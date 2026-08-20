@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import { motion } from 'motion/react';
-import { Search, Car as CarIcon, ArrowUpRight, Gauge, Calendar, SlidersHorizontal, Layers, CheckCircle2 } from 'lucide-react';
+import { Search, Car as CarIcon, ArrowUpRight, Calendar, SlidersHorizontal, Crown, Layers, ArrowDownUp } from 'lucide-react';
 import { Car } from '../../types';
 import { CalculatedStockStats, SortByType } from './types';
 import { formatBRL, detectBodyType, detectTransmission, detectFuel } from './helpers';
+import LuxurySelect, { LuxurySelectOption } from './LuxurySelect';
 
 interface InventoryTabProps {
   filteredCars: Car[];
@@ -32,6 +33,35 @@ export default function InventoryTab({
   setSortBy,
   onSelectCar,
 }: InventoryTabProps) {
+  // Opções formatadas para o Seletor de Marcas
+  const brandOptions: LuxurySelectOption[] = useMemo(() => [
+    { value: 'all', label: 'Todas as Marcas', count: stats.totalCars },
+    ...stats.brandList.map(b => ({
+      value: b.name,
+      label: b.name,
+      count: b.count
+    }))
+  ], [stats.brandList, stats.totalCars]);
+
+  // Opções formatadas para o Seletor de Carrocerias
+  const categoryOptions: LuxurySelectOption[] = useMemo(() => [
+    { value: 'all', label: 'Todas as Carrocerias', count: stats.totalCars },
+    ...stats.bodyTypes.map(bt => ({
+      value: bt.name,
+      label: bt.name,
+      count: bt.value
+    }))
+  ], [stats.bodyTypes, stats.totalCars]);
+
+  // Opções formatadas para o Seletor de Ordenação
+  const sortOptions: LuxurySelectOption[] = [
+    { value: 'price_desc', label: 'Maior Preço' },
+    { value: 'price_asc', label: 'Menor Preço' },
+    { value: 'year_desc', label: 'Mais Recentes (Ano)' },
+    { value: 'km_asc', label: 'Menor KM' },
+    { value: 'name_asc', label: 'Nome A-Z' },
+  ];
+
   return (
     <motion.div
       key="inventory-tab"
@@ -42,7 +72,7 @@ export default function InventoryTab({
       className="space-y-6 text-left"
     >
       {/* Barra de Filtros e Busca Rápida */}
-      <div className="rounded-3xl border border-white/10 bg-gradient-to-br from-zinc-900/90 via-zinc-900/50 to-zinc-950/90 p-5 sm:p-6 backdrop-blur-2xl space-y-4 shadow-2xl relative overflow-hidden">
+      <div className="rounded-3xl border border-white/10 bg-gradient-to-br from-zinc-900/90 via-zinc-900/50 to-zinc-950/90 p-5 sm:p-6 backdrop-blur-2xl space-y-4 shadow-2xl relative overflow-visible z-20">
         <div className="absolute top-0 right-0 h-40 w-40 bg-amber-500/5 blur-3xl pointer-events-none" />
 
         <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 relative z-10">
@@ -63,60 +93,45 @@ export default function InventoryTab({
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 relative z-10">
           
-          {/* Input de Busca */}
+          {/* Input de Busca Customizado */}
           <div className="relative">
-            <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 h-4 w-4 text-zinc-500" />
+            <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 h-4 w-4 text-zinc-400" />
             <input
               type="text"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               placeholder="Buscar por modelo, marca..."
-              className="w-full rounded-2xl border border-white/10 bg-zinc-950/80 py-2.5 pl-10 pr-4 font-mono text-xs text-white placeholder-zinc-500 focus:border-amber-500 focus:outline-none transition-all shadow-inner"
+              className="w-full rounded-2xl border border-white/10 bg-zinc-950/80 hover:border-white/20 py-2.5 pl-10 pr-4 font-mono text-xs text-white placeholder-zinc-500 focus:border-amber-500 focus:outline-none transition-all shadow-inner"
             />
           </div>
 
-          {/* Filtro de Marca */}
-          <div>
-            <select
-              value={selectedBrandFilter}
-              onChange={(e) => setSelectedBrandFilter(e.target.value)}
-              className="w-full rounded-2xl border border-white/10 bg-zinc-950/80 py-2.5 px-3.5 font-mono text-xs text-zinc-300 focus:border-amber-500 focus:outline-none transition-all cursor-pointer shadow-inner"
-            >
-              <option value="all">Todas as Marcas ({stats.totalCars})</option>
-              {stats.brandList.map(b => (
-                <option key={b.name} value={b.name}>{b.name} ({b.count})</option>
-              ))}
-            </select>
-          </div>
+          {/* Filtro de Marca com LuxurySelect */}
+          <LuxurySelect
+            value={selectedBrandFilter}
+            onChange={setSelectedBrandFilter}
+            options={brandOptions}
+            placeholder="Todas as Marcas"
+            icon={<Crown className="h-3.5 w-3.5 text-amber-400" />}
+          />
 
-          {/* Filtro de Carroceria */}
-          <div>
-            <select
-              value={selectedCategoryFilter}
-              onChange={(e) => setSelectedCategoryFilter(e.target.value)}
-              className="w-full rounded-2xl border border-white/10 bg-zinc-950/80 py-2.5 px-3.5 font-mono text-xs text-zinc-300 focus:border-amber-500 focus:outline-none transition-all cursor-pointer shadow-inner"
-            >
-              <option value="all">Todas as Carrocerias</option>
-              {stats.bodyTypes.map(bt => (
-                <option key={bt.name} value={bt.name}>{bt.name} ({bt.value})</option>
-              ))}
-            </select>
-          </div>
+          {/* Filtro de Carroceria com LuxurySelect */}
+          <LuxurySelect
+            value={selectedCategoryFilter}
+            onChange={setSelectedCategoryFilter}
+            options={categoryOptions}
+            placeholder="Todas as Carrocerias"
+            icon={<Layers className="h-3.5 w-3.5 text-purple-400" />}
+          />
 
-          {/* Ordenação */}
-          <div>
-            <select
-              value={sortBy}
-              onChange={(e) => setSortBy(e.target.value as SortByType)}
-              className="w-full rounded-2xl border border-white/10 bg-zinc-950/80 py-2.5 px-3.5 font-mono text-xs text-amber-400 focus:border-amber-500 focus:outline-none transition-all cursor-pointer font-bold shadow-inner"
-            >
-              <option value="price_desc">Ordenar: Maior Preço</option>
-              <option value="price_asc">Ordenar: Menor Preço</option>
-              <option value="year_desc">Ordenar: Mais Recentes (Ano)</option>
-              <option value="km_asc">Ordenar: Menor KM</option>
-              <option value="name_asc">Ordenar: Nome A-Z</option>
-            </select>
-          </div>
+          {/* Ordenação com LuxurySelect */}
+          <LuxurySelect
+            value={sortBy}
+            onChange={(val) => setSortBy(val as SortByType)}
+            options={sortOptions}
+            placeholder="Ordenar por..."
+            icon={<ArrowDownUp className="h-3.5 w-3.5 text-amber-400" />}
+            isAccent
+          />
 
         </div>
       </div>
@@ -133,7 +148,6 @@ export default function InventoryTab({
           {filteredCars.map((car, idx) => {
             const body = detectBodyType(car);
             const trans = detectTransmission(car);
-            const fuel = detectFuel(car);
 
             return (
               <motion.div
