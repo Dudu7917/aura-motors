@@ -7,9 +7,14 @@ import {
   Crown, 
   DollarSign, 
   Car as CarIcon, 
-  Radio 
+  Radio,
+  Zap,
+  TrendingUp,
+  Activity,
+  ShieldCheck
 } from 'lucide-react';
 import { MetricsTabType, CalculatedStockStats } from './types';
+import { formatBRL } from './helpers';
 
 interface HeroBannerProps {
   stats: CalculatedStockStats;
@@ -40,33 +45,55 @@ export default function HeroBanner({
       initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-      className="relative rounded-3xl border border-white/10 bg-gradient-to-br from-zinc-900/90 via-zinc-900/40 to-zinc-950/90 p-6 sm:p-8 backdrop-blur-2xl overflow-hidden shadow-[0_20px_60px_rgba(0,0,0,0.7)]"
+      className="relative rounded-3xl border border-white/10 bg-gradient-to-br from-zinc-900/90 via-zinc-900/40 to-zinc-950/95 p-6 sm:p-8 backdrop-blur-3xl overflow-hidden shadow-[0_25px_70px_rgba(0,0,0,0.8)]"
     >
-      {/* Efeito Glow Interior */}
-      <div className="absolute -right-20 -top-20 h-72 w-72 rounded-full bg-amber-500/15 blur-3xl pointer-events-none" />
-      <div className="absolute -left-20 -bottom-20 h-72 w-72 rounded-full bg-amber-600/10 blur-3xl pointer-events-none" />
+      {/* Efeitos Glow Atmosféricos */}
+      <div className="absolute -right-24 -top-24 h-80 w-80 rounded-full bg-amber-500/15 blur-[120px] pointer-events-none" />
+      <div className="absolute -left-24 -bottom-24 h-80 w-80 rounded-full bg-emerald-500/10 blur-[120px] pointer-events-none" />
+      <div className="absolute top-1/2 left-1/3 h-64 w-64 rounded-full bg-blue-500/5 blur-[100px] pointer-events-none" />
 
-      {/* Top Bar com Status Live */}
-      <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6 relative z-10">
-        <div className="space-y-3 text-left">
-          <div className="flex flex-wrap items-center gap-3">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 backdrop-blur-md">
-              <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75" />
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-amber-500" />
-              </span>
-              <span className="font-mono text-[10px] uppercase tracking-[0.25em] text-amber-400 font-bold">
-                Business Intelligence & Gestão de Pátio
-              </span>
-            </div>
-
-            <div className="hidden sm:inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-white/5 border border-white/10 font-mono text-[10px] text-zinc-400">
-              <Radio className="h-3 w-3 text-emerald-400 animate-pulse" />
-              <span>Sincronia Ativa ({stats.totalCars} Veículos)</span>
-            </div>
+      {/* Faixa Superior de Telemetria Contínua */}
+      <div className="mb-6 pb-4 border-b border-white/5 flex flex-wrap items-center justify-between gap-3 text-left">
+        <div className="flex flex-wrap items-center gap-3">
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/30 backdrop-blur-md shadow-[0_0_20px_rgba(245,158,11,0.15)]">
+            <span className="relative flex h-2 w-2">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75" />
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-amber-500" />
+            </span>
+            <span className="font-mono text-[10px] uppercase tracking-[0.25em] text-amber-400 font-bold">
+              Business Intelligence & Gestão de Pátio
+            </span>
           </div>
 
-          <h1 className="font-luxury text-2xl sm:text-4xl lg:text-5xl tracking-wider text-white uppercase flex items-center gap-3 font-bold">
+          <div className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/5 border border-white/10 font-mono text-[10px] text-zinc-300">
+            <Radio className="h-3 w-3 text-emerald-400 animate-pulse" />
+            <span>Sincronia Ativa ({stats.totalCars} Veículos)</span>
+          </div>
+
+          <div className="hidden md:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 font-mono text-[10px] text-emerald-300">
+            <ShieldCheck className="h-3 w-3 text-emerald-400" />
+            <span>Score de Liquidez: {stats.liquidityScore}/100</span>
+          </div>
+        </div>
+
+        {/* Mini Ticker com Métricas Rápidas */}
+        <div className="hidden xl:flex items-center gap-4 font-mono text-[10.5px] text-zinc-400">
+          <span className="flex items-center gap-1.5 text-zinc-300">
+            <TrendingUp className="h-3.5 w-3.5 text-amber-400" />
+            Giro Estimado: <strong className="text-amber-400 font-bold">~{stats.estimatedMonthlyGiro} unid/mês</strong>
+          </span>
+          <span className="text-zinc-700">•</span>
+          <span className="flex items-center gap-1.5 text-zinc-300">
+            <Zap className="h-3.5 w-3.5 text-emerald-400" />
+            Baixa KM: <strong className="text-emerald-400 font-bold">{stats.lowMileagePercentage}%</strong>
+          </span>
+        </div>
+      </div>
+
+      {/* Header Principal */}
+      <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6 relative z-10 text-left">
+        <div className="space-y-3">
+          <h1 className="font-luxury text-3xl sm:text-4xl lg:text-5xl tracking-wider text-white uppercase font-black">
             INTELIGÊNCIA DE ESTOQUE
           </h1>
 
@@ -81,7 +108,7 @@ export default function HeroBanner({
             whileHover={{ scale: 1.03, y: -2 }}
             whileTap={{ scale: 0.97 }}
             onClick={onExportCSV}
-            className="flex items-center gap-2 px-5 py-3 rounded-2xl border border-white/10 bg-zinc-900/80 hover:bg-zinc-850 hover:border-amber-500/30 text-zinc-300 hover:text-white font-mono text-xs uppercase tracking-wider transition-all duration-300 cursor-pointer shadow-lg"
+            className="flex items-center gap-2 px-5 py-3 rounded-2xl border border-white/10 bg-zinc-900/80 hover:bg-zinc-850 hover:border-amber-500/40 text-zinc-300 hover:text-white font-mono text-xs uppercase tracking-wider transition-all duration-300 cursor-pointer shadow-lg hover:shadow-[0_0_20px_rgba(245,158,11,0.15)]"
             title="Exportar dados do estoque para planilha CSV"
           >
             <Download className="h-4 w-4 text-amber-500" />
@@ -92,7 +119,7 @@ export default function HeroBanner({
             <motion.button
               whileHover={{ scale: 1.04, y: -2 }}
               whileTap={{ scale: 0.96 }}
-              onClick={() => onOpenAiConcierge('Faça um relatório executivo detalhado dos pontos fortes, concentração de marcas e oportunidades comerciais do estoque atual.')}
+              onClick={() => onOpenAiConcierge('Faça um relatório executivo detalhado dos pontos fortes, concentração de marcas, giro potencial e oportunidades comerciais do estoque atual.')}
               className="flex items-center gap-2.5 px-6 py-3 rounded-2xl bg-gradient-to-r from-amber-500 via-amber-400 to-yellow-500 hover:from-amber-400 hover:to-yellow-400 text-black font-mono text-xs uppercase font-extrabold tracking-wider transition-all duration-300 shadow-[0_0_30px_rgba(245,158,11,0.35)] cursor-pointer"
             >
               <Sparkles className="h-4 w-4 fill-black" />
@@ -102,8 +129,8 @@ export default function HeroBanner({
         </div>
       </div>
 
-      {/* SUBMENU DE NAVEGAÇÃO COM LAYOUTID (MOTION PILL) */}
-      <div className="flex items-center space-x-2 border-t border-white/5 mt-8 pt-6 overflow-x-auto pb-1 scrollbar-none">
+      {/* Tabs de Navegação Estilizadas com Indicador Ativo */}
+      <div className="mt-8 pt-6 border-t border-white/5 flex flex-wrap items-center gap-2 sm:gap-3 relative z-10">
         {tabs.map((tab) => {
           const Icon = tab.icon;
           const isActive = activeViewTab === tab.id;
@@ -111,19 +138,14 @@ export default function HeroBanner({
             <button
               key={tab.id}
               onClick={() => setActiveViewTab(tab.id)}
-              className={`relative flex items-center space-x-2 px-5 py-2.5 rounded-2xl font-mono text-xs uppercase tracking-wider transition-all duration-300 cursor-pointer whitespace-nowrap ${
-                isActive ? 'text-black font-extrabold' : 'text-zinc-400 hover:text-white hover:bg-white/5'
+              className={`relative flex items-center gap-2.5 px-4 sm:px-5 py-2.5 rounded-2xl font-mono text-xs uppercase tracking-wider transition-all duration-300 cursor-pointer ${
+                isActive
+                  ? 'text-black font-extrabold bg-gradient-to-r from-amber-400 via-amber-300 to-yellow-400 shadow-[0_0_25px_rgba(245,158,11,0.4)]'
+                  : 'text-zinc-400 hover:text-white bg-zinc-950/60 border border-white/5 hover:border-white/15 hover:bg-zinc-900/60'
               }`}
             >
-              {isActive && (
-                <motion.div
-                  layoutId="active-metric-tab-pill"
-                  className="absolute inset-0 rounded-2xl bg-gradient-to-r from-amber-500 to-amber-400 shadow-[0_0_20px_rgba(245,158,11,0.4)]"
-                  transition={{ type: "spring", stiffness: 400, damping: 30 }}
-                />
-              )}
-              <Icon className="relative z-10 h-4 w-4" />
-              <span className="relative z-10">{tab.label}</span>
+              <Icon className={`h-4 w-4 ${isActive ? 'text-black stroke-[2.5]' : 'text-zinc-400'}`} />
+              <span>{tab.label}</span>
             </button>
           );
         })}

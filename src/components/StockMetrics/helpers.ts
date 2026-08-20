@@ -6,13 +6,15 @@ export { parseKm, formatBRL, detectBodyType, detectFuel, detectTransmission };
 
 // Cálculo das métricas consolidadas do estoque
 export function computeStockStats(carsList: Car[]): CalculatedStockStats {
+  const currentYear = new Date().getFullYear();
+
   if (!carsList || carsList.length === 0) {
     return {
       totalCars: 0,
       totalValue: 0,
       avgPrice: 0,
       avgKm: 0,
-      avgYear: new Date().getFullYear(),
+      avgYear: currentYear,
       brandMap: {},
       brandList: [],
       bodyTypes: [],
@@ -25,10 +27,14 @@ export function computeStockStats(carsList: Car[]): CalculatedStockStats {
       lowestKmCar: null,
       newestCar: null,
       topEquippedCar: null,
+      fastTurnaroundCar: null,
+      bestOpportunityCar: null,
       recentYearsPercentage: 0,
       lowMileagePercentage: 0,
       suvPercentage: 0,
       automaticPercentage: 0,
+      liquidityScore: 0,
+      estimatedMonthlyGiro: 0,
     };
   }
 
@@ -43,7 +49,6 @@ export function computeStockStats(carsList: Car[]): CalculatedStockStats {
   let lowMileageCount = 0;
   let recentYearsCount = 0;
   let totalYears = 0;
-  const currentYear = new Date().getFullYear();
 
   let topValuedCar: Car | null = null;
   let lowestPriceCar: Car | null = null;
@@ -53,6 +58,8 @@ export function computeStockStats(carsList: Car[]): CalculatedStockStats {
   let minKmValue = Infinity;
   let topEquippedCar: Car | null = null;
   let maxFeaturesCount = -1;
+  let fastTurnaroundCar: Car | null = null;
+  let bestOpportunityCar: Car | null = null;
 
   const rawBrandMap: Record<string, { count: number; value: number; cars: Car[]; models: Set<string> }> = {};
   const bodyMap = new Map<string, number>();
@@ -61,11 +68,11 @@ export function computeStockStats(carsList: Car[]): CalculatedStockStats {
   const yearMap = new Map<string, { count: number; value: number }>();
 
   const priceTiersConfig = [
-    { label: 'Até R$ 50k', min: 0, max: 50000, color: '#10b981' },
-    { label: 'R$ 50k - R$ 80k', min: 50000, max: 80000, color: '#3b82f6' },
-    { label: 'R$ 80k - R$ 120k', min: 80000, max: 120000, color: '#f59e0b' },
-    { label: 'R$ 120k - R$ 180k', min: 120000, max: 180000, color: '#ec4899' },
-    { label: 'Acima de R$ 180k', min: 180000, max: Infinity, color: '#8b5cf6' },
+    { label: 'Até R$ 60k', min: 0, max: 60000, color: '#10b981' },
+    { label: 'R$ 60k - R$ 100k', min: 60000, max: 100000, color: '#3b82f6' },
+    { label: 'R$ 100k - R$ 150k', min: 100000, max: 150000, color: '#f59e0b' },
+    { label: 'R$ 150k - R$ 220k', min: 150000, max: 220000, color: '#ec4899' },
+    { label: 'Acima de R$ 220k', min: 220000, max: Infinity, color: '#8b5cf6' },
   ];
   const priceTiersCount = [0, 0, 0, 0, 0];
   const priceTiersValue = [0, 0, 0, 0, 0];
@@ -79,15 +86,18 @@ export function computeStockStats(carsList: Car[]): CalculatedStockStats {
     totalValue += price;
     totalYears += year;
 
+    // Maior valor
     if (price > maxPrice) {
       maxPrice = price;
       topValuedCar = car;
     }
+    // Menor preço
     if (price < minPrice && price > 0) {
       minPrice = price;
       lowestPriceCar = car;
     }
 
+    // Mais novo
     if (year > maxYear) {
       maxYear = year;
       newestCar = car;
@@ -96,6 +106,7 @@ export function computeStockStats(carsList: Car[]): CalculatedStockStats {
       recentYearsCount++;
     }
 
+    // Menor KM
     if (km > 0) {
       totalKm += km;
       validKmCount++;
@@ -106,10 +117,21 @@ export function computeStockStats(carsList: Car[]): CalculatedStockStats {
       if (km <= 45000) lowMileageCount++;
     }
 
+    // Mais equipado
     const featuresCount = car.features?.length || 0;
     if (featuresCount > maxFeaturesCount) {
       maxFeaturesCount = featuresCount;
       topEquippedCar = car;
+    }
+
+    // Carro de Giro Rápido (Preço acessível + Baixa KM + Ano recente)
+    if (!fastTurnaroundCar && km > 0 && km < 40000 && price > 40000 && price < 130000 && year >= currentYear - 3) {
+      fastTurnaroundCar = car;
+    }
+
+    // Carro de Oportunidade (Excelente valor x ano)
+    if (!bestOpportunityCar && price > 60000 && price < 160000 && (car.features?.length || 0) >= 5) {
+      bestOpportunityCar = car;
     }
 
     // Marca
@@ -152,6 +174,10 @@ export function computeStockStats(carsList: Car[]): CalculatedStockStats {
     });
   });
 
+  // Fallbacks para carros de destaque
+  if (!fastTurnaroundCar && lowestKmCar) fastTurnaroundCar = lowestKmCar;
+  if (!bestOpportunityCar && topEquippedCar) bestOpportunityCar = topEquippedCar;
+
   const avgPrice = Math.round(totalValue / totalCars);
   const avgKm = validKmCount > 0 ? Math.round(totalKm / validKmCount) : 0;
   const avgYear = Math.round(totalYears / totalCars);
@@ -159,6 +185,20 @@ export function computeStockStats(carsList: Car[]): CalculatedStockStats {
   const automaticPercentage = Math.round((automaticCount / totalCars) * 100);
   const lowMileagePercentage = validKmCount > 0 ? Math.round((lowMileageCount / validKmCount) * 100) : 0;
   const recentYearsPercentage = Math.round((recentYearsCount / totalCars) * 100);
+
+  // Índice de Liquidez Inteligente (0 a 100)
+  const liquidityScore = Math.min(
+    98,
+    Math.round(
+      (lowMileagePercentage * 0.35) + 
+      (recentYearsPercentage * 0.35) + 
+      (automaticPercentage * 0.15) + 
+      (suvPercentage * 0.15)
+    )
+  );
+
+  // Estimativa de Giro Mensal (unidades/mês baseadas no perfil de estoque)
+  const estimatedMonthlyGiro = Math.max(1, Math.round(totalCars * 0.32));
 
   // Formata marcas
   const brandList: BrandMetricItem[] = Object.entries(rawBrandMap)
@@ -232,9 +272,13 @@ export function computeStockStats(carsList: Car[]): CalculatedStockStats {
     lowestKmCar,
     newestCar,
     topEquippedCar,
+    fastTurnaroundCar,
+    bestOpportunityCar,
     recentYearsPercentage,
     lowMileagePercentage,
     suvPercentage,
     automaticPercentage,
+    liquidityScore,
+    estimatedMonthlyGiro,
   };
 }

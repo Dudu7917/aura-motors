@@ -1,9 +1,9 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import { Crown, Tag, Gauge, Sparkles, ChevronRight, Flame } from 'lucide-react';
+import { Crown, Tag, Gauge, Sparkles, ChevronRight, Flame, Zap, ArrowUpRight } from 'lucide-react';
 import { Car } from '../../types';
 import { CalculatedStockStats } from './types';
-import { formatBRL } from './helpers';
+import { formatBRL, detectTransmission, detectBodyType } from './helpers';
 
 interface StockSpotlightSectionProps {
   stats: CalculatedStockStats;
@@ -14,6 +14,53 @@ export default function StockSpotlightSection({
   stats,
   onSelectCar
 }: StockSpotlightSectionProps) {
+  const spotlights = [
+    {
+      id: 'top-value',
+      title: 'Joia do Pátio',
+      subtitle: 'Maior Valor Agregado',
+      car: stats.topValuedCar,
+      badgeColor: 'bg-amber-500/20 text-amber-300 border-amber-500/40',
+      glowColor: 'bg-amber-500/15 group-hover:bg-amber-500/25',
+      priceColor: 'text-amber-400',
+      icon: Crown,
+      borderColor: 'hover:border-amber-500/50'
+    },
+    {
+      id: 'fast-turnaround',
+      title: 'Giro Comercial',
+      subtitle: 'Alta Liquidez & Demanda',
+      car: stats.fastTurnaroundCar || stats.lowestKmCar,
+      badgeColor: 'bg-cyan-500/20 text-cyan-300 border-cyan-500/40',
+      glowColor: 'bg-cyan-500/15 group-hover:bg-cyan-500/25',
+      priceColor: 'text-cyan-400',
+      icon: Zap,
+      borderColor: 'hover:border-cyan-500/50'
+    },
+    {
+      id: 'entry-opportunity',
+      title: 'Porta de Entrada',
+      subtitle: 'Melhor Custo x Benefício',
+      car: stats.lowestPriceCar,
+      badgeColor: 'bg-emerald-500/20 text-emerald-300 border-emerald-500/40',
+      glowColor: 'bg-emerald-500/15 group-hover:bg-emerald-500/25',
+      priceColor: 'text-emerald-400',
+      icon: Tag,
+      borderColor: 'hover:border-emerald-500/50'
+    },
+    {
+      id: 'top-equipped',
+      title: 'Top Opcionais',
+      subtitle: `${stats.topEquippedCar?.features?.length || 0} Itens Oficiais`,
+      car: stats.topEquippedCar || stats.lowestKmCar,
+      badgeColor: 'bg-purple-500/20 text-purple-300 border-purple-500/40',
+      glowColor: 'bg-purple-500/15 group-hover:bg-purple-500/25',
+      priceColor: 'text-purple-400',
+      icon: Sparkles,
+      borderColor: 'hover:border-purple-500/50'
+    }
+  ];
+
   return (
     <div className="space-y-4 text-left">
       <div className="flex items-center justify-between">
@@ -23,167 +70,86 @@ export default function StockSpotlightSection({
           </div>
           <div>
             <h3 className="font-mono text-xs font-bold uppercase tracking-wider text-white">
-              Spotlight & Veículos em Destaque
+              Spotlight & Veículos Estratégicos
             </h3>
             <span className="text-[10px] font-mono text-zinc-500">
-              Modelos notáveis por preço, quilometragem e pacote de opcionais
+              Modelos de maior destaque por preço, liquidez, quilometragem e pacote de tecnologia
             </span>
           </div>
         </div>
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-        {/* Spotlight 1: Maior Preço */}
-        {stats.topValuedCar && (
-          <motion.div 
-            whileHover={{ y: -6, scale: 1.02 }}
-            onClick={() => onSelectCar(stats.topValuedCar!)}
-            className="group rounded-3xl border border-amber-500/30 bg-gradient-to-b from-zinc-900/60 to-zinc-950/90 p-4.5 backdrop-blur-xl hover:border-amber-500/60 transition-all duration-300 cursor-pointer flex flex-col justify-between space-y-3 shadow-xl relative overflow-hidden"
-          >
-            <div className="absolute top-0 right-0 h-28 w-28 bg-amber-500/10 blur-2xl pointer-events-none" />
-            <div>
-              <div className="flex items-center justify-between mb-2.5">
-                <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[9px] font-mono uppercase tracking-wider bg-amber-500/20 text-amber-300 border border-amber-500/30 font-bold">
-                  <Crown className="h-3 w-3 text-amber-400" /> Maior Valor
-                </span>
-                <span className="font-mono text-[11px] text-zinc-400 font-semibold">{stats.topValuedCar.year}</span>
-              </div>
-              <div className="aspect-video w-full rounded-2xl overflow-hidden bg-zinc-950 mb-3 border border-white/10 relative">
-                <img 
-                  src={stats.topValuedCar.image} 
-                  alt={stats.topValuedCar.name} 
-                  className="h-full w-full object-cover group-hover:scale-108 transition-transform duration-700"
-                  loading="lazy"
-                />
-              </div>
-              <h4 className="font-display text-xs sm:text-sm font-bold text-zinc-100 line-clamp-2 group-hover:text-amber-400 transition-colors">
-                {stats.topValuedCar.name}
-              </h4>
-            </div>
-            <div className="pt-3 border-t border-white/5 flex items-center justify-between">
-              <span className="font-luxury text-base text-amber-400 font-bold">
-                {formatBRL(stats.topValuedCar.price)}
-              </span>
-              <span className="text-[10px] font-mono text-zinc-400 flex items-center gap-1 group-hover:text-white transition-colors">
-                Ver ficha <ChevronRight className="h-3.5 w-3.5" />
-              </span>
-            </div>
-          </motion.div>
-        )}
+        {spotlights.map((item, idx) => {
+          const car = item.car;
+          if (!car) return null;
+          const Icon = item.icon;
 
-        {/* Spotlight 2: Oportunidade de Entrada */}
-        {stats.lowestPriceCar && (
-          <motion.div 
-            whileHover={{ y: -6, scale: 1.02 }}
-            onClick={() => onSelectCar(stats.lowestPriceCar!)}
-            className="group rounded-3xl border border-white/10 bg-gradient-to-b from-zinc-900/60 to-zinc-950/90 p-4.5 backdrop-blur-xl hover:border-emerald-500/50 transition-all duration-300 cursor-pointer flex flex-col justify-between space-y-3 shadow-xl relative overflow-hidden"
-          >
-            <div className="absolute top-0 right-0 h-28 w-28 bg-emerald-500/10 blur-2xl pointer-events-none" />
-            <div>
-              <div className="flex items-center justify-between mb-2.5">
-                <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[9px] font-mono uppercase tracking-wider bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 font-bold">
-                  <Tag className="h-3 w-3 text-emerald-400" /> Oportunidade Entrada
-                </span>
-                <span className="font-mono text-[11px] text-zinc-400 font-semibold">{stats.lowestPriceCar.year}</span>
-              </div>
-              <div className="aspect-video w-full rounded-2xl overflow-hidden bg-zinc-950 mb-3 border border-white/10 relative">
-                <img 
-                  src={stats.lowestPriceCar.image} 
-                  alt={stats.lowestPriceCar.name} 
-                  className="h-full w-full object-cover group-hover:scale-108 transition-transform duration-700"
-                  loading="lazy"
-                />
-              </div>
-              <h4 className="font-display text-xs sm:text-sm font-bold text-zinc-100 line-clamp-2 group-hover:text-emerald-400 transition-colors">
-                {stats.lowestPriceCar.name}
-              </h4>
-            </div>
-            <div className="pt-3 border-t border-white/5 flex items-center justify-between">
-              <span className="font-luxury text-base text-emerald-400 font-bold">
-                {formatBRL(stats.lowestPriceCar.price)}
-              </span>
-              <span className="text-[10px] font-mono text-zinc-400 flex items-center gap-1 group-hover:text-white transition-colors">
-                Ver ficha <ChevronRight className="h-3.5 w-3.5" />
-              </span>
-            </div>
-          </motion.div>
-        )}
+          return (
+            <motion.div
+              key={item.id}
+              initial={{ opacity: 0, y: 15 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: idx * 0.08, duration: 0.4 }}
+              whileHover={{ y: -6, scale: 1.015 }}
+              onClick={() => onSelectCar(car)}
+              className={`group rounded-3xl border border-white/10 bg-gradient-to-b from-zinc-900/80 via-zinc-900/40 to-zinc-950/90 p-4.5 backdrop-blur-2xl ${item.borderColor} transition-all duration-300 cursor-pointer flex flex-col justify-between space-y-3 shadow-xl relative overflow-hidden`}
+            >
+              <div className={`absolute top-0 right-0 h-32 w-32 rounded-full ${item.glowColor} blur-2xl transition-all duration-500 pointer-events-none`} />
 
-        {/* Spotlight 3: Menor Rodagem */}
-        {stats.lowestKmCar && (
-          <motion.div 
-            whileHover={{ y: -6, scale: 1.02 }}
-            onClick={() => onSelectCar(stats.lowestKmCar!)}
-            className="group rounded-3xl border border-white/10 bg-gradient-to-b from-zinc-900/60 to-zinc-950/90 p-4.5 backdrop-blur-xl hover:border-purple-500/50 transition-all duration-300 cursor-pointer flex flex-col justify-between space-y-3 shadow-xl relative overflow-hidden"
-          >
-            <div className="absolute top-0 right-0 h-28 w-28 bg-purple-500/10 blur-2xl pointer-events-none" />
-            <div>
-              <div className="flex items-center justify-between mb-2.5">
-                <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[9px] font-mono uppercase tracking-wider bg-purple-500/20 text-purple-300 border border-purple-500/30 font-bold">
-                  <Gauge className="h-3 w-3 text-purple-400" /> Menor Rodagem
-                </span>
-                <span className="font-mono text-[11px] text-zinc-400 font-semibold">{stats.lowestKmCar.year}</span>
-              </div>
-              <div className="aspect-video w-full rounded-2xl overflow-hidden bg-zinc-950 mb-3 border border-white/10 relative">
-                <img 
-                  src={stats.lowestKmCar.image} 
-                  alt={stats.lowestKmCar.name} 
-                  className="h-full w-full object-cover group-hover:scale-108 transition-transform duration-700"
-                  loading="lazy"
-                />
-              </div>
-              <h4 className="font-display text-xs sm:text-sm font-bold text-zinc-100 line-clamp-2 group-hover:text-purple-400 transition-colors">
-                {stats.lowestKmCar.name}
-              </h4>
-            </div>
-            <div className="pt-3 border-t border-white/5 flex items-center justify-between">
-              <span className="font-mono text-xs text-purple-300 font-bold">
-                {stats.lowestKmCar.specs?.rangeOrdisplacement || stats.lowestKmCar.kmText}
-              </span>
-              <span className="text-[10px] font-mono text-zinc-400 flex items-center gap-1 group-hover:text-white transition-colors">
-                {formatBRL(stats.lowestKmCar.price)}
-              </span>
-            </div>
-          </motion.div>
-        )}
+              <div>
+                {/* Header do Card */}
+                <div className="flex items-center justify-between mb-3 relative z-10">
+                  <span className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[9px] font-mono uppercase tracking-wider border font-bold ${item.badgeColor}`}>
+                    <Icon className="h-3 w-3" /> {item.title}
+                  </span>
+                  <span className="font-mono text-[11px] text-zinc-400 font-semibold">{car.year}</span>
+                </div>
 
-        {/* Spotlight 4: Top Opcionais */}
-        {stats.topEquippedCar && (
-          <motion.div 
-            whileHover={{ y: -6, scale: 1.02 }}
-            onClick={() => onSelectCar(stats.topEquippedCar!)}
-            className="group rounded-3xl border border-white/10 bg-gradient-to-b from-zinc-900/60 to-zinc-950/90 p-4.5 backdrop-blur-xl hover:border-blue-500/50 transition-all duration-300 cursor-pointer flex flex-col justify-between space-y-3 shadow-xl relative overflow-hidden"
-          >
-            <div className="absolute top-0 right-0 h-28 w-28 bg-blue-500/10 blur-2xl pointer-events-none" />
-            <div>
-              <div className="flex items-center justify-between mb-2.5">
-                <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[9px] font-mono uppercase tracking-wider bg-blue-500/20 text-blue-300 border border-blue-500/30 font-bold">
-                  <Sparkles className="h-3 w-3 text-blue-400" /> Top Opcionais
+                {/* Imagem com Aspect Ratio e Zoom */}
+                <div className="aspect-[16/10] w-full rounded-2xl overflow-hidden bg-zinc-950 mb-3 border border-white/10 relative shadow-inner">
+                  <img
+                    src={car.image}
+                    alt={car.name}
+                    className="h-full w-full object-cover group-hover:scale-108 transition-transform duration-700 ease-out"
+                    loading="lazy"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-zinc-950/80 via-transparent to-transparent opacity-60 group-hover:opacity-30 transition-opacity" />
+                  
+                  {/* Badges de Specs sobre a Foto */}
+                  <div className="absolute bottom-2 left-2 right-2 flex items-center justify-between font-mono text-[9px] text-zinc-300">
+                    <span className="px-2 py-0.5 rounded-md bg-black/70 backdrop-blur-md border border-white/10">
+                      {car.specs?.rangeOrdisplacement || car.kmText || `${car.year}`}
+                    </span>
+                    <span className="px-2 py-0.5 rounded-md bg-black/70 backdrop-blur-md border border-white/10 uppercase">
+                      {detectBodyType(car)}
+                    </span>
+                  </div>
+                </div>
+
+                {/* Nome do Carro */}
+                <h4 className="font-display text-xs sm:text-sm font-bold text-zinc-100 line-clamp-2 group-hover:text-amber-400 transition-colors leading-snug">
+                  {car.name}
+                </h4>
+              </div>
+
+              {/* Rodapé com Preço e Ação */}
+              <div className="pt-3 border-t border-white/5 flex items-center justify-between relative z-10">
+                <div>
+                  <span className="text-[9px] font-mono text-zinc-500 block uppercase">Valor de Pátio</span>
+                  <span className={`font-luxury text-base sm:text-lg font-bold ${item.priceColor}`}>
+                    {formatBRL(car.price)}
+                  </span>
+                </div>
+
+                <span className="text-[10px] font-mono text-zinc-400 flex items-center gap-1 group-hover:text-white group-hover:translate-x-0.5 transition-all">
+                  <span>Ficha</span>
+                  <ArrowUpRight className="h-3.5 w-3.5 text-zinc-400 group-hover:text-amber-400" />
                 </span>
-                <span className="font-mono text-[11px] text-zinc-400 font-semibold">{stats.topEquippedCar.features?.length || 0} itens</span>
               </div>
-              <div className="aspect-video w-full rounded-2xl overflow-hidden bg-zinc-950 mb-3 border border-white/10 relative">
-                <img 
-                  src={stats.topEquippedCar.image} 
-                  alt={stats.topEquippedCar.name} 
-                  className="h-full w-full object-cover group-hover:scale-108 transition-transform duration-700"
-                  loading="lazy"
-                />
-              </div>
-              <h4 className="font-display text-xs sm:text-sm font-bold text-zinc-100 line-clamp-2 group-hover:text-blue-400 transition-colors">
-                {stats.topEquippedCar.name}
-              </h4>
-            </div>
-            <div className="pt-3 border-t border-white/5 flex items-center justify-between">
-              <span className="font-luxury text-base text-blue-400 font-bold">
-                {formatBRL(stats.topEquippedCar.price)}
-              </span>
-              <span className="text-[10px] font-mono text-zinc-400 flex items-center gap-1 group-hover:text-white transition-colors">
-                Ver ficha <ChevronRight className="h-3.5 w-3.5" />
-              </span>
-            </div>
-          </motion.div>
-        )}
+            </motion.div>
+          );
+        })}
       </div>
     </div>
   );

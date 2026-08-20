@@ -22,11 +22,11 @@ export interface LuxuryColor {
 export const LUXURY_COLORS: LuxuryColor[] = [
   { main: '#f59e0b', light: '#fbbf24', dark: '#b45309', glow: 'rgba(245, 158, 11, 0.4)' }, // Dourado Nelsinho
   { main: '#10b981', light: '#34d399', dark: '#047857', glow: 'rgba(16, 185, 129, 0.4)' }, // Esmeralda
-  { main: '#06b6d4', light: '#22d3ee', dark: '#0e7490', glow: 'rgba(6, 182, 212, 0.4)' },  // Ciano
+  { main: '#3b82f6', light: '#60a5fa', dark: '#1d4ed8', glow: 'rgba(59, 130, 246, 0.4)' },  // Safira
   { main: '#8b5cf6', light: '#a78bfa', dark: '#6d28d9', glow: 'rgba(139, 92, 246, 0.4)' }, // Violeta
   { main: '#ec4899', light: '#f472b6', dark: '#be185d', glow: 'rgba(236, 72, 153, 0.4)' }, // Magenta
   { main: '#f97316', light: '#fb923c', dark: '#c2410c', glow: 'rgba(249, 115, 22, 0.4)' }, // Laranja
-  { main: '#3b82f6', light: '#60a5fa', dark: '#1d4ed8', glow: 'rgba(59, 130, 246, 0.4)' },  // Azul
+  { main: '#06b6d4', light: '#22d3ee', dark: '#0e7490', glow: 'rgba(6, 182, 212, 0.4)' },  // Ciano
   { main: '#eab308', light: '#fde047', dark: '#a16207', glow: 'rgba(234, 179, 8, 0.4)' },   // Amarelo Ouro
 ];
 
@@ -78,10 +78,14 @@ export interface CalculatedStockStats {
   lowestKmCar: Car | null;
   newestCar: Car | null;
   topEquippedCar: Car | null;
+  fastTurnaroundCar: Car | null;
+  bestOpportunityCar: Car | null;
   recentYearsPercentage: number;
   lowMileagePercentage: number;
   suvPercentage: number;
   automaticPercentage: number;
+  liquidityScore: number;
+  estimatedMonthlyGiro: number;
 }
 
 export const containerVariants = {
@@ -89,8 +93,8 @@ export const containerVariants = {
   visible: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.08,
-      delayChildren: 0.05
+      staggerChildren: 0.06,
+      delayChildren: 0.04
     }
   }
 };
@@ -103,8 +107,8 @@ export const itemVariants = {
     scale: 1,
     transition: {
       type: "spring" as const,
-      stiffness: 120,
-      damping: 14
+      stiffness: 140,
+      damping: 15
     }
   }
 };
