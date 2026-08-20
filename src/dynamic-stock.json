@@ -1,0 +1,1730 @@
+[
+  {
+    "id": "nelsinho-audi-0",
+    "name": "AUDI Q3 1.4 TFSI AMBIENTE FLEX 4P S TRONIC",
+    "brand": "Audi",
+    "role": "Audi Destaque no Estoque",
+    "category": "suv",
+    "price": 93970,
+    "image": "https://www.autocerto.com/fotos/6983/4636335/1.jpg",
+    "description": "Este magnífico AUDI Q3 1.4 TFSI AMBIENTE FLEX 4P S TRONIC ano modelo 2018 conta com apenas 130.150 km rodados! Superbamente revisado pela equipe técnica da Garagem do Nelsinho. Veículo com vistoria cautelar 100% aprovada, estofamento higienizado, mecânica periciada sob rigorosa aprovação, perfeito para rodar diário com imbatível custo-benefício.",
+    "year": 2018,
+    "isAvailableForTestDrive": true,
+    "specs": {
+      "acceleration": 9.8,
+      "topSpeed": 195,
+      "power": 128,
+      "torque": 200,
+      "rangeOrdisplacement": "130.150 km",
+      "weight": 1210
+    },
+    "paints": [
+      {
+        "name": "Cinza Platinum",
+        "hex": "#475569",
+        "price": 0,
+        "class": "bg-slate-600"
+      },
+      {
+        "name": "Branco Diamante",
+        "hex": "#FFFFFF",
+        "price": 0,
+        "class": "bg-white border"
+      },
+      {
+        "name": "Preto Carbono",
+        "hex": "#0F172A",
+        "price": 1500,
+        "class": "bg-slate-900"
+      }
+    ],
+    "wheels": [
+      {
+        "name": "Rodas de Alumínio Diamantadas Originais",
+        "size": "16\"",
+        "image": "Original16",
+        "price": 0
+      }
+    ]
+  },
+  {
+    "id": "nelsinho-bmw-1",
+    "name": "BMW X3 2.0 16V GASOLINA X LINE XDRIVE20I STEPTRONIC",
+    "brand": "Bmw",
+    "role": "Bmw Destaque no Estoque",
+    "category": "suv",
+    "price": 179970,
+    "image": "https://www.autocerto.com/fotos/6983/4636328/1.jpg",
+    "description": "Este magnífico BMW X3 2.0 16V GASOLINA X LINE XDRIVE20I STEPTRONIC ano modelo 2018 conta com apenas 52.007 km rodados! Superbamente revisado pela equipe técnica da Garagem do Nelsinho. Veículo com vistoria cautelar 100% aprovada, estofamento higienizado, mecânica periciada sob rigorosa aprovação, perfeito para rodar diário com imbatível custo-benefício.",
+    "year": 2018,
+    "isAvailableForTestDrive": true,
+    "specs": {
+      "acceleration": 11.2,
+      "topSpeed": 178,
+      "power": 115,
+      "torque": 155,
+      "rangeOrdisplacement": "52.007 km",
+      "weight": 1210
+    },
+    "paints": [
+      {
+        "name": "Cinza Platinum",
+        "hex": "#475569",
+        "price": 0,
+        "class": "bg-slate-600"
+      },
+      {
+        "name": "Branco Diamante",
+        "hex": "#FFFFFF",
+        "price": 0,
+        "class": "bg-white border"
+      },
+      {
+        "name": "Preto Carbono",
+        "hex": "#0F172A",
+        "price": 1500,
+        "class": "bg-slate-900"
+      }
+    ],
+    "wheels": [
+      {
+        "name": "Rodas de Alumínio Diamantadas Originais",
+        "size": "16\"",
+        "image": "Original16",
+        "price": 0
+      }
+    ]
+  },
+  {
+    "id": "nelsinho-chevrolet-2",
+    "name": "CHEVROLET PRISMA 1.4 MPFI LTZ 8V FLEX 4P MANUAL",
+    "brand": "Chevrolet",
+    "role": "Chevrolet Destaque no Estoque",
+    "category": "classics",
+    "price": 58900,
+    "image": "https://www.autocerto.com/fotos/6983/4636469/1.jpg",
+    "description": "Este magnífico CHEVROLET PRISMA 1.4 MPFI LTZ 8V FLEX 4P MANUAL ano modelo 2015 conta com apenas 80.428 km rodados! Superbamente revisado pela equipe técnica da Garagem do Nelsinho. Veículo com vistoria cautelar 100% aprovada, estofamento higienizado, mecânica periciada sob rigorosa aprovação, perfeito para rodar diário com imbatível custo-benefício.",
+    "year": 2015,
+    "isAvailableForTestDrive": true,
+    "specs": {
+      "acceleration": 9.8,
+      "topSpeed": 195,
+      "power": 128,
+      "torque": 200,
+      "rangeOrdisplacement": "80.428 km",
+      "weight": 1210
+    },
+    "paints": [
+      {
+        "name": "Cinza Platinum",
+        "hex": "#475569",
+        "price": 0,
+        "class": "bg-slate-600"
+      },
+      {
+        "name": "Branco Diamante",
+        "hex": "#FFFFFF",
+        "price": 0,
+        "class": "bg-white border"
+      },
+      {
+        "name": "Preto Carbono",
+        "hex": "#0F172A",
+        "price": 1500,
+        "class": "bg-slate-900"
+      }
+    ],
+    "wheels": [
+      {
+        "name": "Rodas de Alumínio Diamantadas Originais",
+        "size": "16\"",
+        "image": "Original16",
+        "price": 0
+      }
+    ]
+  },
+  {
+    "id": "nelsinho-fiat-3",
+    "name": "FIAT FASTBACK 1.3 TURBO 270 FLEX LIMITED EDITION AT6",
+    "brand": "Fiat",
+    "role": "Fiat Destaque no Estoque",
+    "category": "suv",
+    "price": 129900,
+    "image": "https://www.autocerto.com/fotos/6983/4938594/1_090143.jpg",
+    "description": "Este magnífico FIAT FASTBACK 1.3 TURBO 270 FLEX LIMITED EDITION AT6 ano modelo 2025 conta com apenas 31.409 km rodados! Superbamente revisado pela equipe técnica da Garagem do Nelsinho. Veículo com vistoria cautelar 100% aprovada, estofamento higienizado, mecânica periciada sob rigorosa aprovação, perfeito para rodar diário com imbatível custo-benefício.",
+    "year": 2025,
+    "isAvailableForTestDrive": true,
+    "specs": {
+      "acceleration": 11.2,
+      "topSpeed": 178,
+      "power": 115,
+      "torque": 155,
+      "rangeOrdisplacement": "31.409 km",
+      "weight": 1210
+    },
+    "paints": [
+      {
+        "name": "Cinza Platinum",
+        "hex": "#475569",
+        "price": 0,
+        "class": "bg-slate-600"
+      },
+      {
+        "name": "Branco Diamante",
+        "hex": "#FFFFFF",
+        "price": 0,
+        "class": "bg-white border"
+      },
+      {
+        "name": "Preto Carbono",
+        "hex": "#0F172A",
+        "price": 1500,
+        "class": "bg-slate-900"
+      }
+    ],
+    "wheels": [
+      {
+        "name": "Rodas de Alumínio Diamantadas Originais",
+        "size": "16\"",
+        "image": "Original16",
+        "price": 0
+      }
+    ]
+  },
+  {
+    "id": "nelsinho-fiat-4",
+    "name": "FIAT FASTBACK 1.3 TURBO 270 FLEX LIMITED EDITION AT6",
+    "brand": "Fiat",
+    "role": "Fiat Destaque no Estoque",
+    "category": "suv",
+    "price": 134970,
+    "image": "https://www.autocerto.com/fotos/6983/4816327/1_092242.jpg",
+    "description": "Este magnífico FIAT FASTBACK 1.3 TURBO 270 FLEX LIMITED EDITION AT6 ano modelo 2025 conta com apenas 18.768 km rodados! Superbamente revisado pela equipe técnica da Garagem do Nelsinho. Veículo com vistoria cautelar 100% aprovada, estofamento higienizado, mecânica periciada sob rigorosa aprovação, perfeito para rodar diário com imbatível custo-benefício.",
+    "year": 2025,
+    "isAvailableForTestDrive": true,
+    "specs": {
+      "acceleration": 9.8,
+      "topSpeed": 195,
+      "power": 128,
+      "torque": 200,
+      "rangeOrdisplacement": "18.768 km",
+      "weight": 1210
+    },
+    "paints": [
+      {
+        "name": "Cinza Platinum",
+        "hex": "#475569",
+        "price": 0,
+        "class": "bg-slate-600"
+      },
+      {
+        "name": "Branco Diamante",
+        "hex": "#FFFFFF",
+        "price": 0,
+        "class": "bg-white border"
+      },
+      {
+        "name": "Preto Carbono",
+        "hex": "#0F172A",
+        "price": 1500,
+        "class": "bg-slate-900"
+      }
+    ],
+    "wheels": [
+      {
+        "name": "Rodas de Alumínio Diamantadas Originais",
+        "size": "16\"",
+        "image": "Original16",
+        "price": 0
+      }
+    ]
+  },
+  {
+    "id": "nelsinho-fiat-5",
+    "name": "FIAT STRADA 1.4 MPI WORKING CS 8V FLEX 2P MANUAL",
+    "brand": "Fiat",
+    "role": "Fiat Destaque no Estoque",
+    "category": "classics",
+    "price": 56970,
+    "image": "https://www.autocerto.com/fotos/6983/4636333/1.jpg",
+    "description": "Este magnífico FIAT STRADA 1.4 MPI WORKING CS 8V FLEX 2P MANUAL ano modelo 2014 conta com apenas 100.756 km rodados! Superbamente revisado pela equipe técnica da Garagem do Nelsinho. Veículo com vistoria cautelar 100% aprovada, estofamento higienizado, mecânica periciada sob rigorosa aprovação, perfeito para rodar diário com imbatível custo-benefício.",
+    "year": 2014,
+    "isAvailableForTestDrive": true,
+    "specs": {
+      "acceleration": 11.2,
+      "topSpeed": 178,
+      "power": 115,
+      "torque": 155,
+      "rangeOrdisplacement": "100.756 km",
+      "weight": 1210
+    },
+    "paints": [
+      {
+        "name": "Cinza Platinum",
+        "hex": "#475569",
+        "price": 0,
+        "class": "bg-slate-600"
+      },
+      {
+        "name": "Branco Diamante",
+        "hex": "#FFFFFF",
+        "price": 0,
+        "class": "bg-white border"
+      },
+      {
+        "name": "Preto Carbono",
+        "hex": "#0F172A",
+        "price": 1500,
+        "class": "bg-slate-900"
+      }
+    ],
+    "wheels": [
+      {
+        "name": "Rodas de Alumínio Diamantadas Originais",
+        "size": "16\"",
+        "image": "Original16",
+        "price": 0
+      }
+    ]
+  },
+  {
+    "id": "nelsinho-fiat-6",
+    "name": "FIAT TORO 1.3 TURBO 270 FLEX VOLCANO AT6",
+    "brand": "Fiat",
+    "role": "Fiat Destaque no Estoque",
+    "category": "suv",
+    "price": 158970,
+    "image": "https://www.autocerto.com/fotos/6983/4878980/1_055255.jpg",
+    "description": "Este magnífico FIAT TORO 1.3 TURBO 270 FLEX VOLCANO AT6 ano modelo 2025 conta com apenas 9.420 km rodados! Superbamente revisado pela equipe técnica da Garagem do Nelsinho. Veículo com vistoria cautelar 100% aprovada, estofamento higienizado, mecânica periciada sob rigorosa aprovação, perfeito para rodar diário com imbatível custo-benefício.",
+    "year": 2025,
+    "isAvailableForTestDrive": true,
+    "specs": {
+      "acceleration": 9.8,
+      "topSpeed": 195,
+      "power": 128,
+      "torque": 200,
+      "rangeOrdisplacement": "9.420 km",
+      "weight": 1210
+    },
+    "paints": [
+      {
+        "name": "Cinza Platinum",
+        "hex": "#475569",
+        "price": 0,
+        "class": "bg-slate-600"
+      },
+      {
+        "name": "Branco Diamante",
+        "hex": "#FFFFFF",
+        "price": 0,
+        "class": "bg-white border"
+      },
+      {
+        "name": "Preto Carbono",
+        "hex": "#0F172A",
+        "price": 1500,
+        "class": "bg-slate-900"
+      }
+    ],
+    "wheels": [
+      {
+        "name": "Rodas de Alumínio Diamantadas Originais",
+        "size": "16\"",
+        "image": "Original16",
+        "price": 0
+      }
+    ]
+  },
+  {
+    "id": "nelsinho-ford-7",
+    "name": "FORD RANGER 3.2 FX4 4X4 CD 20V DIESEL 4P AUTOMÁTICO",
+    "brand": "Ford",
+    "role": "Ford Destaque no Estoque",
+    "category": "suv",
+    "price": 177970,
+    "image": "https://www.autocerto.com/fotos/6983/4860434/1_090431.jpg",
+    "description": "Este magnífico FORD RANGER 3.2 FX4 4X4 CD 20V DIESEL 4P AUTOMÁTICO ano modelo 2023 conta com apenas 60.588 km rodados! Superbamente revisado pela equipe técnica da Garagem do Nelsinho. Veículo com vistoria cautelar 100% aprovada, estofamento higienizado, mecânica periciada sob rigorosa aprovação, perfeito para rodar diário com imbatível custo-benefício.",
+    "year": 2023,
+    "isAvailableForTestDrive": true,
+    "specs": {
+      "acceleration": 11.2,
+      "topSpeed": 178,
+      "power": 115,
+      "torque": 155,
+      "rangeOrdisplacement": "60.588 km",
+      "weight": 1210
+    },
+    "paints": [
+      {
+        "name": "Cinza Platinum",
+        "hex": "#475569",
+        "price": 0,
+        "class": "bg-slate-600"
+      },
+      {
+        "name": "Branco Diamante",
+        "hex": "#FFFFFF",
+        "price": 0,
+        "class": "bg-white border"
+      },
+      {
+        "name": "Preto Carbono",
+        "hex": "#0F172A",
+        "price": 1500,
+        "class": "bg-slate-900"
+      }
+    ],
+    "wheels": [
+      {
+        "name": "Rodas de Alumínio Diamantadas Originais",
+        "size": "16\"",
+        "image": "Original16",
+        "price": 0
+      }
+    ]
+  },
+  {
+    "id": "nelsinho-honda-8",
+    "name": "HONDA CIVIC 2.0 16V FLEXONE EX 4P CVT",
+    "brand": "Honda",
+    "role": "Honda Destaque no Estoque",
+    "category": "hypercars",
+    "price": 114970,
+    "image": "https://www.autocerto.com/fotos/6983/4880208/1_112327.jpg",
+    "description": "Este magnífico HONDA CIVIC 2.0 16V FLEXONE EX 4P CVT ano modelo 2018 conta com apenas 72.062 km rodados! Superbamente revisado pela equipe técnica da Garagem do Nelsinho. Veículo com vistoria cautelar 100% aprovada, estofamento higienizado, mecânica periciada sob rigorosa aprovação, perfeito para rodar diário com imbatível custo-benefício.",
+    "year": 2018,
+    "isAvailableForTestDrive": true,
+    "specs": {
+      "acceleration": 9.8,
+      "topSpeed": 195,
+      "power": 128,
+      "torque": 200,
+      "rangeOrdisplacement": "72.062 km",
+      "weight": 1210
+    },
+    "paints": [
+      {
+        "name": "Cinza Platinum",
+        "hex": "#475569",
+        "price": 0,
+        "class": "bg-slate-600"
+      },
+      {
+        "name": "Branco Diamante",
+        "hex": "#FFFFFF",
+        "price": 0,
+        "class": "bg-white border"
+      },
+      {
+        "name": "Preto Carbono",
+        "hex": "#0F172A",
+        "price": 1500,
+        "class": "bg-slate-900"
+      }
+    ],
+    "wheels": [
+      {
+        "name": "Rodas de Alumínio Diamantadas Originais",
+        "size": "16\"",
+        "image": "Original16",
+        "price": 0
+      }
+    ]
+  },
+  {
+    "id": "nelsinho-honda-9",
+    "name": "HONDA FIT 1.4 LX 16V FLEX 4P AUTOMÁTICO",
+    "brand": "Honda",
+    "role": "Honda Destaque no Estoque",
+    "category": "classics",
+    "price": 56900,
+    "image": "https://www.autocerto.com/fotos/6983/4858340/1_054929.jpg",
+    "description": "Este magnífico HONDA FIT 1.4 LX 16V FLEX 4P AUTOMÁTICO ano modelo 2013 conta com apenas 130.080 km rodados! Superbamente revisado pela equipe técnica da Garagem do Nelsinho. Veículo com vistoria cautelar 100% aprovada, estofamento higienizado, mecânica periciada sob rigorosa aprovação, perfeito para rodar diário com imbatível custo-benefício.",
+    "year": 2013,
+    "isAvailableForTestDrive": true,
+    "specs": {
+      "acceleration": 11.2,
+      "topSpeed": 178,
+      "power": 115,
+      "torque": 155,
+      "rangeOrdisplacement": "130.080 km",
+      "weight": 1210
+    },
+    "paints": [
+      {
+        "name": "Cinza Platinum",
+        "hex": "#475569",
+        "price": 0,
+        "class": "bg-slate-600"
+      },
+      {
+        "name": "Branco Diamante",
+        "hex": "#FFFFFF",
+        "price": 0,
+        "class": "bg-white border"
+      },
+      {
+        "name": "Preto Carbono",
+        "hex": "#0F172A",
+        "price": 1500,
+        "class": "bg-slate-900"
+      }
+    ],
+    "wheels": [
+      {
+        "name": "Rodas de Alumínio Diamantadas Originais",
+        "size": "16\"",
+        "image": "Original16",
+        "price": 0
+      }
+    ]
+  },
+  {
+    "id": "nelsinho-honda-10",
+    "name": "HONDA HR-V 1.8 16V FLEX EX 4P AUTOMÁTICO",
+    "brand": "Honda",
+    "role": "Honda Destaque no Estoque",
+    "category": "classics",
+    "price": 119970,
+    "image": "https://www.autocerto.com/fotos/6983/4883477/1_023550.jpg",
+    "description": "Este magnífico HONDA HR-V 1.8 16V FLEX EX 4P AUTOMÁTICO ano modelo 2021 conta com apenas 44.161 km rodados! Superbamente revisado pela equipe técnica da Garagem do Nelsinho. Veículo com vistoria cautelar 100% aprovada, estofamento higienizado, mecânica periciada sob rigorosa aprovação, perfeito para rodar diário com imbatível custo-benefício.",
+    "year": 2021,
+    "isAvailableForTestDrive": true,
+    "specs": {
+      "acceleration": 9.8,
+      "topSpeed": 195,
+      "power": 128,
+      "torque": 200,
+      "rangeOrdisplacement": "44.161 km",
+      "weight": 1210
+    },
+    "paints": [
+      {
+        "name": "Cinza Platinum",
+        "hex": "#475569",
+        "price": 0,
+        "class": "bg-slate-600"
+      },
+      {
+        "name": "Branco Diamante",
+        "hex": "#FFFFFF",
+        "price": 0,
+        "class": "bg-white border"
+      },
+      {
+        "name": "Preto Carbono",
+        "hex": "#0F172A",
+        "price": 1500,
+        "class": "bg-slate-900"
+      }
+    ],
+    "wheels": [
+      {
+        "name": "Rodas de Alumínio Diamantadas Originais",
+        "size": "16\"",
+        "image": "Original16",
+        "price": 0
+      }
+    ]
+  },
+  {
+    "id": "nelsinho-honda-11",
+    "name": "HONDA HR-V 1.8 16V FLEX EX 4P AUTOMÁTICO",
+    "brand": "Honda",
+    "role": "Honda Destaque no Estoque",
+    "category": "classics",
+    "price": 79900,
+    "image": "https://www.autocerto.com/fotos/6983/4679885/1_021852.jpg",
+    "description": "Este magnífico HONDA HR-V 1.8 16V FLEX EX 4P AUTOMÁTICO ano modelo 2015 conta com apenas 97.029 km rodados! Superbamente revisado pela equipe técnica da Garagem do Nelsinho. Veículo com vistoria cautelar 100% aprovada, estofamento higienizado, mecânica periciada sob rigorosa aprovação, perfeito para rodar diário com imbatível custo-benefício.",
+    "year": 2015,
+    "isAvailableForTestDrive": true,
+    "specs": {
+      "acceleration": 11.2,
+      "topSpeed": 178,
+      "power": 115,
+      "torque": 155,
+      "rangeOrdisplacement": "97.029 km",
+      "weight": 1210
+    },
+    "paints": [
+      {
+        "name": "Cinza Platinum",
+        "hex": "#475569",
+        "price": 0,
+        "class": "bg-slate-600"
+      },
+      {
+        "name": "Branco Diamante",
+        "hex": "#FFFFFF",
+        "price": 0,
+        "class": "bg-white border"
+      },
+      {
+        "name": "Preto Carbono",
+        "hex": "#0F172A",
+        "price": 1500,
+        "class": "bg-slate-900"
+      }
+    ],
+    "wheels": [
+      {
+        "name": "Rodas de Alumínio Diamantadas Originais",
+        "size": "16\"",
+        "image": "Original16",
+        "price": 0
+      }
+    ]
+  },
+  {
+    "id": "nelsinho-hyundai-12",
+    "name": "HYUNDAI CRETA 2.0 16V FLEX PRESTIGE AUTOMÁTICO",
+    "brand": "Hyundai",
+    "role": "Hyundai Destaque no Estoque",
+    "category": "suv",
+    "price": 96900,
+    "image": "https://www.autocerto.com/images/emBreve.jpg",
+    "description": "Este magnífico HYUNDAI CRETA 2.0 16V FLEX PRESTIGE AUTOMÁTICO ano modelo 2020 conta com apenas 72.300 km rodados! Superbamente revisado pela equipe técnica da Garagem do Nelsinho. Veículo com vistoria cautelar 100% aprovada, estofamento higienizado, mecânica periciada sob rigorosa aprovação, perfeito para rodar diário com imbatível custo-benefício.",
+    "year": 2020,
+    "isAvailableForTestDrive": true,
+    "specs": {
+      "acceleration": 9.8,
+      "topSpeed": 195,
+      "power": 128,
+      "torque": 200,
+      "rangeOrdisplacement": "72.300 km",
+      "weight": 1210
+    },
+    "paints": [
+      {
+        "name": "Cinza Platinum",
+        "hex": "#475569",
+        "price": 0,
+        "class": "bg-slate-600"
+      },
+      {
+        "name": "Branco Diamante",
+        "hex": "#FFFFFF",
+        "price": 0,
+        "class": "bg-white border"
+      },
+      {
+        "name": "Preto Carbono",
+        "hex": "#0F172A",
+        "price": 1500,
+        "class": "bg-slate-900"
+      }
+    ],
+    "wheels": [
+      {
+        "name": "Rodas de Alumínio Diamantadas Originais",
+        "size": "16\"",
+        "image": "Original16",
+        "price": 0
+      }
+    ]
+  },
+  {
+    "id": "nelsinho-hyundai-13",
+    "name": "HYUNDAI CRETA 1.0 TGDI FLEX LIMITED AUTOMÁTICO",
+    "brand": "Hyundai",
+    "role": "Hyundai Destaque no Estoque",
+    "category": "suv",
+    "price": 116970,
+    "image": "https://www.autocerto.com/fotos/6983/4893828/1_055753.jpg",
+    "description": "Este magnífico HYUNDAI CRETA 1.0 TGDI FLEX LIMITED AUTOMÁTICO ano modelo 2021 conta com apenas 47.382 km rodados! Superbamente revisado pela equipe técnica da Garagem do Nelsinho. Veículo com vistoria cautelar 100% aprovada, estofamento higienizado, mecânica periciada sob rigorosa aprovação, perfeito para rodar diário com imbatível custo-benefício.",
+    "year": 2021,
+    "isAvailableForTestDrive": true,
+    "specs": {
+      "acceleration": 11.2,
+      "topSpeed": 178,
+      "power": 115,
+      "torque": 155,
+      "rangeOrdisplacement": "47.382 km",
+      "weight": 1210
+    },
+    "paints": [
+      {
+        "name": "Cinza Platinum",
+        "hex": "#475569",
+        "price": 0,
+        "class": "bg-slate-600"
+      },
+      {
+        "name": "Branco Diamante",
+        "hex": "#FFFFFF",
+        "price": 0,
+        "class": "bg-white border"
+      },
+      {
+        "name": "Preto Carbono",
+        "hex": "#0F172A",
+        "price": 1500,
+        "class": "bg-slate-900"
+      }
+    ],
+    "wheels": [
+      {
+        "name": "Rodas de Alumínio Diamantadas Originais",
+        "size": "16\"",
+        "image": "Original16",
+        "price": 0
+      }
+    ]
+  },
+  {
+    "id": "nelsinho-hyundai-14",
+    "name": "HYUNDAI CRETA 1.0 TGDI FLEX COMFORT AUTOMÁTICO",
+    "brand": "Hyundai",
+    "role": "Hyundai Destaque no Estoque",
+    "category": "suv",
+    "price": 124900,
+    "image": "https://www.autocerto.com/fotos/6983/4852671/1_043553.jpg",
+    "description": "Este magnífico HYUNDAI CRETA 1.0 TGDI FLEX COMFORT AUTOMÁTICO ano modelo 2025 conta com apenas 36.000 km rodados! Superbamente revisado pela equipe técnica da Garagem do Nelsinho. Veículo com vistoria cautelar 100% aprovada, estofamento higienizado, mecânica periciada sob rigorosa aprovação, perfeito para rodar diário com imbatível custo-benefício.",
+    "year": 2025,
+    "isAvailableForTestDrive": true,
+    "specs": {
+      "acceleration": 9.8,
+      "topSpeed": 195,
+      "power": 128,
+      "torque": 200,
+      "rangeOrdisplacement": "36.000 km",
+      "weight": 1210
+    },
+    "paints": [
+      {
+        "name": "Cinza Platinum",
+        "hex": "#475569",
+        "price": 0,
+        "class": "bg-slate-600"
+      },
+      {
+        "name": "Branco Diamante",
+        "hex": "#FFFFFF",
+        "price": 0,
+        "class": "bg-white border"
+      },
+      {
+        "name": "Preto Carbono",
+        "hex": "#0F172A",
+        "price": 1500,
+        "class": "bg-slate-900"
+      }
+    ],
+    "wheels": [
+      {
+        "name": "Rodas de Alumínio Diamantadas Originais",
+        "size": "16\"",
+        "image": "Original16",
+        "price": 0
+      }
+    ]
+  },
+  {
+    "id": "nelsinho-hyundai-15",
+    "name": "HYUNDAI HB20 1.0 12V FLEX SENSE MANUAL",
+    "brand": "Hyundai",
+    "role": "Hyundai Destaque no Estoque",
+    "category": "classics",
+    "price": 59970,
+    "image": "https://www.autocerto.com/fotos/6983/4766596/1_083652.jpg",
+    "description": "Este magnífico HYUNDAI HB20 1.0 12V FLEX SENSE MANUAL ano modelo 2026 conta com apenas 85.000 km rodados! Superbamente revisado pela equipe técnica da Garagem do Nelsinho. Veículo com vistoria cautelar 100% aprovada, estofamento higienizado, mecânica periciada sob rigorosa aprovação, perfeito para rodar diário com imbatível custo-benefício.",
+    "year": 2026,
+    "isAvailableForTestDrive": true,
+    "specs": {
+      "acceleration": 11.2,
+      "topSpeed": 178,
+      "power": 115,
+      "torque": 155,
+      "rangeOrdisplacement": "85.000 km",
+      "weight": 1210
+    },
+    "paints": [
+      {
+        "name": "Cinza Platinum",
+        "hex": "#475569",
+        "price": 0,
+        "class": "bg-slate-600"
+      },
+      {
+        "name": "Branco Diamante",
+        "hex": "#FFFFFF",
+        "price": 0,
+        "class": "bg-white border"
+      },
+      {
+        "name": "Preto Carbono",
+        "hex": "#0F172A",
+        "price": 1500,
+        "class": "bg-slate-900"
+      }
+    ],
+    "wheels": [
+      {
+        "name": "Rodas de Alumínio Diamantadas Originais",
+        "size": "16\"",
+        "image": "Original16",
+        "price": 0
+      }
+    ]
+  },
+  {
+    "id": "nelsinho-hyundai-16",
+    "name": "HYUNDAI HB20S 1.0 TGDI FLEX EVOLUTION AUTOMÁTICO",
+    "brand": "Hyundai",
+    "role": "Hyundai Destaque no Estoque",
+    "category": "classics",
+    "price": 81970,
+    "image": "https://www.autocerto.com/fotos/6983/4644909/1_101933.jpg",
+    "description": "Este magnífico HYUNDAI HB20S 1.0 TGDI FLEX EVOLUTION AUTOMÁTICO ano modelo 2020 conta com apenas 40.535 km rodados! Superbamente revisado pela equipe técnica da Garagem do Nelsinho. Veículo com vistoria cautelar 100% aprovada, estofamento higienizado, mecânica periciada sob rigorosa aprovação, perfeito para rodar diário com imbatível custo-benefício.",
+    "year": 2020,
+    "isAvailableForTestDrive": true,
+    "specs": {
+      "acceleration": 9.8,
+      "topSpeed": 195,
+      "power": 128,
+      "torque": 200,
+      "rangeOrdisplacement": "40.535 km",
+      "weight": 1210
+    },
+    "paints": [
+      {
+        "name": "Cinza Platinum",
+        "hex": "#475569",
+        "price": 0,
+        "class": "bg-slate-600"
+      },
+      {
+        "name": "Branco Diamante",
+        "hex": "#FFFFFF",
+        "price": 0,
+        "class": "bg-white border"
+      },
+      {
+        "name": "Preto Carbono",
+        "hex": "#0F172A",
+        "price": 1500,
+        "class": "bg-slate-900"
+      }
+    ],
+    "wheels": [
+      {
+        "name": "Rodas de Alumínio Diamantadas Originais",
+        "size": "16\"",
+        "image": "Original16",
+        "price": 0
+      }
+    ]
+  },
+  {
+    "id": "nelsinho-jeep-17",
+    "name": "JEEP COMPASS 1.3 T270 TURBO FLEX LONGITUDE AT6",
+    "brand": "Jeep",
+    "role": "Jeep Destaque no Estoque",
+    "category": "suv",
+    "price": 124970,
+    "image": "https://www.autocerto.com/fotos/6983/4775524/1_100525.jpg",
+    "description": "Este magnífico JEEP COMPASS 1.3 T270 TURBO FLEX LONGITUDE AT6 ano modelo 2024 conta com apenas 46.754 km rodados! Superbamente revisado pela equipe técnica da Garagem do Nelsinho. Veículo com vistoria cautelar 100% aprovada, estofamento higienizado, mecânica periciada sob rigorosa aprovação, perfeito para rodar diário com imbatível custo-benefício.",
+    "year": 2024,
+    "isAvailableForTestDrive": true,
+    "specs": {
+      "acceleration": 11.2,
+      "topSpeed": 178,
+      "power": 115,
+      "torque": 155,
+      "rangeOrdisplacement": "46.754 km",
+      "weight": 1210
+    },
+    "paints": [
+      {
+        "name": "Cinza Platinum",
+        "hex": "#475569",
+        "price": 0,
+        "class": "bg-slate-600"
+      },
+      {
+        "name": "Branco Diamante",
+        "hex": "#FFFFFF",
+        "price": 0,
+        "class": "bg-white border"
+      },
+      {
+        "name": "Preto Carbono",
+        "hex": "#0F172A",
+        "price": 1500,
+        "class": "bg-slate-900"
+      }
+    ],
+    "wheels": [
+      {
+        "name": "Rodas de Alumínio Diamantadas Originais",
+        "size": "16\"",
+        "image": "Original16",
+        "price": 0
+      }
+    ]
+  },
+  {
+    "id": "nelsinho-jeep-18",
+    "name": "JEEP COMPASS 1.3 T270 TURBO FLEX LONGITUDE AT6",
+    "brand": "Jeep",
+    "role": "Jeep Destaque no Estoque",
+    "category": "suv",
+    "price": 134970,
+    "image": "https://www.autocerto.com/fotos/6983/4652882/1_100018.jpg",
+    "description": "Este magnífico JEEP COMPASS 1.3 T270 TURBO FLEX LONGITUDE AT6 ano modelo 2024 conta com apenas 22.079 km rodados! Superbamente revisado pela equipe técnica da Garagem do Nelsinho. Veículo com vistoria cautelar 100% aprovada, estofamento higienizado, mecânica periciada sob rigorosa aprovação, perfeito para rodar diário com imbatível custo-benefício.",
+    "year": 2024,
+    "isAvailableForTestDrive": true,
+    "specs": {
+      "acceleration": 9.8,
+      "topSpeed": 195,
+      "power": 128,
+      "torque": 200,
+      "rangeOrdisplacement": "22.079 km",
+      "weight": 1210
+    },
+    "paints": [
+      {
+        "name": "Cinza Platinum",
+        "hex": "#475569",
+        "price": 0,
+        "class": "bg-slate-600"
+      },
+      {
+        "name": "Branco Diamante",
+        "hex": "#FFFFFF",
+        "price": 0,
+        "class": "bg-white border"
+      },
+      {
+        "name": "Preto Carbono",
+        "hex": "#0F172A",
+        "price": 1500,
+        "class": "bg-slate-900"
+      }
+    ],
+    "wheels": [
+      {
+        "name": "Rodas de Alumínio Diamantadas Originais",
+        "size": "16\"",
+        "image": "Original16",
+        "price": 0
+      }
+    ]
+  },
+  {
+    "id": "nelsinho-jeep-19",
+    "name": "JEEP RENEGADE 1.3 T270 TURBO FLEX LONGITUDE AT6",
+    "brand": "Jeep",
+    "role": "Jeep Destaque no Estoque",
+    "category": "suv",
+    "price": 74900,
+    "image": "https://www.autocerto.com/images/emBreve.jpg",
+    "description": "Este magnífico JEEP RENEGADE 1.3 T270 TURBO FLEX LONGITUDE AT6 ano modelo 2023 conta com apenas 47.203 km rodados! Superbamente revisado pela equipe técnica da Garagem do Nelsinho. Veículo com vistoria cautelar 100% aprovada, estofamento higienizado, mecânica periciada sob rigorosa aprovação, perfeito para rodar diário com imbatível custo-benefício.",
+    "year": 2023,
+    "isAvailableForTestDrive": true,
+    "specs": {
+      "acceleration": 11.2,
+      "topSpeed": 178,
+      "power": 115,
+      "torque": 155,
+      "rangeOrdisplacement": "47.203 km",
+      "weight": 1210
+    },
+    "paints": [
+      {
+        "name": "Cinza Platinum",
+        "hex": "#475569",
+        "price": 0,
+        "class": "bg-slate-600"
+      },
+      {
+        "name": "Branco Diamante",
+        "hex": "#FFFFFF",
+        "price": 0,
+        "class": "bg-white border"
+      },
+      {
+        "name": "Preto Carbono",
+        "hex": "#0F172A",
+        "price": 1500,
+        "class": "bg-slate-900"
+      }
+    ],
+    "wheels": [
+      {
+        "name": "Rodas de Alumínio Diamantadas Originais",
+        "size": "16\"",
+        "image": "Original16",
+        "price": 0
+      }
+    ]
+  },
+  {
+    "id": "nelsinho-jeep-20",
+    "name": "JEEP RENEGADE 1.8 16V FLEX SPORT 4P AUTOMÁTICO",
+    "brand": "Jeep",
+    "role": "Jeep Destaque no Estoque",
+    "category": "suv",
+    "price": 81970,
+    "image": "https://www.autocerto.com/fotos/6983/4862958/1_102236.jpg",
+    "description": "Este magnífico JEEP RENEGADE 1.8 16V FLEX SPORT 4P AUTOMÁTICO ano modelo 2018 conta com apenas 53.763 km rodados! Superbamente revisado pela equipe técnica da Garagem do Nelsinho. Veículo com vistoria cautelar 100% aprovada, estofamento higienizado, mecânica periciada sob rigorosa aprovação, perfeito para rodar diário com imbatível custo-benefício.",
+    "year": 2018,
+    "isAvailableForTestDrive": true,
+    "specs": {
+      "acceleration": 9.8,
+      "topSpeed": 195,
+      "power": 128,
+      "torque": 200,
+      "rangeOrdisplacement": "53.763 km",
+      "weight": 1210
+    },
+    "paints": [
+      {
+        "name": "Cinza Platinum",
+        "hex": "#475569",
+        "price": 0,
+        "class": "bg-slate-600"
+      },
+      {
+        "name": "Branco Diamante",
+        "hex": "#FFFFFF",
+        "price": 0,
+        "class": "bg-white border"
+      },
+      {
+        "name": "Preto Carbono",
+        "hex": "#0F172A",
+        "price": 1500,
+        "class": "bg-slate-900"
+      }
+    ],
+    "wheels": [
+      {
+        "name": "Rodas de Alumínio Diamantadas Originais",
+        "size": "16\"",
+        "image": "Original16",
+        "price": 0
+      }
+    ]
+  },
+  {
+    "id": "nelsinho-jeep-21",
+    "name": "JEEP RENEGADE 1.8 16V FLEX LONGITUDE 4P AUTOMÁTICO",
+    "brand": "Jeep",
+    "role": "Jeep Destaque no Estoque",
+    "category": "suv",
+    "price": 86970,
+    "image": "https://www.autocerto.com/fotos/6983/4646509/2_032040.jpg",
+    "description": "Este magnífico JEEP RENEGADE 1.8 16V FLEX LONGITUDE 4P AUTOMÁTICO ano modelo 2018 conta com apenas 55.273 km rodados! Superbamente revisado pela equipe técnica da Garagem do Nelsinho. Veículo com vistoria cautelar 100% aprovada, estofamento higienizado, mecânica periciada sob rigorosa aprovação, perfeito para rodar diário com imbatível custo-benefício.",
+    "year": 2018,
+    "isAvailableForTestDrive": true,
+    "specs": {
+      "acceleration": 11.2,
+      "topSpeed": 178,
+      "power": 115,
+      "torque": 155,
+      "rangeOrdisplacement": "55.273 km",
+      "weight": 1210
+    },
+    "paints": [
+      {
+        "name": "Cinza Platinum",
+        "hex": "#475569",
+        "price": 0,
+        "class": "bg-slate-600"
+      },
+      {
+        "name": "Branco Diamante",
+        "hex": "#FFFFFF",
+        "price": 0,
+        "class": "bg-white border"
+      },
+      {
+        "name": "Preto Carbono",
+        "hex": "#0F172A",
+        "price": 1500,
+        "class": "bg-slate-900"
+      }
+    ],
+    "wheels": [
+      {
+        "name": "Rodas de Alumínio Diamantadas Originais",
+        "size": "16\"",
+        "image": "Original16",
+        "price": 0
+      }
+    ]
+  },
+  {
+    "id": "nelsinho-jeep-22",
+    "name": "JEEP RENEGADE 1.8 16V FLEX LONGITUDE 4P AUTOMÁTICO",
+    "brand": "Jeep",
+    "role": "Jeep Destaque no Estoque",
+    "category": "suv",
+    "price": 69970,
+    "image": "https://www.autocerto.com/fotos/6983/4636432/1.jpg",
+    "description": "Este magnífico JEEP RENEGADE 1.8 16V FLEX LONGITUDE 4P AUTOMÁTICO ano modelo 2018 conta com apenas 76.980 km rodados! Superbamente revisado pela equipe técnica da Garagem do Nelsinho. Veículo com vistoria cautelar 100% aprovada, estofamento higienizado, mecânica periciada sob rigorosa aprovação, perfeito para rodar diário com imbatível custo-benefício.",
+    "year": 2018,
+    "isAvailableForTestDrive": true,
+    "specs": {
+      "acceleration": 9.8,
+      "topSpeed": 195,
+      "power": 128,
+      "torque": 200,
+      "rangeOrdisplacement": "76.980 km",
+      "weight": 1210
+    },
+    "paints": [
+      {
+        "name": "Cinza Platinum",
+        "hex": "#475569",
+        "price": 0,
+        "class": "bg-slate-600"
+      },
+      {
+        "name": "Branco Diamante",
+        "hex": "#FFFFFF",
+        "price": 0,
+        "class": "bg-white border"
+      },
+      {
+        "name": "Preto Carbono",
+        "hex": "#0F172A",
+        "price": 1500,
+        "class": "bg-slate-900"
+      }
+    ],
+    "wheels": [
+      {
+        "name": "Rodas de Alumínio Diamantadas Originais",
+        "size": "16\"",
+        "image": "Original16",
+        "price": 0
+      }
+    ]
+  },
+  {
+    "id": "nelsinho-nissan-23",
+    "name": "NISSAN KICKS 1.6 16V FLEXSTART SV 4P XTRONIC",
+    "brand": "Nissan",
+    "role": "Nissan Destaque no Estoque",
+    "category": "suv",
+    "price": 86900,
+    "image": "https://www.autocerto.com/fotos/6983/4881583/1_052036.jpg",
+    "description": "Este magnífico NISSAN KICKS 1.6 16V FLEXSTART SV 4P XTRONIC ano modelo 2019 conta com apenas 73.137 km rodados! Superbamente revisado pela equipe técnica da Garagem do Nelsinho. Veículo com vistoria cautelar 100% aprovada, estofamento higienizado, mecânica periciada sob rigorosa aprovação, perfeito para rodar diário com imbatível custo-benefício.",
+    "year": 2019,
+    "isAvailableForTestDrive": true,
+    "specs": {
+      "acceleration": 11.2,
+      "topSpeed": 178,
+      "power": 115,
+      "torque": 155,
+      "rangeOrdisplacement": "73.137 km",
+      "weight": 1210
+    },
+    "paints": [
+      {
+        "name": "Cinza Platinum",
+        "hex": "#475569",
+        "price": 0,
+        "class": "bg-slate-600"
+      },
+      {
+        "name": "Branco Diamante",
+        "hex": "#FFFFFF",
+        "price": 0,
+        "class": "bg-white border"
+      },
+      {
+        "name": "Preto Carbono",
+        "hex": "#0F172A",
+        "price": 1500,
+        "class": "bg-slate-900"
+      }
+    ],
+    "wheels": [
+      {
+        "name": "Rodas de Alumínio Diamantadas Originais",
+        "size": "16\"",
+        "image": "Original16",
+        "price": 0
+      }
+    ]
+  },
+  {
+    "id": "nelsinho-toyota-24",
+    "name": "TOYOTA COROLLA 1.8 GLI UPPER 16V FLEX 4P AUTOMÁTICO",
+    "brand": "Toyota",
+    "role": "Toyota Destaque no Estoque",
+    "category": "hypercars",
+    "price": 93900,
+    "image": "https://www.autocerto.com/fotos/6983/4822296/1_055903.jpg",
+    "description": "Este magnífico TOYOTA COROLLA 1.8 GLI UPPER 16V FLEX 4P AUTOMÁTICO ano modelo 2016 conta com apenas 88.466 km rodados! Superbamente revisado pela equipe técnica da Garagem do Nelsinho. Veículo com vistoria cautelar 100% aprovada, estofamento higienizado, mecânica periciada sob rigorosa aprovação, perfeito para rodar diário com imbatível custo-benefício.",
+    "year": 2016,
+    "isAvailableForTestDrive": true,
+    "specs": {
+      "acceleration": 9.8,
+      "topSpeed": 195,
+      "power": 128,
+      "torque": 200,
+      "rangeOrdisplacement": "88.466 km",
+      "weight": 1210
+    },
+    "paints": [
+      {
+        "name": "Cinza Platinum",
+        "hex": "#475569",
+        "price": 0,
+        "class": "bg-slate-600"
+      },
+      {
+        "name": "Branco Diamante",
+        "hex": "#FFFFFF",
+        "price": 0,
+        "class": "bg-white border"
+      },
+      {
+        "name": "Preto Carbono",
+        "hex": "#0F172A",
+        "price": 1500,
+        "class": "bg-slate-900"
+      }
+    ],
+    "wheels": [
+      {
+        "name": "Rodas de Alumínio Diamantadas Originais",
+        "size": "16\"",
+        "image": "Original16",
+        "price": 0
+      }
+    ]
+  },
+  {
+    "id": "nelsinho-toyota-25",
+    "name": "TOYOTA HILUX 2.8 SRV 4X4 CD 16V DIESEL 4P AUTOMÁTICO",
+    "brand": "Toyota",
+    "role": "Toyota Destaque no Estoque",
+    "category": "suv",
+    "price": 164970,
+    "image": "https://www.autocerto.com/fotos/6983/4636323/1.jpg",
+    "description": "Este magnífico TOYOTA HILUX 2.8 SRV 4X4 CD 16V DIESEL 4P AUTOMÁTICO ano modelo 2016 conta com apenas 142.801 km rodados! Superbamente revisado pela equipe técnica da Garagem do Nelsinho. Veículo com vistoria cautelar 100% aprovada, estofamento higienizado, mecânica periciada sob rigorosa aprovação, perfeito para rodar diário com imbatível custo-benefício.",
+    "year": 2016,
+    "isAvailableForTestDrive": true,
+    "specs": {
+      "acceleration": 11.2,
+      "topSpeed": 178,
+      "power": 115,
+      "torque": 155,
+      "rangeOrdisplacement": "142.801 km",
+      "weight": 1210
+    },
+    "paints": [
+      {
+        "name": "Cinza Platinum",
+        "hex": "#475569",
+        "price": 0,
+        "class": "bg-slate-600"
+      },
+      {
+        "name": "Branco Diamante",
+        "hex": "#FFFFFF",
+        "price": 0,
+        "class": "bg-white border"
+      },
+      {
+        "name": "Preto Carbono",
+        "hex": "#0F172A",
+        "price": 1500,
+        "class": "bg-slate-900"
+      }
+    ],
+    "wheels": [
+      {
+        "name": "Rodas de Alumínio Diamantadas Originais",
+        "size": "16\"",
+        "image": "Original16",
+        "price": 0
+      }
+    ]
+  },
+  {
+    "id": "nelsinho-toyota-26",
+    "name": "TOYOTA YARIS 1.5 16V FLEX SEDAN XL MULTIDRIVE",
+    "brand": "Toyota",
+    "role": "Toyota Destaque no Estoque",
+    "category": "classics",
+    "price": 84970,
+    "image": "https://www.autocerto.com/fotos/6983/4818810/1_105327.jpg",
+    "description": "Este magnífico TOYOTA YARIS 1.5 16V FLEX SEDAN XL MULTIDRIVE ano modelo 2019 conta com apenas 72.909 km rodados! Superbamente revisado pela equipe técnica da Garagem do Nelsinho. Veículo com vistoria cautelar 100% aprovada, estofamento higienizado, mecânica periciada sob rigorosa aprovação, perfeito para rodar diário com imbatível custo-benefício.",
+    "year": 2019,
+    "isAvailableForTestDrive": true,
+    "specs": {
+      "acceleration": 9.8,
+      "topSpeed": 195,
+      "power": 128,
+      "torque": 200,
+      "rangeOrdisplacement": "72.909 km",
+      "weight": 1210
+    },
+    "paints": [
+      {
+        "name": "Cinza Platinum",
+        "hex": "#475569",
+        "price": 0,
+        "class": "bg-slate-600"
+      },
+      {
+        "name": "Branco Diamante",
+        "hex": "#FFFFFF",
+        "price": 0,
+        "class": "bg-white border"
+      },
+      {
+        "name": "Preto Carbono",
+        "hex": "#0F172A",
+        "price": 1500,
+        "class": "bg-slate-900"
+      }
+    ],
+    "wheels": [
+      {
+        "name": "Rodas de Alumínio Diamantadas Originais",
+        "size": "16\"",
+        "image": "Original16",
+        "price": 0
+      }
+    ]
+  },
+  {
+    "id": "nelsinho-volkswagen-27",
+    "name": "VOLKSWAGEN NIVUS 1.0 200 TSI TOTAL FLEX HIGHLINE AUTOMÁTICO",
+    "brand": "Volkswagen",
+    "role": "Volkswagen Destaque no Estoque",
+    "category": "suv",
+    "price": 122790,
+    "image": "https://www.autocerto.com/fotos/6983/4816280/1_090938.jpg",
+    "description": "Este magnífico VOLKSWAGEN NIVUS 1.0 200 TSI TOTAL FLEX HIGHLINE AUTOMÁTICO ano modelo 2021 conta com apenas 33.221 km rodados! Superbamente revisado pela equipe técnica da Garagem do Nelsinho. Veículo com vistoria cautelar 100% aprovada, estofamento higienizado, mecânica periciada sob rigorosa aprovação, perfeito para rodar diário com imbatível custo-benefício.",
+    "year": 2021,
+    "isAvailableForTestDrive": true,
+    "specs": {
+      "acceleration": 11.2,
+      "topSpeed": 178,
+      "power": 115,
+      "torque": 155,
+      "rangeOrdisplacement": "33.221 km",
+      "weight": 1210
+    },
+    "paints": [
+      {
+        "name": "Cinza Platinum",
+        "hex": "#475569",
+        "price": 0,
+        "class": "bg-slate-600"
+      },
+      {
+        "name": "Branco Diamante",
+        "hex": "#FFFFFF",
+        "price": 0,
+        "class": "bg-white border"
+      },
+      {
+        "name": "Preto Carbono",
+        "hex": "#0F172A",
+        "price": 1500,
+        "class": "bg-slate-900"
+      }
+    ],
+    "wheels": [
+      {
+        "name": "Rodas de Alumínio Diamantadas Originais",
+        "size": "16\"",
+        "image": "Original16",
+        "price": 0
+      }
+    ]
+  },
+  {
+    "id": "nelsinho-volkswagen-28",
+    "name": "VOLKSWAGEN NIVUS 1.0 200 TSI TOTAL FLEX COMFORTLINE AUTOMÁTICO",
+    "brand": "Volkswagen",
+    "role": "Volkswagen Destaque no Estoque",
+    "category": "suv",
+    "price": 109970,
+    "image": "https://www.autocerto.com/fotos/6983/4636400/1.jpg",
+    "description": "Este magnífico VOLKSWAGEN NIVUS 1.0 200 TSI TOTAL FLEX COMFORTLINE AUTOMÁTICO ano modelo 2021 conta com apenas 23.733 km rodados! Superbamente revisado pela equipe técnica da Garagem do Nelsinho. Veículo com vistoria cautelar 100% aprovada, estofamento higienizado, mecânica periciada sob rigorosa aprovação, perfeito para rodar diário com imbatível custo-benefício.",
+    "year": 2021,
+    "isAvailableForTestDrive": true,
+    "specs": {
+      "acceleration": 9.8,
+      "topSpeed": 195,
+      "power": 128,
+      "torque": 200,
+      "rangeOrdisplacement": "23.733 km",
+      "weight": 1210
+    },
+    "paints": [
+      {
+        "name": "Cinza Platinum",
+        "hex": "#475569",
+        "price": 0,
+        "class": "bg-slate-600"
+      },
+      {
+        "name": "Branco Diamante",
+        "hex": "#FFFFFF",
+        "price": 0,
+        "class": "bg-white border"
+      },
+      {
+        "name": "Preto Carbono",
+        "hex": "#0F172A",
+        "price": 1500,
+        "class": "bg-slate-900"
+      }
+    ],
+    "wheels": [
+      {
+        "name": "Rodas de Alumínio Diamantadas Originais",
+        "size": "16\"",
+        "image": "Original16",
+        "price": 0
+      }
+    ]
+  },
+  {
+    "id": "nelsinho-volkswagen-29",
+    "name": "VOLKSWAGEN POLO 1.0 170 TSI COMFORTLINE AUTOMÁTICO",
+    "brand": "Volkswagen",
+    "role": "Volkswagen Destaque no Estoque",
+    "category": "classics",
+    "price": 89970,
+    "image": "https://www.autocerto.com/fotos/6983/4868304/1_030553.jpg",
+    "description": "Este magnífico VOLKSWAGEN POLO 1.0 170 TSI COMFORTLINE AUTOMÁTICO ano modelo 2024 conta com apenas 60.680 km rodados! Superbamente revisado pela equipe técnica da Garagem do Nelsinho. Veículo com vistoria cautelar 100% aprovada, estofamento higienizado, mecânica periciada sob rigorosa aprovação, perfeito para rodar diário com imbatível custo-benefício.",
+    "year": 2024,
+    "isAvailableForTestDrive": true,
+    "specs": {
+      "acceleration": 11.2,
+      "topSpeed": 178,
+      "power": 115,
+      "torque": 155,
+      "rangeOrdisplacement": "60.680 km",
+      "weight": 1210
+    },
+    "paints": [
+      {
+        "name": "Cinza Platinum",
+        "hex": "#475569",
+        "price": 0,
+        "class": "bg-slate-600"
+      },
+      {
+        "name": "Branco Diamante",
+        "hex": "#FFFFFF",
+        "price": 0,
+        "class": "bg-white border"
+      },
+      {
+        "name": "Preto Carbono",
+        "hex": "#0F172A",
+        "price": 1500,
+        "class": "bg-slate-900"
+      }
+    ],
+    "wheels": [
+      {
+        "name": "Rodas de Alumínio Diamantadas Originais",
+        "size": "16\"",
+        "image": "Original16",
+        "price": 0
+      }
+    ]
+  },
+  {
+    "id": "nelsinho-volkswagen-30",
+    "name": "VOLKSWAGEN POLO 1.0 200 TSI COMFORTLINE AUTOMÁTICO",
+    "brand": "Volkswagen",
+    "role": "Volkswagen Destaque no Estoque",
+    "category": "classics",
+    "price": 79970,
+    "image": "https://www.autocerto.com/fotos/6983/4840729/1_085937.jpg",
+    "description": "Este magnífico VOLKSWAGEN POLO 1.0 200 TSI COMFORTLINE AUTOMÁTICO ano modelo 2019 conta com apenas 79.898 km rodados! Superbamente revisado pela equipe técnica da Garagem do Nelsinho. Veículo com vistoria cautelar 100% aprovada, estofamento higienizado, mecânica periciada sob rigorosa aprovação, perfeito para rodar diário com imbatível custo-benefício.",
+    "year": 2019,
+    "isAvailableForTestDrive": true,
+    "specs": {
+      "acceleration": 9.8,
+      "topSpeed": 195,
+      "power": 128,
+      "torque": 200,
+      "rangeOrdisplacement": "79.898 km",
+      "weight": 1210
+    },
+    "paints": [
+      {
+        "name": "Cinza Platinum",
+        "hex": "#475569",
+        "price": 0,
+        "class": "bg-slate-600"
+      },
+      {
+        "name": "Branco Diamante",
+        "hex": "#FFFFFF",
+        "price": 0,
+        "class": "bg-white border"
+      },
+      {
+        "name": "Preto Carbono",
+        "hex": "#0F172A",
+        "price": 1500,
+        "class": "bg-slate-900"
+      }
+    ],
+    "wheels": [
+      {
+        "name": "Rodas de Alumínio Diamantadas Originais",
+        "size": "16\"",
+        "image": "Original16",
+        "price": 0
+      }
+    ]
+  },
+  {
+    "id": "nelsinho-volkswagen-31",
+    "name": "VOLKSWAGEN T-CROSS 1.4 250 TSI TOTAL FLEX HIGHLINE AUTOMÁTICO",
+    "brand": "Volkswagen",
+    "role": "Volkswagen Destaque no Estoque",
+    "category": "suv",
+    "price": 136970,
+    "image": "https://www.autocerto.com/fotos/6983/4913860/1_110357.jpg",
+    "description": "Este magnífico VOLKSWAGEN T-CROSS 1.4 250 TSI TOTAL FLEX HIGHLINE AUTOMÁTICO ano modelo 2025 conta com apenas 22.000 km rodados! Superbamente revisado pela equipe técnica da Garagem do Nelsinho. Veículo com vistoria cautelar 100% aprovada, estofamento higienizado, mecânica periciada sob rigorosa aprovação, perfeito para rodar diário com imbatível custo-benefício.",
+    "year": 2025,
+    "isAvailableForTestDrive": true,
+    "specs": {
+      "acceleration": 11.2,
+      "topSpeed": 178,
+      "power": 115,
+      "torque": 155,
+      "rangeOrdisplacement": "22.000 km",
+      "weight": 1210
+    },
+    "paints": [
+      {
+        "name": "Cinza Platinum",
+        "hex": "#475569",
+        "price": 0,
+        "class": "bg-slate-600"
+      },
+      {
+        "name": "Branco Diamante",
+        "hex": "#FFFFFF",
+        "price": 0,
+        "class": "bg-white border"
+      },
+      {
+        "name": "Preto Carbono",
+        "hex": "#0F172A",
+        "price": 1500,
+        "class": "bg-slate-900"
+      }
+    ],
+    "wheels": [
+      {
+        "name": "Rodas de Alumínio Diamantadas Originais",
+        "size": "16\"",
+        "image": "Original16",
+        "price": 0
+      }
+    ]
+  },
+  {
+    "id": "nelsinho-volkswagen-32",
+    "name": "VOLKSWAGEN T-CROSS 1.4 250 TSI TOTAL FLEX HIGHLINE AUTOMÁTICO",
+    "brand": "Volkswagen",
+    "role": "Volkswagen Destaque no Estoque",
+    "category": "suv",
+    "price": 132900,
+    "image": "https://www.autocerto.com/fotos/6983/4909051/1_101333.jpg",
+    "description": "Este magnífico VOLKSWAGEN T-CROSS 1.4 250 TSI TOTAL FLEX HIGHLINE AUTOMÁTICO ano modelo 2025 conta com apenas 30.000 km rodados! Superbamente revisado pela equipe técnica da Garagem do Nelsinho. Veículo com vistoria cautelar 100% aprovada, estofamento higienizado, mecânica periciada sob rigorosa aprovação, perfeito para rodar diário com imbatível custo-benefício.",
+    "year": 2025,
+    "isAvailableForTestDrive": true,
+    "specs": {
+      "acceleration": 9.8,
+      "topSpeed": 195,
+      "power": 128,
+      "torque": 200,
+      "rangeOrdisplacement": "30.000 km",
+      "weight": 1210
+    },
+    "paints": [
+      {
+        "name": "Cinza Platinum",
+        "hex": "#475569",
+        "price": 0,
+        "class": "bg-slate-600"
+      },
+      {
+        "name": "Branco Diamante",
+        "hex": "#FFFFFF",
+        "price": 0,
+        "class": "bg-white border"
+      },
+      {
+        "name": "Preto Carbono",
+        "hex": "#0F172A",
+        "price": 1500,
+        "class": "bg-slate-900"
+      }
+    ],
+    "wheels": [
+      {
+        "name": "Rodas de Alumínio Diamantadas Originais",
+        "size": "16\"",
+        "image": "Original16",
+        "price": 0
+      }
+    ]
+  },
+  {
+    "id": "nelsinho-volkswagen-33",
+    "name": "VOLKSWAGEN T-CROSS 1.0 200 TSI TOTAL FLEX AUTOMÁTICO",
+    "brand": "Volkswagen",
+    "role": "Volkswagen Destaque no Estoque",
+    "category": "suv",
+    "price": 94900,
+    "image": "https://www.autocerto.com/fotos/6983/4881532/1_105607.jpg",
+    "description": "Este magnífico VOLKSWAGEN T-CROSS 1.0 200 TSI TOTAL FLEX AUTOMÁTICO ano modelo 2025 conta com apenas 31.761 km rodados! Superbamente revisado pela equipe técnica da Garagem do Nelsinho. Veículo com vistoria cautelar 100% aprovada, estofamento higienizado, mecânica periciada sob rigorosa aprovação, perfeito para rodar diário com imbatível custo-benefício.",
+    "year": 2025,
+    "isAvailableForTestDrive": true,
+    "specs": {
+      "acceleration": 11.2,
+      "topSpeed": 178,
+      "power": 115,
+      "torque": 155,
+      "rangeOrdisplacement": "31.761 km",
+      "weight": 1210
+    },
+    "paints": [
+      {
+        "name": "Cinza Platinum",
+        "hex": "#475569",
+        "price": 0,
+        "class": "bg-slate-600"
+      },
+      {
+        "name": "Branco Diamante",
+        "hex": "#FFFFFF",
+        "price": 0,
+        "class": "bg-white border"
+      },
+      {
+        "name": "Preto Carbono",
+        "hex": "#0F172A",
+        "price": 1500,
+        "class": "bg-slate-900"
+      }
+    ],
+    "wheels": [
+      {
+        "name": "Rodas de Alumínio Diamantadas Originais",
+        "size": "16\"",
+        "image": "Original16",
+        "price": 0
+      }
+    ]
+  },
+  {
+    "id": "nelsinho-volkswagen-34",
+    "name": "VOLKSWAGEN T-CROSS 1.0 200 TSI TOTAL FLEX SENSE AUTOMÁTICO",
+    "brand": "Volkswagen",
+    "role": "Volkswagen Destaque no Estoque",
+    "category": "suv",
+    "price": 89970,
+    "image": "https://www.autocerto.com/fotos/6983/4824753/1_090723.jpg",
+    "description": "Este magnífico VOLKSWAGEN T-CROSS 1.0 200 TSI TOTAL FLEX SENSE AUTOMÁTICO ano modelo 2025 conta com apenas 79.457 km rodados! Superbamente revisado pela equipe técnica da Garagem do Nelsinho. Veículo com vistoria cautelar 100% aprovada, estofamento higienizado, mecânica periciada sob rigorosa aprovação, perfeito para rodar diário com imbatível custo-benefício.",
+    "year": 2025,
+    "isAvailableForTestDrive": true,
+    "specs": {
+      "acceleration": 9.8,
+      "topSpeed": 195,
+      "power": 128,
+      "torque": 200,
+      "rangeOrdisplacement": "79.457 km",
+      "weight": 1210
+    },
+    "paints": [
+      {
+        "name": "Cinza Platinum",
+        "hex": "#475569",
+        "price": 0,
+        "class": "bg-slate-600"
+      },
+      {
+        "name": "Branco Diamante",
+        "hex": "#FFFFFF",
+        "price": 0,
+        "class": "bg-white border"
+      },
+      {
+        "name": "Preto Carbono",
+        "hex": "#0F172A",
+        "price": 1500,
+        "class": "bg-slate-900"
+      }
+    ],
+    "wheels": [
+      {
+        "name": "Rodas de Alumínio Diamantadas Originais",
+        "size": "16\"",
+        "image": "Original16",
+        "price": 0
+      }
+    ]
+  },
+  {
+    "id": "nelsinho-volkswagen-35",
+    "name": "VOLKSWAGEN T-CROSS 1.4 250 TSI TOTAL FLEX HIGHLINE AUTOMÁTICO",
+    "brand": "Volkswagen",
+    "role": "Volkswagen Destaque no Estoque",
+    "category": "suv",
+    "price": 109970,
+    "image": "https://www.autocerto.com/fotos/6983/4636466/1_094511.jpg",
+    "description": "Este magnífico VOLKSWAGEN T-CROSS 1.4 250 TSI TOTAL FLEX HIGHLINE AUTOMÁTICO ano modelo 2025 conta com apenas 64.394 km rodados! Superbamente revisado pela equipe técnica da Garagem do Nelsinho. Veículo com vistoria cautelar 100% aprovada, estofamento higienizado, mecânica periciada sob rigorosa aprovação, perfeito para rodar diário com imbatível custo-benefício.",
+    "year": 2025,
+    "isAvailableForTestDrive": true,
+    "specs": {
+      "acceleration": 11.2,
+      "topSpeed": 178,
+      "power": 115,
+      "torque": 155,
+      "rangeOrdisplacement": "64.394 km",
+      "weight": 1210
+    },
+    "paints": [
+      {
+        "name": "Cinza Platinum",
+        "hex": "#475569",
+        "price": 0,
+        "class": "bg-slate-600"
+      },
+      {
+        "name": "Branco Diamante",
+        "hex": "#FFFFFF",
+        "price": 0,
+        "class": "bg-white border"
+      },
+      {
+        "name": "Preto Carbono",
+        "hex": "#0F172A",
+        "price": 1500,
+        "class": "bg-slate-900"
+      }
+    ],
+    "wheels": [
+      {
+        "name": "Rodas de Alumínio Diamantadas Originais",
+        "size": "16\"",
+        "image": "Original16",
+        "price": 0
+      }
+    ]
+  }
+]

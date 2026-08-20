@@ -1,0 +1,3057 @@
+{
+  "cars": [
+    {
+      "id": "scraped-0-audi-2018",
+      "name": "AUDI Q3 1.4 TFSI AMBIENTE FLEX 4P S TRONIC",
+      "brand": "Audi",
+      "role": "Audi Inteligência Artificial Jina",
+      "category": "suv",
+      "price": 93970,
+      "image": "https://www.autocerto.com/fotos/6983/4636335/1.jpg",
+      "description": "Este esplêndido AUDI Q3 1.4 TFSI AMBIENTE FLEX 4P S TRONIC fabricado em 2018 está disponível.",
+      "year": 2018,
+      "isAvailableForTestDrive": true,
+      "specs": {
+        "acceleration": 9.5,
+        "topSpeed": 198,
+        "power": 130,
+        "torque": 205,
+        "rangeOrdisplacement": "130.150 km",
+        "weight": 1220
+      },
+      "paints": [
+        {
+          "name": "Cinza Platinum",
+          "hex": "#475569",
+          "price": 0,
+          "class": "bg-slate-600"
+        },
+        {
+          "name": "Branco Diamante",
+          "hex": "#FFFFFF",
+          "price": 0,
+          "class": "bg-white border"
+        },
+        {
+          "name": "Preto Carbono",
+          "hex": "#0F172A",
+          "price": 1500,
+          "class": "bg-slate-900"
+        }
+      ],
+      "wheels": [
+        {
+          "name": "Rodas de Liga Leve Originais de Fábrica",
+          "size": "16\"",
+          "image": "Original16",
+          "price": 0
+        }
+      ],
+      "detailUrl": "https://www.garagemdonelsinho.com.br/Veiculo/q3-1.4-tfsi-ambiente-flex-4p-s-tronic-2018/4636335/detalhes",
+      "sellerName": "Garagem do Nelsinho",
+      "sellerPhone": "(19) 99765-4321",
+      "gallery": [
+        "https://www.autocerto.com/fotos/6983/4636335/1.jpg",
+        "https://www.autocerto.com/fotos/6983/4636335/2.jpg",
+        "https://www.autocerto.com/fotos/6983/4636335/3.jpg",
+        "https://www.autocerto.com/fotos/6983/4636335/4.jpg",
+        "https://www.autocerto.com/fotos/6983/4636335/5.jpg",
+        "https://www.autocerto.com/fotos/6983/4636335/6.jpg",
+        "https://www.autocerto.com/fotos/6983/4636335/7.jpg",
+        "https://www.autocerto.com/fotos/6983/4636335/8.jpg",
+        "https://www.autocerto.com/fotos/6983/4636335/9.jpg",
+        "https://www.autocerto.com/fotos/6983/4636335/10.jpg",
+        "https://www.autocerto.com/fotos/6983/4636335/11.jpg",
+        "https://www.autocerto.com/fotos/6983/4636335/12.jpg",
+        "https://www.autocerto.com/fotos/6983/4636335/13.jpg",
+        "https://www.autocerto.com/fotos/6983/4636335/14.jpg",
+        "https://www.autocerto.com/fotos/6983/4636335/15.jpg",
+        "https://www.autocerto.com/fotos/6983/4636335/16.jpg",
+        "https://www.autocerto.com/fotos/6983/4636335/17.jpg",
+        "https://www.autocerto.com/fotos/6983/4636335/18.jpg",
+        "https://www.autocerto.com/fotos/6983/4636335/19.jpg",
+        "https://www.autocerto.com/fotos/6983/4636335/20.jpg",
+        "https://www.autocerto.com/fabricantes/audi.webp"
+      ],
+      "features": [
+        "Ar condicionado",
+        "Vidros elétricos",
+        "Alarme",
+        "Freios ABS",
+        "Travas elétricas",
+        "Direção Hidraulica",
+        "Airbag laterais"
+      ]
+    },
+    {
+      "id": "scraped-1-chery-2023",
+      "name": "CHERY TIGGO 8 1.6 TGDI GASOLINA TXS MAX DRIVE DCT",
+      "brand": "Chery",
+      "role": "Chery Inteligência Artificial Jina",
+      "category": "suv",
+      "price": 146970,
+      "image": "https://www.autocerto.com/fotos/6983/4993270/1_043016.jpg",
+      "description": "Este esplêndido CHERY TIGGO 8 1.6 TGDI GASOLINA TXS MAX DRIVE DCT fabricado em 2023 está disponível.",
+      "year": 2024,
+      "isAvailableForTestDrive": true,
+      "specs": {
+        "acceleration": 11,
+        "topSpeed": 180,
+        "power": 116,
+        "torque": 160,
+        "rangeOrdisplacement": "47.061 km",
+        "weight": 1220
+      },
+      "paints": [
+        {
+          "name": "Cinza Platinum",
+          "hex": "#475569",
+          "price": 0,
+          "class": "bg-slate-600"
+        },
+        {
+          "name": "Branco Diamante",
+          "hex": "#FFFFFF",
+          "price": 0,
+          "class": "bg-white border"
+        },
+        {
+          "name": "Preto Carbono",
+          "hex": "#0F172A",
+          "price": 1500,
+          "class": "bg-slate-900"
+        }
+      ],
+      "wheels": [
+        {
+          "name": "Rodas de Liga Leve Originais de Fábrica",
+          "size": "16\"",
+          "image": "Original16",
+          "price": 0
+        }
+      ],
+      "detailUrl": "https://www.garagemdonelsinho.com.br/Veiculo/tiggo-8-1.6-tgdi-gasolina-txs-max-drive-dct-2024/4993270/detalhes",
+      "sellerName": "Garagem do Nelsinho",
+      "sellerPhone": "(19) 99765-4321",
+      "gallery": [
+        "https://www.autocerto.com/fotos/6983/4993270/1_043016.jpg",
+        "https://www.autocerto.com/fotos/6983/4993270/1_043020.jpg",
+        "https://www.autocerto.com/fotos/6983/4993270/1_043022.jpg",
+        "https://www.autocerto.com/fotos/6983/4993270/1_043025.jpg",
+        "https://www.autocerto.com/fotos/6983/4993270/1_043029.jpg",
+        "https://www.autocerto.com/fotos/6983/4993270/1_043032.jpg",
+        "https://www.autocerto.com/fotos/6983/4993270/1_043034.jpg",
+        "https://www.autocerto.com/fotos/6983/4993270/1_043036.jpg",
+        "https://www.autocerto.com/fotos/6983/4993270/1_043038.jpg",
+        "https://www.autocerto.com/fotos/6983/4993270/1_043040.jpg",
+        "https://www.autocerto.com/fotos/6983/4993270/1_043043.jpg",
+        "https://www.autocerto.com/fabricantes/chery.webp"
+      ],
+      "features": [
+        "Ar condicionado",
+        "Bancos de Couro",
+        "Retrovisores elétricos",
+        "Vidros elétricos",
+        "Alarme",
+        "Freios ABS",
+        "Rodas de liga leve",
+        "Travas elétricas",
+        "Ar condicionado Digital",
+        "Multimídia",
+        "Banco do motorista com ajuste de altura",
+        "Sensor de estacionamento",
+        "Airbag laterais",
+        "Airbag motorista",
+        "Airbag passageiro",
+        "Retrovisor fotocrômico",
+        "Câmera de ré"
+      ]
+    },
+    {
+      "id": "scraped-2-chevrolet-2018",
+      "name": "CHEVROLET ONIX 1.4 MPFI ACTIV 8V FLEX 4P AUTOMÁTICO",
+      "brand": "Chevrolet",
+      "role": "Chevrolet Inteligência Artificial Jina",
+      "category": "classics",
+      "price": 69900,
+      "image": "https://www.autocerto.com/fotos/6983/5340013/1_045559.jpg",
+      "description": "CHEVROLET ONIX 1.4 MPFI ACTIV 8V FLEX 4P AUTOMÁTICO",
+      "year": 2019,
+      "isAvailableForTestDrive": true,
+      "specs": {
+        "acceleration": 9.5,
+        "topSpeed": 198,
+        "power": 130,
+        "torque": 205,
+        "rangeOrdisplacement": "82.433 km",
+        "weight": 1220
+      },
+      "paints": [
+        {
+          "name": "Cinza Platinum",
+          "hex": "#475569",
+          "price": 0,
+          "class": "bg-slate-600"
+        },
+        {
+          "name": "Branco Diamante",
+          "hex": "#FFFFFF",
+          "price": 0,
+          "class": "bg-white border"
+        },
+        {
+          "name": "Preto Carbono",
+          "hex": "#0F172A",
+          "price": 1500,
+          "class": "bg-slate-900"
+        }
+      ],
+      "wheels": [
+        {
+          "name": "Rodas de Liga Leve Originais de Fábrica",
+          "size": "16\"",
+          "image": "Original16",
+          "price": 0
+        }
+      ],
+      "detailUrl": "https://www.garagemdonelsinho.com.br/Veiculo/onix-1.4-mpfi-activ-8v-flex-4p-automatico-2019/5340013/detalhes",
+      "sellerName": "Garagem do Nelsinho",
+      "sellerPhone": "(19) 99765-4321",
+      "gallery": [
+        "https://www.autocerto.com/fotos/6983/5340013/1_045559.jpg",
+        "https://www.autocerto.com/fabricantes/chevrolet.webp"
+      ],
+      "features": [
+        "Ar condicionado",
+        "Retrovisores elétricos",
+        "Vidros elétricos",
+        "Alarme",
+        "Freios ABS",
+        "Rodas de liga leve",
+        "Travas elétricas",
+        "Multimídia",
+        "Vidros elétricos Traseiros",
+        "Banco do motorista com ajuste de altura",
+        "Sensor de estacionamento",
+        "Airbag motorista",
+        "Airbag passageiro",
+        "Câmera de ré"
+      ]
+    },
+    {
+      "id": "scraped-4-fiat-2023",
+      "name": "FIAT FASTBACK 1.3 TURBO 270 FLEX LIMITED EDITION AT6",
+      "brand": "Fiat",
+      "role": "Fiat Inteligência Artificial Jina",
+      "category": "suv",
+      "price": 112900,
+      "image": "https://www.autocerto.com/fotos/6983/5347003/1_114955.jpg",
+      "description": "Este esplêndido FIAT FASTBACK 1.3 TURBO 270 FLEX LIMITED EDITION AT6 ano modelo 2023 está disponível.",
+      "year": 2023,
+      "isAvailableForTestDrive": true,
+      "specs": {
+        "acceleration": 9.5,
+        "topSpeed": 198,
+        "power": 130,
+        "torque": 205,
+        "rangeOrdisplacement": "45.300 km",
+        "weight": 1220
+      },
+      "paints": [
+        {
+          "name": "Cinza Platinum",
+          "hex": "#475569",
+          "price": 0,
+          "class": "bg-slate-600"
+        },
+        {
+          "name": "Branco Diamante",
+          "hex": "#FFFFFF",
+          "price": 0,
+          "class": "bg-white border"
+        },
+        {
+          "name": "Preto Carbono",
+          "hex": "#0F172A",
+          "price": 1500,
+          "class": "bg-slate-900"
+        }
+      ],
+      "wheels": [
+        {
+          "name": "Rodas de Liga Leve Originais de Fábrica",
+          "size": "16\"",
+          "image": "Original16",
+          "price": 0
+        }
+      ],
+      "detailUrl": "https://www.garagemdonelsinho.com.br/Veiculo/fastback-1.3-turbo-270-flex-limited-edition-at6-2023/5347003/detalhes",
+      "sellerName": "Garagem do Nelsinho",
+      "sellerPhone": "(19) 99765-4321",
+      "gallery": [
+        "https://www.autocerto.com/fotos/6983/5347003/1_114955.jpg",
+        "https://www.autocerto.com/fabricantes/fiat.webp"
+      ],
+      "features": [
+        "Ar condicionado",
+        "Bancos de Couro",
+        "Retrovisores elétricos",
+        "Vidros elétricos",
+        "Alarme",
+        "Freios ABS",
+        "Rodas de liga leve",
+        "Travas elétricas",
+        "Ar condicionado Digital",
+        "Multimídia",
+        "Vidros elétricos Traseiros",
+        "Banco do motorista com ajuste de altura",
+        "Sensor de chuva",
+        "Sensor de estacionamento",
+        "Airbag de cortina",
+        "Airbag laterais",
+        "Airbag motorista",
+        "Airbag passageiro",
+        "Retrovisor fotocrômico",
+        "Câmera de ré",
+        "Banco traseiro bipartido"
+      ]
+    },
+    {
+      "id": "scraped-3-fiat-2023",
+      "name": "FIAT FASTBACK 1.3 TURBO 270 FLEX LIMITED EDITION AT6",
+      "brand": "Fiat",
+      "role": "Fiat Inteligência Artificial Jina",
+      "category": "suv",
+      "price": 123970,
+      "image": "https://www.autocerto.com/fotos/6983/4938594/1_090143.jpg",
+      "description": "Este esplêndido FIAT FASTBACK 1.3 TURBO 270 FLEX LIMITED EDITION AT6 fabricado em 2023 está disponível.",
+      "year": 2024,
+      "isAvailableForTestDrive": true,
+      "specs": {
+        "acceleration": 11,
+        "topSpeed": 180,
+        "power": 116,
+        "torque": 160,
+        "rangeOrdisplacement": "31.409 km",
+        "weight": 1220
+      },
+      "paints": [
+        {
+          "name": "Cinza Platinum",
+          "hex": "#475569",
+          "price": 0,
+          "class": "bg-slate-600"
+        },
+        {
+          "name": "Branco Diamante",
+          "hex": "#FFFFFF",
+          "price": 0,
+          "class": "bg-white border"
+        },
+        {
+          "name": "Preto Carbono",
+          "hex": "#0F172A",
+          "price": 1500,
+          "class": "bg-slate-900"
+        }
+      ],
+      "wheels": [
+        {
+          "name": "Rodas de Liga Leve Originais de Fábrica",
+          "size": "16\"",
+          "image": "Original16",
+          "price": 0
+        }
+      ],
+      "detailUrl": "https://www.garagemdonelsinho.com.br/Veiculo/fastback-1.3-turbo-270-flex-limited-edition-at6-2024/4938594/detalhes",
+      "sellerName": "Garagem do Nelsinho",
+      "sellerPhone": "(19) 99765-4321",
+      "gallery": [
+        "https://www.autocerto.com/fotos/6983/4938594/1_090143.jpg",
+        "https://www.autocerto.com/fotos/6983/4938594/1_090144.jpg",
+        "https://www.autocerto.com/fotos/6983/4938594/2_090144.jpg",
+        "https://www.autocerto.com/fotos/6983/4938594/1_090146.jpg",
+        "https://www.autocerto.com/fotos/6983/4938594/2_090146.jpg",
+        "https://www.autocerto.com/fotos/6983/4938594/1_090147.jpg",
+        "https://www.autocerto.com/fotos/6983/4938594/1_090148.jpg",
+        "https://www.autocerto.com/fotos/6983/4938594/1_090150.jpg",
+        "https://www.autocerto.com/fotos/6983/4938594/1_090151.jpg",
+        "https://www.autocerto.com/fotos/6983/4938594/1_090152.jpg",
+        "https://www.autocerto.com/fotos/6983/4938594/1_090154.jpg",
+        "https://www.autocerto.com/fotos/6983/4938594/1_090155.jpg",
+        "https://www.autocerto.com/fotos/6983/4938594/1_090157.jpg",
+        "https://www.autocerto.com/fotos/6983/4938594/2_090157.jpg",
+        "https://www.autocerto.com/fotos/6983/4938594/1_090158.jpg",
+        "https://www.autocerto.com/fotos/6983/4938594/1_090159.jpg",
+        "https://www.autocerto.com/fotos/6983/4938594/1_090200.jpg",
+        "https://www.autocerto.com/fotos/6983/4938594/1_090201.jpg",
+        "https://www.autocerto.com/fotos/6983/4938594/1_090202.jpg",
+        "https://www.autocerto.com/fotos/6983/4938594/1_090203.jpg",
+        "https://www.autocerto.com/fotos/6983/4938594/1_090204.jpg",
+        "https://www.autocerto.com/fabricantes/fiat.webp"
+      ],
+      "features": [
+        "Bancos de Couro",
+        "Retrovisores elétricos",
+        "Vidros elétricos",
+        "Alarme",
+        "Freios ABS",
+        "Rodas de liga leve",
+        "Travas elétricas",
+        "Ar condicionado Digital",
+        "Multimídia",
+        "Vidros elétricos Traseiros",
+        "Banco do motorista com ajuste de altura",
+        "Sensor de chuva",
+        "Sensor de estacionamento",
+        "Airbag laterais",
+        "Airbag motorista",
+        "Airbag passageiro",
+        "Retrovisor fotocrômico",
+        "Câmera de ré"
+      ]
+    },
+    {
+      "id": "scraped-5-fiat-2024",
+      "name": "FIAT TORO 1.3 TURBO 270 FLEX VOLCANO AT6",
+      "brand": "Fiat",
+      "role": "Fiat Inteligência Artificial Jina",
+      "category": "suv",
+      "price": 156970,
+      "image": "https://www.autocerto.com/fotos/6983/5264853/1_022526.jpg",
+      "description": "Este esplêndido FIAT TORO 1.3 TURBO 270 FLEX VOLCANO AT6 fabricado em 2024 está disponível.",
+      "year": 2025,
+      "isAvailableForTestDrive": true,
+      "specs": {
+        "acceleration": 11,
+        "topSpeed": 180,
+        "power": 116,
+        "torque": 160,
+        "rangeOrdisplacement": "7.737 km",
+        "weight": 1220
+      },
+      "paints": [
+        {
+          "name": "Cinza Platinum",
+          "hex": "#475569",
+          "price": 0,
+          "class": "bg-slate-600"
+        },
+        {
+          "name": "Branco Diamante",
+          "hex": "#FFFFFF",
+          "price": 0,
+          "class": "bg-white border"
+        },
+        {
+          "name": "Preto Carbono",
+          "hex": "#0F172A",
+          "price": 1500,
+          "class": "bg-slate-900"
+        }
+      ],
+      "wheels": [
+        {
+          "name": "Rodas de Liga Leve Originais de Fábrica",
+          "size": "16\"",
+          "image": "Original16",
+          "price": 0
+        }
+      ],
+      "detailUrl": "https://www.garagemdonelsinho.com.br/Veiculo/toro-1.3-turbo-270-flex-volcano-at6-2025/5264853/detalhes",
+      "sellerName": "Garagem do Nelsinho",
+      "sellerPhone": "(19) 99765-4321",
+      "gallery": [
+        "https://www.autocerto.com/fotos/6983/5264853/1_022526.jpg",
+        "https://www.autocerto.com/fotos/6983/5264853/1_022527.jpg",
+        "https://www.autocerto.com/fotos/6983/5264853/1_022528.jpg",
+        "https://www.autocerto.com/fotos/6983/5264853/1_022529.jpg",
+        "https://www.autocerto.com/fotos/6983/5264853/1_022530.jpg",
+        "https://www.autocerto.com/fotos/6983/5264853/1_022531.jpg",
+        "https://www.autocerto.com/fotos/6983/5264853/1_022532.jpg",
+        "https://www.autocerto.com/fotos/6983/5264853/1_022533.jpg",
+        "https://www.autocerto.com/fotos/6983/5264853/1_022534.jpg",
+        "https://www.autocerto.com/fotos/6983/5264853/1_022535.jpg",
+        "https://www.autocerto.com/fotos/6983/5264853/1_022536.jpg",
+        "https://www.autocerto.com/fotos/6983/5264853/1_022537.jpg",
+        "https://www.autocerto.com/fotos/6983/5264853/1_022538.jpg",
+        "https://www.autocerto.com/fotos/6983/5264853/2_022538.jpg",
+        "https://www.autocerto.com/fotos/6983/5264853/1_022539.jpg",
+        "https://www.autocerto.com/fotos/6983/5264853/1_022541.jpg",
+        "https://www.autocerto.com/fotos/6983/5264853/1_022542.jpg",
+        "https://www.autocerto.com/fotos/6983/5264853/1_022543.jpg",
+        "https://www.autocerto.com/fotos/6983/5264853/1_022544.jpg",
+        "https://www.autocerto.com/fotos/6983/5264853/1_022545.jpg",
+        "https://www.autocerto.com/fotos/6983/5264853/1_022546.jpg",
+        "https://www.autocerto.com/fabricantes/fiat.webp"
+      ],
+      "features": [
+        "Ar condicionado",
+        "Bancos de Couro",
+        "Retrovisores elétricos",
+        "Vidros elétricos",
+        "Alarme",
+        "Freios ABS",
+        "Rodas de liga leve",
+        "Travas elétricas",
+        "Direção Hidraulica",
+        "Ar condicionado Digital",
+        "Multimídia",
+        "Vidros elétricos Traseiros",
+        "Banco do motorista com ajuste de altura",
+        "Sensor de chuva",
+        "Sensor de estacionamento",
+        "Airbag motorista",
+        "Airbag passageiro",
+        "Câmera de ré"
+      ]
+    },
+    {
+      "id": "scraped-7-honda-2022",
+      "name": "HONDA CITY 1.5 i-VTEC FLEX TOURING CVT",
+      "brand": "Honda",
+      "role": "Honda Inteligência Artificial Jina",
+      "category": "hypercars",
+      "price": 93970,
+      "image": "https://www.autocerto.com/fotos/6983/5362447/1_100337.jpg",
+      "description": "Este esplêndido HONDA CITY 1.5 i-VTEC FLEX TOURING CVT ano modelo 2022 está disponível.",
+      "year": 2022,
+      "isAvailableForTestDrive": true,
+      "specs": {
+        "acceleration": 11,
+        "topSpeed": 180,
+        "power": 116,
+        "torque": 160,
+        "rangeOrdisplacement": "102.904 km",
+        "weight": 1220
+      },
+      "paints": [
+        {
+          "name": "Cinza Platinum",
+          "hex": "#475569",
+          "price": 0,
+          "class": "bg-slate-600"
+        },
+        {
+          "name": "Branco Diamante",
+          "hex": "#FFFFFF",
+          "price": 0,
+          "class": "bg-white border"
+        },
+        {
+          "name": "Preto Carbono",
+          "hex": "#0F172A",
+          "price": 1500,
+          "class": "bg-slate-900"
+        }
+      ],
+      "wheels": [
+        {
+          "name": "Rodas de Liga Leve Originais de Fábrica",
+          "size": "16\"",
+          "image": "Original16",
+          "price": 0
+        }
+      ],
+      "detailUrl": "https://www.garagemdonelsinho.com.br/Veiculo/city-1.5-i-vtec-flex-touring-cvt-2022/5362447/detalhes",
+      "sellerName": "Garagem do Nelsinho",
+      "sellerPhone": "(19) 99765-4321",
+      "gallery": [
+        "https://www.autocerto.com/fotos/6983/5362447/1_100337.jpg",
+        "https://www.autocerto.com/fotos/6983/5362447/1_100338.jpg",
+        "https://www.autocerto.com/fotos/6983/5362447/1_100339.jpg",
+        "https://www.autocerto.com/fotos/6983/5362447/1_100340.jpg",
+        "https://www.autocerto.com/fotos/6983/5362447/1_100342.jpg",
+        "https://www.autocerto.com/fotos/6983/5362447/1_100343.jpg",
+        "https://www.autocerto.com/fotos/6983/5362447/1_100345.jpg",
+        "https://www.autocerto.com/fotos/6983/5362447/1_100346.jpg",
+        "https://www.autocerto.com/fotos/6983/5362447/2_100346.jpg",
+        "https://www.autocerto.com/fotos/6983/5362447/1_100347.jpg",
+        "https://www.autocerto.com/fotos/6983/5362447/1_100348.jpg",
+        "https://www.autocerto.com/fotos/6983/5362447/1_100349.jpg",
+        "https://www.autocerto.com/fotos/6983/5362447/1_100350.jpg",
+        "https://www.autocerto.com/fotos/6983/5362447/2_100350.jpg",
+        "https://www.autocerto.com/fotos/6983/5362447/1_100351.jpg",
+        "https://www.autocerto.com/fotos/6983/5362447/1_100352.jpg",
+        "https://www.autocerto.com/fotos/6983/5362447/2_100352.jpg",
+        "https://www.autocerto.com/fotos/6983/5362447/1_100353.jpg",
+        "https://www.autocerto.com/fotos/6983/5362447/1_100354.jpg",
+        "https://www.autocerto.com/fotos/6983/5362447/1_100355.jpg",
+        "https://www.autocerto.com/fotos/6983/5362447/1_100357.jpg",
+        "https://www.autocerto.com/fotos/6983/5362447/1_100358.jpg",
+        "https://www.autocerto.com/fabricantes/honda.webp"
+      ],
+      "features": [
+        "Bancos de Couro",
+        "Retrovisores elétricos",
+        "Vidros elétricos",
+        "Alarme",
+        "Freios ABS",
+        "Rodas de liga leve",
+        "Travas elétricas",
+        "Ar condicionado Digital",
+        "Multimídia",
+        "Vidros elétricos Traseiros",
+        "Banco do motorista com ajuste de altura",
+        "Sensor de estacionamento",
+        "Airbag motorista",
+        "Airbag passageiro",
+        "Câmera de ré",
+        "Banco traseiro bipartido"
+      ]
+    },
+    {
+      "id": "scraped-6-honda-2017",
+      "name": "HONDA CITY 1.5 LX 16V FLEX 4P AUTOMÁTICO",
+      "brand": "Honda",
+      "role": "Honda Inteligência Artificial Jina",
+      "category": "hypercars",
+      "price": 78970,
+      "image": "https://www.autocerto.com/fotos/6983/5182914/1_110344.jpg",
+      "description": "Este esplêndido HONDA CITY 1.5 LX 16V FLEX 4P AUTOMÁTICO fabricado em 2017 está disponível.",
+      "year": 2017,
+      "isAvailableForTestDrive": true,
+      "specs": {
+        "acceleration": 9.5,
+        "topSpeed": 198,
+        "power": 130,
+        "torque": 205,
+        "rangeOrdisplacement": "111.004 km",
+        "weight": 1220
+      },
+      "paints": [
+        {
+          "name": "Cinza Platinum",
+          "hex": "#475569",
+          "price": 0,
+          "class": "bg-slate-600"
+        },
+        {
+          "name": "Branco Diamante",
+          "hex": "#FFFFFF",
+          "price": 0,
+          "class": "bg-white border"
+        },
+        {
+          "name": "Preto Carbono",
+          "hex": "#0F172A",
+          "price": 1500,
+          "class": "bg-slate-900"
+        }
+      ],
+      "wheels": [
+        {
+          "name": "Rodas de Liga Leve Originais de Fábrica",
+          "size": "16\"",
+          "image": "Original16",
+          "price": 0
+        }
+      ],
+      "detailUrl": "https://www.garagemdonelsinho.com.br/Veiculo/city-1.5-lx-16v-flex-4p-automatico-2017/5182914/detalhes",
+      "sellerName": "Garagem do Nelsinho",
+      "sellerPhone": "(19) 99765-4321",
+      "gallery": [
+        "https://www.autocerto.com/fotos/6983/5182914/1_110344.jpg",
+        "https://www.autocerto.com/fotos/6983/5182914/2_110344.jpg",
+        "https://www.autocerto.com/fotos/6983/5182914/1_110345.jpg",
+        "https://www.autocerto.com/fotos/6983/5182914/1_110346.jpg",
+        "https://www.autocerto.com/fotos/6983/5182914/1_110347.jpg",
+        "https://www.autocerto.com/fotos/6983/5182914/1_110349.jpg",
+        "https://www.autocerto.com/fotos/6983/5182914/1_110351.jpg",
+        "https://www.autocerto.com/fotos/6983/5182914/2_110351.jpg",
+        "https://www.autocerto.com/fotos/6983/5182914/1_110353.jpg",
+        "https://www.autocerto.com/fotos/6983/5182914/2_110353.jpg",
+        "https://www.autocerto.com/fotos/6983/5182914/1_110354.jpg",
+        "https://www.autocerto.com/fotos/6983/5182914/1_110355.jpg",
+        "https://www.autocerto.com/fotos/6983/5182914/1_110356.jpg",
+        "https://www.autocerto.com/fotos/6983/5182914/1_110357.jpg",
+        "https://www.autocerto.com/fotos/6983/5182914/1_110358.jpg",
+        "https://www.autocerto.com/fotos/6983/5182914/1_110359.jpg",
+        "https://www.autocerto.com/fotos/6983/5182914/1_110400.jpg",
+        "https://www.autocerto.com/fotos/6983/5182914/1_110401.jpg",
+        "https://www.autocerto.com/fotos/6983/5182914/1_110403.jpg",
+        "https://www.autocerto.com/fotos/6983/5182914/1_110404.jpg",
+        "https://www.autocerto.com/fabricantes/honda.webp"
+      ],
+      "features": [
+        "Ar condicionado",
+        "Bancos de Couro",
+        "Retrovisores elétricos",
+        "Vidros elétricos",
+        "Alarme",
+        "Freios ABS",
+        "Rodas de liga leve",
+        "Travas elétricas",
+        "Direção Hidraulica",
+        "Vidros elétricos Traseiros",
+        "Banco do motorista com ajuste de altura",
+        "Airbag motorista",
+        "Airbag passageiro"
+      ]
+    },
+    {
+      "id": "scraped-7-honda-2018",
+      "name": "HONDA CIVIC 2.0 16V FLEXONE EXL 4P CVT",
+      "brand": "Honda",
+      "role": "Honda Inteligência Artificial Jina",
+      "category": "hypercars",
+      "price": 113900,
+      "image": "https://www.autocerto.com/fotos/6983/5268439/1_092622.jpg",
+      "description": "Este esplêndido HONDA CIVIC 2.0 16V FLEXONE EXL 4P CVT fabricado em 2018 está disponível.",
+      "year": 2018,
+      "isAvailableForTestDrive": true,
+      "specs": {
+        "acceleration": 11,
+        "topSpeed": 180,
+        "power": 116,
+        "torque": 160,
+        "rangeOrdisplacement": "83.300 km",
+        "weight": 1220
+      },
+      "paints": [
+        {
+          "name": "Cinza Platinum",
+          "hex": "#475569",
+          "price": 0,
+          "class": "bg-slate-600"
+        },
+        {
+          "name": "Branco Diamante",
+          "hex": "#FFFFFF",
+          "price": 0,
+          "class": "bg-white border"
+        },
+        {
+          "name": "Preto Carbono",
+          "hex": "#0F172A",
+          "price": 1500,
+          "class": "bg-slate-900"
+        }
+      ],
+      "wheels": [
+        {
+          "name": "Rodas de Liga Leve Originais de Fábrica",
+          "size": "16\"",
+          "image": "Original16",
+          "price": 0
+        }
+      ],
+      "detailUrl": "https://www.garagemdonelsinho.com.br/Veiculo/civic-2.0-16v-flexone-exl-4p-cvt-2018/5268439/detalhes",
+      "sellerName": "Garagem do Nelsinho",
+      "sellerPhone": "(19) 99765-4321",
+      "gallery": [
+        "https://www.autocerto.com/fotos/6983/5268439/1_092622.jpg",
+        "https://www.autocerto.com/fotos/6983/5268439/1_092623.jpg",
+        "https://www.autocerto.com/fotos/6983/5268439/2_092623.jpg",
+        "https://www.autocerto.com/fotos/6983/5268439/1_092626.jpg",
+        "https://www.autocerto.com/fotos/6983/5268439/1_092627.jpg",
+        "https://www.autocerto.com/fotos/6983/5268439/1_092628.jpg",
+        "https://www.autocerto.com/fotos/6983/5268439/1_092629.jpg",
+        "https://www.autocerto.com/fotos/6983/5268439/1_092631.jpg",
+        "https://www.autocerto.com/fotos/6983/5268439/1_092632.jpg",
+        "https://www.autocerto.com/fotos/6983/5268439/1_092633.jpg",
+        "https://www.autocerto.com/fotos/6983/5268439/1_092635.jpg",
+        "https://www.autocerto.com/fotos/6983/5268439/1_092637.jpg",
+        "https://www.autocerto.com/fotos/6983/5268439/1_092638.jpg",
+        "https://www.autocerto.com/fotos/6983/5268439/1_092639.jpg",
+        "https://www.autocerto.com/fotos/6983/5268439/1_092641.jpg",
+        "https://www.autocerto.com/fotos/6983/5268439/1_092643.jpg",
+        "https://www.autocerto.com/fotos/6983/5268439/1_092644.jpg",
+        "https://www.autocerto.com/fotos/6983/5268439/1_092645.jpg",
+        "https://www.autocerto.com/fotos/6983/5268439/1_092647.jpg",
+        "https://www.autocerto.com/fotos/6983/5268439/1_092648.jpg",
+        "https://www.autocerto.com/fabricantes/honda.webp"
+      ],
+      "features": [
+        "Ar condicionado",
+        "Bancos de Couro",
+        "Retrovisores elétricos",
+        "Vidros elétricos",
+        "Alarme",
+        "Freios ABS",
+        "Rodas de liga leve",
+        "Travas elétricas",
+        "Ar condicionado Digital",
+        "Multimídia",
+        "Vidros elétricos Traseiros",
+        "Banco do motorista com ajuste de altura",
+        "Sensor de chuva",
+        "Sensor de estacionamento",
+        "Airbag motorista",
+        "Airbag passageiro",
+        "Câmera de ré"
+      ]
+    },
+    {
+      "id": "scraped-8-honda-2019",
+      "name": "HONDA CIVIC 2.0 16V FLEXONE EX 4P CVT",
+      "brand": "Honda",
+      "role": "Honda Inteligência Artificial Jina",
+      "category": "hypercars",
+      "price": 114970,
+      "image": "https://www.autocerto.com/fotos/6983/4880208/1_112327.jpg",
+      "description": "Este esplêndido HONDA CIVIC 2.0 16V FLEXONE EX 4P CVT fabricado em 2019 está disponível.",
+      "year": 2019,
+      "isAvailableForTestDrive": true,
+      "specs": {
+        "acceleration": 9.5,
+        "topSpeed": 198,
+        "power": 130,
+        "torque": 205,
+        "rangeOrdisplacement": "72.062 km",
+        "weight": 1220
+      },
+      "paints": [
+        {
+          "name": "Cinza Platinum",
+          "hex": "#475569",
+          "price": 0,
+          "class": "bg-slate-600"
+        },
+        {
+          "name": "Branco Diamante",
+          "hex": "#FFFFFF",
+          "price": 0,
+          "class": "bg-white border"
+        },
+        {
+          "name": "Preto Carbono",
+          "hex": "#0F172A",
+          "price": 1500,
+          "class": "bg-slate-900"
+        }
+      ],
+      "wheels": [
+        {
+          "name": "Rodas de Liga Leve Originais de Fábrica",
+          "size": "16\"",
+          "image": "Original16",
+          "price": 0
+        }
+      ],
+      "detailUrl": "https://www.garagemdonelsinho.com.br/Veiculo/civic-2.0-16v-flexone-ex-4p-cvt-2019/4880208/detalhes",
+      "sellerName": "Garagem do Nelsinho",
+      "sellerPhone": "(19) 99765-4321",
+      "gallery": [
+        "https://www.autocerto.com/fotos/6983/4880208/1_112327.jpg",
+        "https://www.autocerto.com/fotos/6983/4880208/1_112328.jpg",
+        "https://www.autocerto.com/fotos/6983/4880208/1_112329.jpg",
+        "https://www.autocerto.com/fotos/6983/4880208/1_112330.jpg",
+        "https://www.autocerto.com/fotos/6983/4880208/1_112331.jpg",
+        "https://www.autocerto.com/fotos/6983/4880208/2_112331.jpg",
+        "https://www.autocerto.com/fotos/6983/4880208/1_112333.jpg",
+        "https://www.autocerto.com/fotos/6983/4880208/1_112335.jpg",
+        "https://www.autocerto.com/fotos/6983/4880208/1_112336.jpg",
+        "https://www.autocerto.com/fotos/6983/4880208/1_112337.jpg",
+        "https://www.autocerto.com/fotos/6983/4880208/1_112338.jpg",
+        "https://www.autocerto.com/fotos/6983/4880208/1_112339.jpg",
+        "https://www.autocerto.com/fotos/6983/4880208/1_112340.jpg",
+        "https://www.autocerto.com/fotos/6983/4880208/1_112341.jpg",
+        "https://www.autocerto.com/fotos/6983/4880208/2_112341.jpg",
+        "https://www.autocerto.com/fotos/6983/4880208/1_112342.jpg",
+        "https://www.autocerto.com/fotos/6983/4880208/1_112343.jpg",
+        "https://www.autocerto.com/fotos/6983/4880208/1_112344.jpg",
+        "https://www.autocerto.com/fotos/6983/4880208/1_112345.jpg",
+        "https://www.autocerto.com/fotos/6983/4880208/1_112346.jpg",
+        "https://www.autocerto.com/fabricantes/honda.webp"
+      ],
+      "features": [
+        "Ar condicionado",
+        "Bancos de Couro",
+        "Retrovisores elétricos",
+        "Vidros elétricos",
+        "Alarme",
+        "Freios ABS",
+        "Rodas de liga leve",
+        "Travas elétricas",
+        "Ar condicionado Digital",
+        "Multimídia",
+        "Vidros elétricos Traseiros",
+        "Banco do motorista com ajuste de altura",
+        "Sensor de estacionamento",
+        "Airbag laterais",
+        "Airbag motorista",
+        "Airbag passageiro",
+        "Câmera de ré"
+      ]
+    },
+    {
+      "id": "scraped-11-honda-2023",
+      "name": "HONDA HR-V 1.5 DI I-VTEC FLEX EXL CVT",
+      "brand": "Honda",
+      "role": "Honda Inteligência Artificial Jina",
+      "category": "suv",
+      "price": 137900,
+      "image": "https://www.autocerto.com/fotos/6983/5355606/1_091010.jpg",
+      "description": "Este magnífico HONDA HR-V 1.5 DI I-VTEC FLEX EXL CVT ano modelo 2023 conta com apenas 23.800 km rodados! Superbamente revisado pela equipe técnica da Garagem do Nelsinho. Veículo com vistoria cautelar 100% aprovada, estofamento higienizado, mecânica periciada sob rigorosa aprovação, perfeito para rodar diário com imbatível custo-benefício.",
+      "year": 2023,
+      "isAvailableForTestDrive": true,
+      "specs": {
+        "acceleration": 11.2,
+        "topSpeed": 178,
+        "power": 115,
+        "torque": 155,
+        "rangeOrdisplacement": "23.800 km",
+        "weight": 1210
+      },
+      "paints": [
+        {
+          "name": "Cinza Platinum",
+          "hex": "#475569",
+          "price": 0,
+          "class": "bg-slate-600"
+        },
+        {
+          "name": "Branco Diamante",
+          "hex": "#FFFFFF",
+          "price": 0,
+          "class": "bg-white border"
+        },
+        {
+          "name": "Preto Carbono",
+          "hex": "#0F172A",
+          "price": 1500,
+          "class": "bg-slate-900"
+        }
+      ],
+      "wheels": [
+        {
+          "name": "Rodas de Liga Leve Originais de Fábrica",
+          "size": "16\"",
+          "image": "Original16",
+          "price": 0
+        }
+      ],
+      "detailUrl": "https://www.garagemdonelsinho.com.br/Veiculo/hr-v-1.5-di-i-vtec-flex-exl-cvt-2023/5355606/detalhes",
+      "sellerName": "Garagem do Nelsinho",
+      "sellerPhone": "(19) 99765-4321",
+      "gallery": [
+        "https://www.autocerto.com/fotos/6983/5355606/1_091010.jpg",
+        "https://www.autocerto.com/fabricantes/honda.webp"
+      ],
+      "features": [
+        "Ar condicionado",
+        "Bancos de Couro",
+        "Retrovisores elétricos",
+        "Vidros elétricos",
+        "Freios ABS",
+        "Rodas de liga leve",
+        "Travas elétricas",
+        "Ar condicionado Digital",
+        "Multimídia",
+        "Vidros elétricos Traseiros",
+        "Banco do motorista com ajuste de altura",
+        "Bancos elétricos",
+        "Sensor de chuva",
+        "Sensor de estacionamento",
+        "Airbag de cortina",
+        "Airbag laterais",
+        "Airbag motorista",
+        "Airbag passageiro",
+        "Retrovisor fotocrômico",
+        "Câmera de ré",
+        "Banco traseiro bipartido",
+        "Banco do motorista com ajuste elétrico"
+      ]
+    },
+    {
+      "id": "scraped-12-hyundai-2026",
+      "name": "HYUNDAI CRETA 1.6 TGDI GASOLINA ULTIMATE DCT",
+      "brand": "Hyundai",
+      "role": "Hyundai Inteligência Artificial Jina",
+      "category": "suv",
+      "price": 159970,
+      "image": "https://www.autocerto.com/fotos/6983/5357282/1_122017.jpg",
+      "description": "Este esplêndido HYUNDAI CRETA 1.6 TGDI GASOLINA ULTIMATE DCT ano modelo 2026 está disponível.",
+      "year": 2026,
+      "isAvailableForTestDrive": true,
+      "specs": {
+        "acceleration": 9.5,
+        "topSpeed": 198,
+        "power": 130,
+        "torque": 205,
+        "rangeOrdisplacement": "21.042 km",
+        "weight": 1220
+      },
+      "paints": [
+        {
+          "name": "Cinza Platinum",
+          "hex": "#475569",
+          "price": 0,
+          "class": "bg-slate-600"
+        },
+        {
+          "name": "Branco Diamante",
+          "hex": "#FFFFFF",
+          "price": 0,
+          "class": "bg-white border"
+        },
+        {
+          "name": "Preto Carbono",
+          "hex": "#0F172A",
+          "price": 1500,
+          "class": "bg-slate-900"
+        }
+      ],
+      "wheels": [
+        {
+          "name": "Rodas de Liga Leve Originais de Fábrica",
+          "size": "16\"",
+          "image": "Original16",
+          "price": 0
+        }
+      ],
+      "detailUrl": "https://www.garagemdonelsinho.com.br/Veiculo/creta-1.6-tgdi-gasolina-ultimate-dct-2026/5357282/detalhes",
+      "sellerName": "Garagem do Nelsinho",
+      "sellerPhone": "(19) 99765-4321",
+      "gallery": [
+        "https://www.autocerto.com/fotos/6983/5357282/1_122017.jpg",
+        "https://www.autocerto.com/fotos/6983/5357282/1_122019.jpg",
+        "https://www.autocerto.com/fotos/6983/5357282/1_122020.jpg",
+        "https://www.autocerto.com/fotos/6983/5357282/1_122022.jpg",
+        "https://www.autocerto.com/fotos/6983/5357282/2_122022.jpg",
+        "https://www.autocerto.com/fotos/6983/5357282/1_122023.jpg",
+        "https://www.autocerto.com/fotos/6983/5357282/1_122025.jpg",
+        "https://www.autocerto.com/fotos/6983/5357282/1_122028.jpg",
+        "https://www.autocerto.com/fotos/6983/5357282/1_122030.jpg",
+        "https://www.autocerto.com/fotos/6983/5357282/1_122031.jpg",
+        "https://www.autocerto.com/fotos/6983/5357282/1_122033.jpg",
+        "https://www.autocerto.com/fotos/6983/5357282/1_122034.jpg",
+        "https://www.autocerto.com/fotos/6983/5357282/1_122035.jpg",
+        "https://www.autocerto.com/fotos/6983/5357282/1_122037.jpg",
+        "https://www.autocerto.com/fotos/6983/5357282/1_122038.jpg",
+        "https://www.autocerto.com/fotos/6983/5357282/2_122038.jpg",
+        "https://www.autocerto.com/fotos/6983/5357282/1_122040.jpg",
+        "https://www.autocerto.com/fotos/6983/5357282/1_122041.jpg",
+        "https://www.autocerto.com/fotos/6983/5357282/1_122042.jpg",
+        "https://www.autocerto.com/fotos/6983/5357282/1_122043.jpg",
+        "https://www.autocerto.com/fotos/6983/5357282/1_122045.jpg",
+        "https://www.autocerto.com/fotos/6983/5357282/1_122047.jpg",
+        "https://www.autocerto.com/fabricantes/hyundai.webp"
+      ],
+      "features": [
+        "Bancos de Couro",
+        "Retrovisores elétricos",
+        "Teto solar",
+        "Vidros elétricos",
+        "Alarme",
+        "Freios ABS",
+        "Rodas de liga leve",
+        "Travas elétricas",
+        "Ar condicionado Digital",
+        "Multimídia",
+        "Vidros elétricos Traseiros",
+        "Câmera 360",
+        "Ar condicionado dual zone",
+        "Banco do motorista com ajuste de altura",
+        "Sensor de chuva",
+        "Airbag motorista",
+        "Airbag passageiro",
+        "Câmera de ré",
+        "Banco traseiro bipartido",
+        "Banco do motorista com ajuste elétrico"
+      ]
+    },
+    {
+      "id": "scraped-9-hyundai-2021",
+      "name": "HYUNDAI CRETA 1.6 16V FLEX SMART PLUS AUTOMÁTICO",
+      "brand": "Hyundai",
+      "role": "Hyundai Inteligência Artificial Jina",
+      "category": "suv",
+      "price": 97900,
+      "image": "https://www.autocerto.com/fotos/6983/5341481/1_034506.jpg",
+      "description": "Este magnífico HYUNDAI CRETA 1.6 16V FLEX SMART PLUS AUTOMÁTICO fabricado em 2021 conta com apenas 44.914 km rodados! Superbamente revisado pela equipe técnica da Garagem do Nelsinho. Veículo com vistoria cautelar 100% aprovada, estofamento higienizado, mecânica periciada sob rigorosa aprovação, perfeito para rodar diário com imbatível custo-benefício.",
+      "year": 2021,
+      "isAvailableForTestDrive": true,
+      "specs": {
+        "acceleration": 11.2,
+        "topSpeed": 178,
+        "power": 115,
+        "torque": 155,
+        "rangeOrdisplacement": "44.914 km",
+        "weight": 1210
+      },
+      "paints": [
+        {
+          "name": "Cinza Platinum",
+          "hex": "#475569",
+          "price": 0,
+          "class": "bg-slate-600"
+        },
+        {
+          "name": "Branco Diamante",
+          "hex": "#FFFFFF",
+          "price": 0,
+          "class": "bg-white border"
+        },
+        {
+          "name": "Preto Carbono",
+          "hex": "#0F172A",
+          "price": 1500,
+          "class": "bg-slate-900"
+        }
+      ],
+      "wheels": [
+        {
+          "name": "Rodas de Liga Leve Originais de Fábrica",
+          "size": "16\"",
+          "image": "Original16",
+          "price": 0
+        }
+      ],
+      "detailUrl": "https://www.garagemdonelsinho.com.br/Veiculo/creta-1.6-16v-flex-smart-plus-automatico-2021/5341481/detalhes",
+      "sellerName": "Garagem do Nelsinho",
+      "sellerPhone": "(19) 99765-4321",
+      "gallery": [
+        "https://www.autocerto.com/fotos/6983/5341481/1_034506.jpg",
+        "https://www.autocerto.com/fotos/6983/5341481/1_034507.jpg",
+        "https://www.autocerto.com/fotos/6983/5341481/1_034509.jpg",
+        "https://www.autocerto.com/fotos/6983/5341481/2_034509.jpg",
+        "https://www.autocerto.com/fotos/6983/5341481/1_034510.jpg",
+        "https://www.autocerto.com/fotos/6983/5341481/1_034511.jpg",
+        "https://www.autocerto.com/fotos/6983/5341481/1_034512.jpg",
+        "https://www.autocerto.com/fotos/6983/5341481/1_034513.jpg",
+        "https://www.autocerto.com/fotos/6983/5341481/1_034515.jpg",
+        "https://www.autocerto.com/fotos/6983/5341481/1_034516.jpg",
+        "https://www.autocerto.com/fotos/6983/5341481/1_034517.jpg",
+        "https://www.autocerto.com/fotos/6983/5341481/1_034518.jpg",
+        "https://www.autocerto.com/fotos/6983/5341481/1_034519.jpg",
+        "https://www.autocerto.com/fotos/6983/5341481/1_034520.jpg",
+        "https://www.autocerto.com/fotos/6983/5341481/1_034521.jpg",
+        "https://www.autocerto.com/fotos/6983/5341481/2_034521.jpg",
+        "https://www.autocerto.com/fotos/6983/5341481/1_034522.jpg",
+        "https://www.autocerto.com/fotos/6983/5341481/1_034523.jpg",
+        "https://www.autocerto.com/fotos/6983/5341481/1_034524.jpg",
+        "https://www.autocerto.com/fotos/6983/5341481/1_034526.jpg",
+        "https://www.autocerto.com/fotos/6983/5341481/2_034526.jpg",
+        "https://www.autocerto.com/fabricantes/hyundai.webp"
+      ],
+      "features": [
+        "Ar condicionado",
+        "Retrovisores elétricos",
+        "Vidros elétricos",
+        "Alarme",
+        "Freios ABS",
+        "Rodas de liga leve",
+        "Travas elétricas",
+        "Ar condicionado Digital",
+        "Multimídia",
+        "Vidros elétricos Traseiros",
+        "Banco do motorista com ajuste de altura",
+        "Airbag motorista",
+        "Airbag passageiro",
+        "Câmera de ré"
+      ]
+    },
+    {
+      "id": "scraped-9-hyundai-2018",
+      "name": "HYUNDAI CRETA 2.0 16V FLEX PRESTIGE AUTOMÁTICO",
+      "brand": "Hyundai",
+      "role": "Hyundai Inteligência Artificial Jina",
+      "category": "suv",
+      "price": 96900,
+      "image": "https://www.autocerto.com/fotos/6983/5332383/1_080829.jpg",
+      "description": "Este esplêndido HYUNDAI CRETA 2.0 16V FLEX PRESTIGE AUTOMÁTICO fabricado em 2018 está disponível.",
+      "year": 2019,
+      "isAvailableForTestDrive": true,
+      "specs": {
+        "acceleration": 11,
+        "topSpeed": 180,
+        "power": 116,
+        "torque": 160,
+        "rangeOrdisplacement": "72.600 km",
+        "weight": 1220
+      },
+      "paints": [
+        {
+          "name": "Cinza Platinum",
+          "hex": "#475569",
+          "price": 0,
+          "class": "bg-slate-600"
+        },
+        {
+          "name": "Branco Diamante",
+          "hex": "#FFFFFF",
+          "price": 0,
+          "class": "bg-white border"
+        },
+        {
+          "name": "Preto Carbono",
+          "hex": "#0F172A",
+          "price": 1500,
+          "class": "bg-slate-900"
+        }
+      ],
+      "wheels": [
+        {
+          "name": "Rodas de Liga Leve Originais de Fábrica",
+          "size": "16\"",
+          "image": "Original16",
+          "price": 0
+        }
+      ],
+      "detailUrl": "https://www.garagemdonelsinho.com.br/Veiculo/creta-2.0-16v-flex-prestige-automatico-2019/5332383/detalhes",
+      "sellerName": "Garagem do Nelsinho",
+      "sellerPhone": "(19) 99765-4321",
+      "gallery": [
+        "https://www.autocerto.com/fotos/6983/5332383/1_080829.jpg",
+        "https://www.autocerto.com/fabricantes/hyundai.webp"
+      ],
+      "features": [
+        "Ar condicionado",
+        "Bancos de Couro",
+        "Retrovisores elétricos",
+        "Vidros elétricos",
+        "Alarme",
+        "Freios ABS",
+        "Rodas de liga leve",
+        "Travas elétricas",
+        "Ar condicionado Digital",
+        "Bancos dianteiros com aquecimento",
+        "Multimídia",
+        "Vidros elétricos Traseiros",
+        "Banco do motorista com ajuste de altura",
+        "Sensor de chuva",
+        "Sensor de estacionamento",
+        "Airbag motorista",
+        "Airbag passageiro",
+        "Câmera de ré",
+        "Banco traseiro bipartido"
+      ]
+    },
+    {
+      "id": "scraped-10-hyundai-2018",
+      "name": "HYUNDAI CRETA 1.6 16V FLEX ATTITUDE AUTOMÁTICO",
+      "brand": "Hyundai",
+      "role": "Hyundai Inteligência Artificial Jina",
+      "category": "suv",
+      "price": 85970,
+      "image": "https://www.autocerto.com/fotos/6983/5282547/1_092517.jpg",
+      "description": "Este esplêndido HYUNDAI CRETA 1.6 16V FLEX ATTITUDE AUTOMÁTICO fabricado em 2018 está disponível.",
+      "year": 2019,
+      "isAvailableForTestDrive": true,
+      "specs": {
+        "acceleration": 9.5,
+        "topSpeed": 198,
+        "power": 130,
+        "torque": 205,
+        "rangeOrdisplacement": "96.507 km",
+        "weight": 1220
+      },
+      "paints": [
+        {
+          "name": "Cinza Platinum",
+          "hex": "#475569",
+          "price": 0,
+          "class": "bg-slate-600"
+        },
+        {
+          "name": "Branco Diamante",
+          "hex": "#FFFFFF",
+          "price": 0,
+          "class": "bg-white border"
+        },
+        {
+          "name": "Preto Carbono",
+          "hex": "#0F172A",
+          "price": 1500,
+          "class": "bg-slate-900"
+        }
+      ],
+      "wheels": [
+        {
+          "name": "Rodas de Liga Leve Originais de Fábrica",
+          "size": "16\"",
+          "image": "Original16",
+          "price": 0
+        }
+      ],
+      "detailUrl": "https://www.garagemdonelsinho.com.br/Veiculo/creta-1.6-16v-flex-attitude-automatico-2019/5282547/detalhes",
+      "sellerName": "Garagem do Nelsinho",
+      "sellerPhone": "(19) 99765-4321",
+      "gallery": [
+        "https://www.autocerto.com/fotos/6983/5282547/1_092517.jpg",
+        "https://www.autocerto.com/fotos/6983/5282547/1_092518.jpg",
+        "https://www.autocerto.com/fotos/6983/5282547/1_092519.jpg",
+        "https://www.autocerto.com/fotos/6983/5282547/1_092520.jpg",
+        "https://www.autocerto.com/fotos/6983/5282547/1_092521.jpg",
+        "https://www.autocerto.com/fotos/6983/5282547/2_092521.jpg",
+        "https://www.autocerto.com/fotos/6983/5282547/1_092522.jpg",
+        "https://www.autocerto.com/fotos/6983/5282547/1_092524.jpg",
+        "https://www.autocerto.com/fotos/6983/5282547/1_092525.jpg",
+        "https://www.autocerto.com/fotos/6983/5282547/1_092526.jpg",
+        "https://www.autocerto.com/fotos/6983/5282547/1_092527.jpg",
+        "https://www.autocerto.com/fotos/6983/5282547/2_092527.jpg",
+        "https://www.autocerto.com/fotos/6983/5282547/1_092528.jpg",
+        "https://www.autocerto.com/fotos/6983/5282547/1_092529.jpg",
+        "https://www.autocerto.com/fotos/6983/5282547/1_092530.jpg",
+        "https://www.autocerto.com/fotos/6983/5282547/1_092531.jpg",
+        "https://www.autocerto.com/fotos/6983/5282547/1_092533.jpg",
+        "https://www.autocerto.com/fotos/6983/5282547/1_092534.jpg",
+        "https://www.autocerto.com/fotos/6983/5282547/1_092535.jpg",
+        "https://www.autocerto.com/fotos/6983/5282547/1_092536.jpg",
+        "https://www.autocerto.com/fotos/6983/5282547/1_092537.jpg",
+        "https://www.autocerto.com/fabricantes/hyundai.webp"
+      ],
+      "features": [
+        "Ar condicionado",
+        "Bancos de Couro",
+        "Retrovisores elétricos",
+        "Vidros elétricos",
+        "Alarme",
+        "Freios ABS",
+        "Rodas de liga leve",
+        "Travas elétricas",
+        "Multimídia",
+        "Vidros elétricos Traseiros",
+        "Banco do motorista com ajuste de altura",
+        "Sensor de estacionamento",
+        "Airbag laterais",
+        "Airbag motorista",
+        "Airbag passageiro",
+        "Retrovisor fotocrômico",
+        "Câmera de ré"
+      ]
+    },
+    {
+      "id": "scraped-15-hyundai-2020",
+      "name": "HYUNDAI CRETA 2.0 16V FLEX PRESTIGE AUTOMÁTICO",
+      "brand": "Hyundai",
+      "role": "Hyundai Inteligência Artificial Jina",
+      "category": "suv",
+      "price": 101900,
+      "image": "https://www.autocerto.com/fabricantes/hyundai.webp",
+      "description": "Este esplêndido HYUNDAI CRETA 2.0 16V FLEX PRESTIGE AUTOMÁTICO ano modelo 2020 está disponível.",
+      "year": 2020,
+      "isAvailableForTestDrive": true,
+      "specs": {
+        "acceleration": 11,
+        "topSpeed": 180,
+        "power": 116,
+        "torque": 160,
+        "rangeOrdisplacement": "36.900 km",
+        "weight": 1220
+      },
+      "paints": [
+        {
+          "name": "Cinza Platinum",
+          "hex": "#475569",
+          "price": 0,
+          "class": "bg-slate-600"
+        },
+        {
+          "name": "Branco Diamante",
+          "hex": "#FFFFFF",
+          "price": 0,
+          "class": "bg-white border"
+        },
+        {
+          "name": "Preto Carbono",
+          "hex": "#0F172A",
+          "price": 1500,
+          "class": "bg-slate-900"
+        }
+      ],
+      "wheels": [
+        {
+          "name": "Rodas de Liga Leve Originais de Fábrica",
+          "size": "16\"",
+          "image": "Original16",
+          "price": 0
+        }
+      ],
+      "detailUrl": "https://www.garagemdonelsinho.com.br/Veiculo/creta-2.0-16v-flex-prestige-automatico-2020/5273097/detalhes",
+      "sellerName": "Garagem do Nelsinho",
+      "sellerPhone": "(17) 99637-7147",
+      "gallery": [
+        "https://www.autocerto.com/fabricantes/hyundai.webp"
+      ],
+      "features": [
+        "Ar condicionado",
+        "Bancos de Couro",
+        "Retrovisores elétricos",
+        "Vidros elétricos",
+        "Alarme",
+        "Freios ABS",
+        "Rodas de liga leve",
+        "Travas elétricas",
+        "Direção Hidraulica",
+        "Ar condicionado Digital",
+        "Bancos dianteiros com aquecimento",
+        "Multimídia",
+        "Vidros elétricos Traseiros",
+        "Banco do motorista com ajuste de altura",
+        "Sensor de chuva",
+        "Sensor de estacionamento",
+        "Airbag motorista",
+        "Airbag passageiro",
+        "Câmera de ré"
+      ]
+    },
+    {
+      "id": "scraped-12-hyundai-2025",
+      "name": "HYUNDAI HB20 1.0 12V FLEX COMFORT MANUAL",
+      "brand": "Hyundai",
+      "role": "Hyundai Inteligência Artificial Jina",
+      "category": "classics",
+      "price": 78970,
+      "image": "https://www.autocerto.com/fotos/6983/5335415/1_032941.jpg",
+      "description": "Este esplêndido HYUNDAI HB20 1.0 12V FLEX COMFORT MANUAL fabricado em 2025 está disponível.",
+      "year": 2026,
+      "isAvailableForTestDrive": true,
+      "specs": {
+        "acceleration": 9.5,
+        "topSpeed": 198,
+        "power": 130,
+        "torque": 205,
+        "rangeOrdisplacement": "47.968 km",
+        "weight": 1220
+      },
+      "paints": [
+        {
+          "name": "Cinza Platinum",
+          "hex": "#475569",
+          "price": 0,
+          "class": "bg-slate-600"
+        },
+        {
+          "name": "Branco Diamante",
+          "hex": "#FFFFFF",
+          "price": 0,
+          "class": "bg-white border"
+        },
+        {
+          "name": "Preto Carbono",
+          "hex": "#0F172A",
+          "price": 1500,
+          "class": "bg-slate-900"
+        }
+      ],
+      "wheels": [
+        {
+          "name": "Rodas de Liga Leve Originais de Fábrica",
+          "size": "16\"",
+          "image": "Original16",
+          "price": 0
+        }
+      ],
+      "detailUrl": "https://www.garagemdonelsinho.com.br/Veiculo/hb20-1.0-12v-flex-comfort-manual-2026/5335415/detalhes",
+      "sellerName": "Garagem do Nelsinho",
+      "sellerPhone": "(19) 99765-4321",
+      "gallery": [
+        "https://www.autocerto.com/fotos/6983/5335415/1_032941.jpg",
+        "https://www.autocerto.com/fotos/6983/5335415/2_032941.jpg",
+        "https://www.autocerto.com/fotos/6983/5335415/1_032943.jpg",
+        "https://www.autocerto.com/fotos/6983/5335415/1_032944.jpg",
+        "https://www.autocerto.com/fotos/6983/5335415/2_032944.jpg",
+        "https://www.autocerto.com/fotos/6983/5335415/1_032945.jpg",
+        "https://www.autocerto.com/fotos/6983/5335415/1_032946.jpg",
+        "https://www.autocerto.com/fotos/6983/5335415/1_032947.jpg",
+        "https://www.autocerto.com/fotos/6983/5335415/1_032948.jpg",
+        "https://www.autocerto.com/fotos/6983/5335415/1_032949.jpg",
+        "https://www.autocerto.com/fotos/6983/5335415/2_032949.jpg",
+        "https://www.autocerto.com/fotos/6983/5335415/1_032950.jpg",
+        "https://www.autocerto.com/fotos/6983/5335415/1_032951.jpg",
+        "https://www.autocerto.com/fotos/6983/5335415/1_032952.jpg",
+        "https://www.autocerto.com/fotos/6983/5335415/1_032953.jpg",
+        "https://www.autocerto.com/fotos/6983/5335415/1_032954.jpg",
+        "https://www.autocerto.com/fotos/6983/5335415/1_032955.jpg",
+        "https://www.autocerto.com/fotos/6983/5335415/1_032956.jpg",
+        "https://www.autocerto.com/fotos/6983/5335415/1_032958.jpg",
+        "https://www.autocerto.com/fotos/6983/5335415/1_032959.jpg",
+        "https://www.autocerto.com/fabricantes/hyundai.webp"
+      ],
+      "features": [
+        "Ar condicionado",
+        "Vidros elétricos",
+        "Alarme",
+        "Freios ABS",
+        "Travas elétricas",
+        "Multimídia",
+        "Banco do motorista com ajuste de altura",
+        "Airbag motorista",
+        "Airbag passageiro",
+        "Câmera de ré",
+        "Banco traseiro bipartido"
+      ]
+    },
+    {
+      "id": "scraped-13-jeep-2022",
+      "name": "JEEP COMMANDER 1.3 T270 TURBO FLEX OVERLAND AT6",
+      "brand": "Jeep",
+      "role": "Jeep Inteligência Artificial Jina",
+      "category": "suv",
+      "price": 149970,
+      "image": "https://www.autocerto.com/fotos/6983/4997325/1_095550.jpg",
+      "description": "Este esplêndido JEEP COMMANDER 1.3 T270 TURBO FLEX OVERLAND AT6 fabricado em 2022 está disponível.",
+      "year": 2022,
+      "isAvailableForTestDrive": true,
+      "specs": {
+        "acceleration": 11,
+        "topSpeed": 180,
+        "power": 116,
+        "torque": 160,
+        "rangeOrdisplacement": "55.100 km",
+        "weight": 1220
+      },
+      "paints": [
+        {
+          "name": "Cinza Platinum",
+          "hex": "#475569",
+          "price": 0,
+          "class": "bg-slate-600"
+        },
+        {
+          "name": "Branco Diamante",
+          "hex": "#FFFFFF",
+          "price": 0,
+          "class": "bg-white border"
+        },
+        {
+          "name": "Preto Carbono",
+          "hex": "#0F172A",
+          "price": 1500,
+          "class": "bg-slate-900"
+        }
+      ],
+      "wheels": [
+        {
+          "name": "Rodas de Liga Leve Originais de Fábrica",
+          "size": "16\"",
+          "image": "Original16",
+          "price": 0
+        }
+      ],
+      "detailUrl": "https://www.garagemdonelsinho.com.br/Veiculo/commander-1.3-t270-turbo-flex-overland-at6-2022/4997325/detalhes",
+      "sellerName": "Garagem do Nelsinho",
+      "sellerPhone": "(19) 99765-4321",
+      "gallery": [
+        "https://www.autocerto.com/fotos/6983/4997325/1_095550.jpg",
+        "https://www.autocerto.com/fotos/6983/4997325/1_095552.jpg",
+        "https://www.autocerto.com/fotos/6983/4997325/1_095553.jpg",
+        "https://www.autocerto.com/fotos/6983/4997325/1_095554.jpg",
+        "https://www.autocerto.com/fotos/6983/4997325/1_095555.jpg",
+        "https://www.autocerto.com/fotos/6983/4997325/1_095556.jpg",
+        "https://www.autocerto.com/fotos/6983/4997325/1_095558.jpg",
+        "https://www.autocerto.com/fotos/6983/4997325/1_095600.jpg",
+        "https://www.autocerto.com/fotos/6983/4997325/1_095602.jpg",
+        "https://www.autocerto.com/fotos/6983/4997325/1_095604.jpg",
+        "https://www.autocerto.com/fotos/6983/4997325/1_095605.jpg",
+        "https://www.autocerto.com/fotos/6983/4997325/1_095606.jpg",
+        "https://www.autocerto.com/fotos/6983/4997325/1_095607.jpg",
+        "https://www.autocerto.com/fotos/6983/4997325/1_095609.jpg",
+        "https://www.autocerto.com/fotos/6983/4997325/1_095610.jpg",
+        "https://www.autocerto.com/fotos/6983/4997325/1_095613.jpg",
+        "https://www.autocerto.com/fotos/6983/4997325/1_095614.jpg",
+        "https://www.autocerto.com/fotos/6983/4997325/1_095615.jpg",
+        "https://www.autocerto.com/fotos/6983/4997325/1_095616.jpg",
+        "https://www.autocerto.com/fotos/6983/4997325/1_095618.jpg",
+        "https://www.autocerto.com/fotos/6983/4997325/1_095619.jpg",
+        "https://www.autocerto.com/fotos/6983/4997325/1_095620.jpg",
+        "https://www.autocerto.com/fotos/6983/4997325/1_095621.jpg",
+        "https://www.autocerto.com/fotos/6983/4997325/1_095623.jpg",
+        "https://www.autocerto.com/fabricantes/jeep.webp"
+      ],
+      "features": [
+        "Ar condicionado",
+        "Bancos de Couro",
+        "Retrovisores elétricos",
+        "Teto solar",
+        "Vidros elétricos",
+        "Alarme",
+        "Freios ABS",
+        "Rodas de liga leve",
+        "Travas elétricas",
+        "Direção Hidraulica",
+        "Ar condicionado Digital",
+        "Multimídia",
+        "Vidros elétricos Traseiros",
+        "Câmera 360",
+        "Ar condicionado dual zone",
+        "Banco do motorista com ajuste de altura",
+        "Bancos elétricos",
+        "Sensor de chuva",
+        "Sensor de estacionamento",
+        "Airbag laterais",
+        "Airbag motorista",
+        "Airbag passageiro",
+        "Retrovisor fotocrômico",
+        "Câmera de ré",
+        "Banco do motorista com ajuste elétrico"
+      ]
+    },
+    {
+      "id": "scraped-14-jeep-2024",
+      "name": "JEEP COMPASS 1.3 T270 TURBO FLEX LONGITUDE AT6",
+      "brand": "Jeep",
+      "role": "Jeep Inteligência Artificial Jina",
+      "category": "suv",
+      "price": 137970,
+      "image": "https://www.autocerto.com/fotos/6983/5175241/1_050539.jpg",
+      "description": "Este esplêndido JEEP COMPASS 1.3 T270 TURBO FLEX LONGITUDE AT6 fabricado em 2024 está disponível.",
+      "year": 2025,
+      "isAvailableForTestDrive": true,
+      "specs": {
+        "acceleration": 9.5,
+        "topSpeed": 198,
+        "power": 130,
+        "torque": 205,
+        "rangeOrdisplacement": "27.524 km",
+        "weight": 1220
+      },
+      "paints": [
+        {
+          "name": "Cinza Platinum",
+          "hex": "#475569",
+          "price": 0,
+          "class": "bg-slate-600"
+        },
+        {
+          "name": "Branco Diamante",
+          "hex": "#FFFFFF",
+          "price": 0,
+          "class": "bg-white border"
+        },
+        {
+          "name": "Preto Carbono",
+          "hex": "#0F172A",
+          "price": 1500,
+          "class": "bg-slate-900"
+        }
+      ],
+      "wheels": [
+        {
+          "name": "Rodas de Liga Leve Originais de Fábrica",
+          "size": "16\"",
+          "image": "Original16",
+          "price": 0
+        }
+      ],
+      "detailUrl": "https://www.garagemdonelsinho.com.br/Veiculo/compass-1.3-t270-turbo-flex-longitude-at6-2025/5175241/detalhes",
+      "sellerName": "Garagem do Nelsinho",
+      "sellerPhone": "(19) 99765-4321",
+      "gallery": [
+        "https://www.autocerto.com/fotos/6983/5175241/1_050539.jpg",
+        "https://www.autocerto.com/fotos/6983/5175241/1_050540.jpg",
+        "https://www.autocerto.com/fotos/6983/5175241/1_050541.jpg",
+        "https://www.autocerto.com/fotos/6983/5175241/2_050541.jpg",
+        "https://www.autocerto.com/fotos/6983/5175241/1_050542.jpg",
+        "https://www.autocerto.com/fotos/6983/5175241/1_050544.jpg",
+        "https://www.autocerto.com/fotos/6983/5175241/1_052817.jpg",
+        "https://www.autocerto.com/fotos/6983/5175241/1_052809.jpg",
+        "https://www.autocerto.com/fotos/6983/5175241/1_052806.jpg",
+        "https://www.autocerto.com/fotos/6983/5175241/2_050544.jpg",
+        "https://www.autocerto.com/fotos/6983/5175241/1_050545.jpg",
+        "https://www.autocerto.com/fotos/6983/5175241/1_052816.jpg",
+        "https://www.autocerto.com/fotos/6983/5175241/1_050546.jpg",
+        "https://www.autocerto.com/fotos/6983/5175241/1_050547.jpg",
+        "https://www.autocerto.com/fotos/6983/5175241/1_052805.jpg",
+        "https://www.autocerto.com/fotos/6983/5175241/1_052808.jpg",
+        "https://www.autocerto.com/fotos/6983/5175241/1_052815.jpg",
+        "https://www.autocerto.com/fotos/6983/5175241/1_052811.jpg",
+        "https://www.autocerto.com/fotos/6983/5175241/1_052813.jpg",
+        "https://www.autocerto.com/fotos/6983/5175241/1_052814.jpg",
+        "https://www.autocerto.com/fotos/6983/5175241/1_052810.jpg",
+        "https://www.autocerto.com/fotos/6983/5175241/1_052818.jpg",
+        "https://www.autocerto.com/fabricantes/jeep.webp"
+      ],
+      "features": [
+        "Ar condicionado",
+        "Bancos de Couro",
+        "Retrovisores elétricos",
+        "Vidros elétricos",
+        "Alarme",
+        "Freios ABS",
+        "Rodas de liga leve",
+        "Travas elétricas",
+        "Direção Hidraulica",
+        "Ar condicionado Digital",
+        "Multimídia",
+        "Vidros elétricos Traseiros",
+        "Banco do motorista com ajuste de altura",
+        "Sensor de chuva",
+        "Sensor de estacionamento",
+        "Airbag laterais",
+        "Airbag motorista",
+        "Airbag passageiro",
+        "Retrovisor fotocrômico",
+        "Câmera de ré"
+      ]
+    },
+    {
+      "id": "scraped-15-jeep-2023",
+      "name": "JEEP COMPASS 1.3 T270 TURBO FLEX LONGITUDE AT6",
+      "brand": "Jeep",
+      "role": "Jeep Inteligência Artificial Jina",
+      "category": "suv",
+      "price": 129970,
+      "image": "https://www.autocerto.com/fotos/6983/5131621/1_094709.jpg",
+      "description": "Este esplêndido JEEP COMPASS 1.3 T270 TURBO FLEX LONGITUDE AT6 fabricado em 2023 está disponível.",
+      "year": 2024,
+      "isAvailableForTestDrive": true,
+      "specs": {
+        "acceleration": 11,
+        "topSpeed": 180,
+        "power": 116,
+        "torque": 160,
+        "rangeOrdisplacement": "38.146 km",
+        "weight": 1220
+      },
+      "paints": [
+        {
+          "name": "Cinza Platinum",
+          "hex": "#475569",
+          "price": 0,
+          "class": "bg-slate-600"
+        },
+        {
+          "name": "Branco Diamante",
+          "hex": "#FFFFFF",
+          "price": 0,
+          "class": "bg-white border"
+        },
+        {
+          "name": "Preto Carbono",
+          "hex": "#0F172A",
+          "price": 1500,
+          "class": "bg-slate-900"
+        }
+      ],
+      "wheels": [
+        {
+          "name": "Rodas de Liga Leve Originais de Fábrica",
+          "size": "16\"",
+          "image": "Original16",
+          "price": 0
+        }
+      ],
+      "detailUrl": "https://www.garagemdonelsinho.com.br/Veiculo/compass-1.3-t270-turbo-flex-longitude-at6-2024/5131621/detalhes",
+      "sellerName": "Garagem do Nelsinho",
+      "sellerPhone": "(19) 99765-4321",
+      "gallery": [
+        "https://www.autocerto.com/fotos/6983/5131621/1_094709.jpg",
+        "https://www.autocerto.com/fotos/6983/5131621/1_094712.jpg",
+        "https://www.autocerto.com/fotos/6983/5131621/1_094715.jpg",
+        "https://www.autocerto.com/fotos/6983/5131621/1_094717.jpg",
+        "https://www.autocerto.com/fotos/6983/5131621/1_094719.jpg",
+        "https://www.autocerto.com/fotos/6983/5131621/1_094723.jpg",
+        "https://www.autocerto.com/fotos/6983/5131621/1_094728.jpg",
+        "https://www.autocerto.com/fotos/6983/5131621/1_094731.jpg",
+        "https://www.autocerto.com/fotos/6983/5131621/1_094736.jpg",
+        "https://www.autocerto.com/fotos/6983/5131621/1_094739.jpg",
+        "https://www.autocerto.com/fotos/6983/5131621/1_094745.jpg",
+        "https://www.autocerto.com/fotos/6983/5131621/1_094750.jpg",
+        "https://www.autocerto.com/fotos/6983/5131621/1_094752.jpg",
+        "https://www.autocerto.com/fotos/6983/5131621/1_094753.jpg",
+        "https://www.autocerto.com/fotos/6983/5131621/2_094753.jpg",
+        "https://www.autocerto.com/fotos/6983/5131621/1_094754.jpg",
+        "https://www.autocerto.com/fotos/6983/5131621/1_094755.jpg",
+        "https://www.autocerto.com/fotos/6983/5131621/1_094756.jpg",
+        "https://www.autocerto.com/fotos/6983/5131621/1_094757.jpg",
+        "https://www.autocerto.com/fotos/6983/5131621/1_094759.jpg",
+        "https://www.autocerto.com/fotos/6983/5131621/1_094800.jpg",
+        "https://www.autocerto.com/fabricantes/jeep.webp"
+      ],
+      "features": [
+        "Ar condicionado",
+        "Bancos de Couro",
+        "Retrovisores elétricos",
+        "Vidros elétricos",
+        "Alarme",
+        "Freios ABS",
+        "Rodas de liga leve",
+        "Travas elétricas",
+        "Multimídia",
+        "Vidros elétricos Traseiros",
+        "Banco do motorista com ajuste de altura",
+        "Sensor de estacionamento",
+        "Airbag motorista",
+        "Airbag passageiro",
+        "Câmera de ré"
+      ]
+    },
+    {
+      "id": "scraped-20-jeep-2021",
+      "name": "JEEP RENEGADE 1.8 16V FLEX SPORT 4P AUTOMÁTICO",
+      "brand": "Jeep",
+      "role": "Jeep Inteligência Artificial Jina",
+      "category": "suv",
+      "price": 115000,
+      "image": "https://www.autocerto.com/fabricantes/jeep.webp",
+      "description": "Este esplêndido JEEP RENEGADE 1.8 16V FLEX SPORT 4P AUTOMÁTICO ano modelo 2021 está disponível.",
+      "year": 2021,
+      "isAvailableForTestDrive": true,
+      "specs": {
+        "acceleration": 9.5,
+        "topSpeed": 198,
+        "power": 130,
+        "torque": 205,
+        "rangeOrdisplacement": "42.035 km",
+        "weight": 1220
+      },
+      "paints": [
+        {
+          "name": "Cinza Platinum",
+          "hex": "#475569",
+          "price": 0,
+          "class": "bg-slate-600"
+        },
+        {
+          "name": "Branco Diamante",
+          "hex": "#FFFFFF",
+          "price": 0,
+          "class": "bg-white border"
+        },
+        {
+          "name": "Preto Carbono",
+          "hex": "#0F172A",
+          "price": 1500,
+          "class": "bg-slate-900"
+        }
+      ],
+      "wheels": [
+        {
+          "name": "Rodas de Liga Leve Originais de Fábrica",
+          "size": "16\"",
+          "image": "Original16",
+          "price": 0
+        }
+      ],
+      "detailUrl": "https://www.garagemdonelsinho.com.br/Veiculo/renegade-1.8-16v-flex-sport-4p-automatico-2021/5368346/detalhes",
+      "sellerName": "Garagem do Nelsinho",
+      "sellerPhone": "(17) 99637-7147",
+      "gallery": [
+        "https://www.autocerto.com/fabricantes/jeep.webp"
+      ],
+      "features": [
+        "Ar condicionado",
+        "Bancos de Couro",
+        "Retrovisores elétricos",
+        "Vidros elétricos",
+        "Alarme",
+        "Freios ABS",
+        "Rodas de liga leve",
+        "Travas elétricas",
+        "Multimídia",
+        "Vidros elétricos Traseiros",
+        "Banco do motorista com ajuste de altura",
+        "Sensor de estacionamento",
+        "Airbag motorista",
+        "Airbag passageiro",
+        "Retrovisor fotocrômico",
+        "Câmera de ré",
+        "Banco traseiro bipartido"
+      ]
+    },
+    {
+      "id": "scraped-17-jeep-2018",
+      "name": "JEEP RENEGADE 1.8 16V FLEX LIMITED 4P AUTOMÁTICO",
+      "brand": "Jeep",
+      "role": "Jeep Inteligência Artificial Jina",
+      "category": "suv",
+      "price": 76900,
+      "image": "https://www.autocerto.com/fotos/6983/5282526/1_020352.jpg",
+      "description": "Este magnífico JEEP RENEGADE 1.8 16V FLEX LIMITED 4P AUTOMÁTICO fabricado em 2018 conta com apenas 54.900 km rodados! Superbamente revisado pela equipe técnica da Garagem do Nelsinho. Veículo com vistoria cautelar 100% aprovada, estofamento higienizado, mecânica periciada sob rigorosa aprovação, perfeito para rodar diário com imbatível custo-benefício.",
+      "year": 2018,
+      "isAvailableForTestDrive": true,
+      "specs": {
+        "acceleration": 11.2,
+        "topSpeed": 178,
+        "power": 115,
+        "torque": 155,
+        "rangeOrdisplacement": "54.900 km",
+        "weight": 1210
+      },
+      "paints": [
+        {
+          "name": "Cinza Platinum",
+          "hex": "#475569",
+          "price": 0,
+          "class": "bg-slate-600"
+        },
+        {
+          "name": "Branco Diamante",
+          "hex": "#FFFFFF",
+          "price": 0,
+          "class": "bg-white border"
+        },
+        {
+          "name": "Preto Carbono",
+          "hex": "#0F172A",
+          "price": 1500,
+          "class": "bg-slate-900"
+        }
+      ],
+      "wheels": [
+        {
+          "name": "Rodas de Liga Leve Originais de Fábrica",
+          "size": "16\"",
+          "image": "Original16",
+          "price": 0
+        }
+      ],
+      "detailUrl": "https://www.garagemdonelsinho.com.br/Veiculo/renegade-1.8-16v-flex-limited-4p-automatico-2018/5282526/detalhes",
+      "sellerName": "Garagem do Nelsinho",
+      "sellerPhone": "(19) 99765-4321",
+      "gallery": [
+        "https://www.autocerto.com/fotos/6983/5282526/1_020352.jpg",
+        "https://www.autocerto.com/fabricantes/jeep.webp"
+      ],
+      "features": [
+        "Ar condicionado",
+        "Bancos de Couro",
+        "Retrovisores elétricos",
+        "Vidros elétricos",
+        "Alarme",
+        "Freios ABS",
+        "Rodas de liga leve",
+        "Travas elétricas",
+        "Direção Hidraulica",
+        "Ar condicionado Digital",
+        "Multimídia",
+        "Vidros elétricos Traseiros",
+        "Banco do motorista com ajuste de altura",
+        "Sensor de chuva",
+        "Sensor de estacionamento",
+        "Airbag motorista",
+        "Airbag passageiro",
+        "Câmera de ré"
+      ]
+    },
+    {
+      "id": "scraped-16-jeep-2022_dup_20",
+      "name": "JEEP RENEGADE 1.3 T270 TURBO FLEX LONGITUDE AT6",
+      "brand": "Jeep",
+      "role": "Jeep Inteligência Artificial Jina",
+      "category": "suv",
+      "price": 107970,
+      "image": "https://www.autocerto.com/fotos/6983/5095749/1_083537.jpg",
+      "description": "Este esplêndido JEEP RENEGADE 1.3 T270 TURBO FLEX LONGITUDE AT6 fabricado em 2022 está disponível.",
+      "year": 2023,
+      "isAvailableForTestDrive": true,
+      "specs": {
+        "acceleration": 9.5,
+        "topSpeed": 198,
+        "power": 130,
+        "torque": 205,
+        "rangeOrdisplacement": "30.217 km",
+        "weight": 1220
+      },
+      "paints": [
+        {
+          "name": "Cinza Platinum",
+          "hex": "#475569",
+          "price": 0,
+          "class": "bg-slate-600"
+        },
+        {
+          "name": "Branco Diamante",
+          "hex": "#FFFFFF",
+          "price": 0,
+          "class": "bg-white border"
+        },
+        {
+          "name": "Preto Carbono",
+          "hex": "#0F172A",
+          "price": 1500,
+          "class": "bg-slate-900"
+        }
+      ],
+      "wheels": [
+        {
+          "name": "Rodas de Liga Leve Originais de Fábrica",
+          "size": "16\"",
+          "image": "Original16",
+          "price": 0
+        }
+      ],
+      "detailUrl": "https://www.garagemdonelsinho.com.br/Veiculo/renegade-1.3-t270-turbo-flex-longitude-at6-2023/5095749/detalhes",
+      "sellerName": "Garagem do Nelsinho",
+      "sellerPhone": "(19) 99765-4321",
+      "gallery": [
+        "https://www.autocerto.com/fotos/6983/5095749/1_083537.jpg",
+        "https://www.autocerto.com/fotos/6983/5095749/1_083538.jpg",
+        "https://www.autocerto.com/fotos/6983/5095749/1_083539.jpg",
+        "https://www.autocerto.com/fotos/6983/5095749/2_083539.jpg",
+        "https://www.autocerto.com/fotos/6983/5095749/1_083540.jpg",
+        "https://www.autocerto.com/fotos/6983/5095749/1_083541.jpg",
+        "https://www.autocerto.com/fotos/6983/5095749/1_083542.jpg",
+        "https://www.autocerto.com/fotos/6983/5095749/1_083543.jpg",
+        "https://www.autocerto.com/fotos/6983/5095749/1_083545.jpg",
+        "https://www.autocerto.com/fotos/6983/5095749/1_083546.jpg",
+        "https://www.autocerto.com/fotos/6983/5095749/2_083546.jpg",
+        "https://www.autocerto.com/fotos/6983/5095749/1_083548.jpg",
+        "https://www.autocerto.com/fotos/6983/5095749/1_083549.jpg",
+        "https://www.autocerto.com/fotos/6983/5095749/1_083550.jpg",
+        "https://www.autocerto.com/fotos/6983/5095749/1_083551.jpg",
+        "https://www.autocerto.com/fotos/6983/5095749/1_083552.jpg",
+        "https://www.autocerto.com/fotos/6983/5095749/2_083552.jpg",
+        "https://www.autocerto.com/fotos/6983/5095749/1_083554.jpg",
+        "https://www.autocerto.com/fotos/6983/5095749/1_083555.jpg",
+        "https://www.autocerto.com/fotos/6983/5095749/1_083556.jpg",
+        "https://www.autocerto.com/fabricantes/jeep.webp"
+      ],
+      "features": [
+        "Ar condicionado",
+        "Bancos de Couro",
+        "Retrovisores elétricos",
+        "Vidros elétricos",
+        "Alarme",
+        "Freios ABS",
+        "Rodas de liga leve",
+        "Travas elétricas",
+        "Direção Hidraulica",
+        "Ar condicionado Digital",
+        "Multimídia",
+        "Vidros elétricos Traseiros",
+        "Banco do motorista com ajuste de altura",
+        "Sensor de chuva",
+        "Sensor de estacionamento",
+        "Airbag motorista",
+        "Airbag passageiro",
+        "Sensor de Luminosidade",
+        "Câmera de ré"
+      ]
+    },
+    {
+      "id": "scraped-21-mercedes-benz-2015",
+      "name": "MERCEDES-BENZ GLA 200 1.6 CGI VISION 16V TURBO FLEX 4P AUTOMÁTICO",
+      "brand": "Mercedes-benz",
+      "role": "Mercedes-benz Inteligência Artificial Jina",
+      "category": "suv",
+      "price": 99970,
+      "image": "https://www.autocerto.com/fotos/6983/5322208/1_041948.jpg",
+      "description": "Este esplêndido GLA 200 1.6 CGI VISION 16V TURBO FLEX 4P AUTOMÁTICO ano modelo 2015 está disponível.",
+      "year": 2015,
+      "isAvailableForTestDrive": true,
+      "specs": {
+        "acceleration": 11,
+        "topSpeed": 180,
+        "power": 116,
+        "torque": 160,
+        "rangeOrdisplacement": "60.986 km",
+        "weight": 1220
+      },
+      "paints": [
+        {
+          "name": "Cinza Platinum",
+          "hex": "#475569",
+          "price": 0,
+          "class": "bg-slate-600"
+        },
+        {
+          "name": "Branco Diamante",
+          "hex": "#FFFFFF",
+          "price": 0,
+          "class": "bg-white border"
+        },
+        {
+          "name": "Preto Carbono",
+          "hex": "#0F172A",
+          "price": 1500,
+          "class": "bg-slate-900"
+        }
+      ],
+      "wheels": [
+        {
+          "name": "Rodas de Liga Leve Originais de Fábrica",
+          "size": "16\"",
+          "image": "Original16",
+          "price": 0
+        }
+      ],
+      "detailUrl": "https://www.garagemdonelsinho.com.br/Veiculo/gla-200-1.6-cgi-vision-16v-turbo-flex-4p-automatico-2015/5322208/detalhes",
+      "sellerName": "Garagem do Nelsinho",
+      "sellerPhone": "(19) 99765-4321",
+      "gallery": [
+        "https://www.autocerto.com/fotos/6983/5322208/1_041948.jpg",
+        "https://www.autocerto.com/fotos/6983/5322208/1_041949.jpg",
+        "https://www.autocerto.com/fotos/6983/5322208/1_041950.jpg",
+        "https://www.autocerto.com/fotos/6983/5322208/1_041951.jpg",
+        "https://www.autocerto.com/fotos/6983/5322208/1_041953.jpg",
+        "https://www.autocerto.com/fotos/6983/5322208/1_041954.jpg",
+        "https://www.autocerto.com/fotos/6983/5322208/1_041956.jpg",
+        "https://www.autocerto.com/fotos/6983/5322208/1_042000.jpg",
+        "https://www.autocerto.com/fotos/6983/5322208/1_042003.jpg",
+        "https://www.autocerto.com/fotos/6983/5322208/1_042004.jpg",
+        "https://www.autocerto.com/fotos/6983/5322208/1_042005.jpg",
+        "https://www.autocerto.com/fotos/6983/5322208/1_042007.jpg",
+        "https://www.autocerto.com/fotos/6983/5322208/1_042009.jpg",
+        "https://www.autocerto.com/fotos/6983/5322208/1_042011.jpg",
+        "https://www.autocerto.com/fotos/6983/5322208/1_042013.jpg",
+        "https://www.autocerto.com/fotos/6983/5322208/1_042015.jpg",
+        "https://www.autocerto.com/fotos/6983/5322208/1_042017.jpg",
+        "https://www.autocerto.com/fotos/6983/5322208/1_042018.jpg",
+        "https://www.autocerto.com/fotos/6983/5322208/1_042020.jpg",
+        "https://www.autocerto.com/fotos/6983/5322208/1_042024.jpg",
+        "https://www.autocerto.com/fotos/6983/5322208/1_042027.jpg",
+        "https://www.autocerto.com/fotos/6983/5322208/1_042029.jpg",
+        "https://www.autocerto.com/fotos/6983/5322208/1_042031.jpg",
+        "https://www.autocerto.com/fotos/6983/5322208/1_042433.jpg",
+        "https://www.autocerto.com/fabricantes/mercedesbenz.webp"
+      ],
+      "features": [
+        "Ar condicionado",
+        "Bancos de Couro",
+        "Retrovisores elétricos",
+        "Vidros elétricos",
+        "Freios ABS",
+        "Rodas de liga leve",
+        "Vidros elétricos Traseiros",
+        "Banco do motorista com ajuste de altura",
+        "Sensor de estacionamento",
+        "Airbag de cortina",
+        "Airbag laterais",
+        "Airbag motorista",
+        "Airbag passageiro",
+        "Retrovisor fotocrômico",
+        "Banco do motorista com ajuste elétrico"
+      ]
+    },
+    {
+      "id": "scraped-24-nissan-2019",
+      "name": "NISSAN KICKS 1.6 16V FLEXSTART SV 4P XTRONIC",
+      "brand": "Nissan",
+      "role": "Nissan Inteligência Artificial Jina",
+      "category": "suv",
+      "price": 86970,
+      "image": "https://www.autocerto.com/fotos/6983/5240209/1_042307.jpg",
+      "description": "NISSAN KICKS 1.6 16V FLEXSTART SV 4P XTRONIC 2019/2019",
+      "year": 2019,
+      "isAvailableForTestDrive": true,
+      "specs": {
+        "acceleration": 9.5,
+        "topSpeed": 198,
+        "power": 130,
+        "torque": 205,
+        "rangeOrdisplacement": "80.755 km",
+        "weight": 1220
+      },
+      "paints": [
+        {
+          "name": "Cinza Platinum",
+          "hex": "#475569",
+          "price": 0,
+          "class": "bg-slate-600"
+        },
+        {
+          "name": "Branco Diamante",
+          "hex": "#FFFFFF",
+          "price": 0,
+          "class": "bg-white border"
+        },
+        {
+          "name": "Preto Carbono",
+          "hex": "#0F172A",
+          "price": 1500,
+          "class": "bg-slate-900"
+        }
+      ],
+      "wheels": [
+        {
+          "name": "Rodas de Liga Leve Originais de Fábrica",
+          "size": "16\"",
+          "image": "Original16",
+          "price": 0
+        }
+      ],
+      "detailUrl": "https://www.garagemdonelsinho.com.br/Veiculo/kicks-1.6-16v-flexstart-sv-4p-xtronic-2019/5240209/detalhes",
+      "sellerName": "Garagem do Nelsinho",
+      "sellerPhone": "(19) 99765-4321",
+      "gallery": [
+        "https://www.autocerto.com/fotos/6983/5240209/1_042307.jpg",
+        "https://www.autocerto.com/fotos/6983/5240209/1_042309.jpg",
+        "https://www.autocerto.com/fotos/6983/5240209/1_042311.jpg",
+        "https://www.autocerto.com/fotos/6983/5240209/1_042312.jpg",
+        "https://www.autocerto.com/fotos/6983/5240209/1_042314.jpg",
+        "https://www.autocerto.com/fotos/6983/5240209/1_042315.jpg",
+        "https://www.autocerto.com/fotos/6983/5240209/1_042319.jpg",
+        "https://www.autocerto.com/fotos/6983/5240209/1_042322.jpg",
+        "https://www.autocerto.com/fotos/6983/5240209/1_042324.jpg",
+        "https://www.autocerto.com/fotos/6983/5240209/1_042325.jpg",
+        "https://www.autocerto.com/fotos/6983/5240209/1_042326.jpg",
+        "https://www.autocerto.com/fotos/6983/5240209/1_042328.jpg",
+        "https://www.autocerto.com/fotos/6983/5240209/1_042330.jpg",
+        "https://www.autocerto.com/fotos/6983/5240209/1_042332.jpg",
+        "https://www.autocerto.com/fotos/6983/5240209/1_042334.jpg",
+        "https://www.autocerto.com/fotos/6983/5240209/1_042335.jpg",
+        "https://www.autocerto.com/fotos/6983/5240209/1_042338.jpg",
+        "https://www.autocerto.com/fotos/6983/5240209/1_042339.jpg",
+        "https://www.autocerto.com/fotos/6983/5240209/1_042341.jpg",
+        "https://www.autocerto.com/fotos/6983/5240209/1_042344.jpg",
+        "https://www.autocerto.com/fotos/6983/5240209/1_042346.jpg",
+        "https://www.autocerto.com/fabricantes/nissan.webp"
+      ],
+      "features": [
+        "Ar condicionado",
+        "Bancos de Couro",
+        "Retrovisores elétricos",
+        "Vidros elétricos",
+        "Alarme",
+        "Freios ABS",
+        "Rodas de liga leve",
+        "Travas elétricas",
+        "Ar condicionado Digital",
+        "Multimídia",
+        "Vidros elétricos Traseiros",
+        "Banco do motorista com ajuste de altura",
+        "Sensor de estacionamento",
+        "Airbag motorista",
+        "Airbag passageiro",
+        "Câmera de ré",
+        "Banco traseiro bipartido",
+        "Banco do motorista com ajuste elétrico"
+      ]
+    },
+    {
+      "id": "scraped-25-nissan-2019",
+      "name": "NISSAN KICKS 1.6 16V FLEXSTART S DIRECT 4P XTRONIC",
+      "brand": "Nissan",
+      "role": "Nissan Inteligência Artificial Jina",
+      "category": "suv",
+      "price": 79970,
+      "image": "https://www.autocerto.com/fotos/6983/5167354/1_101342.jpg",
+      "description": "NISSAN KICKS 1.6 16V FLEXSTART S DIRECT 4P XTRONIC 2018/2019",
+      "year": 2019,
+      "isAvailableForTestDrive": true,
+      "specs": {
+        "acceleration": 11,
+        "topSpeed": 180,
+        "power": 116,
+        "torque": 160,
+        "rangeOrdisplacement": "76.701 km",
+        "weight": 1220
+      },
+      "paints": [
+        {
+          "name": "Cinza Platinum",
+          "hex": "#475569",
+          "price": 0,
+          "class": "bg-slate-600"
+        },
+        {
+          "name": "Branco Diamante",
+          "hex": "#FFFFFF",
+          "price": 0,
+          "class": "bg-white border"
+        },
+        {
+          "name": "Preto Carbono",
+          "hex": "#0F172A",
+          "price": 1500,
+          "class": "bg-slate-900"
+        }
+      ],
+      "wheels": [
+        {
+          "name": "Rodas de Liga Leve Originais de Fábrica",
+          "size": "16\"",
+          "image": "Original16",
+          "price": 0
+        }
+      ],
+      "detailUrl": "https://www.garagemdonelsinho.com.br/Veiculo/kicks-1.6-16v-flexstart-s-direct-4p-xtronic-2019/5167354/detalhes",
+      "sellerName": "Garagem do Nelsinho",
+      "sellerPhone": "(19) 99765-4321",
+      "gallery": [
+        "https://www.autocerto.com/fotos/6983/5167354/1_101342.jpg",
+        "https://www.autocerto.com/fotos/6983/5167354/1_101345.jpg",
+        "https://www.autocerto.com/fotos/6983/5167354/1_101347.jpg",
+        "https://www.autocerto.com/fotos/6983/5167354/1_101350.jpg",
+        "https://www.autocerto.com/fotos/6983/5167354/1_101352.jpg",
+        "https://www.autocerto.com/fotos/6983/5167354/1_101354.jpg",
+        "https://www.autocerto.com/fotos/6983/5167354/1_101359.jpg",
+        "https://www.autocerto.com/fotos/6983/5167354/1_101402.jpg",
+        "https://www.autocerto.com/fotos/6983/5167354/1_101405.jpg",
+        "https://www.autocerto.com/fotos/6983/5167354/1_101407.jpg",
+        "https://www.autocerto.com/fotos/6983/5167354/1_101409.jpg",
+        "https://www.autocerto.com/fotos/6983/5167354/1_101411.jpg",
+        "https://www.autocerto.com/fotos/6983/5167354/1_101412.jpg",
+        "https://www.autocerto.com/fotos/6983/5167354/1_101414.jpg",
+        "https://www.autocerto.com/fotos/6983/5167354/1_101416.jpg",
+        "https://www.autocerto.com/fotos/6983/5167354/1_101419.jpg",
+        "https://www.autocerto.com/fotos/6983/5167354/1_101422.jpg",
+        "https://www.autocerto.com/fotos/6983/5167354/1_101424.jpg",
+        "https://www.autocerto.com/fotos/6983/5167354/1_101429.jpg",
+        "https://www.autocerto.com/fotos/6983/5167354/1_101434.jpg",
+        "https://www.autocerto.com/fotos/6983/5167354/1_101438.jpg",
+        "https://www.autocerto.com/fabricantes/nissan.webp"
+      ],
+      "features": [
+        "Ar condicionado",
+        "Retrovisores elétricos",
+        "Vidros elétricos",
+        "Alarme",
+        "Freios ABS",
+        "Rodas de liga leve",
+        "Travas elétricas",
+        "Direção Hidraulica",
+        "Multimídia",
+        "Vidros elétricos Traseiros",
+        "Banco do motorista com ajuste de altura",
+        "Sensor de estacionamento",
+        "Airbag motorista",
+        "Airbag passageiro",
+        "Câmera de ré"
+      ]
+    },
+    {
+      "id": "scraped-26-renault-2019",
+      "name": "RENAULT CAPTUR 1.6 16V SCE FLEX LIFE X-TRONIC",
+      "brand": "Renault",
+      "role": "Renault Inteligência Artificial Jina",
+      "category": "suv",
+      "price": 69900,
+      "image": "https://www.autocerto.com/fotos/6983/5079645/1_094010.jpg",
+      "description": "RENAULT CAPTUR 1.6 16V SCE FLEX LIFE X-TRONIC 2018/2019",
+      "year": 2019,
+      "isAvailableForTestDrive": true,
+      "specs": {
+        "acceleration": 9.5,
+        "topSpeed": 198,
+        "power": 130,
+        "torque": 205,
+        "rangeOrdisplacement": "90.909 km",
+        "weight": 1220
+      },
+      "paints": [
+        {
+          "name": "Cinza Platinum",
+          "hex": "#475569",
+          "price": 0,
+          "class": "bg-slate-600"
+        },
+        {
+          "name": "Branco Diamante",
+          "hex": "#FFFFFF",
+          "price": 0,
+          "class": "bg-white border"
+        },
+        {
+          "name": "Preto Carbono",
+          "hex": "#0F172A",
+          "price": 1500,
+          "class": "bg-slate-900"
+        }
+      ],
+      "wheels": [
+        {
+          "name": "Rodas de Liga Leve Originais de Fábrica",
+          "size": "16\"",
+          "image": "Original16",
+          "price": 0
+        }
+      ],
+      "detailUrl": "https://www.garagemdonelsinho.com.br/Veiculo/captur-1.6-16v-sce-flex-life-x-tronic-2019/5079645/detalhes",
+      "sellerName": "Garagem do Nelsinho",
+      "sellerPhone": "(19) 99765-4321",
+      "gallery": [
+        "https://www.autocerto.com/fotos/6983/5079645/1_094010.jpg",
+        "https://www.autocerto.com/fotos/6983/5079645/1_094013.jpg",
+        "https://www.autocerto.com/fotos/6983/5079645/1_094016.jpg",
+        "https://www.autocerto.com/fotos/6983/5079645/1_094022.jpg",
+        "https://www.autocerto.com/fotos/6983/5079645/1_094025.jpg",
+        "https://www.autocerto.com/fotos/6983/5079645/1_094028.jpg",
+        "https://www.autocerto.com/fotos/6983/5079645/1_094033.jpg",
+        "https://www.autocerto.com/fotos/6983/5079645/1_094034.jpg",
+        "https://www.autocerto.com/fotos/6983/5079645/1_094037.jpg",
+        "https://www.autocerto.com/fotos/6983/5079645/1_094039.jpg",
+        "https://www.autocerto.com/fotos/6983/5079645/1_094041.jpg",
+        "https://www.autocerto.com/fotos/6983/5079645/1_094042.jpg",
+        "https://www.autocerto.com/fotos/6983/5079645/1_094044.jpg",
+        "https://www.autocerto.com/fotos/6983/5079645/1_094045.jpg",
+        "https://www.autocerto.com/fotos/6983/5079645/1_094046.jpg",
+        "https://www.autocerto.com/fotos/6983/5079645/1_094048.jpg",
+        "https://www.autocerto.com/fotos/6983/5079645/1_094049.jpg",
+        "https://www.autocerto.com/fotos/6983/5079645/1_094050.jpg",
+        "https://www.autocerto.com/fotos/6983/5079645/1_094052.jpg",
+        "https://www.autocerto.com/fotos/6983/5079645/1_094053.jpg",
+        "https://www.autocerto.com/fabricantes/renault.webp"
+      ],
+      "features": [
+        "Ar condicionado",
+        "Retrovisores elétricos",
+        "Vidros elétricos",
+        "Alarme",
+        "Freios ABS",
+        "Rodas de liga leve",
+        "Travas elétricas",
+        "Vidros elétricos Traseiros",
+        "Banco do motorista com ajuste de altura",
+        "Sensor de estacionamento",
+        "Airbag motorista",
+        "Airbag passageiro"
+      ]
+    },
+    {
+      "id": "scraped-27-toyota-2023",
+      "name": "TOYOTA COROLLA 2.0 VVT-IE FLEX XEI DIRECT SHIFT",
+      "brand": "Toyota",
+      "role": "Toyota Inteligência Artificial Jina",
+      "category": "hypercars",
+      "price": 126970,
+      "image": "https://www.autocerto.com/fotos/6983/5282254/1_113703.jpg",
+      "description": "TOYOTA COROLLA 2.0 VVT-IE FLEX XEI DIRECT SHIFT 2023/2023",
+      "year": 2023,
+      "isAvailableForTestDrive": true,
+      "specs": {
+        "acceleration": 11,
+        "topSpeed": 180,
+        "power": 116,
+        "torque": 160,
+        "rangeOrdisplacement": "35.551 km",
+        "weight": 1220
+      },
+      "paints": [
+        {
+          "name": "Cinza Platinum",
+          "hex": "#475569",
+          "price": 0,
+          "class": "bg-slate-600"
+        },
+        {
+          "name": "Branco Diamante",
+          "hex": "#FFFFFF",
+          "price": 0,
+          "class": "bg-white border"
+        },
+        {
+          "name": "Preto Carbono",
+          "hex": "#0F172A",
+          "price": 1500,
+          "class": "bg-slate-900"
+        }
+      ],
+      "wheels": [
+        {
+          "name": "Rodas de Liga Leve Originais de Fábrica",
+          "size": "16\"",
+          "image": "Original16",
+          "price": 0
+        }
+      ],
+      "detailUrl": "https://www.garagemdonelsinho.com.br/Veiculo/corolla-2.0-vvt-ie-flex-xei-direct-shift-2023/5282254/detalhes",
+      "sellerName": "Garagem do Nelsinho",
+      "sellerPhone": "(19) 99765-4321",
+      "gallery": [
+        "https://www.autocerto.com/fotos/6983/5282254/1_113703.jpg",
+        "https://www.autocerto.com/fotos/6983/5282254/1_113707.jpg",
+        "https://www.autocerto.com/fotos/6983/5282254/1_113712.jpg",
+        "https://www.autocerto.com/fotos/6983/5282254/1_113715.jpg",
+        "https://www.autocerto.com/fotos/6983/5282254/1_113717.jpg",
+        "https://www.autocerto.com/fotos/6983/5282254/1_113720.jpg",
+        "https://www.autocerto.com/fotos/6983/5282254/1_113724.jpg",
+        "https://www.autocerto.com/fotos/6983/5282254/1_113728.jpg",
+        "https://www.autocerto.com/fotos/6983/5282254/1_113732.jpg",
+        "https://www.autocerto.com/fotos/6983/5282254/1_113734.jpg",
+        "https://www.autocerto.com/fotos/6983/5282254/1_113736.jpg",
+        "https://www.autocerto.com/fotos/6983/5282254/1_113740.jpg",
+        "https://www.autocerto.com/fotos/6983/5282254/1_113742.jpg",
+        "https://www.autocerto.com/fotos/6983/5282254/1_113745.jpg",
+        "https://www.autocerto.com/fotos/6983/5282254/1_114029.jpg",
+        "https://www.autocerto.com/fotos/6983/5282254/1_114032.jpg",
+        "https://www.autocerto.com/fotos/6983/5282254/1_114035.jpg",
+        "https://www.autocerto.com/fotos/6983/5282254/1_114037.jpg",
+        "https://www.autocerto.com/fotos/6983/5282254/1_114041.jpg",
+        "https://www.autocerto.com/fotos/6983/5282254/1_114043.jpg",
+        "https://www.autocerto.com/fabricantes/toyota.webp"
+      ],
+      "features": [
+        "Ar condicionado",
+        "Bancos de Couro",
+        "Retrovisores elétricos",
+        "Vidros elétricos",
+        "Alarme",
+        "Freios ABS",
+        "Rodas de liga leve",
+        "Travas elétricas",
+        "Ar condicionado Digital",
+        "Multimídia",
+        "Vidros elétricos Traseiros",
+        "Banco do motorista com ajuste de altura",
+        "Sensor de chuva",
+        "Sensor de estacionamento",
+        "Airbag laterais",
+        "Airbag motorista",
+        "Airbag passageiro",
+        "Retrovisor fotocrômico",
+        "Câmera de ré"
+      ]
+    },
+    {
+      "id": "scraped-29-volkswagen-1976",
+      "name": "VOLKSWAGEN FUSCA 1.3 8V GASOLINA 2P MANUAL",
+      "brand": "Volkswagen",
+      "role": "Volkswagen Inteligência Artificial Jina",
+      "category": "classics",
+      "price": 29900,
+      "image": "https://www.autocerto.com/fotos/6983/5282546/1_090947.jpg",
+      "description": "VOLKSWAGEN FUSCA 1.3 8V GASOLINA 2P MANUAL 1976/1976",
+      "year": 1976,
+      "isAvailableForTestDrive": true,
+      "specs": {
+        "acceleration": 11,
+        "topSpeed": 180,
+        "power": 116,
+        "torque": 160,
+        "rangeOrdisplacement": "9.090 km",
+        "weight": 1220
+      },
+      "paints": [
+        {
+          "name": "Cinza Platinum",
+          "hex": "#475569",
+          "price": 0,
+          "class": "bg-slate-600"
+        },
+        {
+          "name": "Branco Diamante",
+          "hex": "#FFFFFF",
+          "price": 0,
+          "class": "bg-white border"
+        },
+        {
+          "name": "Preto Carbono",
+          "hex": "#0F172A",
+          "price": 1500,
+          "class": "bg-slate-900"
+        }
+      ],
+      "wheels": [
+        {
+          "name": "Rodas de Liga Leve Originais de Fábrica",
+          "size": "16\"",
+          "image": "Original16",
+          "price": 0
+        }
+      ],
+      "detailUrl": "https://www.garagemdonelsinho.com.br/Veiculo/fusca-1.3-8v-gasolina-2p-manual-1976/5282546/detalhes",
+      "sellerName": "Garagem do Nelsinho",
+      "sellerPhone": "(19) 99765-4321",
+      "gallery": [
+        "https://www.autocerto.com/fotos/6983/5282546/1_090947.jpg",
+        "https://www.autocerto.com/fotos/6983/5282546/1_090948.jpg",
+        "https://www.autocerto.com/fotos/6983/5282546/1_090949.jpg",
+        "https://www.autocerto.com/fotos/6983/5282546/1_090951.jpg",
+        "https://www.autocerto.com/fotos/6983/5282546/1_090952.jpg",
+        "https://www.autocerto.com/fotos/6983/5282546/1_090953.jpg",
+        "https://www.autocerto.com/fotos/6983/5282546/1_090954.jpg",
+        "https://www.autocerto.com/fotos/6983/5282546/1_090955.jpg",
+        "https://www.autocerto.com/fotos/6983/5282546/1_090956.jpg",
+        "https://www.autocerto.com/fotos/6983/5282546/1_090957.jpg",
+        "https://www.autocerto.com/fotos/6983/5282546/1_090958.jpg",
+        "https://www.autocerto.com/fotos/6983/5282546/2_090958.jpg",
+        "https://www.autocerto.com/fotos/6983/5282546/1_090959.jpg",
+        "https://www.autocerto.com/fotos/6983/5282546/1_091000.jpg",
+        "https://www.autocerto.com/fotos/6983/5282546/1_091001.jpg",
+        "https://www.autocerto.com/fotos/6983/5282546/1_091002.jpg",
+        "https://www.autocerto.com/fotos/6983/5282546/1_091003.jpg",
+        "https://www.autocerto.com/fotos/6983/5282546/1_091004.jpg",
+        "https://www.autocerto.com/fotos/6983/5282546/2_091004.jpg",
+        "https://www.autocerto.com/fotos/6983/5282546/1_091005.jpg",
+        "https://www.autocerto.com/fotos/6983/5282546/1_091006.jpg",
+        "https://www.autocerto.com/fotos/6983/5282546/2_091006.jpg",
+        "https://www.autocerto.com/fotos/6983/5282546/1_091007.jpg",
+        "https://www.autocerto.com/fabricantes/volkswagen.webp"
+      ],
+      "features": [
+        "Laudo de vistoria cautelar aprovado",
+        "Quilometragem certificada",
+        "Banco com ajuste de altura",
+        "Procedência 100% em dia"
+      ]
+    },
+    {
+      "id": "scraped-30-volkswagen-2021",
+      "name": "VOLKSWAGEN NIVUS 1.0 200 TSI TOTAL FLEX HIGHLINE AUTOMÁTICO",
+      "brand": "Volkswagen",
+      "role": "Volkswagen Inteligência Artificial Jina",
+      "category": "suv",
+      "price": 108970,
+      "image": "https://www.autocerto.com/fotos/6983/5072319/1_085642.jpg",
+      "description": "Este esplêndido NIVUS 1.0 200 TSI TOTAL FLEX HIGHLINE AUTOMÁTICO ano modelo 2021 está disponível.",
+      "year": 2021,
+      "isAvailableForTestDrive": true,
+      "specs": {
+        "acceleration": 9.5,
+        "topSpeed": 198,
+        "power": 130,
+        "torque": 205,
+        "rangeOrdisplacement": "64.754 km",
+        "weight": 1220
+      },
+      "paints": [
+        {
+          "name": "Cinza Platinum",
+          "hex": "#475569",
+          "price": 0,
+          "class": "bg-slate-600"
+        },
+        {
+          "name": "Branco Diamante",
+          "hex": "#FFFFFF",
+          "price": 0,
+          "class": "bg-white border"
+        },
+        {
+          "name": "Preto Carbono",
+          "hex": "#0F172A",
+          "price": 1500,
+          "class": "bg-slate-900"
+        }
+      ],
+      "wheels": [
+        {
+          "name": "Rodas de Liga Leve Originais de Fábrica",
+          "size": "16\"",
+          "image": "Original16",
+          "price": 0
+        }
+      ],
+      "detailUrl": "https://www.garagemdonelsinho.com.br/Veiculo/nivus-1.0-200-tsi-total-flex-highline-automatico-2021/5072319/detalhes",
+      "sellerName": "Garagem do Nelsinho",
+      "sellerPhone": "(19) 99765-4321",
+      "gallery": [
+        "https://www.autocerto.com/fotos/6983/5072319/1_085642.jpg",
+        "https://www.autocerto.com/fotos/6983/5072319/1_085643.jpg",
+        "https://www.autocerto.com/fotos/6983/5072319/1_085645.jpg",
+        "https://www.autocerto.com/fotos/6983/5072319/1_085646.jpg",
+        "https://www.autocerto.com/fotos/6983/5072319/1_085647.jpg",
+        "https://www.autocerto.com/fotos/6983/5072319/1_085648.jpg",
+        "https://www.autocerto.com/fotos/6983/5072319/1_085650.jpg",
+        "https://www.autocerto.com/fotos/6983/5072319/1_085651.jpg",
+        "https://www.autocerto.com/fotos/6983/5072319/1_085652.jpg",
+        "https://www.autocerto.com/fotos/6983/5072319/1_085654.jpg",
+        "https://www.autocerto.com/fotos/6983/5072319/2_085654.jpg",
+        "https://www.autocerto.com/fotos/6983/5072319/1_085655.jpg",
+        "https://www.autocerto.com/fotos/6983/5072319/1_085656.jpg",
+        "https://www.autocerto.com/fotos/6983/5072319/1_085657.jpg",
+        "https://www.autocerto.com/fotos/6983/5072319/1_085700.jpg",
+        "https://www.autocerto.com/fotos/6983/5072319/1_085701.jpg",
+        "https://www.autocerto.com/fotos/6983/5072319/1_085703.jpg",
+        "https://www.autocerto.com/fotos/6983/5072319/1_085706.jpg",
+        "https://www.autocerto.com/fotos/6983/5072319/1_085713.jpg",
+        "https://www.autocerto.com/fotos/6983/5072319/1_085717.jpg",
+        "https://www.autocerto.com/fotos/6983/5072319/1_085723.jpg",
+        "https://www.autocerto.com/fabricantes/volkswagen.webp"
+      ],
+      "features": [
+        "Ar condicionado",
+        "Bancos de Couro",
+        "Retrovisores elétricos",
+        "Vidros elétricos",
+        "Alarme",
+        "Freios ABS",
+        "Rodas de liga leve",
+        "Travas elétricas",
+        "Direção Hidraulica",
+        "Ar condicionado Digital",
+        "Multimídia",
+        "Vidros elétricos Traseiros",
+        "Banco do motorista com ajuste de altura",
+        "Sensor de estacionamento",
+        "Airbag motorista",
+        "Airbag passageiro",
+        "Câmera de ré"
+      ]
+    },
+    {
+      "id": "scraped-30-volkswagen-2024",
+      "name": "VOLKSWAGEN POLO 1.0 170 TSI HIGHLINE AUTOMÁTICO",
+      "brand": "Volkswagen",
+      "role": "Volkswagen Inteligência Artificial Jina",
+      "category": "classics",
+      "price": 135000,
+      "image": "https://www.autocerto.com/fabricantes/volkswagen.webp",
+      "description": "Este esplêndido VOLKSWAGEN POLO 1.0 170 TSI HIGHLINE AUTOMÁTICO ano modelo 2024 está disponível.",
+      "year": 2024,
+      "isAvailableForTestDrive": true,
+      "specs": {
+        "acceleration": 9.5,
+        "topSpeed": 198,
+        "power": 130,
+        "torque": 205,
+        "rangeOrdisplacement": "33.128 km",
+        "weight": 1220
+      },
+      "paints": [
+        {
+          "name": "Cinza Platinum",
+          "hex": "#475569",
+          "price": 0,
+          "class": "bg-slate-600"
+        },
+        {
+          "name": "Branco Diamante",
+          "hex": "#FFFFFF",
+          "price": 0,
+          "class": "bg-white border"
+        },
+        {
+          "name": "Preto Carbono",
+          "hex": "#0F172A",
+          "price": 1500,
+          "class": "bg-slate-900"
+        }
+      ],
+      "wheels": [
+        {
+          "name": "Rodas de Liga Leve Originais de Fábrica",
+          "size": "16\"",
+          "image": "Original16",
+          "price": 0
+        }
+      ],
+      "detailUrl": "https://www.garagemdonelsinho.com.br/Veiculo/polo-1.0-170-tsi-highline-automatico-2024/5364829/detalhes",
+      "sellerName": "Garagem do Nelsinho",
+      "sellerPhone": "(17) 99637-7147",
+      "gallery": [
+        "https://www.autocerto.com/fabricantes/volkswagen.webp"
+      ],
+      "features": [
+        "Bancos de Couro",
+        "Retrovisores elétricos",
+        "Vidros elétricos",
+        "Alarme",
+        "Freios ABS",
+        "Rodas de liga leve",
+        "Travas elétricas",
+        "Ar condicionado Digital",
+        "Multimídia",
+        "Vidros elétricos Traseiros",
+        "Banco do motorista com ajuste de altura",
+        "Sensor de estacionamento",
+        "Airbag motorista",
+        "Airbag passageiro",
+        "Câmera de ré",
+        "Banco traseiro bipartido"
+      ]
+    },
+    {
+      "id": "scraped-31-volkswagen-2024",
+      "name": "VOLKSWAGEN T-CROSS 1.0 200 TSI TOTAL FLEX AUTOMÁTICO",
+      "brand": "Volkswagen",
+      "role": "Volkswagen Inteligência Artificial Jina",
+      "category": "suv",
+      "price": 137000,
+      "image": "https://www.autocerto.com/fabricantes/volkswagen.webp",
+      "description": "Este esplêndido VOLKSWAGEN T-CROSS 1.0 200 TSI TOTAL FLEX AUTOMÁTICO ano modelo 2024 está disponível.",
+      "year": 2024,
+      "isAvailableForTestDrive": true,
+      "specs": {
+        "acceleration": 11,
+        "topSpeed": 180,
+        "power": 116,
+        "torque": 160,
+        "rangeOrdisplacement": "45.821 km",
+        "weight": 1220
+      },
+      "paints": [
+        {
+          "name": "Cinza Platinum",
+          "hex": "#475569",
+          "price": 0,
+          "class": "bg-slate-600"
+        },
+        {
+          "name": "Branco Diamante",
+          "hex": "#FFFFFF",
+          "price": 0,
+          "class": "bg-white border"
+        },
+        {
+          "name": "Preto Carbono",
+          "hex": "#0F172A",
+          "price": 1500,
+          "class": "bg-slate-900"
+        }
+      ],
+      "wheels": [
+        {
+          "name": "Rodas de Liga Leve Originais de Fábrica",
+          "size": "16\"",
+          "image": "Original16",
+          "price": 0
+        }
+      ],
+      "detailUrl": "https://www.garagemdonelsinho.com.br/Veiculo/t-cross-1.0-200-tsi-total-flex-automatico-2024/5375170/detalhes",
+      "sellerName": "Garagem do Nelsinho",
+      "sellerPhone": "(17) 99637-7147",
+      "gallery": [
+        "https://www.autocerto.com/fabricantes/volkswagen.webp"
+      ],
+      "features": [
+        "Ar condicionado",
+        "Bancos de Couro",
+        "Retrovisores elétricos",
+        "Vidros elétricos",
+        "Alarme",
+        "Freios ABS",
+        "Rodas de liga leve",
+        "Travas elétricas",
+        "Multimídia",
+        "Vidros elétricos Traseiros",
+        "Banco do motorista com ajuste de altura",
+        "Airbag motorista",
+        "Airbag passageiro",
+        "Câmera de ré",
+        "Banco traseiro bipartido"
+      ]
+    },
+    {
+      "id": "scraped-32-volkswagen-2022",
+      "name": "VOLKSWAGEN T-CROSS 1.4 250 TSI TOTAL FLEX HIGHLINE AUTOMÁTICO",
+      "brand": "Volkswagen",
+      "role": "Volkswagen Inteligência Artificial Jina",
+      "category": "suv",
+      "price": 116970,
+      "image": "https://www.autocerto.com/fotos/6983/5339121/1_102326.jpg",
+      "description": "Este esplêndido Volkswagen T-Cross 1.4 250 TSI Total Flex Highline Automático ano modelo 2022 está disponível.",
+      "year": 2022,
+      "isAvailableForTestDrive": true,
+      "specs": {
+        "acceleration": 9.5,
+        "topSpeed": 198,
+        "power": 130,
+        "torque": 205,
+        "rangeOrdisplacement": "46.793 km",
+        "weight": 1220
+      },
+      "paints": [
+        {
+          "name": "Cinza Platinum",
+          "hex": "#475569",
+          "price": 0,
+          "class": "bg-slate-600"
+        },
+        {
+          "name": "Branco Diamante",
+          "hex": "#FFFFFF",
+          "price": 0,
+          "class": "bg-white border"
+        },
+        {
+          "name": "Preto Carbono",
+          "hex": "#0F172A",
+          "price": 1500,
+          "class": "bg-slate-900"
+        }
+      ],
+      "wheels": [
+        {
+          "name": "Rodas de Liga Leve Originais de Fábrica",
+          "size": "16\"",
+          "image": "Original16",
+          "price": 0
+        }
+      ],
+      "detailUrl": "https://www.garagemdonelsinho.com.br/Veiculo/t-cross-1.4-250-tsi-total-flex-highline-automatico-2022/5339121/detalhes",
+      "sellerName": "Garagem do Nelsinho",
+      "sellerPhone": "(19) 99765-4321",
+      "gallery": [
+        "https://www.autocerto.com/fotos/6983/5339121/1_102326.jpg",
+        "https://www.autocerto.com/fotos/6983/5339121/1_102328.jpg",
+        "https://www.autocerto.com/fotos/6983/5339121/1_102329.jpg",
+        "https://www.autocerto.com/fotos/6983/5339121/1_102330.jpg",
+        "https://www.autocerto.com/fotos/6983/5339121/1_102331.jpg",
+        "https://www.autocerto.com/fotos/6983/5339121/2_102331.jpg",
+        "https://www.autocerto.com/fotos/6983/5339121/1_102332.jpg",
+        "https://www.autocerto.com/fotos/6983/5339121/1_102333.jpg",
+        "https://www.autocerto.com/fotos/6983/5339121/1_102334.jpg",
+        "https://www.autocerto.com/fotos/6983/5339121/1_102336.jpg",
+        "https://www.autocerto.com/fotos/6983/5339121/1_102337.jpg",
+        "https://www.autocerto.com/fotos/6983/5339121/1_102338.jpg",
+        "https://www.autocerto.com/fotos/6983/5339121/1_102339.jpg",
+        "https://www.autocerto.com/fotos/6983/5339121/1_102340.jpg",
+        "https://www.autocerto.com/fotos/6983/5339121/1_102341.jpg",
+        "https://www.autocerto.com/fotos/6983/5339121/1_102342.jpg",
+        "https://www.autocerto.com/fotos/6983/5339121/1_102343.jpg",
+        "https://www.autocerto.com/fotos/6983/5339121/1_102344.jpg",
+        "https://www.autocerto.com/fotos/6983/5339121/1_102345.jpg",
+        "https://www.autocerto.com/fotos/6983/5339121/1_102346.jpg",
+        "https://www.autocerto.com/fotos/6983/5339121/1_102347.jpg",
+        "https://www.autocerto.com/fabricantes/volkswagen.webp"
+      ],
+      "features": [
+        "Bancos de Couro",
+        "Retrovisores elétricos",
+        "Vidros elétricos",
+        "Alarme",
+        "Freios ABS",
+        "Rodas de liga leve",
+        "Travas elétricas",
+        "Ar condicionado Digital",
+        "Multimídia",
+        "Vidros elétricos Traseiros",
+        "Banco do motorista com ajuste de altura",
+        "Sensor de estacionamento",
+        "Airbag laterais",
+        "Airbag motorista",
+        "Airbag passageiro",
+        "Câmera de ré"
+      ]
+    },
+    {
+      "id": "scraped-33-volkswagen-2025",
+      "name": "VOLKSWAGEN T-CROSS 1.4 250 TSI TOTAL FLEX HIGHLINE AUTOMÁTICO",
+      "brand": "Volkswagen",
+      "role": "Volkswagen Inteligência Artificial Jina",
+      "category": "suv",
+      "price": 141000,
+      "image": "https://www.autocerto.com/fabricantes/volkswagen.webp",
+      "description": "Este esplêndido VOLKSWAGEN T-CROSS 1.4 250 TSI TOTAL FLEX HIGHLINE AUTOMÁTICO ano modelo 2025 está disponível.",
+      "year": 2025,
+      "isAvailableForTestDrive": true,
+      "specs": {
+        "acceleration": 11,
+        "topSpeed": 180,
+        "power": 116,
+        "torque": 160,
+        "rangeOrdisplacement": "17.618 km",
+        "weight": 1220
+      },
+      "paints": [
+        {
+          "name": "Cinza Platinum",
+          "hex": "#475569",
+          "price": 0,
+          "class": "bg-slate-600"
+        },
+        {
+          "name": "Branco Diamante",
+          "hex": "#FFFFFF",
+          "price": 0,
+          "class": "bg-white border"
+        },
+        {
+          "name": "Preto Carbono",
+          "hex": "#0F172A",
+          "price": 1500,
+          "class": "bg-slate-900"
+        }
+      ],
+      "wheels": [
+        {
+          "name": "Rodas de Liga Leve Originais de Fábrica",
+          "size": "16\"",
+          "image": "Original16",
+          "price": 0
+        }
+      ],
+      "detailUrl": "https://www.garagemdonelsinho.com.br/Veiculo/t-cross-1.4-250-tsi-total-flex-highline-automatico-2025/5220784/detalhes",
+      "sellerName": "Garagem do Nelsinho",
+      "sellerPhone": "(17) 99637-7147",
+      "gallery": [
+        "https://www.autocerto.com/fabricantes/volkswagen.webp"
+      ],
+      "features": [
+        "Bancos de Couro",
+        "Retrovisores elétricos",
+        "Vidros elétricos",
+        "Alarme",
+        "Freios ABS",
+        "Rodas de liga leve",
+        "Travas elétricas",
+        "Ar condicionado Digital",
+        "Multimídia",
+        "Vidros elétricos Traseiros",
+        "Banco do motorista com ajuste de altura",
+        "Airbag motorista",
+        "Airbag passageiro",
+        "Câmera de ré"
+      ]
+    },
+    {
+      "id": "scraped-33-volkswagen-2020",
+      "name": "VOLKSWAGEN T-CROSS 1.0 200 TSI TOTAL FLEX SENSE AUTOMÁTICO",
+      "brand": "Volkswagen",
+      "role": "Volkswagen Inteligência Artificial Jina",
+      "category": "suv",
+      "price": 91970,
+      "image": "https://www.autocerto.com/fotos/6983/5160803/1_095026.jpg",
+      "description": "Este esplêndido T-CROSS 1.0 200 TSI TOTAL FLEX SENSE AUTOMÁTICO ano modelo 2020 está disponível.",
+      "year": 2020,
+      "isAvailableForTestDrive": true,
+      "specs": {
+        "acceleration": 11,
+        "topSpeed": 180,
+        "power": 116,
+        "torque": 160,
+        "rangeOrdisplacement": "64.838 km",
+        "weight": 1220
+      },
+      "paints": [
+        {
+          "name": "Cinza Platinum",
+          "hex": "#475569",
+          "price": 0,
+          "class": "bg-slate-600"
+        },
+        {
+          "name": "Branco Diamante",
+          "hex": "#FFFFFF",
+          "price": 0,
+          "class": "bg-white border"
+        },
+        {
+          "name": "Preto Carbono",
+          "hex": "#0F172A",
+          "price": 1500,
+          "class": "bg-slate-900"
+        }
+      ],
+      "wheels": [
+        {
+          "name": "Rodas de Liga Leve Originais de Fábrica",
+          "size": "16\"",
+          "image": "Original16",
+          "price": 0
+        }
+      ],
+      "detailUrl": "https://www.garagemdonelsinho.com.br/Veiculo/t-cross-1.0-200-tsi-total-flex-sense-automatico-2020/5160803/detalhes",
+      "sellerName": "Garagem do Nelsinho",
+      "sellerPhone": "(19) 99765-4321",
+      "gallery": [
+        "https://www.autocerto.com/fotos/6983/5160803/1_095026.jpg",
+        "https://www.autocerto.com/fotos/6983/5160803/1_095028.jpg",
+        "https://www.autocerto.com/fotos/6983/5160803/1_095029.jpg",
+        "https://www.autocerto.com/fotos/6983/5160803/1_095030.jpg",
+        "https://www.autocerto.com/fotos/6983/5160803/2_095030.jpg",
+        "https://www.autocerto.com/fotos/6983/5160803/1_095031.jpg",
+        "https://www.autocerto.com/fotos/6983/5160803/1_095033.jpg",
+        "https://www.autocerto.com/fotos/6983/5160803/1_095034.jpg",
+        "https://www.autocerto.com/fotos/6983/5160803/1_095035.jpg",
+        "https://www.autocerto.com/fotos/6983/5160803/1_095036.jpg",
+        "https://www.autocerto.com/fotos/6983/5160803/1_095038.jpg",
+        "https://www.autocerto.com/fotos/6983/5160803/1_095039.jpg",
+        "https://www.autocerto.com/fotos/6983/5160803/1_095040.jpg",
+        "https://www.autocerto.com/fotos/6983/5160803/1_095041.jpg",
+        "https://www.autocerto.com/fotos/6983/5160803/1_095043.jpg",
+        "https://www.autocerto.com/fotos/6983/5160803/1_095044.jpg",
+        "https://www.autocerto.com/fotos/6983/5160803/1_095046.jpg",
+        "https://www.autocerto.com/fotos/6983/5160803/1_095047.jpg",
+        "https://www.autocerto.com/fotos/6983/5160803/1_095048.jpg",
+        "https://www.autocerto.com/fotos/6983/5160803/1_095050.jpg",
+        "https://www.autocerto.com/fabricantes/volkswagen.webp"
+      ],
+      "features": [
+        "Ar condicionado",
+        "Retrovisores elétricos",
+        "Vidros elétricos",
+        "Alarme",
+        "Freios ABS",
+        "Rodas de liga leve",
+        "Travas elétricas",
+        "Multimídia",
+        "Vidros elétricos Traseiros",
+        "Banco do motorista com ajuste de altura",
+        "Sensor de estacionamento",
+        "Airbag motorista",
+        "Airbag passageiro",
+        "Câmera de ré"
+      ]
+    }
+  ],
+  "timestamp": "2026-08-20T15:18:02.097Z",
+  "source": "local_file_cache"
+}

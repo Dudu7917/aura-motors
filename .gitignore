@@ -1,0 +1,20 @@
+node_modules/
+build/
+dist/
+coverage/
+.DS_Store
+*.log
+agent-debug.log
+
+# Environment variables
+.env*
+!.env.example
+
+# Baileys / WhatsApp session & auth keys (sensitive)
+auth_info_baileys/
+whatsapp-auth/
+
+# Temporary / downloads / scratch
+downloads/
+scratch_nelsinho.html
+fipe-cache-backup*.json

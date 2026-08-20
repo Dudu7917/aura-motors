@@ -1,0 +1,1299 @@
+{
+  "leads": [
+    {
+      "id": "lead_import_1784137306314_0",
+      "fullName": "Dayana",
+      "phone": "(34) 99769-6523",
+      "desiredBrand": "Honda",
+      "desiredModel": "CIVIC",
+      "minYear": 2016,
+      "createdAt": "2026-07-15T17:41:46.313Z",
+      "contacted": false
+    },
+    {
+      "id": "lead_import_1784137306314_1",
+      "fullName": "Juliano Volpiani",
+      "phone": "(17) 99252-828",
+      "desiredBrand": "Toyota",
+      "desiredModel": "Hilux",
+      "maxPrice": 145000,
+      "createdAt": "2026-07-15T17:41:46.313Z"
+    },
+    {
+      "id": "lead_import_1784137306314_2",
+      "fullName": "Antonio",
+      "phone": "(13) 97401-4600",
+      "desiredBrand": "Renault",
+      "desiredModel": "CAPTUR",
+      "maxPrice": 70000,
+      "createdAt": "2026-07-15T17:41:46.313Z"
+    },
+    {
+      "id": "lead_import_1784137306314_3",
+      "fullName": "Vander",
+      "phone": "(11) 97162-3212",
+      "desiredBrand": "Volkswagen",
+      "desiredModel": "TAOS HIGLINE ou T-CROSS Highline",
+      "minYear": 2022,
+      "createdAt": "2026-07-15T17:41:46.313Z"
+    },
+    {
+      "id": "lead_import_1784137306314_4",
+      "fullName": "Matheus",
+      "phone": "(17) 99109-8020",
+      "desiredBrand": "Honda",
+      "desiredModel": "HR-V",
+      "maxPrice": 100000,
+      "createdAt": "2026-07-15T17:41:46.313Z"
+    },
+    {
+      "id": "lead_import_1784137306314_5",
+      "fullName": "Marcio Gazetti",
+      "phone": "(17) 99132-9909",
+      "desiredBrand": "Fiat",
+      "desiredModel": "FASTBACK",
+      "maxPrice": 100000,
+      "createdAt": "2026-07-15T17:41:46.313Z"
+    },
+    {
+      "id": "lead_import_1784137306314_6",
+      "fullName": "Ana Clara",
+      "phone": "(34) 9975-2311",
+      "desiredBrand": "Ford",
+      "desiredModel": "ECOSPORT",
+      "maxPrice": 60000,
+      "createdAt": "2026-07-15T17:41:46.313Z"
+    },
+    {
+      "id": "lead_import_1784137306314_7",
+      "fullName": "Cassia Becari",
+      "phone": "(17) 98822-3315",
+      "desiredBrand": "Fiat",
+      "desiredModel": "Strada",
+      "maxPrice": 40000,
+      "createdAt": "2026-07-15T17:41:46.313Z"
+    },
+    {
+      "id": "lead_import_1784137306314_8",
+      "fullName": "Samuel Guerra de Oliveira",
+      "phone": "(11) 93407-1879",
+      "desiredBrand": "Renault",
+      "desiredModel": "CAPTUR",
+      "minYear": 2019,
+      "notes": "aut na cor branca ou prata",
+      "createdAt": "2026-07-15T17:41:46.313Z"
+    },
+    {
+      "id": "lead_import_1784137306315_9",
+      "fullName": "Camila",
+      "phone": "(17) 99674-9553",
+      "desiredBrand": "Chevrolet",
+      "desiredModel": "S10 4X4 DIESEL",
+      "createdAt": "2026-07-15T17:41:46.313Z"
+    },
+    {
+      "id": "lead_import_1784137306315_10",
+      "fullName": "Clenniane Sousa",
+      "phone": "(17) 99733-3508",
+      "desiredBrand": "Volkswagen",
+      "desiredModel": "Nivus Highline",
+      "createdAt": "2026-07-15T17:41:46.313Z"
+    },
+    {
+      "id": "lead_import_1784137306315_11",
+      "fullName": "Edinéia",
+      "phone": "(17) 99717-1017",
+      "desiredBrand": "",
+      "desiredModel": "Moto",
+      "createdAt": "2026-07-15T17:41:46.313Z"
+    },
+    {
+      "id": "lead_import_1784137306315_12",
+      "fullName": "Viscarlos",
+      "phone": "(17) 99737-2364",
+      "desiredBrand": "",
+      "desiredModel": "STRADA ou Saveiro ou Tracker",
+      "minYear": 2021,
+      "maxPrice": 90000,
+      "createdAt": "2026-07-15T17:41:46.313Z"
+    },
+    {
+      "id": "lead_import_1784137306315_13",
+      "fullName": "Eliza",
+      "phone": "(17) 99649-2173",
+      "desiredBrand": "Volkswagen",
+      "desiredModel": "POLO",
+      "maxPrice": 70000,
+      "createdAt": "2026-07-15T17:41:46.313Z"
+    },
+    {
+      "id": "lead_import_1784137306315_14",
+      "fullName": "Perolan",
+      "phone": "(17) 99766-1644",
+      "desiredBrand": "Renault",
+      "desiredModel": "Duster Automático",
+      "minYear": 2017,
+      "createdAt": "2026-07-15T17:41:46.313Z"
+    },
+    {
+      "id": "lead_import_1784137306315_15",
+      "fullName": "Dr. Mateus Báccaro",
+      "phone": "(17) 99782-5322",
+      "desiredBrand": "Volkswagen",
+      "desiredModel": "TAOS",
+      "notes": "com teto solar",
+      "createdAt": "2026-07-15T17:41:46.313Z",
+      "contacted": true
+    },
+    {
+      "id": "lead_import_1784137306315_16",
+      "fullName": "Ronaldo",
+      "phone": "(17) 99237-7928",
+      "desiredBrand": "Volkswagen",
+      "desiredModel": "T-CROSS ou NIVUS HIGLINE",
+      "minYear": 2022,
+      "notes": "baixa km",
+      "createdAt": "2026-07-15T17:41:46.313Z"
+    },
+    {
+      "id": "lead_import_1784137306315_17",
+      "fullName": "João",
+      "phone": "(11) 94176-1280",
+      "desiredBrand": "Ford",
+      "desiredModel": "ECOSPORT",
+      "minYear": 2019,
+      "createdAt": "2026-07-15T17:41:46.313Z"
+    },
+    {
+      "id": "lead_import_1784137306315_18",
+      "fullName": "Moacir Ponte Volpi",
+      "phone": "(17) 98829-6424",
+      "desiredBrand": "Jeep",
+      "desiredModel": "Compass Limited",
+      "minYear": 2018,
+      "createdAt": "2026-07-15T17:41:46.313Z"
+    },
+    {
+      "id": "lead_import_1784137306315_19",
+      "fullName": "Julio cesar",
+      "phone": "(34) 9698-3177",
+      "desiredBrand": "Chevrolet",
+      "desiredModel": "Onix 1.4 Automático",
+      "createdAt": "2026-07-15T17:41:46.313Z"
+    },
+    {
+      "id": "lead_import_1784137306315_20",
+      "fullName": "Angelina",
+      "phone": "(17) 98821-2993",
+      "desiredBrand": "Honda ou Jeep",
+      "desiredModel": "HR-V ou COMPASS",
+      "maxPrice": 95000,
+      "createdAt": "2026-07-15T17:41:46.313Z"
+    },
+    {
+      "id": "lead_import_1784137306315_21",
+      "fullName": "Vanda",
+      "phone": "(17) 98153-7653",
+      "desiredBrand": "Hyundai",
+      "desiredModel": "HB20S Platinum 1.0 Turbo Automática",
+      "notes": "preferencialmente na cor Branco Atlas",
+      "createdAt": "2026-07-15T17:41:46.313Z"
+    },
+    {
+      "id": "lead_import_1784137306315_22",
+      "fullName": "Gabriel Luana",
+      "phone": "(17) 99170-9486",
+      "desiredBrand": "Honda ou Hyundai",
+      "desiredModel": "City ou HB20 automático",
+      "maxPrice": 60000,
+      "createdAt": "2026-07-15T17:41:46.313Z"
+    },
+    {
+      "id": "lead_import_1784137306315_23",
+      "fullName": "Aline",
+      "phone": "(17) 99123-2692",
+      "desiredBrand": "Hyundai, Honda, Chevrolet",
+      "desiredModel": "CRETA, HR-V Branca, TRACKER",
+      "maxPrice": 80000,
+      "createdAt": "2026-07-15T17:41:46.313Z"
+    },
+    {
+      "id": "lead_import_1784137306315_24",
+      "fullName": "Dejanira Gonçalves",
+      "phone": "(17) 99128-6488",
+      "desiredBrand": "Jeep",
+      "desiredModel": "Compass",
+      "maxPrice": 90000,
+      "createdAt": "2026-07-15T17:41:46.313Z"
+    },
+    {
+      "id": "lead_import_1784137306315_25",
+      "fullName": "Pablo Rocha",
+      "phone": "(17) 99682-8570",
+      "desiredBrand": "Honda",
+      "desiredModel": "Civic",
+      "maxPrice": 70000,
+      "createdAt": "2026-07-15T17:41:46.313Z"
+    },
+    {
+      "id": "lead_import_1784137306315_26",
+      "fullName": "Cristian",
+      "phone": "(17) 99172-2750",
+      "desiredBrand": "Honda ou Hyundai",
+      "desiredModel": "City ou Hb20 sedan",
+      "maxPrice": 60000,
+      "createdAt": "2026-07-15T17:41:46.313Z"
+    },
+    {
+      "id": "lead_import_1784137306315_27",
+      "fullName": "Júnior",
+      "phone": "(16) 99113-1322",
+      "desiredBrand": "BMW ou Honda",
+      "desiredModel": "X3 ou HR-V TOURING",
+      "minYear": 2024,
+      "maxPrice": 170000,
+      "createdAt": "2026-07-15T17:41:46.313Z"
+    },
+    {
+      "id": "lead_import_1784137306315_28",
+      "fullName": "Joice",
+      "phone": "(17) 99180-5766",
+      "desiredBrand": "Toyota",
+      "desiredModel": "COROLLA",
+      "minYear": 2015,
+      "createdAt": "2026-07-15T17:41:46.313Z"
+    },
+    {
+      "id": "lead_import_1784137306315_29",
+      "fullName": "Luiz Carlos Alves",
+      "phone": "(17) 98118-9713",
+      "desiredBrand": "Toyota ou Chevrolet",
+      "desiredModel": "HILUX ou S10",
+      "minYear": 2020,
+      "createdAt": "2026-07-15T17:41:46.313Z"
+    },
+    {
+      "id": "lead_import_1784137306315_30",
+      "fullName": "Tatiane Pacheco",
+      "phone": "(18) 99125-7586",
+      "desiredBrand": "Jeep",
+      "desiredModel": "Compass Diesel",
+      "minYear": 2022,
+      "maxPrice": 120000,
+      "createdAt": "2026-07-15T17:41:46.313Z"
+    },
+    {
+      "id": "lead_import_1784137306315_31",
+      "fullName": "Amauri Caldeira",
+      "phone": "(14) 99790-2678",
+      "desiredBrand": "Chevrolet",
+      "desiredModel": "ONIX",
+      "minYear": 2015,
+      "maxPrice": 60000,
+      "createdAt": "2026-07-15T17:41:46.313Z"
+    },
+    {
+      "id": "lead_import_1784137306315_32",
+      "fullName": "Mariana",
+      "phone": "(16) 99243-3425",
+      "desiredBrand": "Volkswagen",
+      "desiredModel": "POLO HIGHLINE ou CONFORTLINE",
+      "maxPrice": 85000,
+      "createdAt": "2026-07-15T17:41:46.313Z"
+    },
+    {
+      "id": "lead_import_1784137306315_33",
+      "fullName": "Marcos",
+      "phone": "(17) 98146-0099",
+      "desiredBrand": "Fiat",
+      "desiredModel": "TORO",
+      "maxPrice": 90000,
+      "createdAt": "2026-07-15T17:41:46.313Z",
+      "contacted": true
+    },
+    {
+      "id": "lead_import_1784137306315_34",
+      "fullName": "Glaucelaine",
+      "phone": "(17) 99255-5826",
+      "desiredBrand": "Chevrolet ou Hyundai",
+      "desiredModel": "ONIX hatch automático ou HB20 hatch automático",
+      "maxPrice": 75000,
+      "createdAt": "2026-07-15T17:41:46.313Z"
+    },
+    {
+      "id": "lead_import_1784137306315_35",
+      "fullName": "Dorivaldo",
+      "phone": "(17) 99761-1570",
+      "desiredBrand": "Hyundai",
+      "desiredModel": "HB20 Platinum",
+      "createdAt": "2026-07-15T17:41:46.313Z"
+    },
+    {
+      "id": "lead_import_1784137306315_36",
+      "fullName": "Luciana",
+      "phone": "(17) 99124-4607",
+      "desiredBrand": "Volkswagen",
+      "desiredModel": "T-CROSS HIGHLINE",
+      "minYear": 2023,
+      "createdAt": "2026-07-15T17:41:46.313Z"
+    },
+    {
+      "id": "lead_import_1784137306315_37",
+      "fullName": "Eduardo dos Santos Sampaio",
+      "phone": "(17) 99125-2787",
+      "desiredBrand": "Renault",
+      "desiredModel": "Kwid",
+      "maxPrice": 45000,
+      "createdAt": "2026-07-15T17:41:46.313Z"
+    },
+    {
+      "id": "lead_import_1784137306315_38",
+      "fullName": "Rogerio Lima",
+      "phone": "(67) 99257-6282",
+      "desiredBrand": "Toyota",
+      "desiredModel": "SW4",
+      "createdAt": "2026-07-15T17:41:46.313Z"
+    },
+    {
+      "id": "lead_import_1784137306315_39",
+      "fullName": "Bete",
+      "phone": "(17) 99125-5781",
+      "desiredBrand": "Hyundai, Fiat, Chevrolet",
+      "desiredModel": "HB20, Argo ou Onix",
+      "maxPrice": 65000,
+      "createdAt": "2026-07-15T17:41:46.313Z"
+    },
+    {
+      "id": "lead_import_1784137306315_40",
+      "fullName": "Rosana Oliveira",
+      "phone": "(17) 99632-3407",
+      "desiredBrand": "Honda",
+      "desiredModel": "HR-V",
+      "minYear": 2019,
+      "notes": "cor Chumbo",
+      "createdAt": "2026-07-15T17:41:46.313Z"
+    },
+    {
+      "id": "lead_import_1784137306315_41",
+      "fullName": "Edilson",
+      "phone": "(17) 99201-2201",
+      "desiredBrand": "Toyota",
+      "desiredModel": "COROLLA",
+      "minYear": 2019,
+      "createdAt": "2026-07-15T17:41:46.313Z"
+    },
+    {
+      "id": "lead_import_1784137306315_42",
+      "fullName": "Lourival",
+      "phone": "(18) 99790-8754",
+      "desiredBrand": "Fiat",
+      "desiredModel": "Toro",
+      "minYear": 2020,
+      "maxPrice": 100000,
+      "createdAt": "2026-07-15T17:41:46.313Z",
+      "contacted": true
+    },
+    {
+      "id": "lead_import_1784137306315_43",
+      "fullName": "FRANCISCO",
+      "phone": "(16) 99137-6045",
+      "desiredBrand": "Chevrolet ou Volkswagen",
+      "desiredModel": "S10 ou Amarok",
+      "maxPrice": 100000,
+      "createdAt": "2026-07-15T17:41:46.313Z"
+    },
+    {
+      "id": "lead_import_1784137306315_44",
+      "fullName": "Vanderlei",
+      "phone": "(17) 98108-6526",
+      "desiredBrand": "Fiat ou Jeep",
+      "desiredModel": "TORO ou COMPASS",
+      "maxPrice": 90000,
+      "createdAt": "2026-07-15T17:41:46.313Z"
+    },
+    {
+      "id": "lead_import_1784137306315_45",
+      "fullName": "Wellington Dornelos",
+      "phone": "(16) 99705-4034",
+      "desiredBrand": "Honda",
+      "desiredModel": "CIVIC G9",
+      "createdAt": "2026-07-15T17:41:46.313Z"
+    },
+    {
+      "id": "lead_import_1784137306315_46",
+      "fullName": "Antonio Melo",
+      "phone": "(17) 99631-0503",
+      "desiredBrand": "Toyota",
+      "desiredModel": "Corolla",
+      "minYear": 2013,
+      "notes": "exceto cor preta",
+      "createdAt": "2026-07-15T17:41:46.313Z"
+    },
+    {
+      "id": "lead_import_1784137306315_47",
+      "fullName": "Paulo Simão",
+      "phone": "(19) 99449-8760",
+      "desiredBrand": "Toyota",
+      "desiredModel": "Corolla",
+      "minYear": 2018,
+      "createdAt": "2026-07-15T17:41:46.313Z"
+    },
+    {
+      "id": "lead_import_1784137306315_48",
+      "fullName": "Rafael",
+      "phone": "(16) 99182-4618",
+      "desiredBrand": "Jeep",
+      "desiredModel": "Renegade 4x4",
+      "createdAt": "2026-07-15T17:41:46.313Z"
+    },
+    {
+      "id": "lead_import_1784137306315_49",
+      "fullName": "Eduardo dos Santos Sampaio",
+      "phone": "(17) 99125-2787",
+      "desiredBrand": "Renault",
+      "desiredModel": "KWID",
+      "maxPrice": 50000,
+      "createdAt": "2026-07-15T17:41:46.313Z"
+    },
+    {
+      "id": "lead_import_1784137306315_50",
+      "fullName": "Silvio Peschuti",
+      "phone": "(19) 99705-9182",
+      "desiredBrand": "Fiat",
+      "desiredModel": "Toro Diesel",
+      "createdAt": "2026-07-15T17:41:46.313Z"
+    },
+    {
+      "id": "lead_import_1784137306315_51",
+      "fullName": "Leonardo Fernandes",
+      "phone": "(16) 99303-8008",
+      "desiredBrand": "Honda",
+      "desiredModel": "CIVIC G9",
+      "createdAt": "2026-07-15T17:41:46.313Z"
+    },
+    {
+      "id": "lead_import_1784137306315_52",
+      "fullName": "Wellington Dornelos",
+      "phone": "(16) 99705-4034",
+      "desiredBrand": "Honda",
+      "desiredModel": "Civic G9",
+      "createdAt": "2026-07-15T17:41:46.313Z"
+    },
+    {
+      "id": "lead_import_1784137306315_53",
+      "fullName": "Luciana",
+      "phone": "(17) 99124-4607",
+      "desiredBrand": "Toyota",
+      "desiredModel": "Corolla Cross",
+      "createdAt": "2026-07-15T17:41:46.313Z"
+    },
+    {
+      "id": "lead_import_1784137306315_54",
+      "fullName": "Amanda",
+      "phone": "(17) 98198-9577",
+      "desiredBrand": "Fiat",
+      "desiredModel": "Toro",
+      "maxPrice": 95000,
+      "createdAt": "2026-07-15T17:41:46.313Z",
+      "contacted": true
+    },
+    {
+      "id": "lead_import_1784137306315_55",
+      "fullName": "Allan",
+      "phone": "(17) 99662-4403",
+      "desiredBrand": "Chevrolet",
+      "desiredModel": "ONIX AUTOMATICO",
+      "minYear": 2020,
+      "maxPrice": 80000,
+      "createdAt": "2026-07-15T17:41:46.313Z"
+    },
+    {
+      "id": "lead_import_1784137306315_56",
+      "fullName": "Maria Alice Lacerda",
+      "phone": "(17) 99719-6967",
+      "desiredBrand": "Fiat",
+      "desiredModel": "ARGO ou CRONOS",
+      "maxPrice": 80000,
+      "createdAt": "2026-07-15T17:41:46.313Z"
+    },
+    {
+      "id": "lead_import_1784137306315_57",
+      "fullName": "Flavio",
+      "phone": "(14) 99715-7074",
+      "desiredBrand": "Chevrolet",
+      "desiredModel": "ONIX",
+      "maxPrice": 55000,
+      "createdAt": "2026-07-15T17:41:46.313Z"
+    },
+    {
+      "id": "lead_import_1784137306315_58",
+      "fullName": "Francisco",
+      "phone": "(44) 99706-1771",
+      "desiredBrand": "Chevrolet",
+      "desiredModel": "ONIX 1.4",
+      "maxPrice": 55000,
+      "createdAt": "2026-07-15T17:41:46.313Z"
+    },
+    {
+      "id": "lead_import_1784137306315_59",
+      "fullName": "Joice Salvador",
+      "phone": "(17) 99631-3180",
+      "desiredBrand": "Volkswagen",
+      "desiredModel": "Saveiro cabine dupla",
+      "maxPrice": 80000,
+      "createdAt": "2026-07-15T17:41:46.313Z"
+    },
+    {
+      "id": "lead_import_1784137306315_60",
+      "fullName": "Danielle Canevari",
+      "phone": "(18) 98822-4324",
+      "desiredBrand": "Chevrolet",
+      "desiredModel": "S10 FLEX",
+      "minYear": 2013,
+      "createdAt": "2026-07-15T17:41:46.313Z"
+    },
+    {
+      "id": "lead_import_1784137306315_61",
+      "fullName": "Bruna Bizão",
+      "phone": "(17) 99237-3086",
+      "desiredBrand": "Chevrolet, Hyundai, Ford, Volkswagen",
+      "desiredModel": "ONIX, HB20, Ford Ka e Gol",
+      "maxPrice": 50000,
+      "createdAt": "2026-07-15T17:41:46.313Z"
+    },
+    {
+      "id": "lead_import_1784137306315_62",
+      "fullName": "Miriam Melo",
+      "phone": "(17) 99161-7319",
+      "desiredBrand": "Volkswagen",
+      "desiredModel": "Gol G5",
+      "createdAt": "2026-07-15T17:41:46.313Z"
+    },
+    {
+      "id": "lead_import_1784137306315_63",
+      "fullName": "Aline",
+      "phone": "(18) 99614-6743",
+      "desiredBrand": "Chevrolet",
+      "desiredModel": "ONIX",
+      "maxPrice": 45000,
+      "createdAt": "2026-07-15T17:41:46.313Z"
+    },
+    {
+      "id": "lead_import_1784137306315_64",
+      "fullName": "Eliabe Bueno",
+      "phone": "(16) 99766-5882",
+      "desiredBrand": "Honda",
+      "desiredModel": "City",
+      "createdAt": "2026-07-15T17:41:46.313Z",
+      "contacted": true
+    },
+    {
+      "id": "lead_import_1784137306315_65",
+      "fullName": "Ademar",
+      "phone": "(34) 9267-6638",
+      "desiredBrand": "Toyota",
+      "desiredModel": "Etios",
+      "createdAt": "2026-07-15T17:41:46.313Z"
+    },
+    {
+      "id": "lead_import_1784137306315_66",
+      "fullName": "Val Simões",
+      "phone": "(17) 99607-3718",
+      "desiredBrand": "Caoa Chery",
+      "desiredModel": "Tiggo 5 PRO",
+      "notes": "preta ou grafite",
+      "createdAt": "2026-07-15T17:41:46.313Z"
+    },
+    {
+      "id": "lead_import_1784137306315_67",
+      "fullName": "Renan Toledo",
+      "phone": "(18) 99820-3300",
+      "desiredBrand": "Renault",
+      "desiredModel": "SANDERO 1.6",
+      "createdAt": "2026-07-15T17:41:46.313Z"
+    },
+    {
+      "id": "lead_import_1784137306315_68",
+      "fullName": "Loyane",
+      "phone": "(17) 99194-0009",
+      "desiredBrand": "Volkswagen",
+      "desiredModel": "POLO ou Gol",
+      "maxPrice": 70000,
+      "createdAt": "2026-07-15T17:41:46.313Z"
+    },
+    {
+      "id": "lead_import_1784137306315_69",
+      "fullName": "Lucas",
+      "phone": "(17) 99179-1800",
+      "desiredBrand": "Renault",
+      "desiredModel": "DUSTER",
+      "createdAt": "2026-07-15T17:41:46.313Z"
+    },
+    {
+      "id": "lead_import_1784137306315_70",
+      "fullName": "Myrlla",
+      "phone": "(34) 9681-5296",
+      "desiredBrand": "Honda",
+      "desiredModel": "CIVIC",
+      "maxPrice": 70000,
+      "createdAt": "2026-07-15T17:41:46.313Z"
+    },
+    {
+      "id": "lead_import_1784137306315_71",
+      "fullName": "Valter Carlo",
+      "phone": "(17) 99175-4468",
+      "desiredBrand": "Hyundai",
+      "desiredModel": "HB20S",
+      "minYear": 2021,
+      "createdAt": "2026-07-15T17:41:46.313Z"
+    },
+    {
+      "id": "lead_import_1784137306316_72",
+      "fullName": "Valeria",
+      "phone": "(67) 99804-8759",
+      "desiredBrand": "Volkswagen",
+      "desiredModel": "Saveiro Cabine Dupla",
+      "createdAt": "2026-07-15T17:41:46.313Z"
+    },
+    {
+      "id": "lead_import_1784137306316_73",
+      "fullName": "Monica",
+      "phone": "(17) 98110-3202",
+      "desiredBrand": "Chevrolet",
+      "desiredModel": "Onix Joy",
+      "createdAt": "2026-07-15T17:41:46.313Z"
+    },
+    {
+      "id": "lead_import_1784137306316_74",
+      "fullName": "Maura Silva",
+      "phone": "(17) 99150-1492",
+      "desiredBrand": "Fiat",
+      "desiredModel": "Mobi",
+      "createdAt": "2026-07-15T17:41:46.313Z"
+    },
+    {
+      "id": "lead_import_1784137306316_75",
+      "fullName": "Thiago",
+      "phone": "(17) 99614-2964",
+      "desiredBrand": "Volkswagen",
+      "desiredModel": "Virtus",
+      "minYear": 2022,
+      "createdAt": "2026-07-15T17:41:46.313Z"
+    },
+    {
+      "id": "lead_import_1784137306316_76",
+      "fullName": "Henrique",
+      "phone": "(18) 99636-5194",
+      "desiredBrand": "Honda",
+      "desiredModel": "HR-V",
+      "maxPrice": 90000,
+      "notes": "com bancos de couro",
+      "createdAt": "2026-07-15T17:41:46.313Z"
+    },
+    {
+      "id": "lead_import_1784137306316_77",
+      "fullName": "Valdenir Aparecido Neves",
+      "phone": "(17) 99726-9411",
+      "desiredBrand": "Chevrolet",
+      "desiredModel": "ONIX ou TRACKER",
+      "minYear": 2021,
+      "createdAt": "2026-07-15T17:41:46.313Z"
+    },
+    {
+      "id": "lead_import_1784137306316_78",
+      "fullName": "Andrea",
+      "phone": "(17) 98184-7636",
+      "desiredBrand": "Hyundai",
+      "desiredModel": "HB20 hatch automático",
+      "createdAt": "2026-07-15T17:41:46.313Z"
+    },
+    {
+      "id": "lead_import_1784137306316_79",
+      "fullName": "Ana Paula",
+      "phone": "(17) 98225-2747",
+      "desiredBrand": "BMW",
+      "desiredModel": "SUV",
+      "createdAt": "2026-07-15T17:41:46.313Z"
+    },
+    {
+      "id": "lead_import_1784137306316_80",
+      "fullName": "Breno Lavezzo",
+      "phone": "(17) 99721-4790",
+      "desiredBrand": "Volkswagen ou Fiat",
+      "desiredModel": "Virtus ou Cronos",
+      "maxPrice": 70000,
+      "createdAt": "2026-07-15T17:41:46.313Z"
+    },
+    {
+      "id": "lead_import_1784137306316_81",
+      "fullName": "Pedro",
+      "phone": "(17) 98175-5581",
+      "desiredBrand": "Chevrolet",
+      "desiredModel": "S10 LTZ FLEX AUTOMATICA",
+      "minYear": 2018,
+      "createdAt": "2026-07-15T17:41:46.313Z"
+    },
+    {
+      "id": "lead_import_1784137306316_82",
+      "fullName": "Mariani",
+      "phone": "(17) 98141-9204",
+      "desiredBrand": "",
+      "desiredModel": "",
+      "minYear": 2018,
+      "maxPrice": 69900,
+      "notes": "câmbio automático",
+      "createdAt": "2026-07-15T17:41:46.313Z"
+    },
+    {
+      "id": "lead_import_1784137306316_83",
+      "fullName": "Isabela",
+      "phone": "(19) 99319-9709",
+      "desiredBrand": "Volkswagen ou Nissan",
+      "desiredModel": "T-Cross ou Kicks",
+      "maxPrice": 102000,
+      "createdAt": "2026-07-15T17:41:46.313Z"
+    },
+    {
+      "id": "lead_import_1784137306316_84",
+      "fullName": "Ilton",
+      "phone": "(34) 9975-1236",
+      "desiredBrand": "Jeep",
+      "desiredModel": "Renegade 4x4",
+      "minYear": 2023,
+      "createdAt": "2026-07-15T17:41:46.313Z"
+    },
+    {
+      "id": "lead_import_1784137306316_85",
+      "fullName": "Admilson Eufrasio",
+      "phone": "(17) 99269-2606",
+      "desiredBrand": "Toyota",
+      "desiredModel": "Yaris",
+      "minYear": 2021,
+      "createdAt": "2026-07-15T17:41:46.313Z"
+    },
+    {
+      "id": "lead_import_1784137306316_86",
+      "fullName": "Viviane",
+      "phone": "(18) 99776-6187",
+      "desiredBrand": "Toyota",
+      "desiredModel": "SW4 7 lugares",
+      "createdAt": "2026-07-15T17:41:46.313Z"
+    },
+    {
+      "id": "lead_import_1784137306316_87",
+      "fullName": "Michel Prado",
+      "phone": "(17) 99775-0740",
+      "desiredBrand": "Volkswagen",
+      "desiredModel": "T-CROSS",
+      "maxPrice": 90000,
+      "createdAt": "2026-07-15T17:41:46.313Z"
+    },
+    {
+      "id": "lead_import_1784137306316_88",
+      "fullName": "Erlani",
+      "phone": "(18) 99185-4554",
+      "desiredBrand": "Caoa Chery",
+      "desiredModel": "Tiggo 5X 1.5",
+      "createdAt": "2026-07-15T17:41:46.313Z"
+    },
+    {
+      "id": "lead_import_1784137306316_89",
+      "fullName": "Aline",
+      "phone": "(17) 99651-0163",
+      "desiredBrand": "Hyundai",
+      "desiredModel": "Creta",
+      "notes": "Branca com banco de couro",
+      "createdAt": "2026-07-15T17:41:46.313Z",
+      "contacted": true
+    },
+    {
+      "id": "lead_import_1784137306316_90",
+      "fullName": "Diego",
+      "phone": "(17) 99757-5976",
+      "desiredBrand": "Volkswagen",
+      "desiredModel": "T-CROSS",
+      "maxPrice": 95000,
+      "createdAt": "2026-07-15T17:41:46.313Z"
+    },
+    {
+      "id": "lead_import_1784137306316_91",
+      "fullName": "Sirlei Reches",
+      "phone": "(17) 99170-6770",
+      "desiredBrand": "Nissan",
+      "desiredModel": "KICKS SL",
+      "createdAt": "2026-07-15T17:41:46.313Z"
+    },
+    {
+      "id": "lead_import_1784137306316_92",
+      "fullName": "Gerson",
+      "phone": "(18) 99600-1438",
+      "desiredBrand": "Chevrolet",
+      "desiredModel": "Onix",
+      "createdAt": "2026-07-15T17:41:46.313Z",
+      "contacted": true
+    },
+    {
+      "id": "lead_import_1784137306316_93",
+      "fullName": "José Belutti",
+      "phone": "(17) 99714-9578",
+      "desiredBrand": "Nissan",
+      "desiredModel": "VERSA",
+      "createdAt": "2026-07-15T17:41:46.313Z"
+    },
+    {
+      "id": "lead_import_1784137306316_94",
+      "fullName": "Wesley",
+      "phone": "(17) 98833-5698",
+      "desiredBrand": "Honda",
+      "desiredModel": "HONDA CITY",
+      "createdAt": "2026-07-15T17:41:46.313Z",
+      "contacted": true
+    },
+    {
+      "id": "lead_import_1784137306316_95",
+      "fullName": "Leonardo",
+      "phone": "(17) 99607-8740",
+      "desiredBrand": "Volkswagen",
+      "desiredModel": "POLO Automático",
+      "minYear": 2020,
+      "createdAt": "2026-07-15T17:41:46.313Z"
+    },
+    {
+      "id": "lead_import_1784137306316_96",
+      "fullName": "Valdecir",
+      "phone": "(17) 99756-8286",
+      "desiredBrand": "Honda ou Toyota",
+      "desiredModel": "CIVIC ou COROLLA",
+      "maxPrice": 80000,
+      "createdAt": "2026-07-15T17:41:46.313Z"
+    },
+    {
+      "id": "lead_import_1784137306316_97",
+      "fullName": "Elis Regina",
+      "phone": "(17) 99130-4964",
+      "desiredBrand": "Hyundai",
+      "desiredModel": "HB20",
+      "minYear": 2020,
+      "createdAt": "2026-07-15T17:41:46.313Z"
+    },
+    {
+      "id": "lead_import_1784137306316_98",
+      "fullName": "Matheus",
+      "phone": "(17) 99107-3088",
+      "desiredBrand": "Volkswagen",
+      "desiredModel": "NIVUS Higline",
+      "notes": "cor CINZA Monstane",
+      "createdAt": "2026-07-15T17:41:46.313Z"
+    },
+    {
+      "id": "lead_import_1784137306316_99",
+      "fullName": "Amaro Francisco",
+      "phone": "(17) 99718-9469",
+      "desiredBrand": "Honda",
+      "desiredModel": "CIVIC",
+      "minYear": 2011,
+      "createdAt": "2026-07-15T17:41:46.313Z"
+    },
+    {
+      "id": "lead_import_1784137306316_100",
+      "fullName": "Vinícius",
+      "phone": "(17) 99185-0580",
+      "desiredBrand": "Volkswagen",
+      "desiredModel": "Polo Automático",
+      "createdAt": "2026-07-15T17:41:46.313Z"
+    },
+    {
+      "id": "lead_import_1784137306316_101",
+      "fullName": "Matheus",
+      "phone": "(17) 98140-0935",
+      "desiredBrand": "",
+      "desiredModel": "sedan",
+      "maxPrice": 75000,
+      "createdAt": "2026-07-15T17:41:46.313Z"
+    },
+    {
+      "id": "lead_import_1784137306316_102",
+      "fullName": "vilmar flores de Oliveira",
+      "phone": "(17) 99608-7741",
+      "desiredBrand": "Hyundai",
+      "desiredModel": "CRETA",
+      "maxPrice": 90000,
+      "createdAt": "2026-07-15T17:41:46.313Z"
+    },
+    {
+      "id": "lead_import_1784137306316_103",
+      "fullName": "Kelvin Alves",
+      "phone": "(17) 99106-7632",
+      "desiredBrand": "Toyota",
+      "desiredModel": "Corolla",
+      "minYear": 2020,
+      "createdAt": "2026-07-15T17:41:46.313Z"
+    },
+    {
+      "id": "lead_import_1784137306316_104",
+      "fullName": "Selma Belarmino da silva sabino",
+      "phone": "(17) 99681-7247",
+      "desiredBrand": "Jeep",
+      "desiredModel": "Renegade",
+      "minYear": 2019,
+      "notes": "cor Branca",
+      "createdAt": "2026-07-15T17:41:46.313Z"
+    },
+    {
+      "id": "lead_import_1784137306316_105",
+      "fullName": "Maria Eduarda Dias",
+      "phone": "(17) 99716-5810",
+      "desiredBrand": "Honda",
+      "desiredModel": "CIVIC G8 ou G9",
+      "createdAt": "2026-07-15T17:41:46.313Z"
+    },
+    {
+      "id": "lead_import_1784137306316_106",
+      "fullName": "Márcio Bortolotti",
+      "phone": "(17) 99631-8872",
+      "desiredBrand": "Honda",
+      "desiredModel": "Civic G10",
+      "maxPrice": 105000,
+      "createdAt": "2026-07-15T17:41:46.313Z"
+    },
+    {
+      "id": "lead_import_1784137306316_107",
+      "fullName": "Junior",
+      "phone": "(17) 99605-8926",
+      "desiredBrand": "Hyundai",
+      "desiredModel": "Creta",
+      "maxPrice": 95000,
+      "createdAt": "2026-07-15T17:41:46.313Z"
+    },
+    {
+      "id": "lead_import_1784137306316_108",
+      "fullName": "Adriano",
+      "phone": "(14) 99807-8476",
+      "desiredBrand": "Volkswagen",
+      "desiredModel": "Polo Track",
+      "createdAt": "2026-07-15T17:41:46.313Z"
+    },
+    {
+      "id": "lead_import_1784137306316_109",
+      "fullName": "Erivaldo Sena",
+      "phone": "(17) 98228-2098",
+      "desiredBrand": "Fiat",
+      "desiredModel": "TORO PRATA",
+      "maxPrice": 85000,
+      "notes": "compra no fim de ano 2026",
+      "createdAt": "2026-07-15T17:41:46.313Z"
+    },
+    {
+      "id": "lead_import_1784137306316_110",
+      "fullName": "Dulce Silva",
+      "phone": "(17) 99642-0555",
+      "desiredBrand": "Volkswagen",
+      "desiredModel": "POLO TRACK",
+      "createdAt": "2026-07-15T17:41:46.313Z"
+    },
+    {
+      "id": "lead_import_1784137306316_111",
+      "fullName": "Marco",
+      "phone": "(17) 99677-6745",
+      "desiredBrand": "Hyundai",
+      "desiredModel": "Creta",
+      "maxPrice": 90000,
+      "createdAt": "2026-07-15T17:41:46.313Z"
+    },
+    {
+      "id": "lead_import_1784137306316_112",
+      "fullName": "Luiz Antônio",
+      "phone": "(17) 98104-7039",
+      "desiredBrand": "Hyundai",
+      "desiredModel": "HB20 HATCH PRATA",
+      "maxPrice": 60000,
+      "createdAt": "2026-07-15T17:41:46.313Z"
+    },
+    {
+      "id": "lead_import_1784137306316_113",
+      "fullName": "Kenny",
+      "phone": "(17) 98129-6703",
+      "desiredBrand": "Chevrolet",
+      "desiredModel": "S10",
+      "maxPrice": 100000,
+      "createdAt": "2026-07-15T17:41:46.313Z"
+    },
+    {
+      "id": "lead_import_1784137306316_114",
+      "fullName": "Suelen",
+      "phone": "(17) 99603-0148",
+      "desiredBrand": "Chevrolet",
+      "desiredModel": "Montana",
+      "createdAt": "2026-07-15T17:41:46.313Z"
+    },
+    {
+      "id": "lead_import_1784137306316_115",
+      "fullName": "Rodrigo",
+      "phone": "(17) 99128-4565",
+      "desiredBrand": "Hyundai ou Volkswagen",
+      "desiredModel": "HB20 ou Polo",
+      "createdAt": "2026-07-15T17:41:46.313Z"
+    },
+    {
+      "id": "lead_import_1784137306316_116",
+      "fullName": "Brenda",
+      "phone": "(18) 99196-0441",
+      "desiredBrand": "Chevrolet",
+      "desiredModel": "ONIX HATCH",
+      "createdAt": "2026-07-15T17:41:46.313Z"
+    },
+    {
+      "id": "lead_import_1784137306316_117",
+      "fullName": "Rogério Campos",
+      "phone": "(16) 98135-4957",
+      "desiredBrand": "",
+      "desiredModel": "TERA",
+      "createdAt": "2026-07-15T17:41:46.313Z"
+    },
+    {
+      "id": "lead_import_1784137306316_118",
+      "fullName": "Ben Hur",
+      "phone": "(17) 99106-7167",
+      "desiredBrand": "Hyundai",
+      "desiredModel": "HB20",
+      "minYear": 2022,
+      "createdAt": "2026-07-15T17:41:46.313Z"
+    },
+    {
+      "id": "lead_import_1784137306316_119",
+      "fullName": "Marcos Druzian",
+      "phone": "(17) 99757-1690",
+      "desiredBrand": "Honda",
+      "desiredModel": "Civic",
+      "minYear": 2007,
+      "createdAt": "2026-07-15T17:41:46.313Z"
+    },
+    {
+      "id": "lead_import_1784137306316_120",
+      "fullName": "Maicon Lima",
+      "phone": "(17) 99620-7151",
+      "desiredBrand": "Chevrolet",
+      "desiredModel": "CRUZE HACTH",
+      "minYear": 2016,
+      "createdAt": "2026-07-15T17:41:46.313Z"
+    },
+    {
+      "id": "lead_import_1784137306316_121",
+      "fullName": "Anderson Alexandre da Silva",
+      "phone": "(17) 99129-4511",
+      "desiredBrand": "Chevrolet ou Jeep",
+      "desiredModel": "TRACKER PREIMIER ou COMPASS",
+      "minYear": 2021,
+      "createdAt": "2026-07-15T17:41:46.313Z"
+    },
+    {
+      "id": "lead_import_1784137306316_122",
+      "fullName": "Nelson Ayusso",
+      "phone": "(17) 99631-0411",
+      "desiredBrand": "Hyundai",
+      "desiredModel": "Creta",
+      "minYear": 2020,
+      "notes": "cor PRATA",
+      "createdAt": "2026-07-15T17:41:46.313Z"
+    },
+    {
+      "id": "lead_import_1784137306316_123",
+      "fullName": "Hallison",
+      "phone": "(17) 98205-1032",
+      "desiredBrand": "Haval, BYD, Caoa Chery",
+      "desiredModel": "Haval, BYD song ou Tiggo 7",
+      "createdAt": "2026-07-15T17:41:46.313Z"
+    },
+    {
+      "id": "lead_import_1784137306316_124",
+      "fullName": "BRUNO",
+      "phone": "(16) 99162-0643",
+      "desiredBrand": "Jeep",
+      "desiredModel": "RENEGADE",
+      "maxPrice": 90000,
+      "createdAt": "2026-07-15T17:41:46.313Z"
+    },
+    {
+      "id": "lead_import_1784137306316_125",
+      "fullName": "Keyla Ishii",
+      "phone": "(17) 99658-2210",
+      "desiredBrand": "Volkswagen",
+      "desiredModel": "VOYAGE OU GOL",
+      "createdAt": "2026-07-15T17:41:46.313Z"
+    },
+    {
+      "id": "lead_import_1784137306316_126",
+      "fullName": "Ana Laura Alves",
+      "phone": "(17) 98183-5325",
+      "desiredBrand": "Chevrolet",
+      "desiredModel": "S10 flex automática",
+      "minYear": 2018,
+      "createdAt": "2026-07-15T17:41:46.313Z"
+    },
+    {
+      "id": "lead_import_1784137306316_127",
+      "fullName": "Elza",
+      "phone": "(17) 99204-1216",
+      "desiredBrand": "Chevrolet",
+      "desiredModel": "Onix",
+      "minYear": 2016,
+      "createdAt": "2026-07-15T17:41:46.313Z"
+    },
+    {
+      "id": "lead_import_1784137306316_128",
+      "fullName": "Sheila",
+      "phone": "(17) 99113-3953",
+      "desiredBrand": "Jeep",
+      "desiredModel": "COMPASS 2022",
+      "notes": "Cinza Chumbo",
+      "createdAt": "2026-07-15T17:41:46.313Z"
+    },
+    {
+      "id": "lead_import_1784137306316_129",
+      "fullName": "Matheus Massette",
+      "phone": "(17) 99237-9238",
+      "desiredBrand": "Fiat",
+      "desiredModel": "TORO 1.3 Turbo",
+      "createdAt": "2026-07-15T17:41:46.313Z"
+    },
+    {
+      "id": "lead_import_1784137306316_130",
+      "fullName": "Emerson da Silva",
+      "phone": "(17) 99637-2364",
+      "desiredBrand": "Jeep",
+      "desiredModel": "Renegade",
+      "maxPrice": 70000,
+      "createdAt": "2026-07-15T17:41:46.313Z"
+    },
+    {
+      "id": "lead_import_1784137306316_131",
+      "fullName": "Rafael Matos",
+      "phone": "(34) 9964-3427",
+      "desiredBrand": "Fiat",
+      "desiredModel": "STRADA 1.4",
+      "maxPrice": 2020,
+      "createdAt": "2026-07-15T17:41:46.313Z"
+    },
+    {
+      "id": "lead_import_1784137306316_132",
+      "fullName": "Schaienna",
+      "phone": "(19) 98103-2222",
+      "desiredBrand": "Fiat",
+      "desiredModel": "Toro Freddom 1.3 turbo",
+      "createdAt": "2026-07-15T17:41:46.313Z"
+    },
+    {
+      "id": "lead_import_1784139205073_0",
+      "fullName": "Ana",
+      "phone": "(17) 99608-0755",
+      "desiredBrand": "",
+      "desiredModel": "HR-V",
+      "maxPrice": 90000,
+      "notes": "Cliente consultada em Julho de 2026",
+      "createdAt": "2026-07-15T18:13:25.072Z"
+    },
+    {
+      "id": "lead_import_1784297760476_0",
+      "fullName": "Washington Fernando",
+      "phone": "(73) 99139-0768",
+      "desiredBrand": "Hyundai",
+      "desiredModel": "Creta Prestige",
+      "minYear": 2021,
+      "notes": "Cliente consultado em julho de 2026.",
+      "createdAt": "2026-07-17T14:16:00.473Z"
+    },
+    {
+      "id": "lead_import_1784298454875_0",
+      "fullName": "Fábio",
+      "phone": "(17) 98121-9010",
+      "desiredBrand": "Hyundai ou Fiat",
+      "desiredModel": "HB20 ou Argo",
+      "maxPrice": 70000,
+      "notes": "Cliente consultado em julho de 2026",
+      "createdAt": "2026-07-17T14:27:34.875Z"
+    },
+    {
+      "id": "lead_import_1784547519202_0",
+      "fullName": "Bruno",
+      "phone": "(17) 99637-0337",
+      "desiredBrand": "",
+      "desiredModel": "CIVIC",
+      "notes": "Cliente procura veículo sem retoque de pintura",
+      "createdAt": "2026-07-20T11:38:39.202Z"
+    },
+    {
+      "id": "lead_import_1784573725715_0",
+      "fullName": "Julho Luiza",
+      "phone": "(17) 99204-1658",
+      "desiredBrand": "",
+      "desiredModel": "Onix",
+      "createdAt": "2026-07-20T18:55:25.715Z",
+      "contacted": true
+    },
+    {
+      "id": "lead_import_1784579042042_0",
+      "fullName": "Tatiane da Costa Porto",
+      "phone": "(61) 9352-2831",
+      "desiredBrand": "Hyundai",
+      "desiredModel": "Creta Prestige",
+      "createdAt": "2026-07-20T20:24:02.042Z"
+    },
+    {
+      "id": "lead_import_1784657029933_0",
+      "fullName": "Leonardo",
+      "phone": "(34) 9711-3434",
+      "desiredBrand": "Volkswagen",
+      "desiredModel": "T-CROSS Highline",
+      "minYear": 2025,
+      "notes": "Cliente interessado no modelo T-CROSS Highline ano 2025.",
+      "createdAt": "2026-07-21T18:03:49.932Z"
+    },
+    {
+      "id": "lead_import_1784659931284_0",
+      "fullName": "Gilson",
+      "phone": "(17) 98104-1665",
+      "desiredBrand": "Volkswagen",
+      "desiredModel": "T-CROSS HIGHLINE",
+      "minYear": 2024,
+      "notes": "Procura veículo com baixa km",
+      "createdAt": "2026-07-21T18:52:11.283Z"
+    },
+    {
+      "id": "lead_import_1784664702298_0",
+      "fullName": "Marcelo",
+      "phone": "(17) 99103-9525",
+      "desiredBrand": "Honda",
+      "desiredModel": "HR-V",
+      "minYear": 2023,
+      "createdAt": "2026-07-21T20:11:42.298Z"
+    },
+    {
+      "id": "lead_import_1784895199612_0",
+      "fullName": "Julho Celia",
+      "phone": "(17) 99661-1630",
+      "desiredBrand": "Hyundai",
+      "desiredModel": "Creta Prestige",
+      "minYear": 2018,
+      "createdAt": "2026-07-24T12:13:19.612Z"
+    },
+    {
+      "id": "lead_import_1784896846840_0",
+      "fullName": "Julho Laene",
+      "phone": "(17) 99729-3646",
+      "desiredBrand": "",
+      "desiredModel": "Virtus",
+      "maxPrice": 90000,
+      "createdAt": "2026-07-24T12:40:46.838Z"
+    },
+    {
+      "id": "lead_import_1784923941807_0",
+      "fullName": "Carlos A Silveira",
+      "phone": "(17) 99137-3336",
+      "desiredBrand": "Honda",
+      "desiredModel": "HR-V",
+      "maxPrice": 95000,
+      "createdAt": "2026-07-24T20:12:21.806Z"
+    }
+  ],
+  "timestamp": "2026-07-24T20:17:09.198Z"
+}

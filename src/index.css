@@ -1,0 +1,197 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500;600&family=Outfit:wght@300;400;500;600;700&family=Syncopate:wght@400;700&display=swap');
+@import "tailwindcss";
+
+:root {
+  --zinc-950: #09090b;
+  --zinc-900: #18181b;
+  --zinc-800: #27272a;
+  --zinc-700: #3f3f46;
+  --zinc-600: #52525b;
+  --zinc-500: #71717a;
+  --zinc-400: #a1a1aa;
+  --zinc-300: #d4d4d8;
+  --zinc-200: #e4e4e7;
+  --zinc-100: #f4f4f5;
+  --white: #ffffff;
+  --black: #000000;
+}
+
+:root.light {
+  --zinc-950: #fafafa;
+  --zinc-900: #f4f4f5;
+  --zinc-800: #e4e4e7;
+  --zinc-700: #d4d4d8;
+  --zinc-600: #a1a1aa;
+  --zinc-500: #71717a;
+  --zinc-400: #52525b;
+  --zinc-300: #3f3f46;
+  --zinc-200: #27272a;
+  --zinc-100: #18181b;
+  --white: #09090b;
+  --black: #ffffff;
+}
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Outfit", sans-serif;
+  --font-luxury: "Syncopate", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+  /* Dynamically remapped tailwind color variables */
+  --color-zinc-950: var(--zinc-950);
+  --color-zinc-900: var(--zinc-900);
+  --color-zinc-800: var(--zinc-800);
+  --color-zinc-700: var(--zinc-700);
+  --color-zinc-600: var(--zinc-600);
+  --color-zinc-500: var(--zinc-500);
+  --color-zinc-400: var(--zinc-400);
+  --color-zinc-300: var(--zinc-300);
+  --color-zinc-200: var(--zinc-200);
+  --color-zinc-100: var(--zinc-100);
+  --color-white: var(--white);
+  --color-black: var(--black);
+}
+
+/* Custom gorgeous scrollbar for luxury brand style */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--zinc-950);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--zinc-800);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #ca8a04; /* Gold accent */
+}
+
+/* Luxury card glows and decorative lines */
+.luxury-glow {
+  box-shadow: 0 0 35px -5px rgba(202, 138, 4, 0.1);
+}
+
+.luxury-glass {
+  background-color: rgba(9, 9, 11, 0.75);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+:root.light .luxury-glass {
+  background-color: rgba(250, 250, 250, 0.75);
+  border: 1px solid rgba(9, 9, 11, 0.06);
+}
+
+.glow-shimmer {
+  position: relative;
+  overflow: hidden;
+}
+
+.glow-shimmer::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -50%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.06),
+    transparent
+  );
+  transform: skewX(-25deg);
+}
+
+@keyframes shimmer {
+  100% {
+    left: 150%;
+  }
+}
+
+.animate-shimmer::after {
+  animation: shimmer 3s infinite;
+}
+
+@media print {
+  /* A4 sem margens do navegador */
+  @page {
+    size: A4 portrait;
+    margin: 0;
+  }
+
+  /* Reset completo de html/body */
+  html, body {
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    overflow: hidden !important;
+    background: #ffffff !important;
+  }
+
+  /* Colapsa TODA a árvore React para 0px (evita páginas extras) */
+  body > *:not(#printable-showroom-poster) {
+    height: 0 !important;
+    overflow: hidden !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    display: none !important;
+  }
+
+  /* O cartaz se posiciona por cima de tudo, cobrindo a folha inteira */
+  #printable-showroom-poster {
+    display: flex !important;
+    visibility: visible !important;
+    position: relative !important;
+    width: 100% !important;
+    height: 100% !important;
+    margin: 0 !important;
+    padding: 10mm !important;
+    box-sizing: border-box !important;
+    background: #ffffff !important;
+    color: #09090b !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+    z-index: 999999 !important;
+    overflow: hidden !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* Garante que tudo dentro do cartaz é visível */
+  #printable-showroom-poster * {
+    visibility: visible !important;
+    overflow: visible !important;
+  }
+}
+
+/* Custom transmission badges to adapt beautifully in dark & light themes */
+.badge-manual {
+  background-color: rgba(120, 53, 4, 0.25); /* dark mode: soft amber-950/25 */
+  color: #f59e0b; /* text-amber-500 */
+  border: 1px solid rgba(245, 158, 11, 0.25);
+}
+
+:root.light .badge-manual {
+  background-color: rgba(254, 243, 199, 0.9); /* light mode: soft amber-100/90 */
+  color: #b45309; /* text-amber-700 */
+  border: 1px solid rgba(217, 119, 6, 0.4); /* border-amber-600/40 */
+}
+
+.badge-automatic {
+  background-color: rgba(39, 39, 42, 0.8); /* bg-zinc-800/80 default for dark */
+  color: var(--zinc-400);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+:root.light .badge-automatic {
+  background-color: rgba(228, 228, 231, 0.8); /* bg-zinc-800/80 default for light */
+  color: var(--zinc-600);
+  border: 1px solid rgba(9, 9, 11, 0.08);
+}

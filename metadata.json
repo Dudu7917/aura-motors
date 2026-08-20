@@ -1,0 +1,6 @@
+{
+  "name": "AURA Motors",
+  "description": "O catálogo de carros de luxo e hipercarros mais bonito e sofisticado do mundo. Explore, personalize em tempo real e consulte nossa inteligência artificial para escolher o seu modelo ideal.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
