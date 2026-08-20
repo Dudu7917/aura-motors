@@ -154,8 +154,7 @@ export async function performNelsinhoScrape(
                               description: { type: Type.STRING },
                               detailUrl: { type: Type.STRING },
                               kmText: { type: Type.STRING },
-                              sellerName: { type: Type.STRING },
-                              sellerPhone: { type: Type.STRING }
+                              sellerName: { type: Type.STRING }
                             },
                             required: ["name", "brand", "price", "year", "category", "image"]
                           }
@@ -252,8 +251,7 @@ export async function performNelsinhoScrape(
           { name: "Rodas de Liga Leve Originais de Fábrica", size: '16"', image: "Original16", price: 0 }
         ],
         detailUrl,
-        sellerName: car.sellerName || "Garagem do Nelsinho",
-        sellerPhone: car.sellerPhone || "(19) 99765-4321"
+        sellerName: car.sellerName || "Garagem do Nelsinho"
       };
     });
 

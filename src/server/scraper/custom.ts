@@ -326,8 +326,7 @@ ${cleanText.substring(0, 100000)}
                         kmText: { type: Type.STRING },
                         category: { type: Type.STRING },
                         detailUrl: { type: Type.STRING },
-                        sellerName: { type: Type.STRING },
-                        sellerPhone: { type: Type.STRING }
+                        sellerName: { type: Type.STRING }
                       },
                       required: ["name", "brand", "price", "year", "category", "image"]
                     }
@@ -448,8 +447,7 @@ ${cleanText.substring(0, 100000)}
             "Garantia de km real do anúncio",
             "Laudo de vistoria cautelar aprovado"
           ],
-          sellerName: car.sellerName || "Anunciante Web",
-          sellerPhone: car.sellerPhone || "(11) 99765-4321"
+          sellerName: car.sellerName || "Anunciante Web"
         };
       });
 

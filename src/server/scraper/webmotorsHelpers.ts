@@ -371,17 +371,6 @@ export function mapWebmotorsObjectToCar(obj: any, baseUrl: string, idx: number):
     sellerName = obj.SellerName || obj.sellerName;
   }
 
-  let sellerPhone = "";
-  if (obj.Seller && obj.Seller.Phones && Array.isArray(obj.Seller.Phones) && obj.Seller.Phones.length > 0) {
-    const pObj = obj.Seller.Phones[0];
-    const ddd = pObj.DDD || pObj.ddd || "11";
-    const num = pObj.Number || pObj.number || "";
-    if (num) sellerPhone = `(${ddd}) ${num}`;
-  } else if (obj.SellerPhone || obj.sellerPhone) {
-    sellerPhone = obj.SellerPhone || obj.sellerPhone;
-  }
-  if (!sellerPhone) sellerPhone = "(11) 99765-4321";
-
   return {
     id: `custom-scraped-${Date.now()}-${idx}-${Math.floor(Math.random() * 10000)}`,
     name,
@@ -412,7 +401,6 @@ export function mapWebmotorsObjectToCar(obj: any, baseUrl: string, idx: number):
     detailUrl,
     gallery: gallery.slice(0, 10),
     features: features.slice(0, 8),
-    sellerName,
-    sellerPhone
+    sellerName
   };
 }

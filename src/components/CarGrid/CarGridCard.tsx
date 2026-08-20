@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Car, Lead } from '../../types';
-import { Eye, Sparkles, Check, Scale, User, Phone } from 'lucide-react';
+import { Eye, Sparkles, Check, Scale, User } from 'lucide-react';
 import { triggerNelsinhoMouseHover } from '../MouseTelemetryDashboard';
 import { motion } from 'motion/react';
 
@@ -200,25 +200,12 @@ export default function CarGridCard({
           <p className="font-mono text-[9px] text-amber-500/90 uppercase tracking-widest font-semibold text-left flex items-center justify-between">
             <span>{car.role}</span>
           </p>
-          {(car.sellerName || car.sellerPhone) && (
+          {car.sellerName && (
             <div className="flex items-center gap-2 pt-0.5 text-[8.5px] font-mono text-zinc-400">
-              <span className="flex items-center gap-1 bg-zinc-950/80 px-2 py-0.5 rounded border border-white/5 truncate max-w-[160px]" title={car.sellerName}>
+              <span className="flex items-center gap-1 bg-zinc-950/80 px-2 py-0.5 rounded border border-white/5 truncate max-w-[200px]" title={car.sellerName}>
                 <User className="h-2.5 w-2.5 text-amber-500 flex-shrink-0" />
                 <span className="truncate">{car.sellerName || "Garagem do Nelsinho"}</span>
               </span>
-              {car.sellerPhone && (
-                <a 
-                  href={`https://wa.me/55${car.sellerPhone.replace(/\D/g, '')}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  onClick={(e) => e.stopPropagation()}
-                  className="flex items-center gap-1 bg-emerald-500/10 hover:bg-emerald-500/20 text-emerald-400 px-2 py-0.5 rounded border border-emerald-500/20 transition-colors"
-                  title="Chamar Vendedor no WhatsApp"
-                >
-                  <Phone className="h-2.5 w-2.5 text-emerald-400 flex-shrink-0" />
-                  <span>{car.sellerPhone}</span>
-                </a>
-              )}
             </div>
           )}
           <p className="line-clamp-2 text-xs text-zinc-400 font-light leading-relaxed pt-1 text-left">

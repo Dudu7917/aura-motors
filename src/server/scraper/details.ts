@@ -62,7 +62,6 @@ export function extractNativeWebmotorsDetails(rawNextDataText: string) {
     equipments?: string[];
     description?: string;
     sellerName?: string;
-    sellerPhone?: string;
     fipePrice?: number;
   } = {};
 
@@ -99,16 +98,7 @@ export function extractNativeWebmotorsDetails(rawNextDataText: string) {
       result.sellerName = sellerMatches[1].trim();
     }
 
-    // 4. Extração de Telefone
-    const phoneMatches = rawNextDataText.match(/"(?:DDD|ddd)":\s*"(\d+)"[^{}]*"(?:Number|number)":\s*"(\d+)"/i) ||
-                         rawNextDataText.match(/"(?:Number|number)":\s*"(\d+)"[^{}]*"(?:DDD|ddd)":\s*"(\d+)"/i);
-    if (phoneMatches) {
-      const ddd = phoneMatches[1].length === 2 ? phoneMatches[1] : phoneMatches[2];
-      const num = phoneMatches[1].length > 2 ? phoneMatches[1] : phoneMatches[2];
-      result.sellerPhone = `(${ddd}) ${num}`;
-    }
-
-    // 5. Cotação Tabela Fipe
+    // 4. Cotação Tabela Fipe
     const fipeMatches = rawNextDataText.match(/"Fipe":\s*\{[^}]*"(?:Price|price)":\s*(\d+)/i) ||
                         rawNextDataText.match(/"(?:FipePrice|fipePrice)":\s*(\d+)/i);
     if (fipeMatches && fipeMatches[1]) {
@@ -254,8 +244,7 @@ export async function handleScrapeVehicleDetails(req: any, res: any) {
                 },
                 sellerNotes: { type: Type.STRING },
                 laudoCompleto: { type: Type.STRING },
-                sellerName: { type: Type.STRING },
-                sellerPhone: { type: Type.STRING }
+                sellerName: { type: Type.STRING }
               },
               required: ["name", "brand", "price", "year", "kmText", "description", "features", "specs", "sellerNotes", "laudoCompleto"]
             }
@@ -289,9 +278,6 @@ export async function handleScrapeVehicleDetails(req: any, res: any) {
     if (nativeData.sellerName && nativeData.sellerName.trim().length > 0) {
       parsedDetails.sellerName = nativeData.sellerName;
     }
-    if (nativeData.sellerPhone && nativeData.sellerPhone.trim().length > 0) {
-      parsedDetails.sellerPhone = nativeData.sellerPhone;
-    }
     if (nativeData.fipePrice && (!parsedDetails.fipePrice || parsedDetails.fipePrice === 0)) {
       parsedDetails.fipePrice = nativeData.fipePrice;
     }
@@ -306,25 +292,12 @@ export async function handleScrapeVehicleDetails(req: any, res: any) {
       parsedDetails.gallery = combined;
     }
 
-    // Fallback de Telefone/WhatsApp do Vendedor no Markdown se não veio na IA
-    if (!parsedDetails.sellerPhone) {
-      const phoneMatch = markdownResult.match(/(?:\(?([1-9]{2})\)?\s?)?(?:9\d{4}[-\s]?\d{4}|\d{4}[-\s]?\d{4})/);
-      if (phoneMatch) {
-        const digits = phoneMatch[0].replace(/\D/g, '');
-        if (digits.length >= 10) {
-          const ddd = digits.slice(0, 2);
-          const rest = digits.slice(2);
-          parsedDetails.sellerPhone = `(${ddd}) ${rest.slice(0, 5)}-${rest.slice(5)}`;
-        }
-      }
-    }
-
     if (!parsedDetails.sellerName) {
       parsedDetails.sellerName = "Garagem do Nelsinho";
     }
 
     routingLogs.push(`[${new Date().toLocaleTimeString('pt-BR')}] ✅ Extração e enriquecimento de dados pelo modelo concluídos com perfeição!`);
-    routingLogs.push(`[${new Date().toLocaleTimeString('pt-BR')}] 👤 Vendedor extraído: "${parsedDetails.sellerName}" • Contato: ${parsedDetails.sellerPhone || 'Não informado'}`);
+    routingLogs.push(`[${new Date().toLocaleTimeString('pt-BR')}] 👤 Vendedor extraído: "${parsedDetails.sellerName}"`);
     routingLogs.push(`[${new Date().toLocaleTimeString('pt-BR')}] 🛡️ Foram diagnosticados ${parsedDetails.features?.length || 0} opcionais oficiais.`);
     if (parsedDetails.gallery && parsedDetails.gallery.length > 0) {
       routingLogs.push(`[${new Date().toLocaleTimeString('pt-BR')}] 📸 Foram recuperadas ${parsedDetails.gallery.length} fotos reais do anúncio.`);

@@ -263,42 +263,6 @@ export async function parseVehicleDetails(car: any): Promise<any> {
     }
     car.sellerName = extractedSellerName || "Garagem do Nelsinho";
 
-    // Extração do Telefone / WhatsApp do Vendedor
-    let extractedPhone = car.sellerPhone || "";
-    
-    $detail("a[href*='wa.me'], a[href*='whatsapp'], a[href*='tel:']").each((_, el) => {
-      const href = $detail(el).attr("href") || "";
-      const match = href.match(/(\d{10,13})/);
-      if (match && match[1]) {
-        const rawNum = match[1];
-        const ddd = rawNum.length >= 11 ? rawNum.slice(-11, -9) : rawNum.slice(0, 2);
-        const rest = rawNum.slice(-9);
-        if (rest.length === 9) {
-          extractedPhone = `(${ddd}) ${rest.slice(0, 5)}-${rest.slice(5)}`;
-        }
-      }
-    });
-
-    if (!extractedPhone) {
-      const phoneRegex = /(?:\(?([1-9]{2})\)?\s?)?(?:9\d{4}[-\s]?\d{4}|\d{4}[-\s]?\d{4})/g;
-      const matches = detailHtml.match(phoneRegex);
-      if (matches && matches.length > 0) {
-        const cleanMatches = matches.filter(m => m.replace(/\D/g, '').length >= 10);
-        if (cleanMatches.length > 0) {
-          const digits = cleanMatches[0].replace(/\D/g, '');
-          const ddd = digits.slice(0, 2);
-          const num = digits.slice(2);
-          if (num.length === 9) {
-            extractedPhone = `(${ddd}) ${num.slice(0, 5)}-${num.slice(5)}`;
-          } else if (num.length === 8) {
-            extractedPhone = `(${ddd}) ${num.slice(0, 4)}-${num.slice(4)}`;
-          }
-        }
-      }
-    }
-
-    car.sellerPhone = extractedPhone || "(19) 99765-4321";
-
     return car;
   } catch (e) {
     const fallback = getHighResCarFallbackImage(car.brand, car.category, car.name);

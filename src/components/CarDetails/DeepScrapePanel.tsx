@@ -164,8 +164,7 @@ export default function DeepScrapePanel({ car, onEnrich, onScrapeStateChange }: 
         gallery: mergedGallery,
         features: mergedFeatures,
         detailUrl: deepScrapingUrl,
-        sellerName: fresh.sellerName || car.sellerName || "Garagem do Nelsinho",
-        sellerPhone: fresh.sellerPhone || car.sellerPhone
+        sellerName: fresh.sellerName || car.sellerName || "Garagem do Nelsinho"
       };
 
       setDeepScrapingLogs(prev => [

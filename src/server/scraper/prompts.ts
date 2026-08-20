@@ -19,7 +19,7 @@ Importante:
    - 'classics': Hatchback ou Compactos populares (Onix, HB20, Kwid, Argo, Gol, Mobi, Ka, Fox, Sandero, Up!).
 6. Mapeie o campo "brand" com a marca correta (Chevrolet, Fiat, Jeep, Toyota, etc.) capitalizada.
 7. Extraia o link da imagem ("image"). A url da imagem estará dentro da sintaxe Markdown: \`[![Image](imagem_url)](detail_url)\`. Retire a \`imagem_url\`.
-8. Extraia o nome da loja ou vendedor responsável no campo "sellerName" (ex: "Garagem do Nelsinho", "Loja Matriz") e o número de telefone/WhatsApp no campo "sellerPhone" (ex: "(19) 99123-4567").
+8. Extraia o nome da loja ou vendedor responsável no campo "sellerName" (ex: "Garagem do Nelsinho", "Loja Matriz"). NÃO extraia telefones.
 
 Trecho de Estoque:
 ${chunk}
@@ -65,8 +65,7 @@ Regras de Mapeamento Básico:
 6. "kmText": String com a km do veículo (ex: "45.000 km").
 7. "category": Categorize estritamente em um de: 'suv', 'electric', 'hypercars', ou 'classics'.
 8. "detailUrl": Se houver link direto do carro no anúncio, use-o; caso contrário passe vazio.
-9. "sellerName": Nome do vendedor ou loja anunciante se presente (ex: "Garagem do Nelsinho", "Vendedor João").
-10. "sellerPhone": Telefone ou WhatsApp de contato do vendedor (ex: "(11) 98765-4321").
+9. "sellerName": Nome do vendedor ou loja anunciante se presente (ex: "Garagem do Nelsinho", "Vendedor João"). NÃO extraia telefones.
 
 Markdown recebido:
 ${markdownResult.substring(0, 450000)}
@@ -95,8 +94,7 @@ Análise a página do site e extraia as seguintes informações precisas:
    - "weight": Peso em kg.
 10. "sellerNotes": Uma resenha de observações ou destaques citados pelo vendedor (ex: "Mais completo da categoria", "Procedência atestada", "Garantia estendida").
 11. "laudoCompleto": Um parecer pericial de IA em português sobre um diagnóstico prévio do anúncio (atestando se há menção a laudo cautelar aprovado, histórico de revisões, estado de pintura mencionado, raridade do lote ou nível de conservação do patamar).
-12. "sellerName": Nome do vendedor ou concessionária que está anunciando.
-13. "sellerPhone": Telefone ou WhatsApp do vendedor que está anunciando.
+12. "sellerName": Nome do vendedor ou concessionária que está anunciando. (NÃO extraia telefones).
 
 Estude este markdown para extrair o máximo de opcionais, fotos e descrições detalhadas escondidas no anúncio:
 ${markdownResult.substring(0, 400000)}

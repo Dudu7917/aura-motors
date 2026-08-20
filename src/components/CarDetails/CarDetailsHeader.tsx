@@ -1,7 +1,7 @@
 import React from 'react';
 import { Car } from '../../types';
 import { motion } from 'motion/react';
-import { ArrowLeft, Check, Link2, MessageSquare, User, Phone } from 'lucide-react';
+import { ArrowLeft, Check, Link2, MessageSquare, User } from 'lucide-react';
 
 interface CarDetailsHeaderProps {
   onBack: () => void;
@@ -33,8 +33,6 @@ export default function CarDetailsHeader({
   copiedWhatsApp,
   car,
 }: CarDetailsHeaderProps) {
-  const phoneClean = car.sellerPhone ? car.sellerPhone.replace(/\D/g, '') : '';
-
   return (
     <motion.div 
       variants={itemVariants}
@@ -71,17 +69,6 @@ export default function CarDetailsHeader({
           <User className="h-3 w-3 text-amber-500" />
           <span className="text-white font-bold">{car.sellerName || "Garagem do Nelsinho"}</span>
         </div>
-        {car.sellerPhone && (
-          <a
-            href={`https://wa.me/55${phoneClean}`}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center space-x-1.5 bg-emerald-500/10 hover:bg-emerald-500/20 border border-emerald-500/30 px-2.5 py-1 rounded-md text-emerald-400 transition-colors cursor-pointer"
-          >
-            <Phone className="h-3 w-3 text-emerald-400" />
-            <span className="font-bold">{car.sellerPhone}</span>
-          </a>
-        )}
         <span className="text-zinc-600">/</span>
         <span className="text-amber-500 font-semibold">{car.brand}</span>
         <span className="text-zinc-600">/</span>
