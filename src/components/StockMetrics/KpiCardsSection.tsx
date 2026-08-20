@@ -7,8 +7,8 @@ import {
   Gauge, 
   Calendar, 
   CheckCircle2,
-  Zap,
-  Activity
+  Layers,
+  Sparkles
 } from 'lucide-react';
 import { CalculatedStockStats, containerVariants, itemVariants } from './types';
 import AnimatedCounter from './AnimatedCounter';
@@ -30,7 +30,7 @@ export default function KpiCardsSection({ stats }: KpiCardsSectionProps) {
         variants={itemVariants}
         whileHover={{ y: -4, scale: 1.015 }}
         transition={{ duration: 0.2 }}
-        className="relative rounded-3xl border border-amber-500/30 bg-gradient-to-b from-zinc-900/80 via-zinc-900/40 to-zinc-950/90 p-5 backdrop-blur-2xl overflow-hidden group shadow-[0_15px_35px_rgba(0,0,0,0.5)] hover:border-amber-500/60"
+        className="relative rounded-3xl border border-amber-500/30 bg-gradient-to-b from-zinc-900/90 via-zinc-900/50 to-zinc-950/90 p-5 backdrop-blur-2xl overflow-hidden group luxury-kpi-shadow hover:border-amber-500/60 transition-all duration-300"
       >
         <div className="absolute -right-8 -top-8 h-28 w-28 rounded-full bg-amber-500/20 blur-2xl group-hover:bg-amber-500/35 transition-all duration-500 pointer-events-none" />
         
@@ -47,20 +47,20 @@ export default function KpiCardsSection({ stats }: KpiCardsSectionProps) {
         </svg>
 
         <div className="flex items-center justify-between mb-3 relative z-10">
-          <span className="font-mono text-[9px] uppercase tracking-widest text-zinc-400 font-bold">Patrimônio Total</span>
-          <div className="flex h-8 w-8 items-center justify-center rounded-xl bg-amber-500/15 border border-amber-500/30 text-amber-400 group-hover:rotate-12 transition-transform duration-300 shadow-[0_0_15px_rgba(245,158,11,0.2)]">
+          <span className="font-mono text-[9px] uppercase tracking-widest text-zinc-400 font-bold">Patrimônio do Pátio</span>
+          <div className="flex h-8 w-8 items-center justify-center rounded-xl bg-amber-500/15 border border-amber-500/30 text-amber-500 group-hover:rotate-12 transition-transform duration-300 shadow-sm">
             <DollarSign className="h-4 w-4" />
           </div>
         </div>
         
-        <div className="font-luxury text-xl sm:text-2xl text-amber-400 tracking-wider font-bold relative z-10">
+        <div className="font-display text-lg sm:text-xl xl:text-[1.35rem] text-amber-500 tracking-tight font-extrabold relative z-10 whitespace-nowrap">
           <AnimatedCounter value={stats.totalValue} isCurrency />
         </div>
 
         <div className="mt-3 flex items-center justify-between text-[10px] font-mono text-zinc-400 border-t border-white/5 pt-2 relative z-10">
-          <span>Capital em Pátio</span>
-          <span className="text-emerald-400 font-semibold flex items-center gap-1">
-            <CheckCircle2 className="h-3 w-3 text-emerald-400" /> 100% Ativo
+          <span>Soma do estoque</span>
+          <span className="text-emerald-500 font-semibold flex items-center gap-1">
+            <CheckCircle2 className="h-3 w-3 text-emerald-500" /> 100% ativo
           </span>
         </div>
       </motion.div>
@@ -70,25 +70,25 @@ export default function KpiCardsSection({ stats }: KpiCardsSectionProps) {
         variants={itemVariants}
         whileHover={{ y: -4, scale: 1.015 }}
         transition={{ duration: 0.2 }}
-        className="relative rounded-3xl border border-white/10 bg-gradient-to-b from-zinc-900/80 via-zinc-900/40 to-zinc-950/90 p-5 backdrop-blur-2xl overflow-hidden group hover:border-blue-500/40 shadow-[0_15px_35px_rgba(0,0,0,0.5)]"
+        className="relative rounded-3xl border border-white/10 bg-gradient-to-b from-zinc-900/90 via-zinc-900/50 to-zinc-950/90 p-5 backdrop-blur-2xl overflow-hidden group hover:border-blue-500/40 luxury-kpi-shadow transition-all duration-300"
       >
         <div className="absolute -right-8 -top-8 h-28 w-28 rounded-full bg-blue-500/15 blur-2xl group-hover:bg-blue-500/30 transition-all duration-500 pointer-events-none" />
         
         <div className="flex items-center justify-between mb-3 relative z-10">
-          <span className="font-mono text-[9px] uppercase tracking-widest text-zinc-400 font-bold">Veículos em Pátio</span>
-          <div className="flex h-8 w-8 items-center justify-center rounded-xl bg-blue-500/15 border border-blue-500/30 text-blue-400 group-hover:rotate-12 transition-transform duration-300 shadow-[0_0_15px_rgba(59,130,246,0.2)]">
+          <span className="font-mono text-[9px] uppercase tracking-widest text-zinc-400 font-bold">Veículos Disponíveis</span>
+          <div className="flex h-8 w-8 items-center justify-center rounded-xl bg-blue-500/15 border border-blue-500/30 text-blue-500 group-hover:rotate-12 transition-transform duration-300 shadow-sm">
             <CarIcon className="h-4 w-4" />
           </div>
         </div>
 
-        <div className="font-luxury text-xl sm:text-2xl text-white tracking-wider font-bold relative z-10 flex items-baseline gap-1.5">
+        <div className="font-display text-lg sm:text-xl xl:text-[1.35rem] text-zinc-100 tracking-tight font-extrabold relative z-10 flex items-baseline gap-1.5 whitespace-nowrap">
           <AnimatedCounter value={stats.totalCars} /> 
-          <span className="text-xs font-mono text-zinc-400 font-normal uppercase">unid.</span>
+          <span className="text-xs font-mono text-zinc-400 font-normal lowercase">unidades</span>
         </div>
 
         <div className="mt-3 flex items-center justify-between text-[10px] font-mono text-zinc-400 border-t border-white/5 pt-2 relative z-10">
-          <span>{stats.brandList.length} Montadoras</span>
-          <span className="text-blue-400 font-semibold">Showroom</span>
+          <span>{stats.brandList.length} marcas distintas</span>
+          <span className="text-blue-500 font-semibold">Em estoque</span>
         </div>
       </motion.div>
 
@@ -97,24 +97,24 @@ export default function KpiCardsSection({ stats }: KpiCardsSectionProps) {
         variants={itemVariants}
         whileHover={{ y: -4, scale: 1.015 }}
         transition={{ duration: 0.2 }}
-        className="relative rounded-3xl border border-white/10 bg-gradient-to-b from-zinc-900/80 via-zinc-900/40 to-zinc-950/90 p-5 backdrop-blur-2xl overflow-hidden group hover:border-emerald-500/40 shadow-[0_15px_35px_rgba(0,0,0,0.5)]"
+        className="relative rounded-3xl border border-white/10 bg-gradient-to-b from-zinc-900/90 via-zinc-900/50 to-zinc-950/90 p-5 backdrop-blur-2xl overflow-hidden group hover:border-emerald-500/40 luxury-kpi-shadow transition-all duration-300"
       >
         <div className="absolute -right-8 -top-8 h-28 w-28 rounded-full bg-emerald-500/15 blur-2xl group-hover:bg-emerald-500/30 transition-all duration-500 pointer-events-none" />
         
         <div className="flex items-center justify-between mb-3 relative z-10">
           <span className="font-mono text-[9px] uppercase tracking-widest text-zinc-400 font-bold">Ticket Médio</span>
-          <div className="flex h-8 w-8 items-center justify-center rounded-xl bg-emerald-500/15 border border-emerald-500/30 text-emerald-400 group-hover:rotate-12 transition-transform duration-300 shadow-[0_0_15px_rgba(16,185,129,0.2)]">
+          <div className="flex h-8 w-8 items-center justify-center rounded-xl bg-emerald-500/15 border border-emerald-500/30 text-emerald-500 group-hover:rotate-12 transition-transform duration-300 shadow-sm">
             <TrendingUp className="h-4 w-4" />
           </div>
         </div>
 
-        <div className="font-luxury text-xl sm:text-2xl text-emerald-400 tracking-wider font-bold relative z-10">
+        <div className="font-display text-lg sm:text-xl xl:text-[1.35rem] text-emerald-500 tracking-tight font-extrabold relative z-10 whitespace-nowrap">
           <AnimatedCounter value={stats.avgPrice} isCurrency />
         </div>
 
         <div className="mt-3 flex items-center justify-between text-[10px] font-mono text-zinc-400 border-t border-white/5 pt-2 relative z-10">
-          <span>Média por Carro</span>
-          <span className="text-emerald-400 font-semibold">Consolidado</span>
+          <span>Média por seminovo</span>
+          <span className="text-emerald-500 font-semibold">Showroom</span>
         </div>
       </motion.div>
 
@@ -123,79 +123,79 @@ export default function KpiCardsSection({ stats }: KpiCardsSectionProps) {
         variants={itemVariants}
         whileHover={{ y: -4, scale: 1.015 }}
         transition={{ duration: 0.2 }}
-        className="relative rounded-3xl border border-white/10 bg-gradient-to-b from-zinc-900/80 via-zinc-900/40 to-zinc-950/90 p-5 backdrop-blur-2xl overflow-hidden group hover:border-purple-500/40 shadow-[0_15px_35px_rgba(0,0,0,0.5)]"
+        className="relative rounded-3xl border border-white/10 bg-gradient-to-b from-zinc-900/90 via-zinc-900/50 to-zinc-950/90 p-5 backdrop-blur-2xl overflow-hidden group hover:border-purple-500/40 luxury-kpi-shadow transition-all duration-300"
       >
         <div className="absolute -right-8 -top-8 h-28 w-28 rounded-full bg-purple-500/15 blur-2xl group-hover:bg-purple-500/30 transition-all duration-500 pointer-events-none" />
         
         <div className="flex items-center justify-between mb-3 relative z-10">
-          <span className="font-mono text-[9px] uppercase tracking-widest text-zinc-400 font-bold">KM Média</span>
-          <div className="flex h-8 w-8 items-center justify-center rounded-xl bg-purple-500/15 border border-purple-500/30 text-purple-400 group-hover:rotate-12 transition-transform duration-300 shadow-[0_0_15px_rgba(139,92,246,0.2)]">
+          <span className="font-mono text-[9px] uppercase tracking-widest text-zinc-400 font-bold">Quilometragem Média</span>
+          <div className="flex h-8 w-8 items-center justify-center rounded-xl bg-purple-500/15 border border-purple-500/30 text-purple-500 group-hover:rotate-12 transition-transform duration-300 shadow-sm">
             <Gauge className="h-4 w-4" />
           </div>
         </div>
 
-        <div className="font-luxury text-xl sm:text-2xl text-zinc-100 tracking-wider font-bold relative z-10 flex items-baseline gap-1.5">
+        <div className="font-display text-lg sm:text-xl xl:text-[1.35rem] text-zinc-100 tracking-tight font-extrabold relative z-10 flex items-baseline gap-1.5 whitespace-nowrap">
           <AnimatedCounter value={Math.round(stats.avgKm)} /> 
-          <span className="text-xs font-mono text-zinc-400 font-normal uppercase">km</span>
+          <span className="text-xs font-mono text-zinc-400 font-normal lowercase">km</span>
         </div>
 
         <div className="mt-3 flex items-center justify-between text-[10px] font-mono text-zinc-400 border-t border-white/5 pt-2 relative z-10">
-          <span>{stats.lowMileagePercentage}% &lt; 45.000 km</span>
-          <span className="text-purple-400 font-semibold">Baixa KM</span>
+          <span>{stats.lowMileagePercentage}% &lt; 45 mil km</span>
+          <span className="text-purple-500 font-semibold">Baixa KM</span>
         </div>
       </motion.div>
 
-      {/* KPI 5: Safra Média (Corrigido para 2020 sem ponto) */}
+      {/* KPI 5: Safra Média (Sem ponto decimal/milhar!) */}
       <motion.div
         variants={itemVariants}
         whileHover={{ y: -4, scale: 1.015 }}
         transition={{ duration: 0.2 }}
-        className="relative rounded-3xl border border-white/10 bg-gradient-to-b from-zinc-900/80 via-zinc-900/40 to-zinc-950/90 p-5 backdrop-blur-2xl overflow-hidden group hover:border-orange-500/40 shadow-[0_15px_35px_rgba(0,0,0,0.5)]"
+        className="relative rounded-3xl border border-white/10 bg-gradient-to-b from-zinc-900/90 via-zinc-900/50 to-zinc-950/90 p-5 backdrop-blur-2xl overflow-hidden group hover:border-orange-500/40 luxury-kpi-shadow transition-all duration-300"
       >
         <div className="absolute -right-8 -top-8 h-28 w-28 rounded-full bg-orange-500/15 blur-2xl group-hover:bg-orange-500/30 transition-all duration-500 pointer-events-none" />
         
         <div className="flex items-center justify-between mb-3 relative z-10">
           <span className="font-mono text-[9px] uppercase tracking-widest text-zinc-400 font-bold">Safra Média</span>
-          <div className="flex h-8 w-8 items-center justify-center rounded-xl bg-orange-500/15 border border-orange-500/30 text-orange-400 group-hover:rotate-12 transition-transform duration-300 shadow-[0_0_15px_rgba(249,115,22,0.2)]">
+          <div className="flex h-8 w-8 items-center justify-center rounded-xl bg-orange-500/15 border border-orange-500/30 text-orange-500 group-hover:rotate-12 transition-transform duration-300 shadow-sm">
             <Calendar className="h-4 w-4" />
           </div>
         </div>
 
-        <div className="font-luxury text-xl sm:text-2xl text-orange-400 tracking-wider font-bold relative z-10">
+        <div className="font-display text-lg sm:text-xl xl:text-[1.35rem] text-orange-500 tracking-tight font-extrabold relative z-10 whitespace-nowrap">
           <AnimatedCounter value={stats.avgYear} isYear />
         </div>
 
         <div className="mt-3 flex items-center justify-between text-[10px] font-mono text-zinc-400 border-t border-white/5 pt-2 relative z-10">
           <span>{stats.recentYearsPercentage}% 2022+</span>
-          <span className="text-orange-400 font-semibold">Seminovos</span>
+          <span className="text-orange-500 font-semibold">Seminovos</span>
         </div>
       </motion.div>
 
-      {/* KPI 6: Índice de Liquidez & Giro */}
+      {/* KPI 6: Mix de SUVs & Crossovers */}
       <motion.div
         variants={itemVariants}
         whileHover={{ y: -4, scale: 1.015 }}
         transition={{ duration: 0.2 }}
-        className="relative rounded-3xl border border-cyan-500/30 bg-gradient-to-b from-zinc-900/80 via-zinc-900/40 to-zinc-950/90 p-5 backdrop-blur-2xl overflow-hidden group hover:border-cyan-400/60 shadow-[0_15px_35px_rgba(0,0,0,0.5)]"
+        className="relative rounded-3xl border border-cyan-500/30 bg-gradient-to-b from-zinc-900/90 via-zinc-900/50 to-zinc-950/90 p-5 backdrop-blur-2xl overflow-hidden group hover:border-cyan-400/60 luxury-kpi-shadow transition-all duration-300"
       >
         <div className="absolute -right-8 -top-8 h-28 w-28 rounded-full bg-cyan-500/20 blur-2xl group-hover:bg-cyan-500/35 transition-all duration-500 pointer-events-none" />
         
         <div className="flex items-center justify-between mb-3 relative z-10">
-          <span className="font-mono text-[9px] uppercase tracking-widest text-zinc-400 font-bold">Saúde de Giro</span>
-          <div className="flex h-8 w-8 items-center justify-center rounded-xl bg-cyan-500/15 border border-cyan-500/30 text-cyan-400 group-hover:rotate-12 transition-transform duration-300 shadow-[0_0_15px_rgba(6,182,212,0.2)]">
-            <Zap className="h-4 w-4" />
+          <span className="font-mono text-[9px] uppercase tracking-widest text-zinc-400 font-bold">Mix de SUVs</span>
+          <div className="flex h-8 w-8 items-center justify-center rounded-xl bg-cyan-500/15 border border-cyan-500/30 text-cyan-500 group-hover:rotate-12 transition-transform duration-300 shadow-sm">
+            <Layers className="h-4 w-4" />
           </div>
         </div>
 
-        <div className="font-luxury text-xl sm:text-2xl text-cyan-400 tracking-wider font-bold relative z-10 flex items-baseline gap-1">
-          <AnimatedCounter value={stats.liquidityScore} />
-          <span className="text-xs font-mono text-zinc-400 font-normal">/ 100</span>
+        <div className="font-display text-lg sm:text-xl xl:text-[1.35rem] text-cyan-500 tracking-tight font-extrabold relative z-10 flex items-baseline gap-1 whitespace-nowrap">
+          <AnimatedCounter value={stats.suvPercentage} />
+          <span className="text-sm font-mono text-cyan-400 font-bold">%</span>
         </div>
 
         <div className="mt-3 flex items-center justify-between text-[10px] font-mono text-zinc-400 border-t border-white/5 pt-2 relative z-10">
-          <span>~{stats.estimatedMonthlyGiro} Carros/Mês</span>
-          <span className="text-cyan-400 font-semibold flex items-center gap-1">
-            <Activity className="h-3 w-3 text-cyan-400 animate-pulse" /> Alto Giro
+          <span>{stats.bodyTypes.find(b => b.name === 'SUV')?.value || 0} do pátio</span>
+          <span className="text-cyan-500 font-semibold flex items-center gap-1">
+            <Sparkles className="h-3 w-3 text-cyan-400" /> Categoria Líder
           </span>
         </div>
       </motion.div>

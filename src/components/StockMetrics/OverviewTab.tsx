@@ -49,14 +49,14 @@ export default function OverviewTab({
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.4 }}
-          className="lg:col-span-7 rounded-3xl border border-white/10 bg-zinc-900/40 p-6 sm:p-7 backdrop-blur-2xl flex flex-col justify-between shadow-2xl relative overflow-hidden"
+          className="lg:col-span-7 rounded-3xl border border-white/10 bg-gradient-to-br from-zinc-900/80 via-zinc-900/40 to-zinc-950/90 p-6 sm:p-7 backdrop-blur-2xl flex flex-col justify-between luxury-card-shadow relative overflow-hidden"
         >
           <div className="absolute top-0 right-0 h-40 w-40 bg-amber-500/5 blur-3xl pointer-events-none" />
 
           <div>
             <div className="flex items-center justify-between mb-5">
               <div className="flex items-center gap-2.5">
-                <div className="flex h-8 w-8 items-center justify-center rounded-xl bg-amber-500/10 border border-amber-500/20 text-amber-400">
+                <div className="flex h-8 w-8 items-center justify-center rounded-xl bg-amber-500/10 border border-amber-500/20 text-amber-500">
                   <Crown className="h-4 w-4" />
                 </div>
                 <div>
@@ -71,7 +71,7 @@ export default function OverviewTab({
 
               <button
                 onClick={() => setActiveViewTab('brands')}
-                className="text-[11px] font-mono text-amber-400 hover:text-amber-300 font-bold uppercase flex items-center gap-1 cursor-pointer transition-colors"
+                className="text-[11px] font-mono text-amber-500 hover:text-amber-400 font-bold uppercase flex items-center gap-1 cursor-pointer transition-colors"
               >
                 <span>Ver todas ({stats.brandList.length})</span>
                 <ChevronRight className="h-3.5 w-3.5" />
@@ -93,19 +93,19 @@ export default function OverviewTab({
                       setSelectedBrandFilter(brand.name);
                       setActiveViewTab('inventory');
                     }}
-                    className="group p-4 rounded-2xl bg-zinc-950/60 border border-white/5 hover:border-amber-500/40 hover:bg-zinc-900/80 transition-all duration-300 cursor-pointer"
+                    className="group p-4 rounded-2xl bg-zinc-950/50 border border-white/5 hover:border-amber-500/40 hover:bg-zinc-900/70 transition-all duration-300 cursor-pointer"
                   >
                     <div className="flex items-center justify-between mb-2">
                       <div className="flex items-center gap-3">
                         <span className={`flex h-6 w-6 items-center justify-center rounded-full text-[10px] font-mono font-bold transition-transform group-hover:scale-110 ${
                           isLeading 
-                            ? 'bg-amber-500 text-black shadow-[0_0_12px_rgba(245,158,11,0.5)]' 
+                            ? 'bg-amber-500 text-[#09090b] shadow-sm' 
                             : 'bg-zinc-800 text-zinc-300 border border-white/5'
                         }`}>
                           {idx + 1}
                         </span>
                         <div>
-                          <span className="font-display text-sm font-bold text-zinc-100 group-hover:text-amber-400 transition-colors">
+                          <span className="font-display text-sm font-bold text-zinc-100 group-hover:text-amber-500 transition-colors">
                             {brand.name}
                           </span>
                           <span className="text-[10px] font-mono text-zinc-500 ml-2 hidden sm:inline">
@@ -115,10 +115,10 @@ export default function OverviewTab({
                       </div>
 
                       <div className="text-right">
-                        <span className="font-mono text-xs font-bold text-white">
+                        <span className="font-mono text-xs font-bold text-zinc-100">
                           {brand.count} {brand.count === 1 ? 'veículo' : 'veículos'}
                         </span>
-                        <span className="font-mono text-xs text-amber-400 font-bold ml-2">
+                        <span className="font-mono text-xs text-amber-500 font-bold ml-2">
                           {brand.percentage}%
                         </span>
                       </div>
@@ -132,8 +132,8 @@ export default function OverviewTab({
                         transition={{ duration: 0.8, delay: idx * 0.1, ease: 'easeOut' }}
                         className={`h-full rounded-full ${
                           isLeading 
-                            ? 'bg-gradient-to-r from-amber-500 via-amber-400 to-yellow-300 shadow-[0_0_15px_rgba(245,158,11,0.5)]' 
-                            : 'bg-gradient-to-r from-zinc-500 to-zinc-300'
+                            ? 'bg-gradient-to-r from-amber-500 via-amber-400 to-yellow-300' 
+                            : 'bg-gradient-to-r from-zinc-500 to-zinc-400'
                         }`}
                       />
                     </div>
@@ -161,13 +161,13 @@ export default function OverviewTab({
           initial={{ opacity: 0, x: 20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.4 }}
-          className="lg:col-span-5 rounded-3xl border border-white/10 bg-zinc-900/40 p-6 sm:p-7 backdrop-blur-2xl flex flex-col justify-between space-y-4 shadow-2xl relative overflow-hidden"
+          className="lg:col-span-5 rounded-3xl border border-white/10 bg-gradient-to-br from-zinc-900/80 via-zinc-900/40 to-zinc-950/90 p-6 sm:p-7 backdrop-blur-2xl flex flex-col justify-between space-y-4 luxury-card-shadow relative overflow-hidden"
         >
           <div className="absolute top-0 right-0 h-40 w-40 bg-emerald-500/5 blur-3xl pointer-events-none" />
 
           <div>
             <div className="flex items-center gap-2.5 mb-5">
-              <div className="flex h-8 w-8 items-center justify-center rounded-xl bg-amber-500/10 border border-amber-500/20 text-amber-400">
+              <div className="flex h-8 w-8 items-center justify-center rounded-xl bg-amber-500/10 border border-amber-500/20 text-amber-500">
                 <Sparkles className="h-4 w-4" />
               </div>
               <div>
@@ -183,44 +183,44 @@ export default function OverviewTab({
             <div className="space-y-3.5">
               {topBrand && (
                 <div className="p-4 rounded-2xl bg-amber-500/5 border border-amber-500/20 space-y-1.5 relative overflow-hidden">
-                  <div className="flex items-center gap-2 text-amber-400 font-mono text-xs font-bold">
+                  <div className="flex items-center gap-2 text-amber-500 font-mono text-xs font-bold">
                     <Crown className="h-4 w-4" />
                     <span>Montadora Líder: {topBrand.name}</span>
                   </div>
                   <p className="font-display text-xs text-zinc-300 leading-relaxed font-light">
-                    Representa <strong className="text-amber-300 font-semibold">{topBrand.count} veículos ({topBrand.percentage}% do estoque)</strong>, totalizando <strong className="text-white font-medium">{formatBRL(topBrand.value)}</strong> em capital investido no pátio.
+                    Representa <strong className="text-amber-500 font-semibold">{topBrand.count} veículos ({topBrand.percentage}% do estoque)</strong>, totalizando <strong className="text-zinc-100 font-medium">{formatBRL(topBrand.value)}</strong> em capital investido no pátio.
                   </p>
                 </div>
               )}
 
-              <div className="p-4 rounded-2xl bg-zinc-950/60 border border-white/5 space-y-1.5">
-                <div className="flex items-center gap-2 text-emerald-400 font-mono text-xs font-bold">
+              <div className="p-4 rounded-2xl bg-zinc-950/50 border border-white/5 space-y-1.5">
+                <div className="flex items-center gap-2 text-emerald-500 font-mono text-xs font-bold">
                   <Layers className="h-4 w-4" />
                   <span>Perfil de Carrocerias & SUVs</span>
                 </div>
                 <p className="font-display text-xs text-zinc-300 leading-relaxed font-light">
-                  <strong className="text-white font-semibold">{stats.suvPercentage}% do showroom</strong> é composto por SUVs e Crossovers, o segmento de maior procura e velocidade de revenda no mercado nacional.
+                  <strong className="text-zinc-100 font-semibold">{stats.suvPercentage}% do showroom</strong> é composto por SUVs e Crossovers, o segmento de maior procura e velocidade de revenda no mercado nacional.
                 </p>
               </div>
 
-              <div className="p-4 rounded-2xl bg-zinc-950/60 border border-white/5 space-y-1.5">
-                <div className="flex items-center gap-2 text-purple-400 font-mono text-xs font-bold">
+              <div className="p-4 rounded-2xl bg-zinc-950/50 border border-white/5 space-y-1.5">
+                <div className="flex items-center gap-2 text-purple-500 font-mono text-xs font-bold">
                   <Gauge className="h-4 w-4" />
                   <span>Alta Atratividade por Baixa KM</span>
                 </div>
                 <p className="font-display text-xs text-zinc-300 leading-relaxed font-light">
-                  <strong className="text-white font-semibold">{stats.lowMileagePercentage}% dos carros</strong> possuem menos de 45.000 km rodados, permitindo margens de negociação mais saudáveis e garantia estendida.
+                  <strong className="text-zinc-100 font-semibold">{stats.lowMileagePercentage}% dos carros</strong> possuem menos de 45.000 km rodados, permitindo margens de negociação mais saudáveis e garantia estendida.
                 </p>
               </div>
 
               {leadsList && leadsList.length > 0 && (
-                <div className="p-4 rounded-2xl bg-zinc-950/60 border border-white/5 space-y-1.5">
-                  <div className="flex items-center gap-2 text-blue-400 font-mono text-xs font-bold">
+                <div className="p-4 rounded-2xl bg-zinc-950/50 border border-white/5 space-y-1.5">
+                  <div className="flex items-center gap-2 text-blue-500 font-mono text-xs font-bold">
                     <Users className="h-4 w-4" />
                     <span>Cruzamento com Fila de Espera</span>
                   </div>
                   <p className="font-display text-xs text-zinc-300 leading-relaxed font-light">
-                    Existem <strong className="text-white font-semibold">{leadsList.length} clientes aguardando contato</strong> na Fila de Espera com alta afinidade para os modelos em estoque.
+                    Existem <strong className="text-zinc-100 font-semibold">{leadsList.length} clientes aguardando contato</strong> na Fila de Espera com alta afinidade para os modelos em estoque.
                   </p>
                 </div>
               )}
@@ -232,7 +232,7 @@ export default function OverviewTab({
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
               onClick={() => setActiveViewTab('pricing')}
-              className="w-full py-3 rounded-2xl bg-zinc-800/80 hover:bg-zinc-800 text-zinc-200 hover:text-white font-mono text-xs font-bold uppercase tracking-wider transition-all flex items-center justify-center gap-2 cursor-pointer border border-white/10 shadow-lg"
+              className="w-full py-3 rounded-2xl bg-zinc-850 hover:bg-zinc-800 text-zinc-200 hover:text-white font-mono text-xs font-bold uppercase tracking-wider transition-all flex items-center justify-center gap-2 cursor-pointer border border-white/10 shadow-sm"
             >
               <BarChart3 className="h-4 w-4 text-amber-500" />
               <span>Ver Análise de Curva de Preço e Mix</span>

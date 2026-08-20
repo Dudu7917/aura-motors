@@ -54,7 +54,8 @@ export default function AnimatedCounter({
   }
 
   if (isYear) {
-    return <span>{displayValue > 0 ? String(displayValue) : '—'}</span>;
+    // Garantir que anos como 2020 nunca sejam formatados com ponto (ex: 2.020)
+    return <span>{displayValue > 0 ? String(Math.round(displayValue)) : '—'}</span>;
   }
 
   return (

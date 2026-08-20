@@ -7,14 +7,12 @@ import {
   Crown, 
   DollarSign, 
   Car as CarIcon, 
-  Radio,
-  Zap,
-  TrendingUp,
-  Activity,
-  ShieldCheck
+  Radio, 
+  Zap, 
+  TrendingUp, 
+  ShieldCheck 
 } from 'lucide-react';
 import { MetricsTabType, CalculatedStockStats } from './types';
-import { formatBRL } from './helpers';
 
 interface HeroBannerProps {
   stats: CalculatedStockStats;
@@ -45,47 +43,47 @@ export default function HeroBanner({
       initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-      className="relative rounded-3xl border border-white/10 bg-gradient-to-br from-zinc-900/90 via-zinc-900/40 to-zinc-950/95 p-6 sm:p-8 backdrop-blur-3xl overflow-hidden shadow-[0_25px_70px_rgba(0,0,0,0.8)]"
+      className="relative rounded-3xl border border-white/10 bg-gradient-to-br from-zinc-900/90 via-zinc-900/50 to-zinc-950/95 p-6 sm:p-8 backdrop-blur-3xl overflow-hidden luxury-hero-shadow text-left"
     >
-      {/* Efeitos Glow Atmosféricos */}
-      <div className="absolute -right-24 -top-24 h-80 w-80 rounded-full bg-amber-500/15 blur-[120px] pointer-events-none" />
-      <div className="absolute -left-24 -bottom-24 h-80 w-80 rounded-full bg-emerald-500/10 blur-[120px] pointer-events-none" />
-      <div className="absolute top-1/2 left-1/3 h-64 w-64 rounded-full bg-blue-500/5 blur-[100px] pointer-events-none" />
+      {/* Efeitos Glow Atmosféricos Suaves */}
+      <div className="absolute -right-24 -top-24 h-80 w-80 rounded-full bg-amber-500/15 blur-[100px] pointer-events-none" />
+      <div className="absolute -left-24 -bottom-24 h-80 w-80 rounded-full bg-emerald-500/10 blur-[100px] pointer-events-none" />
+      <div className="absolute top-1/2 left-1/3 h-64 w-64 rounded-full bg-blue-500/5 blur-[90px] pointer-events-none" />
 
       {/* Faixa Superior de Telemetria Contínua */}
       <div className="mb-6 pb-4 border-b border-white/5 flex flex-wrap items-center justify-between gap-3 text-left">
-        <div className="flex flex-wrap items-center gap-3">
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/30 backdrop-blur-md shadow-[0_0_20px_rgba(245,158,11,0.15)]">
+        <div className="flex flex-wrap items-center gap-2.5 sm:gap-3">
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/30 backdrop-blur-md">
             <span className="relative flex h-2 w-2">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75" />
               <span className="relative inline-flex rounded-full h-2 w-2 bg-amber-500" />
             </span>
-            <span className="font-mono text-[10px] uppercase tracking-[0.25em] text-amber-400 font-bold">
+            <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-amber-500 font-bold">
               Business Intelligence & Gestão de Pátio
             </span>
           </div>
 
-          <div className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/5 border border-white/10 font-mono text-[10px] text-zinc-300">
+          <div className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-zinc-950/40 border border-white/10 font-mono text-[10px] text-zinc-300">
             <Radio className="h-3 w-3 text-emerald-400 animate-pulse" />
             <span>Sincronia Ativa ({stats.totalCars} Veículos)</span>
           </div>
 
-          <div className="hidden md:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 font-mono text-[10px] text-emerald-300">
-            <ShieldCheck className="h-3 w-3 text-emerald-400" />
-            <span>Score de Liquidez: {stats.liquidityScore}/100</span>
+          <div className="hidden md:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/20 font-mono text-[10px] text-blue-400">
+            <Crown className="h-3 w-3 text-blue-400" />
+            <span>{stats.brandList.length} Fabricantes Ativos</span>
           </div>
         </div>
 
         {/* Mini Ticker com Métricas Rápidas */}
         <div className="hidden xl:flex items-center gap-4 font-mono text-[10.5px] text-zinc-400">
           <span className="flex items-center gap-1.5 text-zinc-300">
-            <TrendingUp className="h-3.5 w-3.5 text-amber-400" />
-            Giro Estimado: <strong className="text-amber-400 font-bold">~{stats.estimatedMonthlyGiro} unid/mês</strong>
+            <TrendingUp className="h-3.5 w-3.5 text-amber-500" />
+            SUVs & Crossovers: <strong className="text-amber-500 font-bold">{stats.suvPercentage}%</strong>
           </span>
-          <span className="text-zinc-700">•</span>
+          <span className="text-zinc-500 opacity-40">•</span>
           <span className="flex items-center gap-1.5 text-zinc-300">
             <Zap className="h-3.5 w-3.5 text-emerald-400" />
-            Baixa KM: <strong className="text-emerald-400 font-bold">{stats.lowMileagePercentage}%</strong>
+            Baixa KM (&lt;45k): <strong className="text-emerald-400 font-bold">{stats.lowMileagePercentage}%</strong>
           </span>
         </div>
       </div>
@@ -108,7 +106,7 @@ export default function HeroBanner({
             whileHover={{ scale: 1.03, y: -2 }}
             whileTap={{ scale: 0.97 }}
             onClick={onExportCSV}
-            className="flex items-center gap-2 px-5 py-3 rounded-2xl border border-white/10 bg-zinc-900/80 hover:bg-zinc-850 hover:border-amber-500/40 text-zinc-300 hover:text-white font-mono text-xs uppercase tracking-wider transition-all duration-300 cursor-pointer shadow-lg hover:shadow-[0_0_20px_rgba(245,158,11,0.15)]"
+            className="flex items-center gap-2 px-5 py-3 rounded-2xl border border-white/10 bg-zinc-950/60 hover:bg-zinc-900/80 hover:border-amber-500/40 text-zinc-200 hover:text-white font-mono text-xs uppercase tracking-wider transition-all duration-300 cursor-pointer shadow-sm"
             title="Exportar dados do estoque para planilha CSV"
           >
             <Download className="h-4 w-4 text-amber-500" />
@@ -119,10 +117,10 @@ export default function HeroBanner({
             <motion.button
               whileHover={{ scale: 1.04, y: -2 }}
               whileTap={{ scale: 0.96 }}
-              onClick={() => onOpenAiConcierge('Faça um relatório executivo detalhado dos pontos fortes, concentração de marcas, giro potencial e oportunidades comerciais do estoque atual.')}
-              className="flex items-center gap-2.5 px-6 py-3 rounded-2xl bg-gradient-to-r from-amber-500 via-amber-400 to-yellow-500 hover:from-amber-400 hover:to-yellow-400 text-black font-mono text-xs uppercase font-extrabold tracking-wider transition-all duration-300 shadow-[0_0_30px_rgba(245,158,11,0.35)] cursor-pointer"
+              onClick={() => onOpenAiConcierge('Faça um relatório executivo detalhado dos pontos fortes, concentração de marcas, perfil de precificação e mix de carrocerias do estoque atual.')}
+              className="flex items-center gap-2.5 px-6 py-3 rounded-2xl bg-gradient-to-r from-amber-500 via-amber-400 to-yellow-500 hover:from-amber-400 hover:to-yellow-400 text-[#09090b] font-mono text-xs uppercase font-extrabold tracking-wider transition-all duration-300 shadow-md shadow-amber-500/25 cursor-pointer"
             >
-              <Sparkles className="h-4 w-4 fill-black" />
+              <Sparkles className="h-4 w-4 fill-[#09090b]" />
               <span>Insights com IA</span>
             </motion.button>
           )}
@@ -140,11 +138,11 @@ export default function HeroBanner({
               onClick={() => setActiveViewTab(tab.id)}
               className={`relative flex items-center gap-2.5 px-4 sm:px-5 py-2.5 rounded-2xl font-mono text-xs uppercase tracking-wider transition-all duration-300 cursor-pointer ${
                 isActive
-                  ? 'text-black font-extrabold bg-gradient-to-r from-amber-400 via-amber-300 to-yellow-400 shadow-[0_0_25px_rgba(245,158,11,0.4)]'
-                  : 'text-zinc-400 hover:text-white bg-zinc-950/60 border border-white/5 hover:border-white/15 hover:bg-zinc-900/60'
+                  ? 'text-[#09090b] font-black bg-gradient-to-r from-amber-400 via-amber-300 to-yellow-400 shadow-md shadow-amber-500/30'
+                  : 'text-zinc-400 hover:text-zinc-100 bg-zinc-950/50 border border-white/5 hover:border-white/15 hover:bg-zinc-900/60'
               }`}
             >
-              <Icon className={`h-4 w-4 ${isActive ? 'text-black stroke-[2.5]' : 'text-zinc-400'}`} />
+              <Icon className={`h-4 w-4 ${isActive ? 'text-[#09090b] stroke-[2.5]' : 'text-zinc-400'}`} />
               <span>{tab.label}</span>
             </button>
           );

@@ -92,13 +92,13 @@ export default function CarGridCard({
         e.preventDefault();
         onContextMenu(e, car);
       }}
-      className={`group relative flex flex-col justify-between overflow-hidden rounded-2xl bg-zinc-900/40 border transition-all duration-500 text-zinc-100 ${
+      className={`group relative flex flex-col justify-between overflow-hidden rounded-2xl bg-zinc-900/40 border transition-all duration-500 text-zinc-100 luxury-card-shadow ${
         isLastUnit 
-          ? 'border-amber-500/20 shadow-[0_0_20px_rgba(245,158,11,0.06)] hover:border-amber-500/60 hover:shadow-[0_0_30px_rgba(245,158,11,0.18)]'
+          ? 'border-amber-500/30 hover:border-amber-500/60'
           : isMostSearched
-            ? 'border-cyan-500/25 shadow-[0_0_20px_rgba(6,182,212,0.06)] hover:border-cyan-500/60 hover:shadow-[0_0_30px_rgba(6,182,212,0.18)]'
-            : 'border-white/5 hover:border-amber-500/30 hover:shadow-2xl'
-      } luxury-glow`}
+            ? 'border-cyan-500/35 hover:border-cyan-500/60'
+            : 'border-white/10 hover:border-amber-500/40'
+      }`}
     >
       {/* Decorative border glow animation line */}
       <div className={`absolute top-0 left-0 h-1.5 w-full bg-gradient-to-r scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left ${
@@ -106,7 +106,7 @@ export default function CarGridCard({
           ? 'from-amber-500 via-amber-400 to-transparent'
           : isMostSearched
             ? 'from-cyan-500 via-sky-400 to-transparent'
-            : 'from-amber-600 via-yellow-400/10 to-transparent'
+            : 'from-amber-600 via-yellow-400/20 to-transparent'
       }`} />
 
       {/* Shimmering glare effect moving overlay on hover */}
@@ -159,8 +159,8 @@ export default function CarGridCard({
         )}
 
         {matchingLeadsCount > 0 && (
-          <span className="absolute bottom-4 left-4 rounded-full bg-amber-500/90 border border-amber-400/25 px-2.5 py-1 font-mono text-[8px] uppercase tracking-widest text-black font-black shadow-lg flex items-center space-x-1 z-10 animate-pulse">
-            <span className="h-1.5 w-1.5 rounded-full bg-black animate-ping" />
+          <span className="absolute bottom-4 left-4 rounded-full bg-amber-500/95 border border-amber-400/30 px-2.5 py-1 font-mono text-[8px] uppercase tracking-widest text-[#09090b] font-black shadow-lg flex items-center space-x-1 z-10 animate-pulse">
+            <span className="h-1.5 w-1.5 rounded-full bg-[#09090b] animate-ping" />
             <span>🔥 {matchingLeadsCount} {matchingLeadsCount === 1 ? 'LEAD INTERESSADO' : 'LEADS INTERESSADOS'}</span>
           </span>
         )}
@@ -168,7 +168,7 @@ export default function CarGridCard({
         {/* Pricing Display */}
         <span 
           onMouseEnter={() => triggerNelsinhoMouseHover('show-price')}
-          className="absolute bottom-4 right-4 text-xs sm:text-sm font-mono tracking-wider bg-amber-500 text-black font-extrabold px-3 py-1 rounded-md shadow-lg z-10"
+          className="absolute bottom-4 right-4 text-xs sm:text-sm font-mono tracking-wider bg-gradient-to-r from-amber-500 to-yellow-400 text-[#09090b] font-black px-3 py-1 rounded-md shadow-lg z-10"
         >
           R$ {car.price.toLocaleString('pt-BR')}
         </span>
@@ -180,7 +180,7 @@ export default function CarGridCard({
           <div className="flex items-start justify-between">
             <h3 
               onClick={() => onSelectCarForDetails(car)}
-              className="font-display text-base font-semibold tracking-wide text-white hover:text-amber-400 transition-colors cursor-pointer text-left leading-snug hover:underline decoration-amber-500/40 decoration-1"
+              className="font-display text-base font-semibold tracking-wide text-white hover:text-amber-500 transition-colors cursor-pointer text-left leading-snug hover:underline decoration-amber-500/40 decoration-1"
             >
               {car.name}
             </h3>
@@ -197,7 +197,7 @@ export default function CarGridCard({
               </span>
             </div>
           </div>
-          <p className="font-mono text-[9px] text-amber-500/90 uppercase tracking-widest font-semibold text-left flex items-center justify-between">
+          <p className="font-mono text-[9px] text-amber-500 uppercase tracking-widest font-semibold text-left flex items-center justify-between">
             <span>{car.role}</span>
           </p>
           {car.sellerName && (
@@ -217,15 +217,15 @@ export default function CarGridCard({
         <div className="grid grid-cols-3 gap-2 rounded-xl bg-zinc-950/50 p-3.5 border border-white/5 font-mono text-[9px] text-center select-none">
           <div>
             <span className="block text-zinc-500 text-[7.5px] uppercase tracking-wider">0-100 KM/H</span>
-            <strong className="text-white text-[11px] font-bold">{car.specs.acceleration}s</strong>
+            <strong className="text-zinc-100 text-[11px] font-bold">{car.specs.acceleration}s</strong>
           </div>
           <div className="border-x border-white/5">
             <span className="block text-zinc-500 text-[7.5px] uppercase tracking-wider">POTÊNCIA</span>
-            <strong className="text-white text-[11px] font-bold">{car.specs.power} cv</strong>
+            <strong className="text-zinc-100 text-[11px] font-bold">{car.specs.power} cv</strong>
           </div>
           <div>
             <span className="block text-zinc-500 text-[7.5px] uppercase tracking-wider">RODADO</span>
-            <strong className="text-emerald-400 text-[9px] font-bold block truncate max-w-[80px] mx-auto uppercase" title={car.specs.rangeOrdisplacement}>
+            <strong className="text-emerald-500 text-[9px] font-bold block truncate max-w-[80px] mx-auto uppercase" title={car.specs.rangeOrdisplacement}>
               {car.specs.rangeOrdisplacement}
             </strong>
           </div>
@@ -240,7 +240,7 @@ export default function CarGridCard({
               title="Comparar Fichas Técnicas"
               className={`flex-1 flex items-center justify-center space-x-2 rounded-full border transition-all duration-300 py-2.5 font-display text-[9px] tracking-wider font-semibold uppercase cursor-pointer ${
                 isCompared
-                  ? 'bg-amber-500/15 border-amber-500 text-amber-550 shadow-md'
+                  ? 'bg-amber-500/15 border-amber-500 text-amber-500 shadow-md'
                   : 'border-white/10 bg-white/5 hover:bg-white/10 text-zinc-400 hover:text-white'
               }`}
             >
@@ -261,10 +261,10 @@ export default function CarGridCard({
           <button
             onClick={() => onSelectCarForDetails(car)}
             onMouseEnter={() => triggerNelsinhoMouseHover('show-details-btn')}
-            className="w-full text-center rounded-full bg-amber-600 hover:bg-amber-500 py-3 text-black font-display text-[9px] font-bold tracking-widest uppercase transition-all duration-300 cursor-pointer flex items-center justify-center space-x-1.5 shadow-[0_4px_12px_rgba(217,119,6,0.15)]"
+            className="w-full text-center rounded-full bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 py-3 text-[#09090b] font-display text-[9px] font-black tracking-widest uppercase transition-all duration-300 cursor-pointer flex items-center justify-center space-x-1.5 shadow-md shadow-amber-500/20"
           >
             <Eye className="h-3.5 w-3.5 animate-pulse" />
-            <span>FOTOS REAIS & COMPRAR</span>
+            <span>FOTOS REAIS & DETALHES</span>
           </button>
         </div>
 

@@ -56,10 +56,10 @@ export default function Navbar({
         <div className="hidden md:flex items-center space-x-1 rounded-full border border-white/5 bg-zinc-900/40 p-1 flex-shrink-0">
           <button
             onClick={() => onTabChange('showroom')}
-            className={`flex items-center space-x-1.5 px-3 py-1.5 rounded-full transition-all text-[10px] xl:text-[11px] font-medium uppercase tracking-wider cursor-pointer whitespace-nowrap flex-shrink-0 ${
+            className={`flex items-center space-x-1.5 px-3.5 py-1.5 rounded-full transition-all text-[10px] xl:text-[11px] uppercase tracking-wider cursor-pointer whitespace-nowrap flex-shrink-0 ${
               activeTab === 'showroom'
-                ? 'bg-amber-500 text-black font-semibold'
-                : 'text-zinc-400 hover:text-white'
+                ? 'bg-amber-500 text-[#09090b] font-extrabold shadow-sm'
+                : 'text-zinc-400 hover:text-white font-medium'
             }`}
           >
             <Compass className="h-3.5 w-3.5" />
@@ -68,10 +68,10 @@ export default function Navbar({
 
           <button
             onClick={() => onTabChange('metrics')}
-            className={`flex items-center space-x-1.5 px-3 py-1.5 rounded-full transition-all text-[10px] xl:text-[11px] font-medium uppercase tracking-wider cursor-pointer whitespace-nowrap flex-shrink-0 ${
+            className={`flex items-center space-x-1.5 px-3.5 py-1.5 rounded-full transition-all text-[10px] xl:text-[11px] uppercase tracking-wider cursor-pointer whitespace-nowrap flex-shrink-0 ${
               activeTab === 'metrics'
-                ? 'bg-amber-500 text-black font-semibold'
-                : 'text-zinc-400 hover:text-white'
+                ? 'bg-amber-500 text-[#09090b] font-extrabold shadow-sm'
+                : 'text-zinc-400 hover:text-white font-medium'
             }`}
           >
             <Activity className="h-3.5 w-3.5" />
@@ -80,10 +80,10 @@ export default function Navbar({
 
           <button
             onClick={() => onTabChange('custom_scrape')}
-            className={`flex items-center space-x-1.5 px-3 py-1.5 rounded-full transition-all text-[10px] xl:text-[11px] font-medium uppercase tracking-wider cursor-pointer whitespace-nowrap flex-shrink-0 ${
+            className={`flex items-center space-x-1.5 px-3.5 py-1.5 rounded-full transition-all text-[10px] xl:text-[11px] uppercase tracking-wider cursor-pointer whitespace-nowrap flex-shrink-0 ${
               activeTab === 'custom_scrape'
-                ? 'bg-amber-500 text-black font-semibold'
-                : 'text-zinc-400 hover:text-white'
+                ? 'bg-amber-500 text-[#09090b] font-extrabold shadow-sm'
+                : 'text-zinc-400 hover:text-white font-medium'
             }`}
           >
             <Globe className="h-3.5 w-3.5" />
@@ -92,10 +92,10 @@ export default function Navbar({
 
           <button
             onClick={() => onTabChange('waiting_list')}
-            className={`flex items-center space-x-1.5 px-3 py-1.5 rounded-full transition-all text-[10px] xl:text-[11px] font-medium uppercase tracking-wider cursor-pointer whitespace-nowrap flex-shrink-0 ${
+            className={`flex items-center space-x-1.5 px-3.5 py-1.5 rounded-full transition-all text-[10px] xl:text-[11px] uppercase tracking-wider cursor-pointer whitespace-nowrap flex-shrink-0 ${
               activeTab === 'waiting_list'
-                ? 'bg-amber-500 text-black font-semibold'
-                : 'text-zinc-400 hover:text-white'
+                ? 'bg-amber-500 text-[#09090b] font-extrabold shadow-sm'
+                : 'text-zinc-400 hover:text-white font-medium'
             }`}
           >
             <Users className="h-3.5 w-3.5" />
@@ -142,11 +142,11 @@ export default function Navbar({
             id="btn-navbar-concierge"
             onClick={onOpenAiConcierge}
             onMouseEnter={() => triggerNelsinhoMouseHover('nav-concierge-btn')}
-            className="relative flex items-center space-x-2 overflow-hidden rounded-full border border-amber-500/20 bg-amber-500/5 px-4 py-2 font-display text-[10px] sm:text-xs font-medium tracking-widest text-amber-400 transition-all hover:border-amber-500/40 hover:bg-amber-500/10 cursor-pointer"
+            className="relative flex items-center space-x-2 overflow-hidden rounded-full border border-amber-500/20 bg-amber-500/5 px-4 py-2 font-display text-[10px] sm:text-xs font-medium tracking-widest text-amber-500 transition-all hover:border-amber-500/40 hover:bg-amber-500/10 cursor-pointer"
           >
             <Sparkles className="h-3.5 w-3.5 animate-pulse text-amber-500" />
-            <span className="hidden xs:inline">AI CONCIERGE</span>
-            <span className="xs:hidden">CONCIERGE</span>
+            <span className="hidden xs:inline font-bold">AI CONCIERGE</span>
+            <span className="xs:hidden font-bold">CONCIERGE</span>
           </button>
 
           {/* Theme Toggle Trigger */}
@@ -156,7 +156,7 @@ export default function Navbar({
             className="p-2 rounded-full border border-white/5 bg-zinc-900/45 text-zinc-400 hover:text-white hover:border-amber-500/20 transition-all cursor-pointer"
             title={theme === 'dark' ? "Alternar para Modo Claro" : "Alternar para Modo Escuro"}
           >
-            {theme === 'dark' ? <Sun className="h-4.5 w-4.5" /> : <Moon className="h-4.5 w-4.5" />}
+            {theme === 'dark' ? <Sun className="h-4.5 w-4.5 text-amber-400" /> : <Moon className="h-4.5 w-4.5 text-amber-500" />}
           </button>
 
           {/* Settings Trigger */}

@@ -12,7 +12,7 @@ export default function SpecChipsRibbon({ activeCar }: SpecChipsRibbonProps) {
   return (
     <div 
       onMouseEnter={() => triggerNelsinhoMouseHover('hero-spec-chips')}
-      className="absolute -bottom-6 left-1/2 flex w-[94%] -translate-x-1/2 flex-wrap justify-between gap-2 rounded-2xl border border-white/5 bg-zinc-900/90 p-4 shadow-2xl backdrop-blur-lg sm:flex-nowrap hover:border-amber-500/20 transition-all duration-300 z-10"
+      className="absolute -bottom-6 left-1/2 flex w-[94%] -translate-x-1/2 flex-wrap justify-between gap-2 rounded-2xl border border-white/10 bg-zinc-900/90 p-4 luxury-card-shadow backdrop-blur-lg sm:flex-nowrap hover:border-amber-500/30 transition-all duration-300 z-10"
     >
       <div className="flex flex-col items-center justify-center p-1.5 text-center w-[48%] sm:w-auto">
         <div className="flex items-center space-x-1 text-zinc-400">
