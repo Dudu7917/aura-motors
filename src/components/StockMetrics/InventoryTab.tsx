@@ -1,6 +1,26 @@
-import React, { useMemo } from 'react';
-import { motion } from 'motion/react';
-import { Search, Car as CarIcon, ArrowUpRight, Calendar, SlidersHorizontal, Crown, Layers, ArrowDownUp } from 'lucide-react';
+import React, { useMemo, useState } from 'react';
+import { motion, AnimatePresence } from 'motion/react';
+import { 
+  Search, 
+  Car as CarIcon, 
+  ArrowUpRight, 
+  Calendar, 
+  Crown, 
+  Layers, 
+  ArrowDownUp, 
+  X, 
+  RotateCcw,
+  LayoutGrid,
+  List,
+  Sparkles,
+  DollarSign,
+  Gauge,
+  SlidersHorizontal,
+  CheckCircle2,
+  TrendingDown,
+  TrendingUp,
+  Tag
+} from 'lucide-react';
 import { Car } from '../../types';
 import { CalculatedStockStats, SortByType } from './types';
 import { formatBRL, detectBodyType, detectTransmission, detectFuel } from './helpers';
@@ -33,34 +53,49 @@ export default function InventoryTab({
   setSortBy,
   onSelectCar,
 }: InventoryTabProps) {
-  // Opções formatadas para o Seletor de Marcas
-  const brandOptions: LuxurySelectOption[] = useMemo(() => [
-    { value: 'all', label: 'Todas as Marcas', count: stats.totalCars },
-    ...stats.brandList.map(b => ({
-      value: b.name,
-      label: b.name,
-      count: b.count
-    }))
-  ], [stats.brandList, stats.totalCars]);
+  const [viewMode, setViewMode] = useState<'grid' | 'table'>('grid');
 
-  // Opções formatadas para o Seletor de Carrocerias
-  const categoryOptions: LuxurySelectOption[] = useMemo(() => [
-    { value: 'all', label: 'Todas as Carrocerias', count: stats.totalCars },
-    ...stats.bodyTypes.map(bt => ({
-      value: bt.name,
-      label: bt.name,
-      count: bt.value
-    }))
-  ], [stats.bodyTypes, stats.totalCars]);
-
-  // Opções formatadas para o Seletor de Ordenação
+  // Opções de ordenação com ícones semânticos
   const sortOptions: LuxurySelectOption[] = [
-    { value: 'price_desc', label: 'Maior Preço' },
-    { value: 'price_asc', label: 'Menor Preço' },
-    { value: 'year_desc', label: 'Mais Recentes (Ano)' },
-    { value: 'km_asc', label: 'Menor KM' },
-    { value: 'name_asc', label: 'Nome A-Z' },
+    { 
+      value: 'price_desc', 
+      label: 'Maior Preço', 
+      description: 'Veículos de maior valor no topo',
+      icon: <TrendingUp className="h-4 w-4 text-amber-400" /> 
+    },
+    { 
+      value: 'price_asc', 
+      label: 'Menor Preço', 
+      description: 'Oportunidades de entrada no topo',
+      icon: <TrendingDown className="h-4 w-4 text-emerald-400" /> 
+    },
+    { 
+      value: 'year_desc', 
+      label: 'Mais Recentes (Ano)', 
+      description: 'Safras e modelos mais novos',
+      icon: <Calendar className="h-4 w-4 text-orange-400" /> 
+    },
+    { 
+      value: 'km_asc', 
+      label: 'Menor Quilometragem', 
+      description: 'Carros com menor rodagem',
+      icon: <Gauge className="h-4 w-4 text-purple-400" /> 
+    },
+    { 
+      value: 'name_asc', 
+      label: 'Ordem Alfabética (A-Z)', 
+      description: 'Classificação por nome do modelo',
+      icon: <CarIcon className="h-4 w-4 text-blue-400" /> 
+    },
   ];
+
+  const hasActiveFilters = selectedBrandFilter !== 'all' || selectedCategoryFilter !== 'all' || searchQuery.trim() !== '';
+
+  const handleResetFilters = () => {
+    setSelectedBrandFilter('all');
+    setSelectedCategoryFilter('all');
+    setSearchQuery('');
+  };
 
   return (
     <motion.div
@@ -71,79 +106,278 @@ export default function InventoryTab({
       transition={{ duration: 0.35 }}
       className="space-y-6 text-left"
     >
-      {/* Barra de Filtros e Busca Rápida */}
-      <div className="rounded-3xl border border-white/10 bg-gradient-to-br from-zinc-900/90 via-zinc-900/50 to-zinc-950/90 p-5 sm:p-6 backdrop-blur-2xl space-y-4 shadow-2xl relative overflow-visible z-20">
-        <div className="absolute top-0 right-0 h-40 w-40 bg-amber-500/5 blur-3xl pointer-events-none" />
+      {/* PAINEL CENTRAL DE COMANDO E FILTROS */}
+      <div className="rounded-3xl border border-white/10 bg-gradient-to-br from-zinc-900/90 via-zinc-900/50 to-zinc-950/95 p-6 backdrop-blur-3xl space-y-5 shadow-[0_20px_60px_rgba(0,0,0,0.8)] relative overflow-visible z-20">
+        <div className="absolute top-0 right-0 h-48 w-48 bg-amber-500/10 blur-3xl pointer-events-none" />
 
-        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 relative z-10">
+        {/* Topo do Terminal com Título, Status e Alternador de Visão */}
+        <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 relative z-10">
           <div>
-            <h3 className="font-luxury text-xl sm:text-2xl text-white uppercase tracking-wider font-bold flex items-center gap-2.5">
-              <CarIcon className="h-5 w-5 text-amber-500" />
-              <span>Explorador de Veículos em Estoque</span>
+            <div className="flex items-center gap-2 mb-1">
+              <span className="h-2 w-2 rounded-full bg-amber-500 animate-ping" />
+              <span className="font-mono text-[10px] uppercase tracking-widest text-amber-400 font-bold">
+                Terminal de Consulta de Pátio
+              </span>
+            </div>
+            <h3 className="font-luxury text-2xl sm:text-3xl text-white uppercase tracking-wider font-bold">
+              Explorador Executivo de Estoque
             </h3>
-            <p className="font-display text-xs text-zinc-400 font-light">
-              Filtre por fabricante, tipo de carroceria, valor ou busque diretamente por modelo.
-            </p>
           </div>
 
-          <div className="font-mono text-xs text-amber-400 bg-amber-500/10 px-3.5 py-1.5 rounded-full border border-amber-500/30">
-            {filteredCars.length} de {stats.totalCars} veículos encontrados
+          <div className="flex items-center gap-3 w-full md:w-auto justify-between md:justify-end">
+            <span className="font-mono text-xs text-amber-400 bg-amber-500/10 px-4 py-2 rounded-2xl border border-amber-500/30 flex items-center gap-2">
+              <Sparkles className="h-3.5 w-3.5 text-amber-400" />
+              <strong>{filteredCars.length}</strong> de {stats.totalCars} veículos
+            </span>
+
+            {/* Alternador de Visualização Grid / Tabela */}
+            <div className="flex items-center p-1 rounded-2xl bg-zinc-950 border border-white/10">
+              <button
+                type="button"
+                onClick={() => setViewMode('grid')}
+                className={`p-2 rounded-xl transition-all cursor-pointer ${
+                  viewMode === 'grid' 
+                    ? 'bg-amber-500 text-black shadow-[0_0_15px_rgba(245,158,11,0.4)] font-bold' 
+                    : 'text-zinc-400 hover:text-white'
+                }`}
+                title="Visualização em Cards Cinemáticos"
+              >
+                <LayoutGrid className="h-4 w-4" />
+              </button>
+              <button
+                type="button"
+                onClick={() => setViewMode('table')}
+                className={`p-2 rounded-xl transition-all cursor-pointer ${
+                  viewMode === 'table' 
+                    ? 'bg-amber-500 text-black shadow-[0_0_15px_rgba(245,158,11,0.4)] font-bold' 
+                    : 'text-zinc-400 hover:text-white'
+                }`}
+                title="Visualização em Tabela Executiva"
+              >
+                <List className="h-4 w-4" />
+              </button>
+            </div>
           </div>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 relative z-10">
-          
-          {/* Input de Busca Customizado */}
-          <div className="relative">
-            <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 h-4 w-4 text-zinc-400" />
+        {/* 1. SELETOR DE MARCAS EM CARROSSEL DINÂMICO (BRAND RIBBON) */}
+        <div className="space-y-2 relative z-10">
+          <div className="flex items-center justify-between">
+            <span className="font-mono text-[10px] uppercase tracking-widest text-zinc-400 font-bold flex items-center gap-1.5">
+              <Crown className="h-3.5 w-3.5 text-amber-400" />
+              <span>Filtrar por Montadora ({stats.brandList.length} marcas no pátio):</span>
+            </span>
+            {selectedBrandFilter !== 'all' && (
+              <button
+                onClick={() => setSelectedBrandFilter('all')}
+                className="text-[10px] font-mono text-amber-400 hover:underline cursor-pointer"
+              >
+                Limpar Marca
+              </button>
+            )}
+          </div>
+
+          <div className="flex items-center gap-2 overflow-x-auto pb-2 custom-scrollbar">
+            {/* Botão Todas as Marcas */}
+            <motion.button
+              type="button"
+              whileHover={{ scale: 1.04 }}
+              whileTap={{ scale: 0.96 }}
+              onClick={() => setSelectedBrandFilter('all')}
+              className={`shrink-0 flex items-center gap-2 px-3.5 py-2 rounded-2xl font-mono text-xs uppercase tracking-wider transition-all duration-300 cursor-pointer ${
+                selectedBrandFilter === 'all'
+                  ? 'bg-gradient-to-r from-amber-500 to-yellow-400 text-black font-extrabold shadow-[0_0_20px_rgba(245,158,11,0.4)] border border-amber-400'
+                  : 'bg-zinc-950/80 hover:bg-zinc-900 text-zinc-300 border border-white/10 hover:border-white/25'
+              }`}
+            >
+              <span>Todas</span>
+              <span className={`px-2 py-0.5 rounded-full text-[10px] font-bold ${
+                selectedBrandFilter === 'all' ? 'bg-black/20 text-black' : 'bg-white/5 text-zinc-400'
+              }`}>
+                {stats.totalCars}
+              </span>
+            </motion.button>
+
+            {/* Chips de Cada Marca */}
+            {stats.brandList.map(brand => {
+              const isSelected = selectedBrandFilter.toLowerCase() === brand.name.toLowerCase();
+
+              return (
+                <motion.button
+                  key={brand.name}
+                  type="button"
+                  whileHover={{ scale: 1.04 }}
+                  whileTap={{ scale: 0.96 }}
+                  onClick={() => setSelectedBrandFilter(isSelected ? 'all' : brand.name)}
+                  className={`shrink-0 flex items-center gap-2 px-3.5 py-2 rounded-2xl font-mono text-xs uppercase tracking-wider transition-all duration-300 cursor-pointer ${
+                    isSelected
+                      ? 'bg-gradient-to-r from-amber-500 to-yellow-400 text-black font-extrabold shadow-[0_0_20px_rgba(245,158,11,0.4)] border border-amber-400'
+                      : 'bg-zinc-950/80 hover:bg-zinc-900 text-zinc-300 border border-white/10 hover:border-amber-500/40'
+                  }`}
+                >
+                  <span>{brand.name}</span>
+                  <span className={`px-2 py-0.5 rounded-full text-[10px] font-bold ${
+                    isSelected ? 'bg-black/20 text-black' : 'bg-white/5 text-amber-400'
+                  }`}>
+                    {brand.count}
+                  </span>
+                </motion.button>
+              );
+            })}
+          </div>
+        </div>
+
+        {/* 2. SELETOR DE CARROCERIAS EM SEGMENTED CONTROL */}
+        <div className="space-y-2 relative z-10 pt-2 border-t border-white/5">
+          <div className="flex items-center justify-between">
+            <span className="font-mono text-[10px] uppercase tracking-widest text-zinc-400 font-bold flex items-center gap-1.5">
+              <Layers className="h-3.5 w-3.5 text-purple-400" />
+              <span>Segmento & Carroceria:</span>
+            </span>
+          </div>
+
+          <div className="flex flex-wrap items-center gap-2">
+            <button
+              type="button"
+              onClick={() => setSelectedCategoryFilter('all')}
+              className={`px-3.5 py-1.5 rounded-xl font-mono text-xs uppercase tracking-wider transition-all cursor-pointer ${
+                selectedCategoryFilter === 'all'
+                  ? 'bg-purple-500/20 text-purple-300 border border-purple-500/50 font-bold shadow-[0_0_15px_rgba(139,92,246,0.2)]'
+                  : 'bg-zinc-950/60 hover:bg-zinc-900 text-zinc-400 border border-white/5'
+              }`}
+            >
+              Todas as Carrocerias
+            </button>
+
+            {stats.bodyTypes.map(bt => {
+              const isSelected = selectedCategoryFilter === bt.name;
+              return (
+                <button
+                  key={bt.name}
+                  type="button"
+                  onClick={() => setSelectedCategoryFilter(isSelected ? 'all' : bt.name)}
+                  className={`flex items-center gap-2 px-3.5 py-1.5 rounded-xl font-mono text-xs uppercase tracking-wider transition-all cursor-pointer ${
+                    isSelected
+                      ? 'bg-purple-500/20 text-purple-300 border border-purple-500/50 font-bold shadow-[0_0_15px_rgba(139,92,246,0.2)]'
+                      : 'bg-zinc-950/60 hover:bg-zinc-900 text-zinc-400 border border-white/5 hover:border-purple-500/30'
+                  }`}
+                >
+                  <span>{bt.name}</span>
+                  <span className="text-[10px] text-zinc-500 font-normal">({bt.value})</span>
+                </button>
+              );
+            })}
+          </div>
+        </div>
+
+        {/* 3. BARRA DE BUSCA EM TEMPO REAL & ORDENAÇÃO EXECUTIVA */}
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-3 pt-3 border-t border-white/5 relative z-10">
+          {/* Input de Busca com Design de Terminal */}
+          <div className="md:col-span-8 relative">
+            <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-4 w-4 text-amber-500 pointer-events-none" />
             <input
               type="text"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              placeholder="Buscar por modelo, marca..."
-              className="w-full rounded-2xl border border-white/10 bg-zinc-950/80 hover:border-white/20 py-2.5 pl-10 pr-4 font-mono text-xs text-white placeholder-zinc-500 focus:border-amber-500 focus:outline-none transition-all shadow-inner"
+              placeholder="Digite o modelo, versão, ano ou palavra-chave..."
+              className="w-full rounded-2xl border border-white/10 bg-zinc-950/90 hover:border-amber-500/40 py-3 pl-11 pr-10 font-mono text-xs text-white placeholder-zinc-500 focus:border-amber-500 focus:outline-none transition-all shadow-inner"
             />
+            {searchQuery && (
+              <button
+                type="button"
+                onClick={() => setSearchQuery('')}
+                className="absolute right-3.5 top-1/2 -translate-y-1/2 text-zinc-400 hover:text-white p-1 cursor-pointer"
+                title="Limpar busca"
+              >
+                <X className="h-4 w-4" />
+              </button>
+            )}
           </div>
 
-          {/* Filtro de Marca com LuxurySelect */}
-          <LuxurySelect
-            value={selectedBrandFilter}
-            onChange={setSelectedBrandFilter}
-            options={brandOptions}
-            placeholder="Todas as Marcas"
-            icon={<Crown className="h-3.5 w-3.5 text-amber-400" />}
-          />
-
-          {/* Filtro de Carroceria com LuxurySelect */}
-          <LuxurySelect
-            value={selectedCategoryFilter}
-            onChange={setSelectedCategoryFilter}
-            options={categoryOptions}
-            placeholder="Todas as Carrocerias"
-            icon={<Layers className="h-3.5 w-3.5 text-purple-400" />}
-          />
-
-          {/* Ordenação com LuxurySelect */}
-          <LuxurySelect
-            value={sortBy}
-            onChange={(val) => setSortBy(val as SortByType)}
-            options={sortOptions}
-            placeholder="Ordenar por..."
-            icon={<ArrowDownUp className="h-3.5 w-3.5 text-amber-400" />}
-            isAccent
-          />
-
+          {/* Ordenação com LuxurySelect Refinado */}
+          <div className="md:col-span-4">
+            <LuxurySelect
+              value={sortBy}
+              onChange={(val) => setSortBy(val as SortByType)}
+              options={sortOptions}
+              placeholder="Critério de Ordenação"
+              isAccent
+            />
+          </div>
         </div>
+
+        {/* 4. CHIPS DE FILTROS ATIVOS & BOTÃO DE RESET */}
+        <AnimatePresence>
+          {hasActiveFilters && (
+            <motion.div
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: 'auto' }}
+              exit={{ opacity: 0, height: 0 }}
+              className="flex flex-wrap items-center gap-2 pt-3 border-t border-white/5 relative z-10"
+            >
+              <span className="font-mono text-[10px] text-zinc-500 uppercase tracking-widest">
+                Filtros Aplicados:
+              </span>
+
+              {selectedBrandFilter !== 'all' && (
+                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 font-mono text-[11px] font-semibold">
+                  Marca: <strong>{selectedBrandFilter}</strong>
+                  <button onClick={() => setSelectedBrandFilter('all')} className="hover:text-white cursor-pointer">
+                    <X className="h-3 w-3" />
+                  </button>
+                </span>
+              )}
+
+              {selectedCategoryFilter !== 'all' && (
+                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-purple-500/10 border border-purple-500/30 text-purple-400 font-mono text-[11px] font-semibold">
+                  Carroceria: <strong>{selectedCategoryFilter}</strong>
+                  <button onClick={() => setSelectedCategoryFilter('all')} className="hover:text-white cursor-pointer">
+                    <X className="h-3 w-3" />
+                  </button>
+                </span>
+              )}
+
+              {searchQuery.trim() !== '' && (
+                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/30 text-blue-400 font-mono text-[11px] font-semibold">
+                  Busca: <strong>"{searchQuery}"</strong>
+                  <button onClick={() => setSearchQuery('')} className="hover:text-white cursor-pointer">
+                    <X className="h-3 w-3" />
+                  </button>
+                </span>
+              )}
+
+              <button
+                type="button"
+                onClick={handleResetFilters}
+                className="ml-auto flex items-center gap-1.5 px-3 py-1 rounded-full bg-zinc-800 hover:bg-zinc-700 text-zinc-300 hover:text-white font-mono text-[10px] uppercase tracking-wider transition-all cursor-pointer border border-white/10"
+              >
+                <RotateCcw className="h-3 w-3 text-amber-400" />
+                <span>Limpar Todos</span>
+              </button>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
 
-      {/* Grid de Carros Filtrados */}
+      {/* RENDERIZAÇÃO DOS RESULTADOS */}
       {filteredCars.length === 0 ? (
-        <div className="p-12 text-center rounded-3xl border border-white/10 bg-zinc-900/30 backdrop-blur-xl">
-          <CarIcon className="h-12 w-12 text-zinc-600 mx-auto mb-3" />
-          <h4 className="font-luxury text-lg text-zinc-300 uppercase tracking-wider">Nenhum veículo encontrado</h4>
-          <p className="font-display text-xs text-zinc-500 mt-1">Tente ajustar seus termos de busca ou remover os filtros aplicados.</p>
+        <div className="p-16 text-center rounded-3xl border border-white/10 bg-zinc-900/30 backdrop-blur-2xl space-y-3">
+          <CarIcon className="h-12 w-12 text-zinc-600 mx-auto" />
+          <h4 className="font-luxury text-xl text-zinc-200 uppercase tracking-wider font-bold">Nenhum veículo encontrado</h4>
+          <p className="font-display text-xs text-zinc-500 max-w-md mx-auto">
+            Não encontramos veículos correspondentes aos filtros selecionados. Tente ajustar os parâmetros ou clique em limpar filtros.
+          </p>
+          <button
+            type="button"
+            onClick={handleResetFilters}
+            className="mt-2 px-5 py-2.5 rounded-2xl bg-amber-500/10 hover:bg-amber-500/20 border border-amber-500/30 text-amber-400 font-mono text-xs font-bold uppercase tracking-wider transition-all cursor-pointer inline-flex items-center gap-2"
+          >
+            <RotateCcw className="h-3.5 w-3.5" />
+            <span>Restaurar Estoque Completo ({stats.totalCars})</span>
+          </button>
         </div>
-      ) : (
+      ) : viewMode === 'grid' ? (
+        /* VISUALIZAÇÃO 1: GRID CINEMÁTICO */
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
           {filteredCars.map((car, idx) => {
             const body = detectBodyType(car);
@@ -155,7 +389,7 @@ export default function InventoryTab({
                 initial={{ opacity: 0, y: 15 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: Math.min(idx * 0.03, 0.4) }}
-                whileHover={{ y: -5, scale: 1.015 }}
+                whileHover={{ y: -6, scale: 1.015 }}
                 onClick={() => onSelectCar(car)}
                 className="group rounded-3xl border border-white/10 bg-gradient-to-b from-zinc-900/80 via-zinc-900/40 to-zinc-950/90 p-4.5 backdrop-blur-2xl hover:border-amber-500/50 transition-all duration-300 cursor-pointer flex flex-col justify-between space-y-3 shadow-xl relative overflow-hidden"
               >
@@ -220,6 +454,66 @@ export default function InventoryTab({
               </motion.div>
             );
           })}
+        </div>
+      ) : (
+        /* VISUALIZAÇÃO 2: TABELA EXECUTIVA DE PREGÃO */
+        <div className="rounded-3xl border border-white/10 bg-zinc-900/60 backdrop-blur-2xl overflow-hidden shadow-2xl">
+          <div className="overflow-x-auto">
+            <table className="w-full text-left font-mono text-xs">
+              <thead className="bg-zinc-950/80 border-b border-white/10 text-zinc-400 uppercase text-[10px] tracking-wider">
+                <tr>
+                  <th className="p-4">Veículo</th>
+                  <th className="p-4">Marca</th>
+                  <th className="p-4">Ano</th>
+                  <th className="p-4">Quilometragem</th>
+                  <th className="p-4">Carroceria</th>
+                  <th className="p-4">Câmbio</th>
+                  <th className="p-4 text-right">Valor de Pátio</th>
+                  <th className="p-4 text-center">Ação</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-white/5">
+                {filteredCars.map((car) => {
+                  const body = detectBodyType(car);
+                  const trans = detectTransmission(car);
+
+                  return (
+                    <tr 
+                      key={car.id} 
+                      onClick={() => onSelectCar(car)}
+                      className="hover:bg-amber-500/5 transition-colors cursor-pointer group"
+                    >
+                      <td className="p-4 font-display font-bold text-white group-hover:text-amber-400 flex items-center gap-3">
+                        <img 
+                          src={car.image} 
+                          alt={car.name} 
+                          className="h-9 w-14 object-cover rounded-lg border border-white/10" 
+                        />
+                        <span className="truncate max-w-xs">{car.name}</span>
+                      </td>
+                      <td className="p-4 text-zinc-300">
+                        <span className="px-2 py-0.5 rounded-md bg-white/5 border border-white/10 text-amber-400">
+                          {car.brand}
+                        </span>
+                      </td>
+                      <td className="p-4 text-zinc-400">{car.year}</td>
+                      <td className="p-4 text-zinc-300">{car.specs?.rangeOrdisplacement || car.kmText || '—'}</td>
+                      <td className="p-4 text-zinc-400 uppercase text-[11px]">{body}</td>
+                      <td className="p-4 text-zinc-400">{trans.includes('Auto') ? 'Automático' : 'Manual'}</td>
+                      <td className="p-4 text-right font-luxury text-sm text-amber-400 font-bold">
+                        {formatBRL(car.price)}
+                      </td>
+                      <td className="p-4 text-center">
+                        <button className="px-3 py-1 rounded-xl bg-amber-500/10 hover:bg-amber-500/20 border border-amber-500/30 text-amber-400 text-[10px] font-bold uppercase transition-all">
+                          Ver Ficha
+                        </button>
+                      </td>
+                    </tr>
+                  );
+                })}
+              </tbody>
+            </table>
+          </div>
         </div>
       )}
     </motion.div>
