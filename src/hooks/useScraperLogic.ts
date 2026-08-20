@@ -100,7 +100,44 @@ export function useScraperLogic() {
     setLogs(prev => [...prev, `[${new Date().toLocaleTimeString()}] ${msg}`]);
   };
 
-  const runCombinedExtraction = async (targetUrl: string, signal?: AbortSignal) => {
+  const matchesCriteria = (car: Car, criteria?: any): boolean => {
+    if (!criteria) return true;
+    
+    // 1. Filtro de Versão / Acabamento
+    if (criteria.version && typeof criteria.version === 'string' && criteria.version.trim().length > 0) {
+      const vTerms = criteria.version.toLowerCase().trim().split(/\s+/);
+      const fullText = `${car.name || ''} ${car.description || ''}`.toLowerCase();
+      const hasAll = vTerms.every((term: string) => fullText.includes(term));
+      if (!hasAll) return false;
+    }
+
+    // 2. Filtro de Quilometragem Máxima
+    if (criteria.kmMax && typeof criteria.kmMax === 'number' && criteria.kmMax > 0) {
+      if (car.kmText) {
+        const numKm = parseInt(String(car.kmText).replace(/\D/g, ''), 10);
+        if (!isNaN(numKm) && numKm > 0 && numKm > criteria.kmMax) {
+          return false;
+        }
+      }
+    }
+
+    // 3. Filtro de Ano Mínimo e Máximo
+    if (criteria.yearMin && typeof criteria.yearMin === 'number' && car.year && car.year < criteria.yearMin) {
+      return false;
+    }
+    if (criteria.yearMax && typeof criteria.yearMax === 'number' && car.year && car.year > criteria.yearMax) {
+      return false;
+    }
+
+    // 4. Filtro de Preço Máximo
+    if (criteria.priceMax && typeof criteria.priceMax === 'number' && car.price && car.price > criteria.priceMax) {
+      return false;
+    }
+
+    return true;
+  };
+
+  const runCombinedExtraction = async (targetUrl: string, signal?: AbortSignal, searchCriteria?: any) => {
     if (signal?.aborted) return;
     const isWebmotorsUrl = targetUrl.toLowerCase().includes("webmotors.com.br");
     addLog(`[⚡ PASSO 1: PLANEJAMENTO] Requisitando planejamento síncrono e contagem de ofertas com ${planningModel}...`);
@@ -138,12 +175,14 @@ export function useScraperLogic() {
       const uniqueCars: Car[] = [];
       planJson.data.forEach((newCar: Car) => {
         if (!uniqueCars.some(c => c.name === newCar.name && c.price === newCar.price)) {
-          uniqueCars.push(newCar);
+          if (matchesCriteria(newCar, searchCriteria)) {
+            uniqueCars.push(newCar);
+          }
         }
       });
       allAccumulatedCars = [...uniqueCars];
       setScrapedCars([...allAccumulatedCars]);
-      addLog(`[LOTE ESPECIAL] Mapeamento nativo acelerado rendeu: +${allAccumulatedCars.length} carros.`);
+      addLog(`[LOTE ESPECIAL] Mapeamento nativo acelerado rendeu: +${allAccumulatedCars.length} carros correspondentes.`);
       if (planJson.nextUrls && planJson.nextUrls.length > 0) {
         nextPagesToScrape = [...planJson.nextUrls];
       } else {
@@ -185,13 +224,13 @@ export function useScraperLogic() {
           json.data.forEach((newCar: Car) => {
             const isDuplicate = existingIds.has(newCar.id) || 
                                allAccumulatedCars.some(c => c.name === newCar.name && c.price === newCar.price && c.year === newCar.year);
-            if (!isDuplicate) {
+            if (!isDuplicate && matchesCriteria(newCar, searchCriteria)) {
               newUniqueCars.push(newCar);
               existingIds.add(newCar.id);
             }
           });
           allAccumulatedCars = [...allAccumulatedCars, ...newUniqueCars];
-          addLog(`[LOTE #${pageIndex} COMPLETADO] Adicionados +${newUniqueCars.length} novos veículos.`);
+          addLog(`[LOTE #${pageIndex} COMPLETADO] Adicionados +${newUniqueCars.length} veículos correspondentes aos filtros.`);
           setScrapedCars([...allAccumulatedCars]);
         }
       }
@@ -211,7 +250,7 @@ export function useScraperLogic() {
     }
 
     setStepStatus(prev => ({ ...prev, extractor: 'done' }));
-    addLog(`🎉 PROCESSO CONCLUÍDO COM SUCESSO! TOTAL: ${allAccumulatedCars.length} veículos.`);
+    addLog(`🎉 PROCESSO CONCLUÍDO COM SUCESSO! TOTAL: ${allAccumulatedCars.length} veículos filtrados.`);
   };
 
   const handleScrape = async (targetUrl: string) => {
@@ -294,7 +333,7 @@ export function useScraperLogic() {
 
       await new Promise(r => setTimeout(r, 800));
       setStepStatus(prev => ({ ...prev, linkGen: 'done' }));
-      await runCombinedExtraction(resJson.url, signal);
+      await runCombinedExtraction(resJson.url, signal, resJson.criteria);
 
     } catch (err: any) {
       if (err.name === 'AbortError') return;

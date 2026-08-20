@@ -17,24 +17,26 @@ export async function handleInterpretSearch(req: any, res: any) {
 
 Seu trabalho é interpretar a intenção de pesquisa do usuário em linguagem natural e traduzi-la em uma URL padrão de filtro estruturado da Webmotors de alta precisão. Além disso, você deve extrair com precisão todos os critérios especificados (marca, modelo, versão/acabamento, ano mínimo/máximo, km máximo, preço máximo, etc.).
 
-Seguem as REGRAS DE GERAÇÃO DE URLs da Webmotors:
-1. A estrutura base de listagem de estoque deve ser em minúsculo:
-   https://www.webmotors.com.br/carros/estoque/[marca]/[modelo]
-   Exemplo: Chevrolet S10 -> https://www.webmotors.com.br/carros/estoque/chevrolet/s10
-   Exemplo: Toyota Corolla -> https://www.webmotors.com.br/carros/estoque/toyota/corolla
+Seguem as REGRAS CRÍTICAS DE GERAÇÃO DE URLs da Webmotors:
+1. REGRA DE VERSÃO ESPECÍFICA (MUITO IMPORTANTE):
+   - Se o usuário pediu uma versão específica (ex: "High Country", "TSI", "GR-Sport", "Titanium", "Longitude", "Black Edition", "M Sport", "AMG", etc.), a Webmotors SÓ filtra a versão se você usar a URL de busca global com o parâmetro 'q':
+     Estrutura: https://www.webmotors.com.br/carros/estoque?q=[marca]%20[modelo]%20[versao]&anode=[ano]&anoate=[ano]&kmate=[km]
+     Exemplo: "s10 high country 2024 menos de 30.000km" -> "https://www.webmotors.com.br/carros/estoque?q=chevrolet%20s10%20high%20country&anode=2024&anoate=2024&kmate=30000"
+     Exemplo: "fusca tsi 2013 a 2015" -> "https://www.webmotors.com.br/carros/estoque?q=volkswagen%20fusca%20tsi&anode=2013&anoate=2015"
 
-2. Se a marca e o modelo não estiverem claros ou não forem específicos de marca, use a URL geral de estoque da Webmotors com o parâmetro de query '?q=...':
-   Exemplo: "suv blindado de luxo" -> https://www.webmotors.com.br/carros/estoque?q=suv%20blindado
+2. REGRA DE MODELO GERAL (Quando NÃO houver versão específica):
+   - Se o usuário pediu apenas a marca e o modelo geral (ex: "Toyota Corolla", "Honda Civic"), use o padrão de categorias:
+     Estrutura: https://www.webmotors.com.br/carros/estoque/[marca]/[modelo]
+     Exemplo: "Corolla 2020 a 2022 em SP" -> "https://www.webmotors.com.br/carros/estoque/toyota/corolla?anode=2020&anoate=2022&estado=sp"
 
-3. Filtros adicionais na query string (sempre use em minúsculas e no padrão clássico da Webmotors):
-   - Versão / Acabamento / Busca textual da versão: Quando o usuário pedir uma versão específica (ex: "High Country", "GR-Sport", "Titanium", "Longitude", "Black", "TSI", "GTI", "M Sport", "AMG"), adicione o parâmetro 'q=[versao]' na URL (ex: q=high%20country ou q=gr-sport) ou use o parâmetro 'versao=[versao]' se aplicável.
+3. Parâmetros de Query String:
    - Ano Mínimo: 'anode=[ano]' (ex: anode=2024)
    - Ano Máximo: 'anoate=[ano]' (ex: anoate=2024)
    - Preço Mínimo: 'precode=[preco]' (ex: precode=80000)
    - Preço Máximo: 'precoate=[preco]' (ex: precoate=150000)
    - Quilometragem Máxima: 'kmate=[km]' (ex: para 30.000km, use kmate=30000)
-   - Filtro de Estado/Localização: Use 'estado=[sigla]' (ex: estado=sp) se o usuário indicar localidade em SP, RJ, etc.
-   - Combine os filtros na query string usando & (ex: ?anode=2024&anoate=2024&kmate=30000&q=high%20country)
+   - Filtro de Estado/Localização: 'estado=[sigla]' (ex: estado=sp)
+
 
 Inteligência de Tabela FIPE & Baixa Quilometragem (KM):
 Se o usuário citar termos relativos ao valor FIPE daquele carro (como "abaixo da FIPE", "fipe", "tabela fipe") ou relativos a rodagem reduzida (como "baixo km", "pouco rodado", "km baixo"), determine logicamente:
