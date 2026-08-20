@@ -7,7 +7,7 @@ import React from 'react';
 import Navbar from './components/Navbar';
 import ShowroomTab from './components/ShowroomTab';
 import CarDetailsPage from './components/CarDetailsPage';
-import ScrapingLoader from './components/ScrapingLoader';
+import StockMetricsDashboard from './components/StockMetricsDashboard';
 import CustomScraperTab from './components/CustomScraperTab';
 import WaitingListTab from './components/WaitingListTab';
 import AppOverlays from './components/AppOverlays';
@@ -103,17 +103,18 @@ export default function App() {
           <motion.div
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
-            className="pt-8"
+            transition={{ duration: 0.3 }}
           >
-            <ScrapingLoader
-              isScraping={isScraping}
-              scrapingStatus={scrapingStatus}
-              carsCount={carsList.length}
+            <StockMetricsDashboard
               carsList={carsList}
-              scrapeSource={scrapeSource}
-              onTriggerScraping={handleTriggerScraping}
-              nelsinhoModel={nelsinhoModel}
-              setNelsinhoModel={setNelsinhoModel}
+              onSelectCar={setSelectedCarDetails}
+              leadsList={leadsList}
+              onOpenAiConcierge={(car, initialQuery) => {
+                if (initialQuery) {
+                  setAiConciergePreloadedQuery(initialQuery);
+                }
+                setIsAiConciergeOpen(true);
+              }}
             />
           </motion.div>
         )}
@@ -190,7 +191,6 @@ export default function App() {
           </motion.div>
         )}
 
-
       </div>
 
       <AppOverlays
@@ -206,6 +206,12 @@ export default function App() {
         setIsSettingsOpen={setIsSettingsOpen}
         handleRemoveFromCompare={handleRemoveFromCompare}
         handleClearCompare={handleClearCompare}
+        isScraping={isScraping}
+        scrapingStatus={scrapingStatus}
+        scrapeSource={scrapeSource}
+        onTriggerScraping={handleTriggerScraping}
+        nelsinhoModel={nelsinhoModel}
+        setNelsinhoModel={setNelsinhoModel}
       />
 
       <CarContextMenu

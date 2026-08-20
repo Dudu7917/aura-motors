@@ -20,6 +20,12 @@ interface AppOverlaysProps {
   setIsSettingsOpen: (open: boolean) => void;
   handleRemoveFromCompare: (carId: string) => void;
   handleClearCompare: () => void;
+  isScraping?: boolean;
+  scrapingStatus?: string;
+  scrapeSource?: string;
+  onTriggerScraping?: (force?: boolean) => void;
+  nelsinhoModel?: string;
+  setNelsinhoModel?: (model: string) => void;
 }
 
 export default function AppOverlays({
@@ -35,6 +41,12 @@ export default function AppOverlays({
   setIsSettingsOpen,
   handleRemoveFromCompare,
   handleClearCompare,
+  isScraping = false,
+  scrapingStatus = '',
+  scrapeSource = '',
+  onTriggerScraping = () => {},
+  nelsinhoModel = 'gemini-3.1-flash-lite',
+  setNelsinhoModel = () => {},
 }: AppOverlaysProps) {
   return (
     <>
@@ -74,6 +86,14 @@ export default function AppOverlays({
           <SettingsModal
             isOpen={isSettingsOpen}
             onClose={() => setIsSettingsOpen(false)}
+            isScraping={isScraping}
+            scrapingStatus={scrapingStatus}
+            carsCount={carsList.length}
+            carsList={carsList}
+            scrapeSource={scrapeSource}
+            onTriggerScraping={onTriggerScraping}
+            nelsinhoModel={nelsinhoModel}
+            setNelsinhoModel={setNelsinhoModel}
           />
         )}
       </AnimatePresence>

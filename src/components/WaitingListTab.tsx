@@ -1,16 +1,15 @@
 import React, { useState } from 'react';
 import { Lead, Car } from '../types';
-import { 
-  Trash2, Clock, Search, Sparkles, ChevronRight, AlertCircle, MessageSquare, ShieldCheck, CheckCircle2, Pencil, Mail, Plus, SlidersHorizontal 
-} from 'lucide-react';
+import { Search, AlertCircle, CheckCircle2 } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
-import { exportToCSV, printReport } from '../utils/leadsExport';
 import AddLeadForm from './WaitingList/AddLeadForm';
 import EditLeadModal from './WaitingList/EditLeadModal';
 import IaPitchModal from './WaitingList/IaPitchModal';
 import ConflictResolutionModals from './WaitingList/ConflictResolutionModals';
 import ImportBox from './WaitingList/ImportBox';
 import ConfirmModal from './WaitingList/ConfirmModal';
+import LeadCardItem from './WaitingList/LeadCardItem';
+import WaitingListHeader from './WaitingList/WaitingListHeader';
 
 interface WaitingListTabProps {
   leads: Lead[];
@@ -39,19 +38,6 @@ export default function WaitingListTab({
   const [showSuccessToast, setShowSuccessToast] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
   const [activeSubTab, setActiveSubTab] = useState<'waiting' | 'contacted'>('waiting');
-
-  const handleMarkContacted = async (lead: Lead, contacted: boolean) => {
-    setIsSubmitting(true);
-    const success = await onAddLead({
-      ...lead,
-      contacted
-    });
-    setIsSubmitting(false);
-    if (!success) {
-      alert("Falha ao atualizar o status do contato.");
-    }
-  };
-
   const [showAddModal, setShowAddModal] = useState(false);
   const [showImportModal, setShowImportModal] = useState(false);
 
@@ -92,6 +78,13 @@ export default function WaitingListTab({
     message: '',
     onConfirm: () => {}
   });
+
+  const handleMarkContacted = async (lead: Lead, contacted: boolean) => {
+    setIsSubmitting(true);
+    const success = await onAddLead({ ...lead, contacted });
+    setIsSubmitting(false);
+    if (!success) alert("Falha ao atualizar o status do contato.");
+  };
 
   const processImportedLeads = async (incomingLeads: Lead[]) => {
     const cleanPhone = (p: string) => p.replace(/\D/g, '');
@@ -231,14 +224,6 @@ export default function WaitingListTab({
     await executeAdd(newLead);
   };
 
-  const handleSaveEdit = async (updatedLead: Lead) => {
-    setIsSubmitting(true);
-    const success = await onAddLead(updatedLead);
-    setIsSubmitting(false);
-    if (success) setSelectedEditLead(null);
-    else alert("Falha ao atualizar o lead.");
-  };
-
   const handleGeneratePitch = async (lead: Lead, car: Car) => {
     setPitchLead(lead);
     setPitchCar(car);
@@ -253,7 +238,7 @@ export default function WaitingListTab({
       const data = await res.json();
       if (data.success && data.pitch) setGeneratedPitchText(data.pitch);
       else setGeneratedPitchText("Erro ao gerar a abordagem por IA.");
-    } catch (e) {
+    } catch {
       setGeneratedPitchText("Erro de conexão ao falar com o servidor de IA.");
     } finally {
       setIsGeneratingPitch(false);
@@ -312,353 +297,103 @@ export default function WaitingListTab({
         )}
       </AnimatePresence>
 
-      <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 border-b border-white/5 pb-8">
-        <div>
-          <span className="font-mono text-[9px] uppercase tracking-[0.4em] text-amber-500 font-bold block mb-1">
-            FILA DE ESPERA E CRUZAMENTO INTELIGENTE
-          </span>
-          <h2 className="font-luxury text-3xl font-medium tracking-[0.08em] text-white uppercase sm:text-4xl">
-            LEADS & INTERESSADOS
-          </h2>
-          <p className="font-display text-xs text-zinc-400 font-light max-w-2xl mt-2 leading-relaxed">
-            Cadastre contatos de clientes que aguardam veículos específicos. O sistema cruzará automaticamente o estoque ativo atual (pátio de seminovos) para encontrar combinações instantâneas.
-          </p>
-        </div>
-        
-        <div className="flex flex-wrap items-center gap-3">
-          <button
-            onClick={() => setShowImportModal(true)}
-            className="bg-zinc-900 hover:bg-zinc-800 border border-white/5 hover:border-amber-500/30 text-zinc-350 hover:text-white rounded-full px-4 py-2 flex items-center font-mono text-[10px] gap-2 transition-all cursor-pointer font-bold duration-300"
-          >
-            <Sparkles className="h-3.5 w-3.5 text-amber-500 animate-pulse" />
-            IMPORTAR COM IA
-          </button>
-          <button
-            onClick={() => setShowAddModal(true)}
-            className="bg-amber-500 hover:bg-amber-400 text-black rounded-full px-4 py-2 flex items-center font-mono text-[10px] gap-2 transition-all cursor-pointer font-bold duration-300 shadow-[0_0_15px_rgba(245,158,11,0.25)] hover:shadow-[0_0_20px_rgba(245,158,11,0.45)]"
-          >
-            <Plus className="h-3.5 w-3.5" />
-            CADASTRAR LEAD
-          </button>
-          <div className="bg-zinc-900 border border-white/5 rounded-full px-4 py-2 flex items-center font-mono text-[10px] text-zinc-400 gap-2">
-            <span className="h-2 w-2 rounded-full bg-amber-500 animate-pulse" />
-            TOTAL DE LEADS ATIVOS: <strong className="text-white">{leads.filter(l => !l.contacted).length}</strong>
-          </div>
-          {leads.filter(l => l.contacted).length > 0 && (
-            <div className="bg-zinc-900 border border-white/5 rounded-full px-4 py-2 flex items-center font-mono text-[10px] text-zinc-400 gap-2">
-              <span className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />
-              CONTATADOS: <strong className="text-white">{leads.filter(l => l.contacted).length}</strong>
-            </div>
-          )}
-          {leads.length > 0 && (
-            <div className="relative group">
-              <button className="bg-zinc-900 hover:bg-zinc-800 border border-white/5 hover:border-amber-500/30 text-zinc-350 hover:text-white rounded-full px-4 py-2 flex items-center font-mono text-[10px] gap-2 transition-all cursor-pointer font-bold duration-300">
-                EXPORTAR
-              </button>
-              <div className="absolute right-0 mt-2 w-48 bg-zinc-900 border border-white/10 rounded-2xl shadow-xl py-1 hidden group-hover:block z-50">
-                <button
-                  type="button"
-                  onClick={() => exportToCSV(leads)}
-                  className="w-full text-left px-4 py-2.5 text-[10px] font-mono text-zinc-400 hover:text-white hover:bg-white/5 transition-all cursor-pointer"
-                >
-                  EXPORTAR CSV (EXCEL)
-                </button>
-                <button
-                  type="button"
-                  onClick={() => printReport(leads, cars)}
-                  className="w-full text-left px-4 py-2.5 text-[10px] font-mono text-zinc-400 hover:text-white hover:bg-white/5 transition-all cursor-pointer"
-                >
-                  IMPRIMIR RELATÓRIO (PDF)
-                </button>
-              </div>
-            </div>
-          )}
-          {leads.length > 0 && (
-            <button
-              onClick={() => {
-                setConfirmDelete({
-                  isOpen: true,
-                  title: 'Deletar todos os leads',
-                  message: (
-                    <span>
-                      Você deseja mesmo deletar <strong className="text-red-400 font-semibold">todos os {leads.length} leads</strong> da fila de espera? Esta ação não pode ser desfeita.
-                    </span>
-                  ),
-                  confirmLabel: 'DELETAR TODOS',
-                  onConfirm: async () => {
-                    await onDeleteAllLeads();
-                    setConfirmDelete(prev => ({ ...prev, isOpen: false }));
-                  }
-                });
-              }}
-              className="bg-red-500/10 hover:bg-red-500 border border-red-500/20 hover:border-red-400 text-red-400 hover:text-white rounded-full px-4 py-2 flex items-center font-mono text-[10px] gap-2 transition-all cursor-pointer font-bold duration-300"
-            >
-              <Trash2 className="h-3.5 w-3.5" />
-              DELETAR TODOS
-            </button>
-          )}
-        </div>
-      </div>
+      <WaitingListHeader
+        leads={leads}
+        cars={cars}
+        onOpenImportModal={() => setShowImportModal(true)}
+        onOpenAddModal={() => setShowAddModal(true)}
+        onRequestDeleteAll={() => {
+          setConfirmDelete({
+            isOpen: true,
+            title: 'Deletar todos os leads',
+            message: <span>Deseja deletar <strong className="text-red-400 font-semibold">todos os {leads.length} leads</strong>?</span>,
+            confirmLabel: 'DELETAR TODOS',
+            onConfirm: async () => {
+              await onDeleteAllLeads();
+              setConfirmDelete(prev => ({ ...prev, isOpen: false }));
+            }
+          });
+        }}
+      />
 
       <div className="w-full space-y-5">
-          <div className="relative">
-            <Search className="absolute left-4 top-3.5 h-4.5 w-4.5 text-zinc-550" />
-            <input
-              type="text"
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-              placeholder="Buscar por nome de cliente, telefone, marca ou modelo de desejo..."
-              className="w-full bg-zinc-900/60 font-display text-xs rounded-full border border-white/5 py-3.5 pl-12 pr-4 text-white placeholder:text-zinc-650 focus:outline-none focus:border-amber-500/50 transition-colors font-light"
-            />
-          </div>
-
-          <div className="flex border-b border-white/5 gap-6 pt-2">
-            <button
-              onClick={() => setActiveSubTab('waiting')}
-              className={`relative pb-3 text-[10px] font-mono tracking-wider font-bold transition-all cursor-pointer ${
-                activeSubTab === 'waiting' ? 'text-amber-500' : 'text-zinc-400 hover:text-white'
-              }`}
-            >
-              FILA ATIVA ({leads.filter(l => !l.contacted).length})
-              {activeSubTab === 'waiting' && (
-                <motion.div
-                  layoutId="activeSubTabUnderline"
-                  className="absolute bottom-0 left-0 right-0 h-[2px] bg-amber-500"
-                />
-              )}
-            </button>
-            <button
-              onClick={() => setActiveSubTab('contacted')}
-              className={`relative pb-3 text-[10px] font-mono tracking-wider font-bold transition-all cursor-pointer ${
-                activeSubTab === 'contacted' ? 'text-amber-500' : 'text-zinc-400 hover:text-white'
-              }`}
-            >
-              CONTATOS EFETUADOS ({leads.filter(l => l.contacted).length})
-              {activeSubTab === 'contacted' && (
-                <motion.div
-                  layoutId="activeSubTabUnderline"
-                  className="absolute bottom-0 left-0 right-0 h-[2px] bg-amber-500"
-                />
-              )}
-            </button>
-          </div>
-
-          <div className="space-y-4 max-h-[68vh] overflow-y-auto pr-1 custom-scrollbar">
-            <AnimatePresence mode="popLayout">
-              {filteredLeads.length === 0 ? (
-                <motion.div
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  className="bg-zinc-900/20 border border-dashed border-white/5 rounded-3xl p-12 text-center text-zinc-550 font-display text-xs flex flex-col items-center justify-center space-y-3"
-                >
-                  <AlertCircle className="h-8 w-8 text-zinc-600" />
-                  <p className="font-light">Nenhum lead encontrado ou registrado nesta visualização.</p>
-                </motion.div>
-              ) : (
-                filteredLeads.map((lead) => {
-                  const matchingCars = getMatchingCarsForLead(lead);
-                  return (
-                    <motion.div
-                      key={lead.id}
-                      initial={{ opacity: 0, y: 12 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      exit={{ opacity: 0, x: -30 }}
-                      className="bg-zinc-900 border border-white/5 rounded-2xl p-5 space-y-4 hover:border-white/10 transition-all text-left relative"
-                    >
-                      <div className="flex items-start justify-between gap-4">
-                        <div className="space-y-1">
-                          <span className="font-mono text-[8px] text-zinc-500 uppercase tracking-widest flex items-center gap-1.5">
-                            <Clock className="h-3 w-3" />
-                            Registrado em {new Date(lead.createdAt).toLocaleDateString('pt-BR')} às {new Date(lead.createdAt).toLocaleTimeString('pt-BR', {hour: '2-digit', minute:'2-digit'})}
-                          </span>
-                          <h4 className="font-luxury text-base font-semibold text-white uppercase tracking-wide">
-                            {lead.fullName}
-                          </h4>
-                          <div className="flex flex-wrap items-center gap-x-4 gap-y-1 font-mono text-[10px] text-zinc-400">
-                            <a 
-                              href={`https://wa.me/55${lead.phone.replace(/\D/g, '')}`} 
-                              target="_blank" 
-                              rel="noopener noreferrer"
-                              className="flex items-center gap-1 text-emerald-400 hover:underline cursor-pointer"
-                            >
-                              <MessageSquare className="h-3.5 w-3.5" />
-                              {lead.phone}
-                            </a>
-                            {lead.email && (
-                              <span className="flex items-center gap-1">
-                                <Mail className="h-3.5 w-3.5 text-zinc-550" />
-                                {lead.email}
-                              </span>
-                            )}
-                          </div>
-                        </div>
-                        <div className="flex items-center gap-1">
-                          {onFilterShowroomByLead && (
-                            <button
-                              type="button"
-                              onClick={() => onFilterShowroomByLead(lead)}
-                              className="bg-amber-500/10 hover:bg-amber-500 border border-amber-500/20 hover:border-amber-400 text-amber-500 hover:text-black font-mono text-[9px] font-bold px-2.5 py-1.5 rounded-lg flex items-center gap-1 transition-all cursor-pointer shadow-sm"
-                              title="Aplicar filtros deste lead no pátio do Showroom"
-                            >
-                              <SlidersHorizontal className="h-3 w-3" />
-                              <span>FILTRAR NO SHOWROOM</span>
-                            </button>
-                          )}
-                          {activeSubTab === 'waiting' ? (
-                            <button
-                              onClick={() => handleMarkContacted(lead, true)}
-                              className="text-zinc-650 hover:text-emerald-450 p-2 rounded-full hover:bg-white/5 transition-all cursor-pointer"
-                              title="Marcar como Contatado"
-                            >
-                              <CheckCircle2 className="h-4.5 w-4.5" />
-                            </button>
-                          ) : (
-                            <button
-                              onClick={() => handleMarkContacted(lead, false)}
-                              className="text-zinc-650 hover:text-amber-500 p-2 rounded-full hover:bg-white/5 transition-all cursor-pointer"
-                              title="Retornar para Fila de Espera"
-                            >
-                              <Clock className="h-4.5 w-4.5" />
-                            </button>
-                          )}
-                          <button
-                            onClick={() => setSelectedEditLead(lead)}
-                            className="text-zinc-650 hover:text-amber-400 p-2 rounded-full hover:bg-white/5 transition-all cursor-pointer"
-                            title="Editar Lead"
-                          >
-                            <Pencil className="h-4.5 w-4.5" />
-                          </button>
-                          <button
-                            onClick={() => {
-                              setConfirmDelete({
-                                isOpen: true,
-                                title: 'Remover Lead',
-                                message: (
-                                  <span>
-                                    Deseja remover o lead <strong className="text-white font-semibold">{lead.fullName}</strong> da fila de espera?
-                                  </span>
-                                ),
-                                confirmLabel: 'REMOVER',
-                                onConfirm: async () => {
-                                  await onDeleteLead(lead.id);
-                                  setConfirmDelete(prev => ({ ...prev, isOpen: false }));
-                                }
-                              });
-                            }}
-                            className="text-zinc-650 hover:text-red-400 p-2 rounded-full hover:bg-white/5 transition-all cursor-pointer"
-                            title="Remover Lead"
-                          >
-                            <Trash2 className="h-4.5 w-4.5" />
-                          </button>
-                        </div>
-                      </div>
-
-                      <div className="rounded-xl bg-zinc-950/60 p-3.5 border border-white/5 flex flex-wrap items-center justify-between gap-4">
-                        <div className="space-y-1.5">
-                          <span className="font-mono text-[8px] text-zinc-500 tracking-wider block uppercase">Veículo Desejado:</span>
-                          <div className="flex flex-wrap items-center gap-1.5">
-                            {lead.desiredBrand && (
-                              <span className="bg-zinc-900 border border-zinc-800 text-zinc-350 px-2 py-0.5 rounded text-[9px] font-semibold uppercase font-mono">
-                                Marca: {lead.desiredBrand}
-                              </span>
-                            )}
-                            {lead.desiredModel && (
-                              <span className="bg-zinc-900 border border-zinc-800 text-zinc-350 px-2 py-0.5 rounded text-[9px] font-semibold uppercase font-mono">
-                                Modelo: {lead.desiredModel}
-                              </span>
-                            )}
-                            {lead.minYear && (
-                              <span className="bg-amber-500/10 border border-amber-500/20 text-amber-500 px-2 py-0.5 rounded text-[9px] font-mono">
-                                Ano &gt;= {lead.minYear}
-                              </span>
-                            )}
-                            {lead.maxYear && (
-                              <span className="bg-amber-500/10 border border-amber-500/20 text-amber-500 px-2 py-0.5 rounded text-[9px] font-mono">
-                                Ano &lt;= {lead.maxYear}
-                              </span>
-                            )}
-                            {lead.maxPrice && (
-                              <span className="bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 px-2 py-0.5 rounded text-[9px] font-mono">
-                                Preço Max: R$ {lead.maxPrice.toLocaleString('pt-BR')}
-                              </span>
-                            )}
-                          </div>
-                        </div>
-                        {lead.notes && (
-                          <div className="w-full sm:w-auto font-display text-[10.5px] font-light text-zinc-400 max-w-sm italic border-l border-white/10 pl-3 leading-relaxed">
-                            "{lead.notes}"
-                          </div>
-                        )}
-                      </div>
-
-                      <div className="pt-1">
-                        <div className="flex items-center justify-between mb-2">
-                          <span className="font-mono text-[8px] tracking-wider text-zinc-550 uppercase">
-                            Cruzamento com o Estoque ({matchingCars.length} matches):
-                          </span>
-                          {matchingCars.length > 0 ? (
-                            <span className="bg-emerald-500/10 text-emerald-400 font-mono text-[9px] font-semibold px-2 py-0.5 rounded-full border border-emerald-500/20 uppercase tracking-widest flex items-center gap-1 animate-pulse">
-                              <ShieldCheck className="h-3 w-3" /> MATCH DISPONÍVEL!
-                            </span>
-                          ) : (
-                            <span className="bg-zinc-950 text-zinc-500 font-mono text-[8.5px] px-2.5 py-0.5 rounded-full border border-white/5 uppercase tracking-wider">
-                              Aguardando veículo em pátio
-                            </span>
-                          )}
-                        </div>
-
-                        {matchingCars.length > 0 && (
-                          <div className="grid gap-3 sm:grid-cols-2">
-                            {matchingCars.map(car => (
-                              <div
-                                key={car.id}
-                                className="flex flex-col gap-2.5 bg-zinc-950/40 border border-white/5 hover:border-amber-500/30 p-3 rounded-xl transition-all text-left relative group/card"
-                              >
-                                <div 
-                                  onClick={() => onSelectCarDetails(car)}
-                                  className="flex items-center gap-3 cursor-pointer"
-                                >
-                                  <img
-                                    src={car.image}
-                                    alt={car.name}
-                                    className="h-10 w-14 rounded-lg object-cover bg-zinc-900 border border-white/5"
-                                  />
-                                  <div className="flex-1 min-w-0">
-                                    <h5 className="font-luxury text-[11px] text-white font-semibold truncate group-hover/card:text-amber-400 transition-colors uppercase">
-                                      {car.name}
-                                    </h5>
-                                    <p className="font-mono text-[9px] text-zinc-400">
-                                      {car.year} • R$ {car.price.toLocaleString('pt-BR')}
-                                    </p>
-                                  </div>
-                                  <ChevronRight className="h-3.5 w-3.5 text-zinc-550 group-hover/card:text-amber-400 group-hover/card:translate-x-0.5 transition-all flex-shrink-0" />
-                                </div>
-                                <div className="border-t border-white/5 pt-2 flex justify-between items-center">
-                                  <span className="font-mono text-[8.5px] text-zinc-650">Match no Estoque</span>
-                                  <button
-                                    type="button"
-                                    onClick={(e) => {
-                                      e.stopPropagation();
-                                      handleGeneratePitch(lead, car);
-                                    }}
-                                    className="flex items-center space-x-1.5 bg-amber-500/10 hover:bg-amber-500 border border-amber-500/20 hover:border-amber-400 text-amber-500 hover:text-black rounded px-2.5 py-1.5 font-mono text-[8.5px] font-bold tracking-wider transition-all cursor-pointer"
-                                  >
-                                    <Sparkles className="h-2.5 w-2.5" />
-                                    <span>GERAR ABORDAGEM IA</span>
-                                  </button>
-                                </div>
-                              </div>
-                            ))}
-                          </div>
-                        )}
-                      </div>
-                    </motion.div>
-                  );
-                })
-              )}
-            </AnimatePresence>
-          </div>
+        <div className="relative">
+          <Search className="absolute left-4 top-3.5 h-4.5 w-4.5 text-zinc-550" />
+          <input
+            type="text"
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+            placeholder="Buscar por nome de cliente, telefone, marca ou modelo de desejo..."
+            className="w-full bg-zinc-900/60 font-display text-xs rounded-full border border-white/5 py-3.5 pl-12 pr-4 text-white placeholder:text-zinc-650 focus:outline-none focus:border-amber-500/50 transition-colors font-light"
+          />
         </div>
+
+        <div className="flex border-b border-white/5 gap-6 pt-2">
+          <button
+            onClick={() => setActiveSubTab('waiting')}
+            className={`relative pb-3 text-[10px] font-mono tracking-wider font-bold transition-all cursor-pointer ${
+              activeSubTab === 'waiting' ? 'text-amber-500' : 'text-zinc-400 hover:text-white'
+            }`}
+          >
+            FILA ATIVA ({leads.filter(l => !l.contacted).length})
+            {activeSubTab === 'waiting' && (
+              <motion.div layoutId="activeSubTabUnderline" className="absolute bottom-0 left-0 right-0 h-[2px] bg-amber-500" />
+            )}
+          </button>
+          <button
+            onClick={() => setActiveSubTab('contacted')}
+            className={`relative pb-3 text-[10px] font-mono tracking-wider font-bold transition-all cursor-pointer ${
+              activeSubTab === 'contacted' ? 'text-amber-500' : 'text-zinc-400 hover:text-white'
+            }`}
+          >
+            CONTATOS EFETUADOS ({leads.filter(l => l.contacted).length})
+            {activeSubTab === 'contacted' && (
+              <motion.div layoutId="activeSubTabUnderline" className="absolute bottom-0 left-0 right-0 h-[2px] bg-amber-500" />
+            )}
+          </button>
+        </div>
+
+        <div className="space-y-4 max-h-[68vh] overflow-y-auto pr-1 custom-scrollbar">
+          <AnimatePresence mode="popLayout">
+            {filteredLeads.length === 0 ? (
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                className="bg-zinc-900/20 border border-dashed border-white/5 rounded-3xl p-12 text-center text-zinc-550 font-display text-xs flex flex-col items-center justify-center space-y-3"
+              >
+                <AlertCircle className="h-8 w-8 text-zinc-600" />
+                <p className="font-light">Nenhum lead encontrado ou registrado nesta visualização.</p>
+              </motion.div>
+            ) : (
+              filteredLeads.map((lead) => (
+                <LeadCardItem
+                  key={lead.id}
+                  lead={lead}
+                  matchingCars={getMatchingCarsForLead(lead)}
+                  activeSubTab={activeSubTab}
+                  onFilterShowroomByLead={onFilterShowroomByLead}
+                  onMarkContacted={handleMarkContacted}
+                  onEditLead={setSelectedEditLead}
+                  onRequestDelete={(l) => {
+                    setConfirmDelete({
+                      isOpen: true,
+                      title: 'Remover Lead',
+                      message: <span>Deseja remover <strong className="text-white font-semibold">{l.fullName}</strong>?</span>,
+                      confirmLabel: 'REMOVER',
+                      onConfirm: async () => {
+                        await onDeleteLead(l.id);
+                        setConfirmDelete(prev => ({ ...prev, isOpen: false }));
+                      }
+                    });
+                  }}
+                  onSelectCarDetails={onSelectCarDetails}
+                  onGeneratePitch={handleGeneratePitch}
+                />
+              ))
+            )}
+          </AnimatePresence>
+        </div>
+      </div>
 
       <AnimatePresence>
         {pitchLead && pitchCar && (
@@ -700,7 +435,13 @@ export default function WaitingListTab({
           <EditLeadModal
             lead={selectedEditLead}
             onClose={() => setSelectedEditLead(null)}
-            onSave={handleSaveEdit}
+            onSave={async (updatedLead) => {
+              setIsSubmitting(true);
+              const success = await onAddLead(updatedLead);
+              setIsSubmitting(false);
+              if (success) setSelectedEditLead(null);
+              else alert("Falha ao atualizar o lead.");
+            }}
             isSubmitting={isSubmitting}
           />
         )}
@@ -730,7 +471,6 @@ export default function WaitingListTab({
               initial={{ opacity: 0, scale: 0.95, y: 15 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.95, y: 15 }}
-              transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
               className="relative w-full max-w-lg bg-zinc-950/95 border border-zinc-800/80 rounded-3xl p-6 shadow-2xl overflow-y-auto max-h-[90vh] luxury-glow"
             >
               <button
@@ -762,7 +502,6 @@ export default function WaitingListTab({
               initial={{ opacity: 0, scale: 0.95, y: 15 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.95, y: 15 }}
-              transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
               className="relative w-full max-w-lg bg-zinc-950/95 border border-zinc-800/80 rounded-3xl p-6 shadow-2xl overflow-y-auto max-h-[90vh] luxury-glow"
             >
               <button
