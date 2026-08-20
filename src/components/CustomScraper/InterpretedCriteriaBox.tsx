@@ -4,8 +4,10 @@ import { Zap, ChevronRight, TrendingDown, Gauge } from 'lucide-react';
 interface InterpretedCriteria {
   brand?: string;
   model?: string;
+  version?: string;
   yearMin?: number;
   yearMax?: number;
+  kmMax?: number;
   priceMax?: number;
   isFipeQuery?: boolean;
   isLowKmQuery?: boolean;
@@ -57,9 +59,20 @@ export default function InterpretedCriteriaBox({
               Modelo: {interpretedCriteria.model}
             </span>
           )}
+          {interpretedCriteria.version && (
+            <span className="bg-amber-500/10 border border-amber-500/30 text-amber-300 px-2 py-1 rounded-md font-bold uppercase tracking-wide">
+              Versão: {interpretedCriteria.version}
+            </span>
+          )}
           {(interpretedCriteria.yearMin || interpretedCriteria.yearMax) && (
             <span className="bg-zinc-900 px-2 py-1 rounded-md border border-white/5 text-zinc-300 font-medium">
               Ano: {interpretedCriteria.yearMin || 'Qualquer'} - {interpretedCriteria.yearMax || 'Qualquer'}
+            </span>
+          )}
+          {interpretedCriteria.kmMax && (
+            <span className="bg-blue-500/10 border border-blue-500/25 text-blue-400 px-2 py-1 rounded-md font-semibold font-mono tracking-wide flex items-center gap-1.5 text-[9.5px]">
+              <Gauge className="h-3 w-3 text-blue-400" />
+              KM Máx: &lt; {Number(interpretedCriteria.kmMax).toLocaleString('pt-BR')} KM
             </span>
           )}
           {interpretedCriteria.priceMax && (
@@ -73,7 +86,7 @@ export default function InterpretedCriteriaBox({
               Tabela FIPE Estimada: R$ {Number(interpretedCriteria.estimatedFipe).toLocaleString('pt-BR')}
             </span>
           )}
-          {interpretedCriteria.isLowKmQuery && interpretedCriteria.suggestedKmMax && (
+          {interpretedCriteria.isLowKmQuery && interpretedCriteria.suggestedKmMax && !interpretedCriteria.kmMax && (
             <span className="bg-emerald-500/10 border border-emerald-500/25 text-emerald-455 px-2.5 py-1 rounded-md font-semibold font-mono tracking-wide flex items-center gap-1.5 text-[9.5px] uppercase">
               <Gauge className="h-3 w-3 text-emerald-455" />
               Baixo KM Recomendado: &lt; {Number(interpretedCriteria.suggestedKmMax).toLocaleString('pt-BR')} KM

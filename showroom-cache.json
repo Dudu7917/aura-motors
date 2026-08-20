@@ -2657,13 +2657,13 @@
     },
     {
       "id": "scraped-30-volkswagen-2024",
-      "name": "VOLKSWAGEN POLO 1.0 170 TSI HIGHLINE AUTOMÁTICO",
+      "name": "Volkswagen Polo 1.0 170 TSI Highline Automático",
       "brand": "Volkswagen",
       "role": "Volkswagen Inteligência Artificial Jina",
       "category": "classics",
       "price": 135000,
       "image": "https://www.autocerto.com/fabricantes/volkswagen.webp",
-      "description": "Este esplêndido VOLKSWAGEN POLO 1.0 170 TSI HIGHLINE AUTOMÁTICO ano modelo 2024 está disponível.",
+      "description": "Este esplêndido Volkswagen Polo 1.0 170 TSI Highline Automático ano modelo 2024 está disponível.",
       "year": 2024,
       "isAvailableForTestDrive": true,
       "specs": {
@@ -2729,13 +2729,13 @@
     },
     {
       "id": "scraped-31-volkswagen-2024",
-      "name": "VOLKSWAGEN T-CROSS 1.0 200 TSI TOTAL FLEX AUTOMÁTICO",
+      "name": "Volkswagen T-Cross 1.0 200 TSI Total Flex Automático",
       "brand": "Volkswagen",
       "role": "Volkswagen Inteligência Artificial Jina",
       "category": "suv",
       "price": 137000,
       "image": "https://www.autocerto.com/fabricantes/volkswagen.webp",
-      "description": "Este esplêndido VOLKSWAGEN T-CROSS 1.0 200 TSI TOTAL FLEX AUTOMÁTICO ano modelo 2024 está disponível.",
+      "description": "Este esplêndido Volkswagen T-Cross 1.0 200 TSI Total Flex Automático ano modelo 2024 está disponível.",
       "year": 2024,
       "isAvailableForTestDrive": true,
       "specs": {
@@ -2800,7 +2800,7 @@
     },
     {
       "id": "scraped-32-volkswagen-2022",
-      "name": "VOLKSWAGEN T-CROSS 1.4 250 TSI TOTAL FLEX HIGHLINE AUTOMÁTICO",
+      "name": "Volkswagen T-Cross 1.4 250 TSI Total Flex Highline Automático",
       "brand": "Volkswagen",
       "role": "Volkswagen Inteligência Artificial Jina",
       "category": "suv",
@@ -2893,13 +2893,13 @@
     },
     {
       "id": "scraped-33-volkswagen-2025",
-      "name": "VOLKSWAGEN T-CROSS 1.4 250 TSI TOTAL FLEX HIGHLINE AUTOMÁTICO",
+      "name": "Volkswagen T-Cross 1.4 250 TSI Total Flex Highline Automático",
       "brand": "Volkswagen",
       "role": "Volkswagen Inteligência Artificial Jina",
       "category": "suv",
       "price": 141000,
       "image": "https://www.autocerto.com/fabricantes/volkswagen.webp",
-      "description": "Este esplêndido VOLKSWAGEN T-CROSS 1.4 250 TSI TOTAL FLEX HIGHLINE AUTOMÁTICO ano modelo 2025 está disponível.",
+      "description": "Este esplêndido Volkswagen T-Cross 1.4 250 TSI Total Flex Highline Automático ano modelo 2025 está disponível.",
       "year": 2025,
       "isAvailableForTestDrive": true,
       "specs": {
@@ -2963,7 +2963,7 @@
     },
     {
       "id": "scraped-33-volkswagen-2020",
-      "name": "VOLKSWAGEN T-CROSS 1.0 200 TSI TOTAL FLEX SENSE AUTOMÁTICO",
+      "name": "Volkswagen T-Cross 1.0 200 TSI Total Flex Sense Automático",
       "brand": "Volkswagen",
       "role": "Volkswagen Inteligência Artificial Jina",
       "category": "suv",
@@ -3052,6 +3052,6 @@
       ]
     }
   ],
-  "timestamp": "2026-08-20T15:18:02.097Z",
+  "timestamp": "2026-08-20T16:07:24.219Z",
   "source": "local_file_cache"
 }

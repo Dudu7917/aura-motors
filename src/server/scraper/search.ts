@@ -15,34 +15,39 @@ export async function handleInterpretSearch(req: any, res: any) {
   try {
     const formulationPrompt = `Você é um Engenheiro de Inteligência Artificial especializado na arquitetura interna e mapeamento de URLs do portal Webmotors (webmotors.com.br), o maior classificado de automóveis do Brasil.
 
-Seu trabalho é interpretar a intenção de pesquisa do usuário em linguagem natural e traduzi-la em uma URL padrão de filtro estruturado da Webmotors de alta precisão. Além disso, se o usuário fizer buscas subjetivas sem limites exatos, como "baixa km", "pouco rodado" ou "abaixo da fipe", "fipe", você irá usar sua inteligência de mercado para estimar valores de referência.
+Seu trabalho é interpretar a intenção de pesquisa do usuário em linguagem natural e traduzi-la em uma URL padrão de filtro estruturado da Webmotors de alta precisão. Além disso, você deve extrair com precisão todos os critérios especificados (marca, modelo, versão/acabamento, ano mínimo/máximo, km máximo, preço máximo, etc.).
 
 Seguem as REGRAS DE GERAÇÃO DE URLs da Webmotors:
 1. A estrutura base de listagem de estoque deve ser em minúsculo:
    https://www.webmotors.com.br/carros/estoque/[marca]/[modelo]
+   Exemplo: Chevrolet S10 -> https://www.webmotors.com.br/carros/estoque/chevrolet/s10
    Exemplo: Toyota Corolla -> https://www.webmotors.com.br/carros/estoque/toyota/corolla
+
 2. Se a marca e o modelo não estiverem claros ou não forem específicos de marca, use a URL geral de estoque da Webmotors com o parâmetro de query '?q=...':
    Exemplo: "suv blindado de luxo" -> https://www.webmotors.com.br/carros/estoque?q=suv%20blindado
-3. Filtros adicionais na query string (sempre use em minúsculas e no padrão clássico):
-   - Ano Mínimo: 'anode=[ano]' (ex: anode=2020)
-   - Ano Máximo: 'anoate=[ano]' (ex: anoate=2022)
+
+3. Filtros adicionais na query string (sempre use em minúsculas e no padrão clássico da Webmotors):
+   - Versão / Acabamento / Busca textual da versão: Quando o usuário pedir uma versão específica (ex: "High Country", "GR-Sport", "Titanium", "Longitude", "Black", "TSI", "GTI", "M Sport", "AMG"), adicione o parâmetro 'q=[versao]' na URL (ex: q=high%20country ou q=gr-sport) ou use o parâmetro 'versao=[versao]' se aplicável.
+   - Ano Mínimo: 'anode=[ano]' (ex: anode=2024)
+   - Ano Máximo: 'anoate=[ano]' (ex: anoate=2024)
    - Preço Mínimo: 'precode=[preco]' (ex: precode=80000)
    - Preço Máximo: 'precoate=[preco]' (ex: precoate=150000)
-   - Quilometragem Máxima: 'kmate=[km]' (ex: kmate=60000)
+   - Quilometragem Máxima: 'kmate=[km]' (ex: para 30.000km, use kmate=30000)
    - Filtro de Estado/Localização: Use 'estado=[sigla]' (ex: estado=sp) se o usuário indicar localidade em SP, RJ, etc.
-   - Combine os filtros na query string usando & (ex: ?anode=2020&anoate=2022&precoate=140000)
+   - Combine os filtros na query string usando & (ex: ?anode=2024&anoate=2024&kmate=30000&q=high%20country)
 
 Inteligência de Tabela FIPE & Baixa Quilometragem (KM):
 Se o usuário citar termos relativos ao valor FIPE daquele carro (como "abaixo da FIPE", "fipe", "tabela fipe") ou relativos a rodagem reduzida (como "baixo km", "pouco rodado", "km baixo"), determine logicamente:
 1. "isFipeQuery": Defina como true.
-2. "estimatedFipe": Use seu conhecimento nativo do mercado brasileiro para estimar o preço de tabela FIPE típico médio desse modelo no período/ano filtrado.
+2. "estimatedFipe": Preço de tabela FIPE típico médio desse modelo no período/ano filtrado.
 3. "isLowKmQuery": Defina como true se ele pediu rodagem baixa.
-4. "suggestedKmMax": Defina um teto realista em km que qualifique o carro como excelente estado / pouco rodado para o ano aproximado dele (ex: se o carro for 2020 a 2022, sugerir até 45000 km ou 50000 km).
+4. "suggestedKmMax": Defina um teto realista em km se ele não especificou um número (ex: 45000).
+5. "kmMax": Se o usuário especificou um limite de km exato (ex: "menos de 30.000km"), defina "kmMax": 30000.
 
 Exemplos de Tradução:
+- "s10 high country com menos de 30.000km ano 2024" -> "https://www.webmotors.com.br/carros/estoque/chevrolet/s10?anode=2024&anoate=2024&kmate=30000&q=high%20country"
 - "Quero Corolla de 2020 a 2022 até 140 mil em SP" -> "https://www.webmotors.com.br/carros/estoque/toyota/corolla?anode=2020&anoate=2022&precoate=140000&estado=sp"
-- "Civic usado barato" -> "https://www.webmotors.com.br/carros/estoque/honda/civic"
-- "Fusca TSI de 2013 a 2015" -> "https://www.webmotors.com.br/carros/estoque/volkswagen/fusca?anode=2013&anoate=2015"
+- "Fusca TSI de 2013 a 2015" -> "https://www.webmotors.com.br/carros/estoque/volkswagen/fusca?anode=2013&anoate=2015&q=tsi"
 
 Analise a seguinte busca em português e crie a melhor URL da Webmotors compatível e analise a intenção.
 Termo de busca do usuário: "${query}"
@@ -54,8 +59,10 @@ Retorne estritamente um formato JSON com o seguinte esquema:
   "criteria": {
     "brand": "marca identificada",
     "model": "modelo identificado",
+    "version": "versão específica identificada (ex: High Country) ou null",
     "yearMin": ano mínimo ou null,
     "yearMax": ano máximo ou null,
+    "kmMax": km máximo especificado como número ou null,
     "priceMax": preço máximo ou null,
     "isFipeQuery": true/false ou null,
     "isLowKmQuery": true/false ou null,
@@ -85,13 +92,15 @@ Retorne estritamente um formato JSON com o seguinte esquema:
                   properties: {
                     brand: { type: Type.STRING },
                     model: { type: Type.STRING },
-                    yearMin: { type: Type.INTEGER },
-                    yearMax: { type: Type.INTEGER },
-                    priceMax: { type: Type.INTEGER },
-                    isFipeQuery: { type: Type.BOOLEAN },
-                    isLowKmQuery: { type: Type.BOOLEAN },
-                    estimatedFipe: { type: Type.INTEGER },
-                    suggestedKmMax: { type: Type.INTEGER }
+                    version: { type: Type.STRING, nullable: true },
+                    yearMin: { type: Type.INTEGER, nullable: true },
+                    yearMax: { type: Type.INTEGER, nullable: true },
+                    kmMax: { type: Type.INTEGER, nullable: true },
+                    priceMax: { type: Type.INTEGER, nullable: true },
+                    isFipeQuery: { type: Type.BOOLEAN, nullable: true },
+                    isLowKmQuery: { type: Type.BOOLEAN, nullable: true },
+                    estimatedFipe: { type: Type.INTEGER, nullable: true },
+                    suggestedKmMax: { type: Type.INTEGER, nullable: true }
                   },
                   required: ["brand", "model"]
                 }
