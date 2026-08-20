@@ -47,9 +47,9 @@ Se o usuário citar termos relativos ao valor FIPE daquele carro (como "abaixo d
 5. "kmMax": Se o usuário especificou um limite de km exato (ex: "menos de 30.000km"), defina "kmMax": 30000.
 
 Exemplos de Tradução:
-- "s10 high country com menos de 30.000km ano 2024" -> "https://www.webmotors.com.br/carros/estoque/chevrolet/s10?anode=2024&anoate=2024&kmate=30000&q=high%20country"
+- "s10 high country com menos de 30.000km ano 2024" -> "https://www.webmotors.com.br/carros/estoque?q=chevrolet%20s10%20high%20country&anode=2024&anoate=2024&kmate=30000"
 - "Quero Corolla de 2020 a 2022 até 140 mil em SP" -> "https://www.webmotors.com.br/carros/estoque/toyota/corolla?anode=2020&anoate=2022&precoate=140000&estado=sp"
-- "Fusca TSI de 2013 a 2015" -> "https://www.webmotors.com.br/carros/estoque/volkswagen/fusca?anode=2013&anoate=2015&q=tsi"
+- "Fusca TSI de 2013 a 2015" -> "https://www.webmotors.com.br/carros/estoque?q=volkswagen%20fusca%20tsi&anode=2013&anoate=2015"
 
 Analise a seguinte busca em português e crie a melhor URL da Webmotors compatível e analise a intenção.
 Termo de busca do usuário: "${query}"

@@ -2018,7 +2018,7 @@
       "name": "MERCEDES-BENZ GLA 200 1.6 CGI VISION 16V TURBO FLEX 4P AUTOMÁTICO",
       "brand": "Mercedes-benz",
       "role": "Mercedes-benz Inteligência Artificial Jina",
-      "category": "suv",
+      "category": "hypercars",
       "price": 99970,
       "image": "https://www.autocerto.com/fotos/6983/5322208/1_041948.jpg",
       "description": "Este esplêndido GLA 200 1.6 CGI VISION 16V TURBO FLEX 4P AUTOMÁTICO ano modelo 2015 está disponível.",
@@ -3052,6 +3052,6 @@
       ]
     }
   ],
-  "timestamp": "2026-08-20T16:07:24.219Z",
+  "timestamp": "2026-08-20T16:33:53.297Z",
   "source": "local_file_cache"
 }

@@ -37,6 +37,7 @@ export interface Car {
   wheels: WheelOption[];
   isAvailableForTestDrive: boolean;
   year: number;
+  kmText?: string;
   gallery?: string[];
   features?: string[];
   detailUrl?: string;

@@ -147,7 +147,7 @@ export function useScraperLogic() {
       method: 'POST',
       headers: getApiHeaders({ 'Content-Type': 'application/json' }),
       signal,
-      body: JSON.stringify({ url: targetUrl, mode: 'plan', planningModel, extractionModel })
+      body: JSON.stringify({ url: targetUrl, mode: 'plan', planningModel, extractionModel, criteria: searchCriteria })
     });
 
     const planJson = await planRes.json().catch(() => null);
@@ -204,7 +204,7 @@ export function useScraperLogic() {
         method: 'POST',
         headers: getApiHeaders({ 'Content-Type': 'application/json' }),
         signal,
-        body: JSON.stringify({ url: currentUrlToFetch, mode: 'extract', planningModel, extractionModel })
+        body: JSON.stringify({ url: currentUrlToFetch, mode: 'extract', planningModel, extractionModel, criteria: searchCriteria })
       });
 
       const json = await res.json().catch(() => null);

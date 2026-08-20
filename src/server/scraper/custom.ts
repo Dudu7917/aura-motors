@@ -8,7 +8,8 @@ import {
   getCurrentPageFromUrl,
   generateNextPagesUrls,
   findCarObjectsRecursive,
-  mapWebmotorsObjectToCar
+  mapWebmotorsObjectToCar,
+  filterCarByCriteria
 } from "./webmotorsHelpers";
 import {
   getCustomPlannerPrompt,
@@ -21,7 +22,7 @@ export async function runJinaFallback(url: string, customRoutingLogs: string[], 
 }
 
 export async function handleCustomScrape(req: any, res: any) {
-  const { url, mode = "extract", planningModel = "gemini-3.6-flash", extractionModel = "gemini-3.5-flash-lite" } = req.body;
+  const { url, mode = "extract", planningModel = "gemini-3.6-flash", extractionModel = "gemini-3.5-flash-lite", criteria } = req.body;
   if (!url) {
     return res.status(400).json({ success: false, error: "A URL é obrigatória" });
   }
@@ -133,17 +134,19 @@ ${cleanText.substring(0, 100000)}
           customRoutingLogs.push(`[${new Date().toLocaleTimeString('pt-BR')}] 📑 Paginação gerada pelo servidor nativamente: ${totalResults} veículos em ${totalPages} páginas.`);
         }
 
-        const mappedCars = uniqueCars.map((carObj, idx) => mapWebmotorsObjectToCar(carObj, url, idx));
+        const mappedCars = uniqueCars
+          .map((carObj, idx) => mapWebmotorsObjectToCar(carObj, url, idx))
+          .filter(car => filterCarByCriteria(car, criteria));
 
         return res.json({
           success: true,
           mode: "plan",
-          totalResults,
+          totalResults: mappedCars.length > 0 ? totalResults : 0,
           currentPageResults: mappedCars.length,
           nextUrls,
-          data: mappedCars, // Fornece os carros de bônus!
+          data: mappedCars, // Fornece os carros filtrados
           routingLogs: customRoutingLogs,
-          scrapedContent: `[PLANEJAMENTO WEBMOTORS NATIVO]\n\nMeta de Total de Resultados: ${totalResults} anúncios.\nAnúncios na Página Atual: ${mappedCars.length}\nURLs de Paginação Identificadas: ${nextUrls.length} links.`
+          scrapedContent: `[PLANEJAMENTO WEBMOTORS NATIVO]\n\nMeta de Total de Resultados: ${totalResults} anúncios.\nAnúncios Filtrados na Página Atual: ${mappedCars.length}\nURLs de Paginação Identificadas: ${nextUrls.length} links.`
         });
       }
 
@@ -272,8 +275,11 @@ ${cleanText.substring(0, 100000)}
         }
 
         if (uniqueCars.length > 0) {
-          const mappedCars = uniqueCars.map((carObj, idx) => mapWebmotorsObjectToCar(carObj, url, idx));
-          customRoutingLogs.push(`[${new Date().toLocaleTimeString('pt-BR')}] ✅ Mapeamento nativo bem-sucedido! ${mappedCars.length} carros estruturados.`);
+          const mappedCars = uniqueCars
+            .map((carObj, idx) => mapWebmotorsObjectToCar(carObj, url, idx))
+            .filter(car => filterCarByCriteria(car, criteria));
+            
+          customRoutingLogs.push(`[${new Date().toLocaleTimeString('pt-BR')}] ✅ Mapeamento nativo bem-sucedido! ${mappedCars.length} carros estruturados e validados com os critérios.`);
           scrapedContent = `[FORMATO WEBMOTORS - DADOS NATIVOS EXTRAÍDOS]\n\nEncontrados ${mappedCars.length} veículos legítimos via parsing nativo do lote correspondente.\n\nJSON Amostra:\n\n${JSON.stringify(mappedCars.slice(0, 10), null, 2)}`;
           
           return res.json({ 
@@ -359,7 +365,9 @@ ${cleanText.substring(0, 100000)}
         throw new Error(`Todos os modelos de roteamento inteligente do Gemini falharam ao processar o anúncio personalizado. Erro final: ${lastErrorMsg}`);
       }
       
-      const mappedCars = parsed.map((car: any, idx: number) => {
+      const mappedCars = parsed
+        .filter((car: any) => filterCarByCriteria(car, criteria))
+        .map((car: any, idx: number) => {
         const paintList = [
           { name: "Metálico Premium", hex: "#4B5563", price: 0, class: "bg-gray-600" },
           { name: "Branco Perolizado", hex: "#F3F4F6", price: 0, class: "bg-gray-100 border" },
