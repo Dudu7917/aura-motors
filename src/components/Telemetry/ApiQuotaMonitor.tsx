@@ -8,8 +8,11 @@ import {
   XCircle,
   Key,
   ChevronDown,
-  ChevronUp
+  ChevronUp,
+  Cpu,
+  Layers
 } from 'lucide-react';
+import CustomSelect, { CustomSelectOption } from '../CustomSelect';
 
 interface ApiRequestLog {
   id: string;
@@ -355,19 +358,23 @@ export default function ApiQuotaMonitor() {
             </h4>
           </div>
 
-          {/* Filtros de Serviço */}
+          {/* Filtros de Serviço Refinado */}
           <div className="flex items-center gap-2">
-            <span className="font-mono text-[9px] text-zinc-500 uppercase">Filtrar:</span>
-            <select 
-              value={filterService} 
-              onChange={(e) => setFilterService(e.target.value)}
-              className="bg-zinc-950 border border-white/10 rounded px-2 py-1 text-[10px] font-mono text-zinc-300 focus:outline-none focus:border-amber-500 cursor-pointer"
-            >
-              <option value="all">Todos os Serviços</option>
-              <option value="gemini">Google Gemini (Todos)</option>
-              <option value="jina-reader">Jina Reader</option>
-              <option value="scrapingbee">ScrapingBee</option>
-            </select>
+            <span className="font-mono text-[10px] text-zinc-400 uppercase">Filtrar:</span>
+            <CustomSelect
+              value={filterService}
+              onChange={setFilterService}
+              options={[
+                { value: 'all', label: 'Todos os Serviços', icon: <Layers className="h-3.5 w-3.5 text-zinc-400" /> },
+                { value: 'gemini', label: 'Google Gemini (Todos)', icon: <Cpu className="h-3.5 w-3.5 text-blue-400" /> },
+                { value: 'jina-reader', label: 'Jina Reader', icon: <Terminal className="h-3.5 w-3.5 text-purple-400" /> },
+                { value: 'scrapingbee', label: 'ScrapingBee', icon: <Gauge className="h-3.5 w-3.5 text-amber-400" /> },
+              ]}
+              size="xs"
+              align="right"
+              minDropdownWidth="min-w-[210px]"
+              triggerClassName="!py-1 !px-2.5 !bg-zinc-950 !border-white/10 hover:!border-amber-500/40 text-[10px]"
+            />
           </div>
         </div>
 

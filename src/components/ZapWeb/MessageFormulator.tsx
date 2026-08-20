@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { MessageSquare, Sparkles, AlertCircle, Edit3, ShieldAlert, Check, RefreshCw, Wand2 } from 'lucide-react';
+import { MessageSquare, Sparkles, AlertCircle, Edit3, ShieldAlert, Check, RefreshCw, Wand2, User } from 'lucide-react';
 import { ZapContact } from '../../types';
+import CustomSelect, { CustomSelectOption } from '../CustomSelect';
 
 interface MessageFormulatorProps {
   contacts: ZapContact[];
@@ -161,18 +162,21 @@ export default function MessageFormulator({
 
             {/* Pagination / Contact Selector */}
             <div className="flex items-center space-x-2">
-              <span className="text-[11px] text-zinc-400">Contato {activePreviewIndex + 1} de {contacts.length}:</span>
-              <select
-                value={activePreviewIndex}
-                onChange={(e) => setActivePreviewIndex(Number(e.target.value))}
-                className="rounded-lg border border-white/10 bg-zinc-950 px-2 py-1 text-xs text-white focus:outline-none"
-              >
-                {contacts.map((c, i) => (
-                  <option key={c.id} value={i}>
-                    {c.name} ({c.formattedPhone})
-                  </option>
-                ))}
-              </select>
+              <span className="text-[11px] text-zinc-400">Contato:</span>
+              <CustomSelect
+                value={String(activePreviewIndex)}
+                onChange={(val) => setActivePreviewIndex(Number(val))}
+                options={contacts.map((c, i) => ({
+                  value: String(i),
+                  label: c.name,
+                  description: c.formattedPhone,
+                  icon: <User className="h-3.5 w-3.5 text-emerald-400" />,
+                }))}
+                size="xs"
+                align="right"
+                minDropdownWidth="min-w-[220px]"
+                triggerClassName="!py-1 !px-2.5 !bg-zinc-950 !border-white/10 hover:!border-emerald-500/40 text-xs"
+              />
             </div>
           </div>
 

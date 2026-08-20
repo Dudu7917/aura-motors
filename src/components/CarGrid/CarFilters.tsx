@@ -316,8 +316,8 @@ export default function CarFilters({
                 onChange={setTransmission}
                 options={[
                   { value: 'all', label: 'Todos os Câmbios' },
-                  { value: 'automatic', label: 'Automático' },
-                  { value: 'manual', label: 'Manual' }
+                  { value: 'automatic', label: 'Automático', description: 'AT / Tiptronic / CVT / DSG' },
+                  { value: 'manual', label: 'Manual', description: 'Câmbio mecânico tradicional' }
                 ]}
                 className="w-full"
               />
@@ -332,12 +332,12 @@ export default function CarFilters({
                 value={sortKey}
                 onChange={setSortKey}
                 options={[
-                  { value: 'all', label: 'Relevância (Destaque)' },
-                  { value: 'priceAsc', label: 'Menor Preço' },
-                  { value: 'priceDesc', label: 'Maior Preço' },
-                  { value: 'yearDesc', label: 'Ano: Mais Novos primeiro' },
-                  { value: 'yearAsc', label: 'Ano: Mais Antigos primeiro' },
-                  { value: 'kmAsc', label: 'Quilometragem: Menor KM' }
+                  { value: 'all', label: 'Relevância (Destaque)', description: 'Ordem original curada' },
+                  { value: 'priceAsc', label: 'Menor Preço', description: 'Oportunidades de entrada' },
+                  { value: 'priceDesc', label: 'Maior Preço', description: 'Veículos topo de linha' },
+                  { value: 'yearDesc', label: 'Ano: Mais Novos', description: 'Modelos e safras recentes' },
+                  { value: 'yearAsc', label: 'Ano: Mais Antigos', description: 'Clássicos e safras anteriores' },
+                  { value: 'kmAsc', label: 'Menor Quilometragem', description: 'Veículos com menor rodagem' }
                 ]}
                 className="w-full"
               />

@@ -96,6 +96,9 @@ export interface Lead {
   notes?: string;
   createdAt: string;
   contacted?: boolean;
+  priority?: 'high' | 'medium' | 'low';
+  customStatus?: 'waiting' | 'match_found' | 'contacted' | 'negotiating' | 'closed';
+  lastContactDate?: string;
 }
 
 export interface ZapContact {

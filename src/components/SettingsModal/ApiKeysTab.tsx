@@ -10,9 +10,12 @@ import {
   Check, 
   ShieldAlert, 
   ToggleLeft, 
-  ToggleRight 
+  ToggleRight,
+  Terminal,
+  Gauge
 } from 'lucide-react';
 import { ApiKeyEntry } from '../../utils/apiKeyHelper';
+import CustomSelect, { CustomSelectOption } from '../CustomSelect';
 
 interface ApiKeysTabProps {
   keys: ApiKeyEntry[];
@@ -113,15 +116,19 @@ export default function ApiKeysTab({
               </div>
               <div>
                 <label className="font-mono text-[10px] text-zinc-400 block mb-1">Serviço</label>
-                <select
+                <CustomSelect
                   value={newService}
-                  onChange={(e) => setNewService(e.target.value as any)}
-                  className="w-full rounded-xl border border-white/10 bg-zinc-950 px-3 py-2 font-mono text-xs text-white focus:border-amber-500 focus:outline-none"
-                >
-                  <option value="gemini">Google Gemini</option>
-                  <option value="jina">Jina Reader</option>
-                  <option value="scrapingbee">ScrapingBee</option>
-                </select>
+                  onChange={(val) => setNewService(val as any)}
+                  options={[
+                    { value: 'gemini', label: 'Google Gemini', icon: <Cpu className="h-3.5 w-3.5 text-blue-400" />, description: 'Modelos 2.5 Flash, Pro e Flash-Lite' },
+                    { value: 'jina', label: 'Jina Reader', icon: <Terminal className="h-3.5 w-3.5 text-purple-400" />, description: 'Extração e parsing de URLs web' },
+                    { value: 'scrapingbee', label: 'ScrapingBee', icon: <Gauge className="h-3.5 w-3.5 text-amber-400" />, description: 'Bypass antibot e headless browser' },
+                  ]}
+                  size="sm"
+                  className="w-full"
+                  minDropdownWidth="min-w-[260px]"
+                  triggerClassName="!py-2 !px-3 !bg-zinc-950 !border-white/10 hover:!border-amber-500/40"
+                />
               </div>
             </div>
             <div>

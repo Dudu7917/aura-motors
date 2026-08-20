@@ -266,7 +266,7 @@ export default function InventoryTab({
         </div>
 
         {/* 3. BARRA DE BUSCA EM TEMPO REAL & ORDENAÇÃO EXECUTIVA */}
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-3 pt-3 border-t border-white/5 relative z-10">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-3 pt-3 border-t border-white/5 relative z-30">
           {/* Input de Busca com Design de Terminal */}
           <div className="md:col-span-8 relative">
             <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-4 w-4 text-amber-500 pointer-events-none" />
@@ -290,7 +290,7 @@ export default function InventoryTab({
           </div>
 
           {/* Ordenação com LuxurySelect Refinado */}
-          <div className="md:col-span-4">
+          <div className="md:col-span-4 relative z-40">
             <LuxurySelect
               value={sortBy}
               onChange={(val) => setSortBy(val as SortByType)}
@@ -344,7 +344,7 @@ export default function InventoryTab({
               <button
                 type="button"
                 onClick={handleResetFilters}
-                className="ml-auto flex items-center gap-1.5 px-3 py-1 rounded-full bg-zinc-800 hover:bg-zinc-700 text-zinc-300 hover:text-white font-mono text-[10px] uppercase tracking-wider transition-all cursor-pointer border border-white/10"
+                className="ml-auto flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-zinc-900 hover:bg-zinc-800 text-zinc-300 hover:text-white font-mono text-[10px] uppercase tracking-wider transition-all cursor-pointer border border-white/10 hover:border-amber-500/40 shrink-0"
               >
                 <RotateCcw className="h-3 w-3 text-amber-500" />
                 <span>Limpar Todos</span>

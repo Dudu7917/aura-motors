@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Car } from '../types';
-import { Calendar, CheckCircle2, ShieldCheck, X, Car as CarIcon, Target, Landmark } from 'lucide-react';
+import { Calendar, CheckCircle2, ShieldCheck, X, Car as CarIcon, Target, Landmark, MapPin } from 'lucide-react';
+import CustomSelect, { CustomSelectOption } from './CustomSelect';
 
 interface AppointmentFormProps {
   isOpen: boolean;
@@ -53,6 +54,20 @@ export default function AppointmentForm({
 
   const selectedCar = cars.find(c => c.id === carId) || cars.find(c => c.id === selectedCarId) || cars[0];
   const selectedLoc = locations.find(l => l.id === location) || locations[0];
+
+  const carOptions: CustomSelectOption[] = cars.map((c) => ({
+    value: c.id,
+    label: c.name,
+    description: `Ano ${c.year} • R$ ${c.price.toLocaleString('pt-BR')}`,
+    icon: <CarIcon className="h-4 w-4 text-amber-400" />,
+  }));
+
+  const locationOptions: CustomSelectOption[] = locations.map((loc) => ({
+    value: loc.id,
+    label: loc.name,
+    description: loc.address,
+    icon: <MapPin className="h-4 w-4 text-amber-400" />,
+  }));
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-zinc-950/85 p-4 backdrop-blur-md">
@@ -169,32 +184,26 @@ export default function AppointmentForm({
 
               <div className="space-y-1.5">
                 <label className="font-mono text-[9px] uppercase tracking-widest text-zinc-400 block">MÁQUINA SELECIONADA</label>
-                <select
+                <CustomSelect
                   value={carId}
-                  onChange={(e) => setCarId(e.target.value)}
-                  className="w-full rounded-xl border border-white/5 bg-zinc-950 p-3 font-display text-xs text-white focus:border-amber-500 focus:outline-none transition-all font-light"
-                >
-                  {cars.map(c => (
-                    <option key={c.id} value={c.id} className="bg-zinc-900 text-white">
-                      {c.name} (R$ {c.price.toLocaleString('pt-BR')})
-                    </option>
-                  ))}
-                </select>
+                  onChange={setCarId}
+                  options={carOptions}
+                  size="md"
+                  className="w-full"
+                  triggerClassName="!py-3 !px-3.5 !bg-zinc-950 !border-white/10 hover:!border-amber-500/50"
+                />
               </div>
 
               <div className="space-y-1.5">
                 <label className="font-mono text-[9px] uppercase tracking-widest text-zinc-400 block">FILIAL DE VISITA</label>
-                <select
+                <CustomSelect
                   value={location}
-                  onChange={(e) => setLocation(e.target.value)}
-                  className="w-full rounded-xl border border-white/5 bg-zinc-950 p-3 font-display text-xs text-white focus:border-amber-500 focus:outline-none transition-all font-light"
-                >
-                  {locations.map(loc => (
-                    <option key={loc.id} value={loc.id} className="bg-zinc-900 text-white">
-                      {loc.name} - {loc.address}
-                    </option>
-                  ))}
-                </select>
+                  onChange={setLocation}
+                  options={locationOptions}
+                  size="md"
+                  className="w-full"
+                  triggerClassName="!py-3 !px-3.5 !bg-zinc-950 !border-white/10 hover:!border-amber-500/50"
+                />
               </div>
 
               <div className="grid grid-cols-2 gap-3">
