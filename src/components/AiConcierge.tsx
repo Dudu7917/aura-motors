@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import { ChatMessage, Car } from '../types';
 import { Sparkles, Send, X, Bot } from 'lucide-react';
 import { getApiHeaders } from '../utils/apiKeyHelper';
-import { motion } from 'motion/react';
+import { motion, AnimatePresence } from 'motion/react';
 import ModelSelector, { AVAILABLE_MODELS } from './AiConcierge/ModelSelector';
 import ChatMessageItem from './AiConcierge/ChatMessageItem';
 
@@ -175,42 +175,53 @@ export default function AiConcierge({
         </button>
       </div>
 
-      {showModelDetails && (
-        <ModelSelector
-          selectedModel={selectedModel}
-          onSelectModel={setSelectedModel}
-          onClose={() => setShowModelDetails(false)}
-        />
-      )}
-      <div className="flex-1 overflow-y-auto p-5 space-y-4">
-        {messages.map((msg) => (
-          <ChatMessageItem
-            key={msg.id}
-            msg={msg}
-            cars={cars}
-            onSelectCar={onSelectCar}
-            expandedActions={expandedActions}
-            toggleActions={toggleActions}
-            expandedSteps={expandedSteps}
-            toggleStep={toggleStep}
+      <AnimatePresence>
+        {showModelDetails && (
+          <ModelSelector
+            selectedModel={selectedModel}
+            onSelectModel={setSelectedModel}
+            onClose={() => setShowModelDetails(false)}
           />
-        ))}
-
-        {isTyping && (
-          <div className="flex flex-col space-y-1.5 items-start">
-            <div className="flex items-center space-x-1.5 font-mono text-[8px] uppercase tracking-widest text-zinc-550">
-              <Bot className="h-3 w-3 text-amber-500 animate-spin" />
-              <span>Nelsinho está digitando...</span>
-            </div>
-            <div className="rounded-2xl bg-zinc-900 border border-white/5 px-4 py-3">
-              <div className="flex space-x-1">
-                <span className="h-1.5 w-1.5 rounded-full bg-amber-500 animate-bounce duration-300" style={{ animationDelay: '0ms' }} />
-                <span className="h-1.5 w-1.5 rounded-full bg-amber-500 animate-bounce duration-300" style={{ animationDelay: '150ms' }} />
-                <span className="h-1.5 w-1.5 rounded-full bg-amber-500 animate-bounce duration-300" style={{ animationDelay: '300ms' }} />
-              </div>
-            </div>
-          </div>
         )}
+      </AnimatePresence>
+      <div className="flex-1 overflow-y-auto p-5 space-y-4">
+        <AnimatePresence initial={false}>
+          {messages.map((msg) => (
+            <ChatMessageItem
+              key={msg.id}
+              msg={msg}
+              cars={cars}
+              onSelectCar={onSelectCar}
+              expandedActions={expandedActions}
+              toggleActions={toggleActions}
+              expandedSteps={expandedSteps}
+              toggleStep={toggleStep}
+            />
+          ))}
+        </AnimatePresence>
+
+        <AnimatePresence>
+          {isTyping && (
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -10 }}
+              className="flex flex-col space-y-1.5 items-start"
+            >
+              <div className="flex items-center space-x-1.5 font-mono text-[8px] uppercase tracking-widest text-zinc-550">
+                <Bot className="h-3 w-3 text-amber-500 animate-spin" />
+                <span>Nelsinho está digitando...</span>
+              </div>
+              <div className="rounded-2xl bg-zinc-900 border border-white/5 px-4 py-3">
+                <div className="flex space-x-1">
+                  <span className="h-1.5 w-1.5 rounded-full bg-amber-500 animate-bounce duration-300" style={{ animationDelay: '0ms' }} />
+                  <span className="h-1.5 w-1.5 rounded-full bg-amber-500 animate-bounce duration-300" style={{ animationDelay: '150ms' }} />
+                  <span className="h-1.5 w-1.5 rounded-full bg-amber-500 animate-bounce duration-300" style={{ animationDelay: '300ms' }} />
+                </div>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
         <div ref={chatEndRef} />
       </div>
 

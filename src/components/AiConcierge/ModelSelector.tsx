@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'motion/react';
 import { Sparkles } from 'lucide-react';
 
 export const AVAILABLE_MODELS = [
@@ -64,7 +65,13 @@ export default function ModelSelector({
   onClose,
 }: ModelSelectorProps) {
   return (
-    <div className="absolute inset-x-0 top-[88px] bottom-0 z-40 bg-zinc-950 flex flex-col p-5 overflow-y-auto">
+    <motion.div
+      initial={{ opacity: 0, y: -10 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -10 }}
+      transition={{ duration: 0.2 }}
+      className="absolute inset-x-0 top-[88px] bottom-0 z-40 bg-zinc-950 flex flex-col p-5 overflow-y-auto"
+    >
       <div className="flex items-center justify-between border-b border-white/10 pb-2 mb-3">
         <h3 className="font-display font-semibold text-xs text-amber-500 uppercase tracking-wider">Mecanismo do Chat Inteligente</h3>
         <button 
@@ -129,6 +136,6 @@ export default function ModelSelector({
           );
         })}
       </div>
-    </div>
+    </motion.div>
   );
 }

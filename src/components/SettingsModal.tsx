@@ -141,10 +141,12 @@ export default function SettingsModal({
     saveApiKeysList(updated);
   };
 
-  if (!isOpen) return null;
-
   return (
-    <div 
+    <motion.div 
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.25 }}
       onClick={(e) => { if (e.target === e.currentTarget) onClose(); }}
       className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md"
     >
@@ -239,6 +241,6 @@ export default function SettingsModal({
           </AnimatePresence>
         </div>
       </motion.div>
-    </div>
+    </motion.div>
   );
 }

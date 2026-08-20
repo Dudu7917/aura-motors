@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'motion/react';
 import { ChatMessage, Car } from '../../types';
 import { Bot, User, Globe, ArrowRight } from 'lucide-react';
 import Markdown from 'react-markdown';
@@ -26,7 +27,13 @@ export default function ChatMessageItem({
   const isAi = msg.sender === 'assistant';
   
   return (
-    <div className={`flex flex-col space-y-1.5 ${isAi ? 'items-start' : 'items-end'}`}>
+    <motion.div
+      initial={{ opacity: 0, y: 12, scale: 0.98 }}
+      animate={{ opacity: 1, y: 0, scale: 1 }}
+      exit={{ opacity: 0, y: -8, scale: 0.98 }}
+      transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
+      className={`flex flex-col space-y-1.5 ${isAi ? 'items-start' : 'items-end'}`}
+    >
       <div className="flex items-center space-x-1.5 font-mono text-[8px] uppercase tracking-widest text-zinc-550">
         {isAi ? (
           <>
@@ -234,6 +241,6 @@ export default function ChatMessageItem({
           </div>
         )}
       </div>
-    </div>
+    </motion.div>
   );
 }

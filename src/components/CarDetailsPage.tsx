@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Car, Lead } from '../types';
-import { motion } from 'motion/react';
+import { motion, AnimatePresence } from 'motion/react';
 import { Download } from 'lucide-react';
 import CarDetailsGallery from './CarDetailsGallery';
 import DeepScrapePanel from './CarDetails/DeepScrapePanel';
@@ -207,13 +207,17 @@ export default function CarDetailsPage({
               />
             </motion.div>
 
-            <DeliveryGuidelines car={currentCar} />
+            <motion.div variants={itemVariants}>
+              <DeliveryGuidelines car={currentCar} />
+            </motion.div>
 
           </div>
 
           <div className="lg:col-span-5 space-y-6">
 
-            <MatchingLeadsSection car={currentCar} leads={leads} onUpdateLead={onUpdateLead} />
+            <motion.div variants={itemVariants}>
+              <MatchingLeadsSection car={currentCar} leads={leads} onUpdateLead={onUpdateLead} />
+            </motion.div>
             
             {/* Painel Deep Scraping */}
             <motion.div variants={itemVariants}>
@@ -253,11 +257,15 @@ export default function CarDetailsPage({
       </div>
 
       {/* Modal do Cartaz A4 de Showroom */}
-      <PrintPosterModal
-        car={currentCar}
-        isOpen={isPrintPosterOpen}
-        onClose={() => setIsPrintPosterOpen(false)}
-      />
+      <AnimatePresence>
+        {isPrintPosterOpen && (
+          <PrintPosterModal
+            car={currentCar}
+            isOpen={isPrintPosterOpen}
+            onClose={() => setIsPrintPosterOpen(false)}
+          />
+        )}
+      </AnimatePresence>
     </motion.div>
   );
 }

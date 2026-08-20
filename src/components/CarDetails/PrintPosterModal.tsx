@@ -1,5 +1,6 @@
 import React, { useState, useMemo, useEffect, useCallback } from 'react';
 import { createPortal } from 'react-dom';
+import { motion } from 'motion/react';
 import { Car } from '../../types';
 import { Printer, X, Award, RotateCcw } from 'lucide-react';
 import { PosterConfig, createDefaultConfig } from './posterTypes';
@@ -34,13 +35,22 @@ export default function PrintPosterModal({ car, isOpen, onClose }: PrintPosterMo
 
   const allFeatures = useMemo(() => car.features ?? [], [car.features]);
 
-  console.log('PRINT_POSTER_CONFIG', config);
-
-  if (!isOpen) return null;
-
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-zinc-950/90 backdrop-blur-md overflow-y-auto">
-      <div className="bg-zinc-900 border border-white/10 rounded-2xl w-full max-w-5xl overflow-hidden shadow-2xl relative my-4">
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.25 }}
+      onClick={(e) => { if (e.target === e.currentTarget) onClose(); }}
+      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-zinc-950/90 backdrop-blur-md overflow-y-auto"
+    >
+      <motion.div
+        initial={{ opacity: 0, scale: 0.95, y: 15 }}
+        animate={{ opacity: 1, scale: 1, y: 0 }}
+        exit={{ opacity: 0, scale: 0.95, y: 15 }}
+        transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
+        className="bg-zinc-900 border border-white/10 rounded-2xl w-full max-w-5xl overflow-hidden shadow-2xl relative my-4"
+      >
 
         {/* Header */}
         <div className="flex items-center justify-between px-6 py-3 border-b border-white/5 bg-zinc-900/50">
@@ -102,13 +112,13 @@ export default function PrintPosterModal({ car, isOpen, onClose }: PrintPosterMo
             </button>
           </div>
         </div>
-      </div>
+      </motion.div>
 
       {/* Cartaz invisível para impressora */}
       {createPortal(
         <PrintablePoster car={car} config={config} qrCodeUrl={qrCodeUrl} />,
         document.body
       )}
-    </div>
+    </motion.div>
   );
 }
