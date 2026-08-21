@@ -221,6 +221,7 @@ export default function App() {
         setAiConciergePreloadedQuery={setAiConciergePreloadedQuery}
         isSettingsOpen={isSettingsOpen}
         setIsSettingsOpen={setIsSettingsOpen}
+        handleAddToCompare={handleAddToCompare}
         handleRemoveFromCompare={handleRemoveFromCompare}
         handleClearCompare={handleClearCompare}
         isScraping={isScraping}

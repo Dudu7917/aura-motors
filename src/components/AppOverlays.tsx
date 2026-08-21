@@ -18,6 +18,7 @@ interface AppOverlaysProps {
   setAiConciergePreloadedQuery: (query: string) => void;
   isSettingsOpen: boolean;
   setIsSettingsOpen: (open: boolean) => void;
+  handleAddToCompare?: (car: Car) => void;
   handleRemoveFromCompare: (carId: string) => void;
   handleClearCompare: () => void;
   isScraping?: boolean;
@@ -39,6 +40,7 @@ export default function AppOverlays({
   setAiConciergePreloadedQuery,
   isSettingsOpen,
   setIsSettingsOpen,
+  handleAddToCompare = () => {},
   handleRemoveFromCompare,
   handleClearCompare,
   isScraping = false,
@@ -60,8 +62,10 @@ export default function AppOverlays({
         {comparedCars.length > 0 && (
           <CarComparator
             comparedCars={comparedCars}
+            allCars={carsList}
             onRemoveFromCompare={handleRemoveFromCompare}
             onClearCompare={handleClearCompare}
+            onAddCarToCompare={handleAddToCompare}
           />
         )}
       </AnimatePresence>
