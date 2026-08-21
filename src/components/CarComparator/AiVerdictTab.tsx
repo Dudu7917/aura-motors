@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { motion } from 'motion/react';
 import { Sparkles, Award, Copy, Check, MessageSquare, Compass, ShieldCheck, Zap } from 'lucide-react';
 import { Car } from '../../types';
+import { getCarMileageText } from '../../utils/carMileageHelper';
 
 interface AiVerdictTabProps {
   car1: Car;
@@ -39,14 +40,14 @@ export default function AiVerdictTab({ car1, car2 }: AiVerdictTabProps) {
 🏁 *OPÇÃO 1: ${car1.name.toUpperCase()}*
 • Marca: ${car1.brand} | Ano: ${car1.year}
 • Preço: R$ ${car1.price.toLocaleString('pt-BR')}
+• KM: ${getCarMileageText(car1)}
 • Potência: ${car1.specs.power} cv | 0-100: ${car1.specs.acceleration}s
-• Destaque: ${car1.specs.rangeOrdisplacement}
 
 🏁 *OPÇÃO 2: ${car2.name.toUpperCase()}*
 • Marca: ${car2.brand} | Ano: ${car2.year}
 • Preço: R$ ${car2.price.toLocaleString('pt-BR')}
+• KM: ${getCarMileageText(car2)}
 • Potência: ${car2.specs.power} cv | 0-100: ${car2.specs.acceleration}s
-• Destaque: ${car2.specs.rangeOrdisplacement}
 ━━━━━━━━━━━━━━━━━━━━
 🏆 *VEREDITO DO ESPECIALISTA:*
 ⚡ *Maior Performance:* ${winnerPerf.name} (${winnerPerf.specs.power} cv)

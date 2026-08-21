@@ -3,6 +3,7 @@ import { motion } from 'motion/react';
 import { Zap, Gauge, Dumbbell, Feather, Flame, Volume2, Trophy, ArrowRight } from 'lucide-react';
 import { Car } from '../../types';
 import { playV12Roar } from '../../utils/audio';
+import { getCarMileageText } from '../../utils/carMileageHelper';
 
 interface PerformanceTabProps {
   car1: Car;
@@ -136,8 +137,8 @@ export default function PerformanceTab({ car1, car2 }: PerformanceTabProps) {
             </button>
           </div>
           <div className="mt-3 flex items-center justify-between text-[10px] font-mono text-zinc-400 border-t border-white/5 pt-2">
-            <span>Cilindrada / Motor:</span>
-            <span className="text-white font-semibold">{car1.specs.rangeOrdisplacement || '1.5 - 2.0L Flex'}</span>
+            <span>Quilometragem:</span>
+            <span className="text-emerald-400 font-bold">{getCarMileageText(car1)}</span>
           </div>
         </motion.div>
 
@@ -170,8 +171,8 @@ export default function PerformanceTab({ car1, car2 }: PerformanceTabProps) {
             </button>
           </div>
           <div className="mt-3 flex items-center justify-between text-[10px] font-mono text-zinc-400 border-t border-white/5 pt-2">
-            <span>Cilindrada / Motor:</span>
-            <span className="text-white font-semibold">{car2.specs.rangeOrdisplacement || '1.5 - 2.0L Flex'}</span>
+            <span>Quilometragem:</span>
+            <span className="text-emerald-400 font-bold">{getCarMileageText(car2)}</span>
           </div>
         </motion.div>
       </div>

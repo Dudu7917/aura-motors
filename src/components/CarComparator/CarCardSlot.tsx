@@ -1,7 +1,8 @@
 import React from 'react';
 import { motion } from 'motion/react';
 import { Car } from '../../types';
-import { X, RefreshCw, Plus, Zap, Gauge, Dumbbell } from 'lucide-react';
+import { X, RefreshCw, Plus, Zap, Gauge, Dumbbell, Compass } from 'lucide-react';
+import { getCarMileageText } from '../../utils/carMileageHelper';
 
 interface CarCardSlotProps {
   car?: Car | null;
@@ -110,6 +111,9 @@ export default function CarCardSlot({
           <div className="flex flex-wrap items-center gap-x-3 gap-y-1 mt-1 font-mono text-[10px]">
             <span className="text-amber-400 font-extrabold">
               R$ {car.price.toLocaleString('pt-BR')}
+            </span>
+            <span className="text-emerald-400 font-bold flex items-center gap-0.5">
+              {getCarMileageText(car)}
             </span>
             <span className="text-zinc-400 flex items-center gap-0.5">
               <Zap className="h-2.5 w-2.5 text-amber-500" />

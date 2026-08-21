@@ -1,8 +1,9 @@
 import React from 'react';
-import { Scale, AppWindow, PanelBottom, Maximize2, Minimize2, ChevronDown, ChevronUp, X, Trash2 } from 'lucide-react';
+import { Scale, AppWindow, PanelBottom, Maximize2, ChevronDown, ChevronUp, X } from 'lucide-react';
 import { motion } from 'motion/react';
+import { ComparatorViewMode } from './types';
 
-export type ComparatorViewMode = 'floating_70' | 'dock_bottom' | 'fullscreen_hud';
+export { type ComparatorViewMode };
 
 interface CarComparatorHeaderProps {
   carsCount: number;
