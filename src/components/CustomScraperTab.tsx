@@ -16,90 +16,98 @@ import DirectUrlPanel from './CustomScraper/DirectUrlPanel';
 import ScrapedResultsGrid from './CustomScraper/ScrapedResultsGrid';
 import AdvancedConfigPanel from './CustomScraper/AdvancedConfigPanel';
 import ProgressTracker from './CustomScraper/ProgressTracker';
+import { useScraperLogic } from '../hooks/useScraperLogic';
+import { useShowroom } from '../context/ShowroomContext';
+import { useUI } from '../context/UIContext';
 
 interface CustomScraperTabProps {
-  onSelectCarDetails: (car: Car) => void;
-  onOpenAiConcierge: (car: Car, initialQuery: string) => void;
-  onAddToCompare: (car: Car) => void;
-  comparedCarIds: string[];
+  onSelectCarDetails?: (car: Car) => void;
+  onOpenAiConcierge?: (car: Car, initialQuery: string) => void;
+  onAddToCompare?: (car: Car) => void;
+  comparedCarIds?: string[];
   
-  url: string;
-  setUrl: (val: string) => void;
-  loading: boolean;
-  error: string | null;
-  setError: (val: string | null) => void;
-  scrapedCars: Car[];
-  setScrapedCars: (val: Car[]) => void;
-  logs: string[];
-  setLogs: (val: string[] | ((prev: string[]) => string[])) => void;
-  scrapedContent: string;
-  planningModel: string;
-  setPlanningModel: (val: string) => void;
-  extractionModel: string;
-  setExtractionModel: (val: string) => void;
-  metaGoal: number | null;
-  activeTabMode: 'semantic' | 'url' | 'agent';
-  setActiveTabMode: (val: 'semantic' | 'url' | 'agent') => void;
-  semanticQuery: string;
-  setSemanticQuery: (val: string) => void;
-  agentPrompt: string;
-  setAgentPrompt: (val: string) => void;
-  formulatorModel: string;
-  setFormulatorModel: (val: string) => void;
-  stepStatus: {
+  url?: string;
+  setUrl?: (val: string) => void;
+  loading?: boolean;
+  error?: string | null;
+  setError?: (val: string | null) => void;
+  scrapedCars?: Car[];
+  setScrapedCars?: (val: Car[]) => void;
+  logs?: string[];
+  setLogs?: (val: string[] | ((prev: string[]) => string[])) => void;
+  scrapedContent?: string;
+  planningModel?: string;
+  setPlanningModel?: (val: string) => void;
+  extractionModel?: string;
+  setExtractionModel?: (val: string) => void;
+  metaGoal?: number | null;
+  activeTabMode?: 'semantic' | 'url' | 'agent';
+  setActiveTabMode?: (val: 'semantic' | 'url' | 'agent') => void;
+  semanticQuery?: string;
+  setSemanticQuery?: (val: string) => void;
+  agentPrompt?: string;
+  setAgentPrompt?: (val: string) => void;
+  formulatorModel?: string;
+  setFormulatorModel?: (val: string) => void;
+  stepStatus?: {
     formulator: 'idle' | 'running' | 'done' | 'error';
     linkGen: 'idle' | 'running' | 'done' | 'error';
     planner: 'idle' | 'running' | 'done' | 'error';
     extractor: 'idle' | 'running' | 'done' | 'error';
   };
-  formulatedUrl: string;
-  interpretedCriteria: any;
-  interpretedReasoning: string;
-  handleScrape: (targetUrl: string) => void;
-  handleSemanticSearch: () => void;
-  handleAbortExtraction: () => void;
-  handleSandboxAgentRun: () => void;
-  generatedFiles: Array<{ name: string; path: string; size: number }>;
+  formulatedUrl?: string;
+  interpretedCriteria?: any;
+  interpretedReasoning?: string;
+  handleScrape?: (targetUrl: string) => void;
+  handleSemanticSearch?: () => void;
+  handleAbortExtraction?: () => void;
+  handleSandboxAgentRun?: () => void;
+  generatedFiles?: Array<{ name: string; path: string; size: number }>;
 }
 
-export default function CustomScraperTab({
-  onSelectCarDetails,
-  onOpenAiConcierge,
-  onAddToCompare,
-  comparedCarIds,
-  url,
-  setUrl,
-  loading,
-  error,
-  setError,
-  scrapedCars,
-  setScrapedCars,
-  logs,
-  setLogs,
-  scrapedContent,
-  planningModel,
-  setPlanningModel,
-  extractionModel,
-  setExtractionModel,
-  metaGoal,
-  activeTabMode,
-  setActiveTabMode,
-  semanticQuery,
-  setSemanticQuery,
-  agentPrompt,
-  setAgentPrompt,
-  formulatorModel,
-  setFormulatorModel,
-  stepStatus,
-  formulatedUrl,
-  interpretedCriteria,
-  interpretedReasoning,
-  handleScrape,
-  handleSemanticSearch,
-  handleAbortExtraction,
-  handleSandboxAgentRun,
-  generatedFiles
-}: CustomScraperTabProps) {
+export default function CustomScraperTab(props: CustomScraperTabProps) {
+  const showroom = useShowroom();
+  const ui = useUI();
+  const internalScraper = useScraperLogic();
+
+  // Fallbacks: usa o que for passado via props ou assume os Contexts / useScraperLogic interno
+  const onSelectCarDetails = props.onSelectCarDetails || showroom.setSelectedCarDetails;
+  const onAddToCompare = props.onAddToCompare || showroom.addToCompare;
+  const onOpenAiConcierge = props.onOpenAiConcierge || ((car: Car, q: string) => ui.openConciergeWithQuery(q));
+  const comparedCarIds = props.comparedCarIds || showroom.comparedCars.map(c => c.id);
+
+  const url = props.url !== undefined ? props.url : internalScraper.url;
+  const setUrl = props.setUrl || internalScraper.setUrl;
+  const loading = props.loading !== undefined ? props.loading : internalScraper.loading;
+  const error = props.error !== undefined ? props.error : internalScraper.error;
+  const setError = props.setError || internalScraper.setError;
+  const scrapedCars = props.scrapedCars !== undefined ? props.scrapedCars : internalScraper.scrapedCars;
+  const setScrapedCars = props.setScrapedCars || internalScraper.setScrapedCars;
+  const logs = props.logs !== undefined ? props.logs : internalScraper.logs;
+  const setLogs = props.setLogs || internalScraper.setLogs;
+  const scrapedContent = props.scrapedContent !== undefined ? props.scrapedContent : internalScraper.scrapedContent;
+  const planningModel = props.planningModel !== undefined ? props.planningModel : internalScraper.planningModel;
+  const setPlanningModel = props.setPlanningModel || internalScraper.setPlanningModel;
+  const extractionModel = props.extractionModel !== undefined ? props.extractionModel : internalScraper.extractionModel;
+  const setExtractionModel = props.setExtractionModel || internalScraper.setExtractionModel;
+  const metaGoal = props.metaGoal !== undefined ? props.metaGoal : internalScraper.metaGoal;
+  const activeTabMode = props.activeTabMode !== undefined ? props.activeTabMode : internalScraper.activeTabMode;
+  const setActiveTabMode = props.setActiveTabMode || internalScraper.setActiveTabMode;
+  const semanticQuery = props.semanticQuery !== undefined ? props.semanticQuery : internalScraper.semanticQuery;
+  const setSemanticQuery = props.setSemanticQuery || internalScraper.setSemanticQuery;
+  const agentPrompt = props.agentPrompt !== undefined ? props.agentPrompt : internalScraper.agentPrompt;
+  const setAgentPrompt = props.setAgentPrompt || internalScraper.setAgentPrompt;
+  const formulatorModel = props.formulatorModel !== undefined ? props.formulatorModel : internalScraper.formulatorModel;
+  const setFormulatorModel = props.setFormulatorModel || internalScraper.setFormulatorModel;
+  const stepStatus = props.stepStatus !== undefined ? props.stepStatus : internalScraper.stepStatus;
+  const formulatedUrl = props.formulatedUrl !== undefined ? props.formulatedUrl : internalScraper.formulatedUrl;
+  const interpretedCriteria = props.interpretedCriteria !== undefined ? props.interpretedCriteria : internalScraper.interpretedCriteria;
+  const interpretedReasoning = props.interpretedReasoning !== undefined ? props.interpretedReasoning : internalScraper.interpretedReasoning;
+  const handleScrape = props.handleScrape || internalScraper.handleScrape;
+  const handleSemanticSearch = props.handleSemanticSearch || internalScraper.handleSemanticSearch;
+  const handleAbortExtraction = props.handleAbortExtraction || internalScraper.handleAbortExtraction;
+  const handleSandboxAgentRun = props.handleSandboxAgentRun || internalScraper.handleSandboxAgentRun;
+  const generatedFiles = props.generatedFiles !== undefined ? props.generatedFiles : internalScraper.generatedFiles;
   
   const [copied, setCopied] = useState(false);
 

@@ -1,10 +1,29 @@
 @echo off
-title Iniciar Aura Motors
-cd /d "C:\Users\am_in\Downloads\aura-motors_loja\aura-motors (1)"
-echo Iniciando o servidor de desenvolvimento (Aura Motors)...
-start "Aura Motors Server" cmd /k "npm run dev"
-echo Aguardando o servidor inicializar...
-timeout /t 3 >nul
-echo Abrindo o aplicativo no Google Chrome...
-start chrome http://localhost:3000
+title Aura Motors Launcher
+cd /d "%~dp0"
+
+echo ===================================================
+echo             INICIANDO AURA MOTORS
+echo ===================================================
+echo.
+
+:: Verifica se a porta 3000 já está em uso
+netstat -ano | findstr :3000 | findstr LISTENING >nul
+if %errorlevel% equ 0 (
+    echo [OK] O servidor ja esta rodando na porta 3000!
+) else (
+    echo [INFO] Iniciando o servidor Aura Motors (npm run dev)...
+    start "Aura Motors Server" cmd /k "npm run dev"
+    echo [INFO] Aguardando o servidor inicializar...
+    timeout /t 3 >nul
+)
+
+echo [INFO] Abrindo o aplicativo no navegador padrao...
+start http://localhost:3000
+
+echo.
+echo ===================================================
+echo   Pronto! Voce ja pode usar o Aura Motors.
+echo ===================================================
+timeout /t 2 >nul
 exit

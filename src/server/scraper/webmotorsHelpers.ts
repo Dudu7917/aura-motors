@@ -1,3 +1,5 @@
+import { matchesVehicleCriteria } from "../../shared/domain/vehicleFilters";
+
 /**
  * Funções auxiliares para raspagem do Webmotors e tratamento de NextData
  */
@@ -20,40 +22,7 @@ export function parseModelYear(val: any): number {
 }
 
 export function filterCarByCriteria(car: any, criteria: any): boolean {
-  if (!criteria) return true;
-
-  // 1. Filtro de Versão
-  if (criteria.version && typeof criteria.version === 'string' && criteria.version.trim()) {
-    const versionTerms = criteria.version.toLowerCase().trim().split(/\s+/).filter((t: string) => t.length > 1);
-    const carFullName = `${car.name || ''} ${car.description || ''}`.toLowerCase();
-    const matchesVersion = versionTerms.every((term: string) => carFullName.includes(term));
-    if (!matchesVersion) return false;
-  }
-
-  // 2. Filtro de Quilometragem Máxima
-  if (criteria.kmMax && typeof criteria.kmMax === 'number' && criteria.kmMax > 0) {
-    if (car.kmText) {
-      const numKm = parseInt(String(car.kmText).replace(/\D/g, ''), 10);
-      if (!isNaN(numKm) && numKm > 0 && numKm > criteria.kmMax) {
-        return false;
-      }
-    }
-  }
-
-  // 3. Filtro de Ano Mínimo e Máximo
-  if (criteria.yearMin && typeof criteria.yearMin === 'number' && car.year && car.year < criteria.yearMin) {
-    return false;
-  }
-  if (criteria.yearMax && typeof criteria.yearMax === 'number' && car.year && car.year > criteria.yearMax) {
-    return false;
-  }
-
-  // 4. Filtro de Preço Máximo
-  if (criteria.priceMax && typeof criteria.priceMax === 'number' && car.price && car.price > 0 && car.price > criteria.priceMax) {
-    return false;
-  }
-
-  return true;
+  return matchesVehicleCriteria(car, criteria);
 }
 
 // Tenta procurar e calcular a paginação de forma recursiva no JSON do NextData

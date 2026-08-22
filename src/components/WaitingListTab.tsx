@@ -15,30 +15,37 @@ import WaitingListFiltersBar, { ViewMode, StatusFilter, SortOption } from './Wai
 import WaitingListKanban from './WaitingList/WaitingListKanban';
 import WaitingListRadar from './WaitingList/WaitingListRadar';
 import { getMatchingCarsWithScores } from './WaitingList/matchHelpers';
+import { useLeads } from '../context/LeadsContext';
+import { useShowroom } from '../context/ShowroomContext';
+import { partitionIncomingLeads, mergeLeadConflict, isDuplicateLead } from '../shared/domain/leadOperations';
+import { readFileAsBase64, convertTextStringToBase64 } from '../shared/infrastructure/fileHelper';
 
 interface WaitingListTabProps {
-  leads: Lead[];
-  cars: Car[];
-  onAddLead: (lead: Lead) => Promise<boolean>;
-  onDeleteLead: (id: string) => Promise<boolean>;
-  onDeleteAllLeads: () => Promise<boolean>;
-  onSelectCarDetails: (car: Car) => void;
-  onImportLeadsFile?: (fileData: string, fileName: string, fileType: string, modelName?: string) => Promise<{ success: boolean; count?: number; error?: string; extractedLeads?: Lead[] }>;
+  leads?: Lead[];
+  cars?: Car[];
+  onAddLead?: (lead: Lead) => Promise<boolean>;
+  onDeleteLead?: (id: string) => Promise<boolean>;
+  onDeleteAllLeads?: () => Promise<boolean>;
+  onSelectCarDetails?: (car: Car) => void;
+  onImportLeadsFile?: (fileData: string, fileName: string, fileType: string, modelName?: string) => Promise<any>;
   onBatchAddLeads?: (leads: Lead[]) => Promise<boolean>;
   onFilterShowroomByLead?: (lead: Lead) => void;
 }
 
-export default function WaitingListTab({
-  leads,
-  cars,
-  onAddLead,
-  onDeleteLead,
-  onDeleteAllLeads,
-  onSelectCarDetails,
-  onImportLeadsFile,
-  onBatchAddLeads,
-  onFilterShowroomByLead
-}: WaitingListTabProps) {
+export default function WaitingListTab(props: WaitingListTabProps) {
+  const leadsContext = useLeads();
+  const showroomContext = useShowroom();
+
+  const leads = props.leads || leadsContext.leadsList;
+  const cars = props.cars || showroomContext.carsList;
+  const onAddLead = props.onAddLead || leadsContext.handleAddLead;
+  const onDeleteLead = props.onDeleteLead || leadsContext.handleDeleteLead;
+  const onDeleteAllLeads = props.onDeleteAllLeads || leadsContext.handleDeleteAllLeads;
+  const onSelectCarDetails = props.onSelectCarDetails || showroomContext.setSelectedCarDetails;
+  const onImportLeadsFile = props.onImportLeadsFile || leadsContext.handleImportLeadsFile;
+  const onBatchAddLeads = props.onBatchAddLeads || leadsContext.handleBatchAddLeads;
+  const onFilterShowroomByLead = props.onFilterShowroomByLead || showroomContext.filterShowroomByLead;
+
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [showSuccessToast, setShowSuccessToast] = useState(false);
   const [toastMessage, setToastMessage] = useState('Lead registrado na fila de espera com sucesso!');
@@ -111,15 +118,7 @@ export default function WaitingListTab({
   };
 
   const processImportedLeads = async (incomingLeads: Lead[]) => {
-    const cleanPhone = (p: string) => p.replace(/\D/g, '');
-    const duplicates: { existing: Lead; incoming: Lead }[] = [];
-    const nonDuplicates: Lead[] = [];
-
-    incomingLeads.forEach(incoming => {
-      const existing = leads.find(l => cleanPhone(l.phone) === cleanPhone(incoming.phone));
-      if (existing) duplicates.push({ existing, incoming });
-      else nonDuplicates.push(incoming);
-    });
+    const { nonDuplicates, duplicates } = partitionIncomingLeads(leads, incomingLeads);
 
     if (duplicates.length === 0) {
       if (onBatchAddLeads) {
@@ -151,14 +150,9 @@ export default function WaitingListTab({
     setImportResult(null);
     setImportFileName('Texto Colado');
     try {
-      const utf8Bytes = new TextEncoder().encode(pastedText);
-      let binary = '';
-      for (let i = 0; i < utf8Bytes.byteLength; i++) {
-        binary += String.fromCharCode(utf8Bytes[i]);
-      }
-      const base64Data = `data:text/plain;base64,${window.btoa(binary)}`;
+      const { base64Data, fileName, fileType } = convertTextStringToBase64(pastedText);
       if (onImportLeadsFile) {
-        const result = await onImportLeadsFile(base64Data, 'texto_copiado.txt', 'text/plain', leadsModel);
+        const result = await onImportLeadsFile(base64Data, fileName, fileType, leadsModel);
         if (result.success && result.extractedLeads) {
           setPastedText('');
           await processImportedLeads(result.extractedLeads);
@@ -179,25 +173,22 @@ export default function WaitingListTab({
     setIsImporting(true);
     setImportResult(null);
     setImportFileName(file.name);
-    const reader = new FileReader();
-    reader.onload = async (event) => {
-      const base64Data = event.target?.result as string;
+    try {
+      const { base64Data, fileName, fileType } = await readFileAsBase64(file);
       if (onImportLeadsFile) {
-        const result = await onImportLeadsFile(base64Data, file.name, file.type, leadsModel);
+        const result = await onImportLeadsFile(base64Data, fileName, fileType, leadsModel);
         if (result.success && result.extractedLeads) {
           await processImportedLeads(result.extractedLeads);
         } else {
           setImportResult({ success: false, error: result.error || "Erro ao importar leads." });
         }
       }
+    } catch (err: any) {
+      setImportResult({ success: false, error: err.message || "Erro ao ler o arquivo local." });
+    } finally {
       setIsImporting(false);
-    };
-    reader.onerror = () => {
-      setImportResult({ success: false, error: "Erro ao ler o arquivo local." });
-      setIsImporting(false);
-    };
-    reader.readAsDataURL(file);
-    e.target.value = '';
+      e.target.value = '';
+    }
   };
 
   const handleAddSubmit = async (leadData: Omit<Lead, 'id' | 'createdAt'>) => {
@@ -207,8 +198,7 @@ export default function WaitingListTab({
       id: `lead_${Date.now()}`,
       createdAt: new Date().toISOString()
     };
-    const cleanPhone = (p: string) => p.replace(/\D/g, '');
-    const existing = leads.find(l => cleanPhone(l.phone) === cleanPhone(leadData.phone));
+    const existing = leads.find(l => isDuplicateLead(l, leadData));
 
     const executeAdd = async (leadToAdd: Lead) => {
       const success = await onAddLead(leadToAdd);
@@ -226,18 +216,7 @@ export default function WaitingListTab({
         incoming: newLead,
         resolve: async (action) => {
           if (action === 'update') {
-            const mergedLead: Lead = {
-              ...existing,
-              fullName: newLead.fullName,
-              phone: newLead.phone,
-              email: newLead.email || existing.email,
-              desiredBrand: newLead.desiredBrand || existing.desiredBrand,
-              desiredModel: newLead.desiredModel || existing.desiredModel,
-              minYear: newLead.minYear || existing.minYear,
-              maxYear: newLead.maxYear || existing.maxYear,
-              maxPrice: newLead.maxPrice || existing.maxPrice,
-              notes: newLead.notes ? (existing.notes ? `${existing.notes} | ${newLead.notes}` : newLead.notes) : existing.notes
-            };
+            const mergedLead = mergeLeadConflict(existing, newLead);
             await executeAdd(mergedLead);
           } else if (action === 'keep_both') {
             await executeAdd(newLead);

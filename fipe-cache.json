@@ -13998,5 +13998,17 @@
     "MesReferencia": "agosto de 2026",
     "SiglaCombustivel": "G",
     "priceHistory": []
+  },
+  "honda:honda city 1_5 i vtec flex hatch exl cvt:2024": {
+    "TipoVeiculo": 1,
+    "Valor": "R$ 118.990,00",
+    "Marca": "Honda",
+    "Modelo": "CITY Hatchback EXL 1.5 Flex 16V Aut.",
+    "AnoModelo": 2024,
+    "Combustivel": "Flex",
+    "CodigoFipe": "014108-9",
+    "MesReferencia": "agosto de 2026",
+    "SiglaCombustivel": "F",
+    "priceHistory": []
   }
 }
