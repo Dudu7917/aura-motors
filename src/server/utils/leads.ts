@@ -101,7 +101,7 @@ export async function importLeadsFromContent(
     }
 
     const resObj = await ai.models.generateContent({
-      model: modelName || "gemini-3.6-flash",
+      model: modelName || "gemini-3.7-flash",
       contents,
       config: {
         responseMimeType: "application/json",

@@ -57,10 +57,11 @@ export default function AdvancedConfigPanel({
                 value={formulatorModel}
                 onChange={setFormulatorModel}
                 options={[
+                  { value: 'gemini-3.7-flash', label: 'gemini-3.7-flash' },
                   { value: 'gemini-3.6-flash', label: 'gemini-3.6-flash' },
                   { value: 'gemini-3.5-flash-lite', label: 'gemini-3.5-flash-lite' },
                   { value: 'gemini-3.5-flash', label: 'gemini-3.5-flash' },
-                  { value: 'gemini-3.1-pro', label: 'gemini-3.1-pro' }
+                  { value: 'gemini-3.1-flash-lite', label: 'gemini-3.1-flash-lite' }
                 ]}
                 className="w-full"
                 triggerClassName="py-3 px-3 rounded-xl text-left bg-zinc-950 text-zinc-300 font-display text-[11px]"
@@ -79,10 +80,11 @@ export default function AdvancedConfigPanel({
               value={planningModel}
               onChange={setPlanningModel}
               options={[
+                { value: 'gemini-3.7-flash', label: 'gemini-3.7-flash' },
                 { value: 'gemini-3.6-flash', label: 'gemini-3.6-flash' },
                 { value: 'gemini-3.5-flash-lite', label: 'gemini-3.5-flash-lite' },
                 { value: 'gemini-3.5-flash', label: 'gemini-3.5-flash' },
-                { value: 'gemini-3.1-pro', label: 'gemini-3.1-pro' }
+                { value: 'gemini-3.1-flash-lite', label: 'gemini-3.1-flash-lite' }
               ]}
               className="w-full"
               triggerClassName="py-3 px-3 rounded-xl text-left bg-zinc-950 text-zinc-300 font-display text-[11px]"
@@ -101,9 +103,10 @@ export default function AdvancedConfigPanel({
               onChange={setExtractionModel}
               options={[
                 { value: 'gemini-3.5-flash-lite', label: 'gemini-3.5-flash-lite' },
+                { value: 'gemini-3.1-flash-lite', label: 'gemini-3.1-flash-lite' },
+                { value: 'gemini-3.7-flash', label: 'gemini-3.7-flash' },
                 { value: 'gemini-3.6-flash', label: 'gemini-3.6-flash' },
-                { value: 'gemini-3.5-flash', label: 'gemini-3.5-flash' },
-                { value: 'gemini-3.1-pro', label: 'gemini-3.1-pro' }
+                { value: 'gemini-3.5-flash', label: 'gemini-3.5-flash' }
               ]}
               className="w-full"
               triggerClassName="py-3 px-3 rounded-xl text-left bg-zinc-950 text-zinc-300 font-display text-[11px]"

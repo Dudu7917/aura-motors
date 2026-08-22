@@ -3,7 +3,7 @@ import { recordApiCall } from "../utils/apiMonitor";
 import { executeGemini } from "../utils/keysManager";
 
 export async function handleInterpretSearch(req: any, res: any) {
-  const { query, formulatorModel = "gemini-3.6-flash" } = req.body;
+  const { query, formulatorModel = "gemini-3.7-flash" } = req.body;
   if (!query) {
     return res.status(400).json({ success: false, error: "O termo de busca é obrigatório" });
   }

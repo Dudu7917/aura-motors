@@ -72,7 +72,7 @@ export default function CarDetailsHeader({
         <span className="text-zinc-600">/</span>
         <span className="text-amber-500 font-semibold">{car.brand}</span>
         <span className="text-zinc-600">/</span>
-        <span className="text-zinc-300 truncate max-w-[140px]">{car.name}</span>
+        <span className="text-zinc-300 font-medium">{car.name}</span>
       </div>
     </motion.div>
   );

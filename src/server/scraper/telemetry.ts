@@ -1,8 +1,9 @@
 export const FALLBACK_MODELS = [
+  "gemini-3.7-flash",
   "gemini-3.6-flash",
-  "gemini-3.5-flash",
   "gemini-3.5-flash-lite",
-  "gemini-3.1-pro"
+  "gemini-3.5-flash",
+  "gemini-3.1-flash-lite"
 ];
 
 export let lastTelemetry: any = {
@@ -11,7 +12,7 @@ export let lastTelemetry: any = {
   error: null,
   jinaCharCount: 0,
   jinaEstimatedCars: 0,
-  model: "gemini-3.6-flash",
+  model: "gemini-3.7-flash",
   totalChunks: 0,
   processedChunks: 0,
   aiExtractedCount: 0,

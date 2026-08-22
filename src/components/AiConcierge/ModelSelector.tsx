@@ -4,52 +4,64 @@ import { Sparkles } from 'lucide-react';
 
 export const AVAILABLE_MODELS = [
   {
-    id: 'gemini-3.6-flash',
-    name: 'Gemini 3.6 Flash',
-    tagline: 'Novo carro-chefe da geração 3.6',
+    id: 'gemini-3.7-flash',
+    name: 'Gemini 3.7 Flash',
+    tagline: 'Nosso modelo Flash mais recente e capaz',
     rpm: '15 RPM',
     tpm: '1.000.000 TPM',
     rpd: '1.500 RPD',
     context: '1.048.576',
     modalitiesInput: 'Texto, Imagem, Vídeo, Áudio, PDF',
-    description: 'Novo modelo carro-chefe da geração 3.6 para raciocínio avançado, código e inteligência agêntica.',
+    description: 'Nosso modelo Flash mais recente e capaz, construído para codificação complexa, fluxos agênticos e execução confiável de múltiplos passos.',
+    badge: 'Novo 3.7'
+  },
+  {
+    id: 'gemini-3.6-flash',
+    name: 'Gemini 3.6 Flash',
+    tagline: 'Equilíbrio de velocidade e recursos multimodais',
+    rpm: '15 RPM',
+    tpm: '1.000.000 TPM',
+    rpd: '1.500 RPD',
+    context: '1.048.576',
+    modalitiesInput: 'Texto, Imagem, Vídeo, Áudio, PDF',
+    description: 'Modelo Flash de geração anterior, equilibrando velocidade e recursos multimodais em tarefas agênticas gerais e cotidianas.',
     badge: 'Novo 3.6'
   },
   {
     id: 'gemini-3.5-flash-lite',
     name: 'Gemini 3.5 Flash-Lite',
-    tagline: 'Mais rápido e generoso em requisições',
+    tagline: 'Mais rápido e econômico da linha 3.5',
     rpm: '30 RPM',
     tpm: '1.000.000 TPM',
     rpd: '1.500 RPD',
     context: '1.048.576',
     modalitiesInput: 'Texto, Imagem, Vídeo, Áudio',
-    description: 'Alta taxa de requisição por minuto (30 RPM) com baixíssima latência e alta eficiência.',
+    description: 'Nosso modelo 3.5 mais rápido e econômico para execução de alto volume e alta taxa de transferência.',
     badge: 'Novo Lite'
   },
   {
     id: 'gemini-3.5-flash',
     name: 'Gemini 3.5 Flash',
-    tagline: 'Desempenho multimodal equilibrado',
+    tagline: 'Velocidade base e desempenho fundacional',
     rpm: '15 RPM',
     tpm: '1.000.000 TPM',
     rpd: '1.500 RPD',
     context: '1.048.576',
     modalitiesInput: 'Texto, Imagem, Vídeo, Áudio, PDF',
-    description: 'Modelo estável da geração 3.5 para inteligência rápida e multimodal.',
+    description: 'Nosso modelo Flash legado, fornecendo velocidade de linha de base e desempenho fundamental para cargas de trabalho rotineiras de alta taxa de transferência.',
     badge: 'Estável'
   },
   {
-    id: 'gemini-3.1-pro',
-    name: 'Gemini 3.1 Pro',
-    tagline: 'Pro para raciocínio analítico profundo',
-    rpm: '10 RPM',
+    id: 'gemini-3.1-flash-lite',
+    name: 'Gemini 3.1 Flash-Lite',
+    tagline: 'Mais econômico para alto volume e tradução',
+    rpm: '30 RPM',
     tpm: '1.000.000 TPM',
-    rpd: '1.000 RPD',
+    rpd: '1.500 RPD',
     context: '1.048.576',
-    modalitiesInput: 'Texto, Imagem, Vídeo, Áudio, PDF',
-    description: 'Modelo Pro avançado para raciocínio complexo e análises profundas.',
-    badge: 'Pro'
+    modalitiesInput: 'Texto, Imagem, Vídeo, Áudio',
+    description: 'Nosso modelo mais econômico, otimizado para tarefas agênticas de alto volume, tradução e processamento simples de dados.',
+    badge: 'Econômico'
   }
 ];
 

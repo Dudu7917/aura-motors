@@ -22,7 +22,7 @@ export async function runJinaFallback(url: string, customRoutingLogs: string[], 
 }
 
 export async function handleCustomScrape(req: any, res: any) {
-  const { url, mode = "extract", planningModel = "gemini-3.6-flash", extractionModel = "gemini-3.5-flash-lite", criteria } = req.body;
+  const { url, mode = "extract", planningModel = "gemini-3.7-flash", extractionModel = "gemini-3.1-flash-lite", criteria } = req.body;
   if (!url) {
     return res.status(400).json({ success: false, error: "A URL é obrigatória" });
   }

@@ -106,9 +106,11 @@ export default function ApiQuotaMonitor() {
   };
 
   const getServiceColor = (name: string) => {
-    if (name.includes('gemini-3.5')) return 'from-purple-500 to-indigo-600 border-purple-500/20 text-purple-400';
-    if (name.includes('gemini-3.1')) return 'from-amber-500 to-orange-600 border-amber-500/20 text-amber-400';
-    if (name.includes('gemini')) return 'from-blue-500 to-teal-600 border-blue-500/20 text-blue-400';
+    if (name.includes('gemini-3.7')) return 'from-purple-500 to-indigo-600 border-purple-500/20 text-purple-400';
+    if (name.includes('gemini-3.6')) return 'from-cyan-500 to-blue-600 border-cyan-500/20 text-cyan-400';
+    if (name.includes('gemini-3.5-flash-lite')) return 'from-emerald-500 to-teal-600 border-emerald-500/20 text-emerald-400';
+    if (name.includes('gemini-3.5')) return 'from-amber-500 to-orange-600 border-amber-500/20 text-amber-400';
+    if (name.includes('gemini-3.1')) return 'from-teal-500 to-emerald-600 border-teal-500/20 text-teal-400';
     if (name === 'jina-reader') return 'from-emerald-500 to-teal-600 border-emerald-500/20 text-emerald-400';
     return 'from-rose-500 to-pink-600 border-rose-500/20 text-rose-400';
   };
@@ -405,9 +407,11 @@ export default function ApiQuotaMonitor() {
                         <td className="py-3 text-zinc-400 text-[11px]">{formattedTime}</td>
                         <td className="py-3 font-bold text-zinc-200">
                           <span className={`inline-block px-1.5 py-0.5 rounded text-[9px] border ${
-                            log.service.includes('gemini-3.5') ? 'bg-purple-500/10 border-purple-500/20 text-purple-400' :
-                            log.service.includes('gemini-3.1') ? 'bg-amber-500/10 border-amber-500/20 text-amber-400' :
-                            log.service.includes('gemini') ? 'bg-blue-500/10 border-blue-500/20 text-blue-400' :
+                            log.service.includes('gemini-3.7') ? 'bg-purple-500/10 border-purple-500/20 text-purple-400' :
+                            log.service.includes('gemini-3.6') ? 'bg-cyan-500/10 border-cyan-500/20 text-cyan-400' :
+                            log.service.includes('gemini-3.5-flash-lite') ? 'bg-emerald-500/10 border-emerald-500/20 text-emerald-400' :
+                            log.service.includes('gemini-3.5') ? 'bg-amber-500/10 border-amber-500/20 text-amber-400' :
+                            log.service.includes('gemini-3.1') ? 'bg-teal-500/10 border-teal-500/20 text-teal-400' :
                             log.service === 'jina-reader' ? 'bg-emerald-500/10 border-emerald-500/20 text-emerald-400' :
                             'bg-rose-500/10 border-rose-500/20 text-rose-400'
                           }`}>

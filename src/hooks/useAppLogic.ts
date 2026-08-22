@@ -61,7 +61,7 @@ export function useAppLogic() {
   const [isSettingsOpen, setIsSettingsOpen] = useState(false);
 
   const [nelsinhoModel, setNelsinhoModel] = useState<string>(
-    () => localStorage.getItem('aura_nelsinho_model') || 'gemini-3.6-flash'
+    () => localStorage.getItem('aura_nelsinho_model') || 'gemini-3.7-flash'
   );
 
   const [theme, setTheme] = useState<'light' | 'dark'>(

@@ -104,7 +104,7 @@ export default function CarCardSlot({
             </span>
           </div>
 
-          <h4 className="font-display text-xs sm:text-sm font-bold text-white truncate" title={car.name}>
+          <h4 className="font-display text-xs sm:text-sm font-bold text-white leading-snug break-words" title={car.name}>
             {car.name}
           </h4>
 

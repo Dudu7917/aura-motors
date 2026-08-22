@@ -117,7 +117,7 @@ export async function getFipePrice(req: any, brand: string, model: string, year:
 
     const geminiResText = await executeGemini(req, async (ai, keyUsedName) => {
       const resObj = await ai.models.generateContent({
-        model: "gemini-3.6-flash",
+        model: "gemini-3.7-flash",
         contents: matchingPrompt,
         config: {
           responseMimeType: "application/json",

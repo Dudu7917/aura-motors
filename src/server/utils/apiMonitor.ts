@@ -60,12 +60,12 @@ export const getMetricsForService = (service: string): ServiceMetrics => {
   const oneMinuteAgo = now - 60 * 1000;
   const oneDayAgo = now - 24 * 60 * 60 * 1000;
 
-  // Limites Padrão (Futebol / Free Tiers típicos da AI Studio de maio de 2026)
+  // Limites Padrão (Free / Standard Tiers da AI Studio)
   let rpmLimit = 15;
   let tpmLimit = 1000000;
   let rpdLimit = 1500;
 
-  if (service === 'gemini-3.1-flash-lite' || service === 'gemini-2.5-flash-lite') {
+  if (service === 'gemini-3.5-flash-lite' || service === 'gemini-3.1-flash-lite') {
     rpmLimit = 30;
     tpmLimit = 1000000;
     rpdLimit = 1500;
@@ -103,11 +103,11 @@ export const getMetricsForService = (service: string): ServiceMetrics => {
 
 export const getAllMetrics = () => {
   const services = [
+    'gemini-3.7-flash',
+    'gemini-3.6-flash',
+    'gemini-3.5-flash-lite',
     'gemini-3.5-flash',
     'gemini-3.1-flash-lite',
-    'gemini-3-flash-preview',
-    'gemini-2.5-flash',
-    'gemini-2.5-flash-lite',
     'jina-reader',
     'scrapingbee'
   ];

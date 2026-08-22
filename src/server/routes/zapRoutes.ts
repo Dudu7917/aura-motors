@@ -50,7 +50,7 @@ Responda ESTRITAMENTE em formato JSON VÁLIDO (sem marcação de bloco de códig
 }`;
 
       const response = await ai.models.generateContent({
-        model: "gemini-2.5-flash",
+        model: "gemini-3.7-flash",
         contents: prompt,
         config: {
           responseMimeType: "application/json",
@@ -134,7 +134,7 @@ Responda ESTRITAMENTE em formato JSON VÁLIDO no seguinte formato:
 }`;
 
       const response = await ai.models.generateContent({
-        model: modelName || "gemini-2.5-flash",
+        model: modelName || "gemini-3.7-flash",
         contents: prompt,
         config: {
           responseMimeType: "application/json",

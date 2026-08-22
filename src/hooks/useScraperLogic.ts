@@ -18,7 +18,7 @@ export function useScraperLogic() {
   });
   const [scrapedContent, setScrapedContent] = useState(() => localStorage.getItem('aura_scraped_content') || '');
   const [planningModel, setPlanningModel] = useState<string>(
-    () => localStorage.getItem('aura_planning_model') || 'gemini-3.6-flash'
+    () => localStorage.getItem('aura_planning_model') || 'gemini-3.7-flash'
   );
   const [extractionModel, setExtractionModel] = useState<string>(
     () => localStorage.getItem('aura_extraction_model') || 'gemini-3.5-flash-lite'
@@ -47,7 +47,7 @@ export function useScraperLogic() {
     };
   }, []);
   const [formulatorModel, setFormulatorModel] = useState<string>(
-    () => localStorage.getItem('aura_formulator_model') || 'gemini-3.6-flash'
+    () => localStorage.getItem('aura_formulator_model') || 'gemini-3.7-flash'
   );
   const [stepStatus, setStepStatus] = useState<{
     formulator: 'idle' | 'running' | 'done' | 'error';

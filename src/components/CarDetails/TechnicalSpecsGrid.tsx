@@ -63,7 +63,7 @@ export default function TechnicalSpecsGrid({ car }: TechnicalSpecsGridProps) {
           className="bg-zinc-900/35 border border-white/5 rounded-xl p-4 transition-all duration-300 luxury-glass cursor-default"
         >
           <span className="font-mono text-[8px] uppercase tracking-widest text-zinc-500 block mb-1 font-bold">KM COLETADA</span>
-          <strong className="font-display text-sm font-bold text-emerald-450 tracking-tight block truncate uppercase" title={car.specs.rangeOrdisplacement}>
+          <strong className="font-display text-sm font-bold text-emerald-450 tracking-tight block uppercase" title={car.specs.rangeOrdisplacement}>
             {car.specs.rangeOrdisplacement}
           </strong>
           <span className="font-mono text-[8px] text-zinc-500 block mt-0.5">100% Auditada</span>

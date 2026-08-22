@@ -25,7 +25,7 @@ import { deduplicateCars } from "../../utils/carDeduplicator";
 
 export async function handleScrape(req: any, res: any, NELSINHO_FALLBACK_STOCKS: any[]) {
   const forceRefresh = req?.query?.force === "true";
-  const selectedModel = (req?.query?.modelName as string) || "gemini-3.6-flash";
+  const selectedModel = (req?.query?.modelName as string) || "gemini-3.7-flash";
   try {
     const result = await performNelsinhoScrape(req, selectedModel, forceRefresh, NELSINHO_FALLBACK_STOCKS);
     return res.json(result);

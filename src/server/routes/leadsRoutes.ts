@@ -74,7 +74,7 @@ router.post("/import", async (req, res) => {
       return res.status(400).json({ success: false, error: "Arquivo inválido ou incompleto." });
     }
 
-    console.log(`[HTTP Server] Iniciando extração via Gemini (${modelName || 'gemini-3.6-flash'}) do arquivo importado: ${fileName} (${fileType})...`);
+    console.log(`[HTTP Server] Iniciando extração via Gemini (${modelName || 'gemini-3.7-flash'}) do arquivo importado: ${fileName} (${fileType})...`);
     const extractedLeads = await importLeadsFromContent(req, fileData, fileName, fileType, modelName);
     
     console.log(`[HTTP Server] ${extractedLeads.length} leads extraídos com sucesso!`);
@@ -163,7 +163,7 @@ Regras Cruciais:
 
     const pitchText = await executeGemini(req, async (ai) => {
       const response = await ai.models.generateContent({
-        model: "gemini-3.6-flash",
+        model: "gemini-3.7-flash",
         contents: prompt,
       });
       return response.text || "";

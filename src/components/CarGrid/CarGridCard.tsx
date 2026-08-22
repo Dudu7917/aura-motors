@@ -225,7 +225,7 @@ export default function CarGridCard({
           </div>
           <div>
             <span className="block text-zinc-500 text-[7.5px] uppercase tracking-wider">RODADO</span>
-            <strong className="text-emerald-500 text-[9px] font-bold block truncate max-w-[80px] mx-auto uppercase" title={car.specs.rangeOrdisplacement}>
+            <strong className="text-emerald-500 text-[9.5px] font-bold block whitespace-nowrap mx-auto uppercase" title={car.specs.rangeOrdisplacement}>
               {car.specs.rangeOrdisplacement}
             </strong>
           </div>

@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Car, PaintColor } from '../types';
-import { Volume2, Flame } from 'lucide-react';
+import { Flame } from 'lucide-react';
 import { triggerNelsinhoMouseHover } from './MouseTelemetryDashboard';
 import { motion, AnimatePresence } from 'motion/react';
-import { playV12Roar } from '../utils/audio';
 import CommercialBanner from './Hero/CommercialBanner';
 import SpinningStamp from './Hero/SpinningStamp';
 import SpecChipsRibbon from './Hero/SpecChipsRibbon';
@@ -24,7 +23,6 @@ export default function HeroSection({ car, cars, onChangePaint, onNavigateToShow
   const activeCar = featuredCars[activeIndex] || car;
 
   const [selectedPaint, setSelectedPaint] = useState<PaintColor>(activeCar.paints[0]);
-  const [isSynthesizing, setIsSynthesizing] = useState(false);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
 
   useEffect(() => {
@@ -53,14 +51,6 @@ export default function HeroSection({ car, cars, onChangePaint, onNavigateToShow
   const handlePrev = () => {
     setIsAutoPlaying(false);
     setActiveIndex((prev) => (prev - 1 + featuredCars.length) % featuredCars.length);
-  };
-
-  const handlePlayV12 = async () => {
-    if (isSynthesizing) return;
-    setIsSynthesizing(true);
-    try { await playV12Roar(activeCar.specs.power); }
-    catch (err) { console.error(err); }
-    finally { setIsSynthesizing(false); }
   };
 
   return (
@@ -161,26 +151,12 @@ export default function HeroSection({ car, cars, onChangePaint, onNavigateToShow
               onSelectPaint={handlePaintSelect}
             />
 
-            {/* Core Buttons */}
+            {/* Core Action Button */}
             <div className="flex flex-col sm:flex-row gap-3 pt-1">
-              <button
-                onClick={handlePlayV12}
-                disabled={isSynthesizing}
-                onMouseEnter={() => triggerNelsinhoMouseHover('hero-roar-btn')}
-                className={`flex items-center justify-center gap-2.5 rounded-full border px-5 py-3.5 font-mono text-[11px] tracking-widest uppercase transition-all duration-300 cursor-pointer ${
-                  isSynthesizing
-                    ? 'border-amber-500/40 bg-amber-500/15 text-amber-400 animate-pulse'
-                    : 'border-white/10 bg-white/5 text-white hover:bg-white/10 hover:border-white/20'
-                }`}
-              >
-                <Volume2 className={`h-4 w-4 ${isSynthesizing ? 'animate-bounce' : ''}`} />
-                <span>{isSynthesizing ? 'Som Ativo...' : 'Simular Motor'}</span>
-              </button>
-
               <button
                 onClick={onNavigateToShowroom}
                 onMouseEnter={() => triggerNelsinhoMouseHover('hero-showroom-btn')}
-                className="flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-amber-550 to-amber-600 hover:from-amber-500 hover:to-amber-550 px-6 py-3.5 font-display text-xs font-bold tracking-widest text-black uppercase transition-all hover:scale-105 active:scale-95 cursor-pointer shadow-[0_4px_15px_rgba(245,158,11,0.15)]"
+                className="flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-amber-550 to-amber-600 hover:from-amber-500 hover:to-amber-550 px-8 py-3.5 font-display text-xs font-bold tracking-widest text-black uppercase transition-all hover:scale-105 active:scale-95 cursor-pointer shadow-[0_4px_15px_rgba(245,158,11,0.15)]"
               >
                 <span>VER SHOWROOM COMPLETO</span>
               </button>

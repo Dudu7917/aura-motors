@@ -12,31 +12,39 @@ interface ModelOption {
 
 const MODELS_LIST: ModelOption[] = [
   { 
+    value: 'gemini-3.7-flash', 
+    label: 'Gemini 3.7 Flash', 
+    sublabel: 'Nosso modelo mais recente e capaz para código complexo e fluxos agênticos',
+    badge: 'Novo 3.7',
+    icon: <Sparkles className="h-3 w-3 text-amber-500" />
+  },
+  { 
     value: 'gemini-3.6-flash', 
     label: 'Gemini 3.6 Flash', 
-    sublabel: 'Novo motor principal para tarefas complexas e agênticas',
+    sublabel: 'Equilíbrio de velocidade e capacidades multimodais para tarefas gerais e agênticas',
     badge: 'Novo 3.6',
-    icon: <Sparkles className="h-3 w-3 text-amber-500" />
+    icon: <Cpu className="h-3 w-3 text-cyan-400" />
   },
   { 
     value: 'gemini-3.5-flash-lite', 
     label: 'Gemini 3.5 Flash-Lite', 
-    sublabel: 'Novo modelo ultrarrápido (30 RPM) e econômico',
+    sublabel: 'Mais rápido e econômico da linha 3.5 para execução de alta vazão',
     badge: 'Novo Lite',
     icon: <Zap className="h-3 w-3 text-emerald-400" />
   },
   { 
     value: 'gemini-3.5-flash', 
     label: 'Gemini 3.5 Flash', 
-    sublabel: 'Equilíbrio ideal de inteligência e agilidade',
+    sublabel: 'Velocidade de linha base e desempenho fundacional para cargas de trabalho de alta vazão',
+    badge: 'Estável',
     icon: <Sparkles className="h-3 w-3 text-amber-400" />
   },
   { 
-    value: 'gemini-3.1-pro', 
-    label: 'Gemini 3.1 Pro', 
-    sublabel: 'Raciocínio complexo e tarefas profundas',
-    badge: 'Heavy',
-    icon: <Cpu className="h-3 w-3 text-cyan-400" />
+    value: 'gemini-3.1-flash-lite', 
+    label: 'Gemini 3.1 Flash-Lite', 
+    sublabel: 'Máxima eficiência de custo, otimizado para tarefas agênticas em alto volume',
+    badge: 'Econômico',
+    icon: <Zap className="h-3 w-3 text-emerald-400" />
   }
 ];
 

@@ -36,7 +36,7 @@ export default function PriceSpotlightCards({ car1, car2 }: PriceSpotlightCardsP
             </span>
           )}
         </div>
-        <h4 className="font-display text-sm font-bold text-white truncate mt-1">
+        <h4 className="font-display text-sm font-bold text-white leading-snug break-words mt-1">
           {car1.name}
         </h4>
         <div className="mt-3">
@@ -73,7 +73,7 @@ export default function PriceSpotlightCards({ car1, car2 }: PriceSpotlightCardsP
             </span>
           )}
         </div>
-        <h4 className="font-display text-sm font-bold text-white truncate mt-1">
+        <h4 className="font-display text-sm font-bold text-white leading-snug break-words mt-1">
           {car2.name}
         </h4>
         <div className="mt-3">

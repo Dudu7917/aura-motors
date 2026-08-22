@@ -304,7 +304,7 @@ Gostaria de agendar um teste drive ou ver fotos detalhadas dele?`;
 
 export async function handleChat(req: any, res: any, NELSINHO_FALLBACK_STOCKS: any[]) {
   const { messages, model } = req.body;
-  const selectedModel = model || "gemini-3.6-flash";
+  const selectedModel = model || "gemini-3.7-flash";
 
   try {
     if (!messages || !Array.isArray(messages)) {
@@ -329,10 +329,11 @@ export async function handleChat(req: any, res: any, NELSINHO_FALLBACK_STOCKS: a
     const dynamicInstruction = getDynamicInstruction(NELSINHO_FALLBACK_STOCKS);
 
     const FALLBACK_MODELS = [
+      "gemini-3.7-flash",
       "gemini-3.6-flash",
-      "gemini-3.5-flash",
       "gemini-3.5-flash-lite",
-      "gemini-3.1-pro"
+      "gemini-3.5-flash",
+      "gemini-3.1-flash-lite"
     ];
 
     const prioritizedModels = [

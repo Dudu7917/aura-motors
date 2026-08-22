@@ -37,7 +37,7 @@ export default function FinancingResultsCards({
             <span className="font-mono text-[9px] text-zinc-400">{config.installments} Meses</span>
           </div>
 
-          <h4 className="font-display text-sm font-bold text-white truncate">
+          <h4 className="font-display text-sm font-bold text-white leading-snug break-words">
             {car1.name}
           </h4>
 
@@ -97,7 +97,7 @@ export default function FinancingResultsCards({
             <span className="font-mono text-[9px] text-zinc-400">{config.installments} Meses</span>
           </div>
 
-          <h4 className="font-display text-sm font-bold text-white truncate">
+          <h4 className="font-display text-sm font-bold text-white leading-snug break-words">
             {car2.name}
           </h4>
 
