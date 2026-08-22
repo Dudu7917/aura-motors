@@ -112,7 +112,7 @@ export function extractNativeWebmotorsDetails(rawNextDataText: string) {
 }
 
 export async function handleScrapeVehicleDetails(req: any, res: any) {
-  const { url, modelName = "gemini-3.6-flash" } = req.body;
+  const { url, modelName = "gemini-3.7-flash" } = req.body;
   if (!url) {
     return res.status(400).json({ success: false, error: "A URL do veículo é obrigatória" });
   }

@@ -140,6 +140,19 @@ export default function CarDetailsPage({
     setActiveImage(list[0] || car.image);
   }, [car]);
 
+  const isNelsinhoStockCar = (c: Car) => {
+    if (!c) return false;
+    const seller = (c.sellerName || '').toLowerCase();
+    const url = (c.detailUrl || '').toLowerCase();
+    const desc = (c.description || '').toLowerCase();
+    
+    if (seller.includes('nelsinho') || seller.includes('garagem do nelsinho')) return true;
+    if (url.includes('garagemdonelsinho.com.br')) return true;
+    if (desc.includes('garagem do nelsinho')) return true;
+    
+    return false;
+  };
+
   const handleOpenAiAssisChat = () => {
     onOpenAiConcierge(currentCar, `Olá Nelsinho! Tenho muito interesse neste carro real do pátio: *${currentCar.name}* de valor R$ ${currentCar.price.toLocaleString('pt-BR')}. Quais opcionais ele tem e como está o estado de conservação dele?`);
   };
@@ -219,14 +232,16 @@ export default function CarDetailsPage({
               <MatchingLeadsSection car={currentCar} leads={leads} onUpdateLead={onUpdateLead} />
             </motion.div>
             
-            {/* Painel Deep Scraping */}
-            <motion.div variants={itemVariants}>
-              <DeepScrapePanel 
-                car={currentCar} 
-                onEnrich={handleEnrichCar} 
-                onScrapeStateChange={setIsScraping}
-              />
-            </motion.div>
+            {/* Painel Deep Scraping - Oculto para carros que já são nativos do estoque da Garagem do Nelsinho */}
+            {!isNelsinhoStockCar(currentCar) && (
+              <motion.div variants={itemVariants}>
+                <DeepScrapePanel 
+                  car={currentCar} 
+                  onEnrich={handleEnrichCar} 
+                  onScrapeStateChange={setIsScraping}
+                />
+              </motion.div>
+            )}
 
             {/* Seção Laudo Vistoria / IA */}
             <motion.div variants={itemVariants}>

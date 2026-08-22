@@ -14,30 +14,39 @@ interface ModelOption {
 
 const DEEP_SCRAPE_MODELS: ModelOption[] = [
   {
+    value: 'gemini-3.7-flash',
+    label: 'Gemini 3.7 Flash',
+    sublabel: 'Nosso modelo Flash mais recente e capaz para fluxos agênticos e código',
+    badge: 'Novo 3.7',
+    icon: <Sparkles className="h-3.5 w-3.5 text-amber-500" />
+  },
+  {
     value: 'gemini-3.6-flash',
     label: 'Gemini 3.6 Flash',
-    sublabel: 'O novo carro-chefe para extração e raciocínio avançado',
+    sublabel: 'Equilíbrio de velocidade e capacidades multimodais em tarefas cotidianas',
     badge: 'Novo 3.6',
-    icon: <Sparkles className="h-3.5 w-3.5 text-amber-500" />
+    icon: <Cpu className="h-3.5 w-3.5 text-cyan-400" />
   },
   {
     value: 'gemini-3.5-flash-lite',
     label: 'Gemini 3.5 Flash-Lite',
-    sublabel: 'Resposta ultra rápida com cota maior (30 RPM)',
-    badge: 'Rápido',
+    sublabel: 'Mais rápido e econômico da linha 3.5 com cota maior (30 RPM)',
+    badge: 'Novo Lite',
     icon: <Zap className="h-3.5 w-3.5 text-emerald-400" />
   },
   {
     value: 'gemini-3.5-flash',
     label: 'Gemini 3.5 Flash',
-    sublabel: 'Equilíbrio ideal de inteligência e agilidade',
+    sublabel: 'Velocidade base e desempenho fundacional consistente',
+    badge: 'Estável',
     icon: <Sparkles className="h-3.5 w-3.5 text-amber-400" />
   },
   {
-    value: 'gemini-3.1-pro',
-    label: 'Gemini 3.1 Pro',
-    sublabel: 'Modelo Pro avançado para análises profundas',
-    icon: <Cpu className="h-3.5 w-3.5 text-cyan-400" />
+    value: 'gemini-3.1-flash-lite',
+    label: 'Gemini 3.1 Flash Lite',
+    sublabel: 'Máxima eficiência de custo para extrações massivas (30 RPM)',
+    badge: 'Econômico',
+    icon: <Zap className="h-3.5 w-3.5 text-emerald-400" />
   }
 ];
 
@@ -54,7 +63,7 @@ interface DeepScrapePanelProps {
 
 export default function DeepScrapePanel({ car, onEnrich, onScrapeStateChange }: DeepScrapePanelProps) {
   const [deepScrapingUrl, setDeepScrapingUrl] = useState<string>(car.detailUrl || '');
-  const [selectedAiModel, setSelectedAiModel] = useState<string>('gemini-3.6-flash');
+  const [selectedAiModel, setSelectedAiModel] = useState<string>('gemini-3.7-flash');
   const [isScrapingDeep, setIsScrapingDeep] = useState<boolean>(false);
   const [deepScrapingLogs, setDeepScrapingLogs] = useState<string[]>([]);
   const [deepScrapingError, setDeepScrapingError] = useState<string | null>(null);
@@ -285,7 +294,7 @@ export default function DeepScrapePanel({ car, onEnrich, onScrapeStateChange }: 
               </AnimatePresence>
             </div>
             <div className="bg-zinc-950/80 border border-white/5 rounded-lg p-2.5 flex flex-col justify-center text-[8px] font-mono text-zinc-550 uppercase tracking-widest text-right leading-relaxed">
-              <span>RPM: {selectedAiModel === 'gemini-3.1-flash-lite' ? '30' : '15'} | TPM: 1.0M</span>
+              <span>RPM: {selectedAiModel === 'gemini-3.5-flash-lite' || selectedAiModel === 'gemini-3.1-flash-lite' ? '30' : '15'} | TPM: 1.0M</span>
               <span className="text-amber-500/80">Janela: 1.0M Tokens</span>
             </div>
           </div>
