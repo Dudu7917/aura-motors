@@ -1,10 +1,11 @@
-import { Sparkles, Compass, Activity, Globe, Settings, Users, Sun, Moon } from 'lucide-react';
+import { Sparkles, Compass, Activity, Globe, Settings, Users, Sun, Moon, Swords, Trophy } from 'lucide-react';
 import { triggerNelsinhoMouseHover } from './MouseTelemetryDashboard';
+import { TabType } from '../context/UIContext';
 
 interface NavbarProps {
   onOpenAiConcierge: () => void;
-  activeTab: 'showroom' | 'metrics' | 'custom_scrape' | 'waiting_list';
-  onTabChange: (tab: 'showroom' | 'metrics' | 'custom_scrape' | 'waiting_list') => void;
+  activeTab: TabType;
+  onTabChange: (tab: TabType) => void;
   onOpenSettings: () => void;
   theme: 'light' | 'dark';
   onToggleTheme: () => void;
@@ -101,6 +102,18 @@ export default function Navbar({
             <Users className="h-3.5 w-3.5" />
             <span>Fila de Espera</span>
           </button>
+
+          <button
+            onClick={() => onTabChange('sales_arena')}
+            className={`flex items-center space-x-1.5 px-3.5 py-1.5 rounded-full transition-all text-[10px] xl:text-[11px] uppercase tracking-wider cursor-pointer whitespace-nowrap flex-shrink-0 ${
+              activeTab === 'sales_arena'
+                ? 'bg-gradient-to-r from-amber-400 to-amber-500 text-black font-black shadow-md shadow-amber-500/20'
+                : 'text-amber-400 hover:text-white font-semibold'
+            }`}
+          >
+            <Swords className="h-3.5 w-3.5" />
+            <span>Arena de Vendas</span>
+          </button>
         </div>
 
         {/* Action Buttons */}
@@ -134,6 +147,13 @@ export default function Navbar({
               title="Fila de Espera"
             >
               <Users className="h-4 w-4" />
+            </button>
+            <button
+              onClick={() => onTabChange('sales_arena')}
+              className={`p-2 rounded-full border ${activeTab === 'sales_arena' ? 'border-amber-500/50 bg-amber-500/10 text-amber-500' : 'border-white/5 text-zinc-400'}`}
+              title="Arena de Vendas"
+            >
+              <Swords className="h-4 w-4" />
             </button>
           </div>
 

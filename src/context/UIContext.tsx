@@ -1,7 +1,7 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
 import { storageAdapter, STORAGE_KEYS } from '../core/storage/storageAdapter';
 
-export type TabType = 'showroom' | 'metrics' | 'custom_scrape' | 'waiting_list';
+export type TabType = 'showroom' | 'metrics' | 'custom_scrape' | 'waiting_list' | 'sales_arena';
 
 interface UIContextType {
   activeTab: TabType;
@@ -20,7 +20,7 @@ const UIContext = createContext<UIContextType | undefined>(undefined);
 export const UIProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [activeTab, setActiveTabState] = useState<TabType>(() => {
     const saved = storageAdapter.getString(STORAGE_KEYS.ACTIVE_TAB, 'showroom');
-    if (['showroom', 'metrics', 'custom_scrape', 'waiting_list'].includes(saved)) {
+    if (['showroom', 'metrics', 'custom_scrape', 'waiting_list', 'sales_arena'].includes(saved)) {
       return saved as TabType;
     }
     return 'showroom';

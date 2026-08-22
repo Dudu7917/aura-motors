@@ -11,6 +11,8 @@ import { handleChat } from "./src/server/chat";
 import leadsRoutes from "./src/server/routes/leadsRoutes";
 import scraperRoutes from "./src/server/routes/scraperRoutes";
 import agentRoutes from "./src/server/routes/agentRoutes";
+import zapRoutes from "./src/server/routes/zapRoutes";
+import salesArenaRoutes from "./src/server/routes/salesArenaRoutes";
 import { initScheduler } from "./src/server/utils/scheduler";
 
 dotenv.config();
@@ -71,6 +73,8 @@ async function startServer() {
   app.use("/api/leads", leadsRoutes);
   app.use("/api", scraperRoutes); // Registra sob o prefixo /api (ex: /api/scrape)
   app.use("/api/agent", agentRoutes);
+  app.use("/api/zap", zapRoutes);
+  app.use("/api/arena", salesArenaRoutes);
 
   // Rota do Assistente Inteligente (Gemini API)
   app.post("/api/chat", async (req, res) => {

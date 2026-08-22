@@ -10,6 +10,7 @@ import CarDetailsPage from './components/CarDetailsPage';
 import StockMetricsDashboard from './components/StockMetricsDashboard';
 import CustomScraperTab from './components/CustomScraperTab';
 import WaitingListTab from './components/WaitingListTab';
+import SalesArenaTab from './features/sales-arena/components/SalesArenaTab';
 import AppOverlays from './components/AppOverlays';
 import CarContextMenu from './components/CarGrid/CarContextMenu';
 
@@ -147,6 +148,19 @@ function AppContent() {
               className="pt-4"
             >
               <WaitingListTab />
+            </motion.div>
+          )}
+
+          {activeTab === 'sales_arena' && (
+            <motion.div
+              key="sales-arena-tab"
+              initial={{ opacity: 0, y: 8 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -8 }}
+              transition={{ duration: 0.25 }}
+              className="pt-4"
+            >
+              <SalesArenaTab />
             </motion.div>
           )}
         </AnimatePresence>

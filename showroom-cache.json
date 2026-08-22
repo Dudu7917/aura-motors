@@ -505,7 +505,7 @@
       "name": "HONDA CITY 1.5 i-VTEC FLEX HATCH EXL CVT",
       "brand": "Honda",
       "role": "Honda Inteligência Artificial Jina",
-      "category": "classics",
+      "category": "hypercars",
       "price": 109970,
       "image": "https://www.autocerto.com/fotos/6983/5374230/1_092749.jpg",
       "description": "Este esplêndido HONDA CITY 1.5 i-VTEC FLEX HATCH EXL CVT ano modelo 2024 está disponível.",
@@ -3209,6 +3209,6 @@
       ]
     }
   ],
-  "timestamp": "2026-08-22T22:13:56.434Z",
+  "timestamp": "2026-08-22T23:11:23.701Z",
   "source": "local_file_cache"
 }
