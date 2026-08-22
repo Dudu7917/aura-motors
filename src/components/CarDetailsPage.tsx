@@ -154,7 +154,10 @@ export default function CarDetailsPage({
   };
 
   const handleOpenAiAssisChat = () => {
-    onOpenAiConcierge(currentCar, `Olá Nelsinho! Tenho muito interesse neste carro real do pátio: *${currentCar.name}* de valor R$ ${currentCar.price.toLocaleString('pt-BR')}. Quais opcionais ele tem e como está o estado de conservação dele?`);
+    onOpenAiConcierge(
+      currentCar,
+      `Olá! Preciso de argumentos de venda e dados técnicos do *${currentCar.name}* (R$ ${currentCar.price.toLocaleString('pt-BR')}). Quais são os principais diferenciais, opcionais de destaque e pontos fortes para eu apresentar ao cliente no balcão?`
+    );
   };
 
   const containerVariants = {

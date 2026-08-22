@@ -126,11 +126,11 @@ export default function ScrapedResultsGrid({
                     {/* AI Chat button quick integration */}
                     <button
                       type="button"
-                      onClick={() => onOpenAiConcierge(car, `Me apresente os principais pontos fortes e opcionais desse ${car.name} extraído do link externo.`)}
+                      onClick={() => onOpenAiConcierge(car, `Me apresente os principais argumentos de venda e diferenciais do ${car.name} para eu negociar com o cliente.`)}
                       className="w-full flex items-center justify-center gap-1.5 rounded-xl bg-zinc-900 border border-white/5 hover:border-amber-500/15 p-2.5 font-display text-[9.5px] uppercase tracking-wider font-bold text-zinc-400 hover:text-amber-500 transition-all cursor-pointer"
                     >
                       <Sparkles className="h-3.5 w-3.5 text-amber-500" />
-                      <span>CONSULTAR VENDEDOR IA</span>
+                      <span>ARGUMENTOS DE VENDA IA</span>
                     </button>
                   </div>
                 </div>

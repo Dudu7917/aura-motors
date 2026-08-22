@@ -54,7 +54,7 @@ export default function AiVerdictTab({ car1, car2 }: AiVerdictTabProps) {
 💰 *Melhor Valor:* ${winnerPrice.name} (R$ ${winnerPrice.price.toLocaleString('pt-BR')})
 📅 *Mais Recente:* ${winnerYear.name} (${winnerYear.year})
 
-📍 Venha realizar um Test Drive na Garagem do Nelsinho e escolha o seu próximo seminovo com procedência 100% periciada!`;
+📍 Proposta comercial elaborada pela Garagem do Nelsinho. Veículos com procedência 100% periciada e laudo cautelar aprovado!`;
 
     navigator.clipboard.writeText(text);
     setCopiedZap(true);

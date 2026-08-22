@@ -64,7 +64,8 @@ export default function AiConcierge({
   const QUICK_PROMPTS = [
     'Argumentos de vendas SUV',
     'Tabela de Financiamento',
-    'Modelos mais econômicos do pátio'
+    'Modelos mais econômicos do pátio',
+    'Diferenciais do laudo pericial'
   ];
 
   useEffect(() => {
@@ -244,7 +245,7 @@ export default function AiConcierge({
             value={inputValue}
             onChange={(e) => setInputValue(e.target.value)}
             onKeyDown={handleKeyPress}
-            placeholder="Pergunte sobre opcionais ou simule valores de parcelas..."
+            placeholder="Solicite argumentos de venda, simulação de parcelas ou dados do pátio..."
             className="w-full rounded-full border border-white/10 bg-zinc-900 py-3.5 pl-5 pr-12 font-display text-xs text-zinc-200 placeholder-zinc-500 focus:border-amber-500 focus:outline-none focus:ring-1 focus:ring-amber-500 transition-all font-light"
           />
           <button
