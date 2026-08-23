@@ -61,7 +61,11 @@ export default function ArenaHeaderBar({
           type="button"
           onClick={onEvaluate}
           disabled={isEvaluating || messagesCount < 2}
-          className="px-4 py-2.5 rounded-xl bg-gradient-to-r from-amber-500 via-amber-400 to-yellow-400 hover:from-amber-400 hover:to-yellow-300 text-[#09090b] font-mono text-xs font-extrabold uppercase tracking-wider transition-all flex items-center gap-2 cursor-pointer disabled:opacity-40 disabled:cursor-not-allowed shadow-lg shadow-amber-500/25"
+          className={`px-4 py-2.5 rounded-xl font-mono text-xs font-extrabold uppercase tracking-wider transition-all flex items-center gap-2 ${
+            isEvaluating || messagesCount < 2
+              ? 'bg-zinc-200/80 dark:bg-zinc-800 text-zinc-500 dark:text-zinc-500 border border-zinc-300 dark:border-white/5 cursor-not-allowed'
+              : 'bg-gradient-to-r from-amber-500 via-amber-400 to-yellow-400 hover:from-amber-400 hover:to-yellow-300 text-[#09090b] shadow-lg shadow-amber-500/25 cursor-pointer'
+          }`}
         >
           {isEvaluating ? (
             <>
@@ -70,7 +74,7 @@ export default function ArenaHeaderBar({
             </>
           ) : (
             <>
-              <Award className="h-4 w-4 text-[#09090b]" />
+              <Award className="h-4 w-4" />
               <span>Finalizar & Ver Scorecard</span>
             </>
           )}
