@@ -1,69 +1,20 @@
 import React from 'react';
 import { motion } from 'motion/react';
 import { Sparkles } from 'lucide-react';
+import { AI_MODELS } from '../../shared/domain/aiModels';
 
-export const AVAILABLE_MODELS = [
-  {
-    id: 'gemini-3.7-flash',
-    name: 'Gemini 3.7 Flash',
-    tagline: 'Nosso modelo Flash mais recente e capaz',
-    rpm: '15 RPM',
-    tpm: '1.000.000 TPM',
-    rpd: '1.500 RPD',
-    context: '1.048.576',
-    modalitiesInput: 'Texto, Imagem, Vídeo, Áudio, PDF',
-    description: 'Nosso modelo Flash mais recente e capaz, construído para codificação complexa, fluxos agênticos e execução confiável de múltiplos passos.',
-    badge: 'Novo 3.7'
-  },
-  {
-    id: 'gemini-3.6-flash',
-    name: 'Gemini 3.6 Flash',
-    tagline: 'Equilíbrio de velocidade e recursos multimodais',
-    rpm: '15 RPM',
-    tpm: '1.000.000 TPM',
-    rpd: '1.500 RPD',
-    context: '1.048.576',
-    modalitiesInput: 'Texto, Imagem, Vídeo, Áudio, PDF',
-    description: 'Modelo Flash de geração anterior, equilibrando velocidade e recursos multimodais em tarefas agênticas gerais e cotidianas.',
-    badge: 'Novo 3.6'
-  },
-  {
-    id: 'gemini-3.5-flash-lite',
-    name: 'Gemini 3.5 Flash-Lite',
-    tagline: 'Mais rápido e econômico da linha 3.5',
-    rpm: '30 RPM',
-    tpm: '1.000.000 TPM',
-    rpd: '1.500 RPD',
-    context: '1.048.576',
-    modalitiesInput: 'Texto, Imagem, Vídeo, Áudio',
-    description: 'Nosso modelo 3.5 mais rápido e econômico para execução de alto volume e alta taxa de transferência.',
-    badge: 'Novo Lite'
-  },
-  {
-    id: 'gemini-3.5-flash',
-    name: 'Gemini 3.5 Flash',
-    tagline: 'Velocidade base e desempenho fundacional',
-    rpm: '15 RPM',
-    tpm: '1.000.000 TPM',
-    rpd: '1.500 RPD',
-    context: '1.048.576',
-    modalitiesInput: 'Texto, Imagem, Vídeo, Áudio, PDF',
-    description: 'Nosso modelo Flash legado, fornecendo velocidade de linha de base e desempenho fundamental para cargas de trabalho rotineiras de alta taxa de transferência.',
-    badge: 'Estável'
-  },
-  {
-    id: 'gemini-3.1-flash-lite',
-    name: 'Gemini 3.1 Flash-Lite',
-    tagline: 'Mais econômico para alto volume e tradução',
-    rpm: '30 RPM',
-    tpm: '1.000.000 TPM',
-    rpd: '1.500 RPD',
-    context: '1.048.576',
-    modalitiesInput: 'Texto, Imagem, Vídeo, Áudio',
-    description: 'Nosso modelo mais econômico, otimizado para tarefas agênticas de alto volume, tradução e processamento simples de dados.',
-    badge: 'Econômico'
-  }
-];
+export const AVAILABLE_MODELS = AI_MODELS.map(m => ({
+  id: m.id,
+  name: m.name,
+  tagline: m.tagline,
+  rpm: m.rpm || '15 RPM',
+  tpm: m.tpm || '1.000.000 TPM',
+  rpd: m.rpd || '1.500 RPD',
+  context: m.context || '1.048.576',
+  modalitiesInput: m.modalitiesInput || 'Texto, Imagem, Vídeo, Áudio, PDF',
+  description: m.description,
+  badge: m.badge || 'Estável'
+}));
 
 interface ModelSelectorProps {
   selectedModel: string;
@@ -93,58 +44,53 @@ export default function ModelSelector({
           [ Voltar ]
         </button>
       </div>
-      
-      <p className="text-[10.5px] text-zinc-400 mb-3.5 leading-relaxed font-light">
-        Selecione qual modelo do Gemini gerenciará suas simulações de vendas e triagem de pátio comercial. Todos operam com <strong>Google Search Grounding</strong> integrado:
+
+      <p className="text-xs text-zinc-400 mb-4 leading-relaxed">
+        Selecione o modelo do Gemini para processar as conversas e buscas no showroom:
       </p>
 
-      <div className="space-y-2.5 flex-1 mb-4">
-        {AVAILABLE_MODELS.map((m) => {
-          const isSelected = m.id === selectedModel;
+      <div className="space-y-3 pb-6">
+        {AVAILABLE_MODELS.map((model) => {
+          const isSelected = selectedModel === model.id;
           return (
-            <button
-              key={m.id}
-              onClick={() => {
-                onSelectModel(m.id);
-                onClose();
-              }}
-              className={`w-full text-left p-3 rounded-2xl border transition-all flex flex-col space-y-1.5 cursor-pointer ${
-                isSelected 
-                  ? 'bg-amber-500/10 border-amber-500/50 shadow-[0_4px_12px_rgba(245,158,11,0.08)]' 
-                  : 'bg-zinc-900 border-white/5 hover:border-white/10 hover:bg-zinc-900/80'
+            <div
+              key={model.id}
+              onClick={() => onSelectModel(model.id)}
+              className={`p-3.5 rounded-xl border transition-all cursor-pointer text-left relative overflow-hidden ${
+                isSelected
+                  ? 'border-amber-500 bg-amber-500/10 shadow-[0_0_15px_rgba(245,158,11,0.15)]'
+                  : 'border-white/5 bg-zinc-900/60 hover:border-white/20 hover:bg-zinc-900'
               }`}
             >
-              <div className="flex items-center justify-between">
-                <span className="font-display font-bold text-xs text-white flex items-center space-x-1.5">
-                  <Sparkles className={`h-3 w-3 ${isSelected ? 'text-amber-400' : 'text-zinc-500'}`} />
-                  <span>{m.name}</span>
-                </span>
-                <span className={`px-1.5 py-0.5 rounded-full font-mono text-[7px] uppercase tracking-wider font-semibold ${
-                  isSelected ? 'bg-amber-500 text-black' : 'bg-zinc-800 text-zinc-400'
+              {model.badge && (
+                <span className={`absolute top-3 right-3 text-[9px] font-mono px-2 py-0.5 rounded-full border ${
+                  isSelected 
+                    ? 'border-amber-500/40 bg-amber-500/20 text-amber-300' 
+                    : 'border-white/10 bg-white/5 text-zinc-400'
                 }`}>
-                  {m.badge}
+                  {model.badge}
                 </span>
+              )}
+
+              <div className="flex items-center gap-2 mb-1">
+                <Sparkles className={`w-3.5 h-3.5 ${isSelected ? 'text-amber-500' : 'text-zinc-500'}`} />
+                <h4 className={`text-sm font-semibold tracking-tight ${isSelected ? 'text-amber-400' : 'text-zinc-200'}`}>
+                  {model.name}
+                </h4>
               </div>
 
-              <p className="text-[9.5px] text-zinc-400 leading-normal font-light">
-                {m.description}
-              </p>
+              <div className="text-[11px] font-medium text-amber-500/80 mb-1.5">{model.tagline}</div>
+              <p className="text-xs text-zinc-400 leading-relaxed mb-3">{model.description}</p>
 
-              <div className="grid grid-cols-2 gap-x-2 gap-y-0.5 pt-1.5 border-t border-white/5 font-mono text-[8px] text-zinc-550">
+              <div className="grid grid-cols-2 gap-2 pt-2 border-t border-white/5 text-[10px] font-mono text-zinc-400">
                 <div>
-                  <span className="text-zinc-400">RPM:</span> <strong className="text-zinc-300">{m.rpm}</strong>
+                  <span className="text-zinc-500">Janela de Contexto:</span> {model.context} tokens
                 </div>
                 <div>
-                  <span className="text-zinc-400">TPM:</span> <strong className="text-zinc-300">{m.tpm}</strong>
-                </div>
-                <div>
-                  <span className="text-zinc-400">RPD:</span> <strong className="text-zinc-300">{m.rpd}</strong>
-                </div>
-                <div>
-                  <span className="text-zinc-400">Mensagens:</span> <strong className="text-zinc-300">Google Search</strong>
+                  <span className="text-zinc-500">Taxa Máxima:</span> {model.rpm}
                 </div>
               </div>
-            </button>
+            </div>
           );
         })}
       </div>

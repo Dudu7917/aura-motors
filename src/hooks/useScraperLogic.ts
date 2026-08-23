@@ -1,34 +1,34 @@
-import { useState, useEffect, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import { Car } from '../types';
 import { getApiHeaders } from '../utils/apiKeyHelper';
-import { storageAdapter, STORAGE_KEYS } from '../core/storage/storageAdapter';
+import { useScraperState } from './useScraperState';
 
 export function useScraperLogic() {
   const abortControllerRef = useRef<AbortController | null>(null);
-
-  const [url, setUrl] = useState(() => storageAdapter.getString(STORAGE_KEYS.SCRAPER_URL, ''));
-  const [loading, setLoading] = useState(() => storageAdapter.get('aura_scraper_loading', false));
-  const [error, setError] = useState<string | null>(() => storageAdapter.get('aura_scraper_error', null));
-  const [scrapedCars, setScrapedCars] = useState<Car[]>(() => storageAdapter.get('aura_scraped_cars', []));
-  const [logs, setLogs] = useState<string[]>(() => storageAdapter.get('aura_scraper_logs', []));
-  const [scrapedContent, setScrapedContent] = useState(() => storageAdapter.getString('aura_scraped_content', ''));
-  const [planningModel, setPlanningModel] = useState<string>(
-    () => storageAdapter.getString(STORAGE_KEYS.PLANNING_MODEL, 'gemini-3.7-flash')
-  );
-  const [extractionModel, setExtractionModel] = useState<string>(
-    () => storageAdapter.getString(STORAGE_KEYS.EXTRACTION_MODEL, 'gemini-3.5-flash-lite')
-  );
-  const [metaGoal, setMetaGoal] = useState<number | null>(() => storageAdapter.get(STORAGE_KEYS.SCRAPER_META_GOAL, null));
-  const [activeTabMode, setActiveTabMode] = useState<'semantic' | 'url' | 'agent'>(
-    () => storageAdapter.getString(STORAGE_KEYS.SCRAPER_TAB_MODE, 'semantic') as any
-  );
-  const [semanticQuery, setSemanticQuery] = useState(() => storageAdapter.getString(STORAGE_KEYS.SCRAPER_QUERY, ''));
-  const [agentPrompt, setAgentPrompt] = useState(() => storageAdapter.getString(STORAGE_KEYS.SCRAPER_PROMPT, ''));
-  const [environmentId, setEnvironmentId] = useState<string>(() => storageAdapter.getString('aura_agent_env_id', ''));
-  const [generatedFiles, setGeneratedFiles] = useState<Array<{ name: string; path: string; size: number }>>(() => 
-    storageAdapter.get('aura_generated_files', [])
-  );
   const pollIntervalRef = useRef<any>(null);
+
+  const state = useScraperState();
+  const {
+    url, setUrl,
+    loading, setLoading,
+    error, setError,
+    scrapedCars, setScrapedCars,
+    logs, setLogs,
+    scrapedContent, setScrapedContent,
+    planningModel, setPlanningModel,
+    extractionModel, setExtractionModel,
+    formulatorModel, setFormulatorModel,
+    metaGoal, setMetaGoal,
+    activeTabMode, setActiveTabMode,
+    semanticQuery, setSemanticQuery,
+    agentPrompt, setAgentPrompt,
+    environmentId, setEnvironmentId,
+    generatedFiles, setGeneratedFiles,
+    stepStatus, setStepStatus,
+    formulatedUrl, setFormulatedUrl,
+    interpretedCriteria, setInterpretedCriteria,
+    interpretedReasoning, setInterpretedReasoning
+  } = state;
 
   useEffect(() => {
     return () => {
@@ -38,59 +38,13 @@ export function useScraperLogic() {
     };
   }, []);
 
-  const [formulatorModel, setFormulatorModel] = useState<string>(
-    () => storageAdapter.getString(STORAGE_KEYS.FORMULATOR_MODEL, 'gemini-3.7-flash')
-  );
-  const [stepStatus, setStepStatus] = useState<{
-    formulator: 'idle' | 'running' | 'done' | 'error';
-    linkGen: 'idle' | 'running' | 'done' | 'error';
-    planner: 'idle' | 'running' | 'done' | 'error';
-    extractor: 'idle' | 'running' | 'done' | 'error';
-  }>(() => storageAdapter.get('aura_step_status', {
-    formulator: 'idle',
-    linkGen: 'idle',
-    planner: 'idle',
-    extractor: 'idle'
-  }));
-  const [formulatedUrl, setFormulatedUrl] = useState(() => storageAdapter.getString('aura_formulated_url', ''));
-  const [interpretedCriteria, setInterpretedCriteria] = useState<any>(() => 
-    storageAdapter.get('aura_interpreted_criteria', null)
-  );
-  const [interpretedReasoning, setInterpretedReasoning] = useState(() => storageAdapter.getString('aura_interpreted_reasoning', ''));
-
-  useEffect(() => { storageAdapter.set(STORAGE_KEYS.SCRAPER_URL, url); }, [url]);
-  useEffect(() => { storageAdapter.set('aura_scraper_loading', loading); }, [loading]);
-  useEffect(() => {
-    if (error) storageAdapter.set('aura_scraper_error', error);
-    else storageAdapter.remove('aura_scraper_error');
-  }, [error]);
-  useEffect(() => { storageAdapter.set('aura_scraped_cars', scrapedCars); }, [scrapedCars]);
-  useEffect(() => { storageAdapter.set('aura_scraper_logs', logs); }, [logs]);
-  useEffect(() => { storageAdapter.set('aura_scraped_content', scrapedContent); }, [scrapedContent]);
-  useEffect(() => { storageAdapter.set(STORAGE_KEYS.PLANNING_MODEL, planningModel); }, [planningModel]);
-  useEffect(() => { storageAdapter.set(STORAGE_KEYS.EXTRACTION_MODEL, extractionModel); }, [extractionModel]);
-  useEffect(() => {
-    if (metaGoal !== null) storageAdapter.set(STORAGE_KEYS.SCRAPER_META_GOAL, metaGoal);
-    else storageAdapter.remove(STORAGE_KEYS.SCRAPER_META_GOAL);
-  }, [metaGoal]);
-  useEffect(() => { storageAdapter.set(STORAGE_KEYS.SCRAPER_TAB_MODE, activeTabMode); }, [activeTabMode]);
-  useEffect(() => { storageAdapter.set(STORAGE_KEYS.SCRAPER_QUERY, semanticQuery); }, [semanticQuery]);
-  useEffect(() => { storageAdapter.set(STORAGE_KEYS.SCRAPER_PROMPT, agentPrompt); }, [agentPrompt]);
-  useEffect(() => { storageAdapter.set(STORAGE_KEYS.FORMULATOR_MODEL, formulatorModel); }, [formulatorModel]);
-  useEffect(() => { storageAdapter.set('aura_step_status', stepStatus); }, [stepStatus]);
-  useEffect(() => { storageAdapter.set('aura_formulated_url', formulatedUrl); }, [formulatedUrl]);
-  useEffect(() => { storageAdapter.set('aura_interpreted_criteria', interpretedCriteria); }, [interpretedCriteria]);
-  useEffect(() => { storageAdapter.set('aura_interpreted_reasoning', interpretedReasoning); }, [interpretedReasoning]);
-  useEffect(() => { storageAdapter.set('aura_agent_env_id', environmentId); }, [environmentId]);
-  useEffect(() => { storageAdapter.set('aura_generated_files', generatedFiles); }, [generatedFiles]);
-
   const addLog = (msg: string) => {
     setLogs(prev => [...prev, `[${new Date().toLocaleTimeString()}] ${msg}`]);
   };
 
   const matchesCriteria = (car: Car, criteria?: any): boolean => {
     if (!criteria) return true;
-    
+
     // 1. Filtro de Versão / Acabamento
     if (criteria.version && typeof criteria.version === 'string' && criteria.version.trim().length > 0) {
       const vTerms = criteria.version.toLowerCase().trim().split(/\s+/);
@@ -127,10 +81,9 @@ export function useScraperLogic() {
 
   const runCombinedExtraction = async (targetUrl: string, signal?: AbortSignal, searchCriteria?: any) => {
     if (signal?.aborted) return;
-    const isWebmotorsUrl = targetUrl.toLowerCase().includes("webmotors.com.br");
     addLog(`[⚡ PASSO 1: PLANEJAMENTO] Requisitando planejamento síncrono e contagem de ofertas com ${planningModel}...`);
     setStepStatus(prev => ({ ...prev, planner: 'running' }));
-    
+
     const planRes = await fetch('/api/scrape-custom', {
       method: 'POST',
       headers: getApiHeaders({ 'Content-Type': 'application/json' }),
@@ -210,7 +163,7 @@ export function useScraperLogic() {
           const existingIds = new Set(allAccumulatedCars.map(c => c.id));
           const newUniqueCars: Car[] = [];
           json.data.forEach((newCar: Car) => {
-            const isDuplicate = existingIds.has(newCar.id) || 
+            const isDuplicate = existingIds.has(newCar.id) ||
                                allAccumulatedCars.some(c => c.name === newCar.name && c.price === newCar.price && c.year === newCar.year);
             if (!isDuplicate && matchesCriteria(newCar, searchCriteria)) {
               newUniqueCars.push(newCar);
@@ -258,13 +211,13 @@ export function useScraperLogic() {
     setMetaGoal(null);
     setStepStatus({ formulator: 'done', linkGen: 'done', planner: 'idle', extractor: 'idle' });
 
-    addLog(`Iniciando varredura inteligente por multietapas com IAs selecionadas...`);
+    addLog('Iniciando varredura inteligente por multietapas com IAs selecionadas...');
     try {
       await runCombinedExtraction(targetUrl, signal);
     } catch (err: any) {
       if (err.name === 'AbortError') return;
-      if (err.message === "EMPTY_STOCK_URL") {
-        setError("EMPTY_STOCK_URL");
+      if (err.message === 'EMPTY_STOCK_URL') {
+        setError('EMPTY_STOCK_URL');
       } else {
         setError(err.message || 'Erro crítico no processador em lotes de IA.');
       }
@@ -293,7 +246,7 @@ export function useScraperLogic() {
     setInterpretedReasoning('');
     setStepStatus({ formulator: 'running', linkGen: 'idle', planner: 'idle', extractor: 'idle' });
 
-    addLog(`✨ [AURA SEARCH ROUTER] Iniciando interpretação semântica...`);
+    addLog('✨ [AURA SEARCH ROUTER] Iniciando interpretação semântica...');
     try {
       const resp = await fetch('/api/interpret-search', {
         method: 'POST',
@@ -382,7 +335,6 @@ export function useScraperLogic() {
 
       setStepStatus({ formulator: 'done', linkGen: 'running', planner: 'idle', extractor: 'idle' });
 
-      // Inicia polling a cada 3 segundos
       const seenStepIds = new Set<string>();
 
       pollIntervalRef.current = setInterval(async () => {
@@ -391,7 +343,7 @@ export function useScraperLogic() {
           const statusRes = await fetch(`/api/agent/status/${interactionId}`, {
             headers: getApiHeaders({}),
           });
-          
+
           if (!statusRes.ok) {
             throw new Error(`Erro ao checar status do agente: HTTP ${statusRes.status}`);
           }
@@ -401,39 +353,37 @@ export function useScraperLogic() {
             throw new Error(statusData.error || 'Erro na resposta do status.');
           }
 
-          // Atualiza os passos na tela
           const newSteps = (statusData.steps || []).filter((s: any) => !seenStepIds.has(s.id));
-          
+
           if (newSteps.length > 0) {
             newSteps.forEach((step: any) => {
               seenStepIds.add(step.id);
-              let icon = "⚙️";
-              let prefix = "Ação";
-              
-              if (step.type === "thought") {
-                icon = "🧠";
-                prefix = "Pensamento";
-              } else if (step.type === "code_execution_call") {
-                icon = "💻";
-                prefix = "Bash Executar";
-              } else if (step.type === "code_execution_result") {
-                icon = "🖥️";
-                prefix = "Bash Retorno";
-              } else if (step.type === "google_search_call") {
-                icon = "🌐";
-                prefix = "Google Search";
-              } else if (step.type === "url_context_call") {
-                icon = "🔗";
-                prefix = "Ler URL";
-              } else if (step.type === "model_output") {
-                icon = "🤖";
-                prefix = "Output IA";
+              let icon = '⚙️';
+              let prefix = 'Ação';
+
+              if (step.type === 'thought') {
+                icon = '🧠';
+                prefix = 'Pensamento';
+              } else if (step.type === 'code_execution_call') {
+                icon = '💻';
+                prefix = 'Bash Executar';
+              } else if (step.type === 'code_execution_result') {
+                icon = '🖥️';
+                prefix = 'Bash Retorno';
+              } else if (step.type === 'google_search_call') {
+                icon = '🌐';
+                prefix = 'Google Search';
+              } else if (step.type === 'url_context_call') {
+                icon = '🔗';
+                prefix = 'Ler URL';
+              } else if (step.type === 'model_output') {
+                icon = '🤖';
+                prefix = 'Output IA';
               }
 
-              // Limita o tamanho do log de retorno da console
-              let detailText = step.detail || "";
+              let detailText = step.detail || '';
               if (detailText.length > 400) {
-                detailText = detailText.substring(0, 400) + "... (truncado)";
+                detailText = detailText.substring(0, 400) + '... (truncado)';
               }
 
               setLogs(prev => [
@@ -443,12 +393,11 @@ export function useScraperLogic() {
             });
           }
 
-          // Checa se finalizou
-          if (statusData.status === "completed") {
+          if (statusData.status === 'completed') {
             clearInterval(pollIntervalRef.current);
             pollIntervalRef.current = null;
             setLoading(false);
-            setScrapedContent(statusData.output || "");
+            setScrapedContent(statusData.output || '');
             setStepStatus({ formulator: 'done', linkGen: 'done', planner: 'done', extractor: 'done' });
             setLogs(prev => [...prev, `[${new Date().toLocaleTimeString()}] 🎉 [SUCESSO] Agente de Sandbox concluiu a tarefa com sucesso!`]);
 
@@ -467,26 +416,26 @@ export function useScraperLogic() {
                 }
               })
               .catch(err => {
-                console.error("Erro ao puxar arquivos da sandbox:", err);
+                console.error('Erro ao puxar arquivos da sandbox:', err);
               });
             }
-          } else if (statusData.status === "failed") {
+          } else if (statusData.status === 'failed') {
             clearInterval(pollIntervalRef.current);
             pollIntervalRef.current = null;
             setLoading(false);
             setStepStatus({ formulator: 'done', linkGen: 'done', planner: 'done', extractor: 'error' });
-            setError(statusData.output || "O agente de sandbox falhou na nuvem.");
+            setError(statusData.output || 'O agente de sandbox falhou na nuvem.');
             setLogs(prev => [...prev, `[${new Date().toLocaleTimeString()}] ❌ [FALHA] O Agente encontrou um erro crítico e encerrou a execução.`]);
-          } else if (statusData.status === "cancelled") {
+          } else if (statusData.status === 'cancelled') {
             clearInterval(pollIntervalRef.current);
             pollIntervalRef.current = null;
             setLoading(false);
             setStepStatus({ formulator: 'done', linkGen: 'done', planner: 'done', extractor: 'error' });
-            setError("Execução do agente cancelada.");
+            setError('Execução do agente cancelada.');
             setLogs(prev => [...prev, `[${new Date().toLocaleTimeString()}] ⚠️ [CANCELADO] A tarefa do agente foi cancelada.`]);
           }
         } catch (pollErr: any) {
-          console.error("Erro no polling da sandbox:", pollErr);
+          console.error('Erro no polling da sandbox:', pollErr);
           setLogs(prev => [...prev, `[${new Date().toLocaleTimeString()}] ⚠️ [Aviso de Conexão] ${pollErr.message || pollErr}`]);
         }
       }, 3000);

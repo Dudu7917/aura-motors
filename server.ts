@@ -5,7 +5,7 @@ import dotenv from "dotenv";
 import http from "http";
 import { Server as SocketIOServer } from "socket.io";
 import DynamicStocks from "./src/dynamic-stock.json";
-import { handleChat } from "./src/server/chat";
+import { chatController } from "./src/server/controllers/chatController";
 
 // Importa as rotas modularizadas
 import leadsRoutes from "./src/server/routes/leadsRoutes";
@@ -78,7 +78,7 @@ async function startServer() {
 
   // Rota do Assistente Inteligente (Gemini API)
   app.post("/api/chat", async (req, res) => {
-    await handleChat(req, res, NELSINHO_FALLBACK_STOCKS);
+    await chatController.handleChat(req, res, NELSINHO_FALLBACK_STOCKS);
   });
 
   // Setup do Vite de acordo com o ambiente (Dev / Prod)
