@@ -131,7 +131,7 @@ export default function SalesArenaCockpit({
       />
 
       {/* Grid Principal: Painel Lateral de Métricas + Chat */}
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start relative z-10">
         <div className="lg:col-span-4">
           <ArenaCoachingPanel
             config={config}

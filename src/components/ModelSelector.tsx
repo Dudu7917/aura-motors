@@ -78,7 +78,7 @@ export default function ModelSelector({
   };
 
   return (
-    <div className={`relative inline-block text-left ${className}`} ref={dropdownRef}>
+    <div className={`relative inline-block text-left ${isOpen ? 'z-50' : 'z-10'} ${className}`} ref={dropdownRef}>
       {/* Botão Gatilho */}
       <button
         type="button"
@@ -115,7 +115,7 @@ export default function ModelSelector({
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: -6, scale: 0.96 }}
             transition={{ duration: 0.15, ease: 'easeOut' }}
-            className={`absolute z-50 mt-1.5 w-72 sm:w-80 rounded-2xl p-1.5 shadow-2xl
+            className={`absolute z-[100] mt-1.5 w-72 sm:w-80 rounded-2xl p-1.5 shadow-2xl
               bg-zinc-950/98 backdrop-blur-2xl
               border border-white/15
               focus:outline-none overflow-hidden

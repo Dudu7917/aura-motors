@@ -25,7 +25,7 @@ export default function ArenaHeaderBar({
   const { mode } = config;
 
   return (
-    <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-4 p-5 sm:p-6 rounded-3xl bg-zinc-900/90 border border-white/10 backdrop-blur-2xl shadow-xl">
+    <div className="relative z-40 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-4 p-5 sm:p-6 rounded-3xl bg-zinc-900/90 border border-white/10 backdrop-blur-2xl shadow-xl">
       {/* Informações da Sessão */}
       <div className="flex items-center gap-4">
         <div className="p-3.5 rounded-2xl bg-amber-500/10 text-amber-400 border border-amber-500/20 shadow-inner flex-shrink-0">
@@ -45,8 +45,8 @@ export default function ArenaHeaderBar({
       </div>
 
       {/* Controles de Modelo e Ação */}
-      <div className="flex items-center gap-3 flex-wrap w-full lg:w-auto justify-end">
-        <ModelSelector value={selectedModel} onChange={onModelChange} align="left" />
+      <div className="flex items-center gap-3 flex-wrap w-full lg:w-auto justify-end relative z-50">
+        <ModelSelector value={selectedModel} onChange={onModelChange} align="right" />
 
         <button
           type="button"
