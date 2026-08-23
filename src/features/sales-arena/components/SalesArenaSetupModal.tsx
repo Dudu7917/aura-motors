@@ -102,7 +102,7 @@ export default function SalesArenaSetupModal({
         className="relative w-full max-w-4xl max-h-[90vh] flex flex-col rounded-3xl bg-zinc-900/95 border border-amber-500/20 shadow-2xl shadow-black/80 overflow-hidden"
       >
         {/* Header */}
-        <div className="flex items-center justify-between px-6 py-5 border-b border-white/10 bg-zinc-950/70">
+        <div className="relative z-20 flex items-center justify-between px-6 py-5 border-b border-white/10 bg-zinc-950/70">
           <div className="flex items-center gap-3.5">
             <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-gradient-to-br from-amber-400 to-amber-600 text-black shadow-lg shadow-amber-500/20">
               <Swords className="h-5 w-5" />

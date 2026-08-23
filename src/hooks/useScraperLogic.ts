@@ -1,9 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { Car } from '../types';
+import { getApiHeaders } from '../utils/apiKeyHelper';
 import { storageAdapter, STORAGE_KEYS } from '../core/storage/storageAdapter';
-import { matchesVehicleCriteria } from '../shared/domain/vehicleFilters';
-import { ScraperApiService } from '../features/scraper/services/scraperApiService';
-import { triggerFileDownload } from '../shared/infrastructure/fileHelper';
 
 export function useScraperLogic() {
   const abortControllerRef = useRef<AbortController | null>(null);
@@ -91,20 +89,64 @@ export function useScraperLogic() {
   };
 
   const matchesCriteria = (car: Car, criteria?: any): boolean => {
-    return matchesVehicleCriteria(car, criteria);
+    if (!criteria) return true;
+    
+    // 1. Filtro de Versão / Acabamento
+    if (criteria.version && typeof criteria.version === 'string' && criteria.version.trim().length > 0) {
+      const vTerms = criteria.version.toLowerCase().trim().split(/\s+/);
+      const fullText = `${car.name || ''} ${car.description || ''}`.toLowerCase();
+      const hasAll = vTerms.every((term: string) => fullText.includes(term));
+      if (!hasAll) return false;
+    }
+
+    // 2. Filtro de Quilometragem Máxima
+    if (criteria.kmMax && typeof criteria.kmMax === 'number' && criteria.kmMax > 0) {
+      if (car.kmText) {
+        const numKm = parseInt(String(car.kmText).replace(/\D/g, ''), 10);
+        if (!isNaN(numKm) && numKm > 0 && numKm > criteria.kmMax) {
+          return false;
+        }
+      }
+    }
+
+    // 3. Filtro de Ano Mínimo e Máximo
+    if (criteria.yearMin && typeof criteria.yearMin === 'number' && car.year && car.year < criteria.yearMin) {
+      return false;
+    }
+    if (criteria.yearMax && typeof criteria.yearMax === 'number' && car.year && car.year > criteria.yearMax) {
+      return false;
+    }
+
+    // 4. Filtro de Preço Máximo
+    if (criteria.priceMax && typeof criteria.priceMax === 'number' && car.price && car.price > criteria.priceMax) {
+      return false;
+    }
+
+    return true;
   };
 
   const runCombinedExtraction = async (targetUrl: string, signal?: AbortSignal, searchCriteria?: any) => {
     if (signal?.aborted) return;
+    const isWebmotorsUrl = targetUrl.toLowerCase().includes("webmotors.com.br");
     addLog(`[⚡ PASSO 1: PLANEJAMENTO] Requisitando planejamento síncrono e contagem de ofertas com ${planningModel}...`);
     setStepStatus(prev => ({ ...prev, planner: 'running' }));
     
-    const planJson = await ScraperApiService.plan(targetUrl, planningModel, extractionModel, searchCriteria, signal);
+    const planRes = await fetch('/api/scrape-custom', {
+      method: 'POST',
+      headers: getApiHeaders({ 'Content-Type': 'application/json' }),
+      signal,
+      body: JSON.stringify({ url: targetUrl, mode: 'plan', planningModel, extractionModel, criteria: searchCriteria })
+    });
 
+    const planJson = await planRes.json().catch(() => null);
     if (planJson?.routingLogs && Array.isArray(planJson.routingLogs)) {
       planJson.routingLogs.forEach((backendLog: string) => { setLogs(prev => [...prev, backendLog]); });
     }
 
+    if (!planRes.ok || (planJson && planJson.success === false)) {
+      setStepStatus(prev => ({ ...prev, planner: 'error' }));
+      throw new Error(planJson?.error || `Erro no Planejamento (HTTP ${planRes.status}).`);
+    }
     if (planJson.scrapedContent) setScrapedContent(planJson.scrapedContent);
 
     const meta = planJson.totalResults || 12;
@@ -146,17 +188,24 @@ export function useScraperLogic() {
       addLog(`[⚡ PROCESSO LOTE #${pageIndex}] Varrendo e decifrando dados com ${extractionModel}...`);
       await new Promise(r => setTimeout(r, 600));
 
-      try {
-        const json = await ScraperApiService.extract(currentUrlToFetch, planningModel, extractionModel, searchCriteria, signal);
-        
-        if (json?.routingLogs && Array.isArray(json.routingLogs)) {
-          json.routingLogs.forEach((backendLog: string) => { setLogs(prev => [...prev, backendLog]); });
-        }
+      const res = await fetch('/api/scrape-custom', {
+        method: 'POST',
+        headers: getApiHeaders({ 'Content-Type': 'application/json' }),
+        signal,
+        body: JSON.stringify({ url: currentUrlToFetch, mode: 'extract', planningModel, extractionModel, criteria: searchCriteria })
+      });
 
+      const json = await res.json().catch(() => null);
+      if (json?.routingLogs && Array.isArray(json.routingLogs)) {
+        json.routingLogs.forEach((backendLog: string) => { setLogs(prev => [...prev, backendLog]); });
+      }
+
+      if (!res.ok || (json && json.success === false)) {
+        addLog(`[⚠️ LOTE #${pageIndex}] Alerta: Falha de extração na URL de lote correspondente (${json?.error || `HTTP ${res.status}`}).`);
+      } else if (json) {
         if (json.scrapedContent) {
           setScrapedContent(prev => prev ? `${prev}\n\n[DADOS BRUTOS LOTE #${pageIndex}]\n${json.scrapedContent}` : json.scrapedContent);
         }
-
         if (json.success && json.data && json.data.length > 0) {
           const existingIds = new Set(allAccumulatedCars.map(c => c.id));
           const newUniqueCars: Car[] = [];
@@ -169,11 +218,9 @@ export function useScraperLogic() {
             }
           });
           allAccumulatedCars = [...allAccumulatedCars, ...newUniqueCars];
-          addLog(`[LOTE #${pageIndex} COMPLETADO] Adicionados +${newUniqueCars.length} veículos correspondentes.`);
+          addLog(`[LOTE #${pageIndex} COMPLETADO] Adicionados +${newUniqueCars.length} veículos correspondentes aos filtros.`);
           setScrapedCars([...allAccumulatedCars]);
         }
-      } catch (loteErr: any) {
-        addLog(`[⚠️ LOTE #${pageIndex}] Alerta: Falha de extração na URL de lote (${loteErr.message}).`);
       }
 
       const currentCount = allAccumulatedCars.length;
@@ -216,7 +263,11 @@ export function useScraperLogic() {
       await runCombinedExtraction(targetUrl, signal);
     } catch (err: any) {
       if (err.name === 'AbortError') return;
-      setError(err.message || 'Erro crítico no processador em lotes de IA.');
+      if (err.message === "EMPTY_STOCK_URL") {
+        setError("EMPTY_STOCK_URL");
+      } else {
+        setError(err.message || 'Erro crítico no processador em lotes de IA.');
+      }
     } finally {
       setLoading(false);
     }
@@ -244,155 +295,247 @@ export function useScraperLogic() {
 
     addLog(`✨ [AURA SEARCH ROUTER] Iniciando interpretação semântica...`);
     try {
-      const data = await ScraperApiService.interpretSearch(semanticQuery, formulatorModel, signal);
-      
-      setStepStatus(prev => ({ ...prev, formulator: 'done', linkGen: 'running' }));
-      setFormulatedUrl(data.formulatedUrl || '');
-      setInterpretedCriteria(data.criteria || null);
-      setInterpretedReasoning(data.reasoning || '');
-      addLog(`✨ [AURA SEARCH ROUTER] Interpretação concluída com sucesso.`);
-      
-      if (data.formulatedUrl) {
-        addLog(`🔗 [LINK GERADO] URL oficial: ${data.formulatedUrl}`);
-        setStepStatus(prev => ({ ...prev, linkGen: 'done' }));
-        await runCombinedExtraction(data.formulatedUrl, signal, data.criteria);
-      } else {
-        throw new Error('Não foi possível formular uma URL a partir da sua busca.');
+      const resp = await fetch('/api/interpret-search', {
+        method: 'POST',
+        headers: getApiHeaders({ 'Content-Type': 'application/json' }),
+        signal,
+        body: JSON.stringify({ query: semanticQuery, formulatorModel })
+      });
+
+      const resJson = await resp.json().catch(() => null);
+
+      if (resJson && resJson.routingLogs && Array.isArray(resJson.routingLogs)) {
+        resJson.routingLogs.forEach((l: string) => { setLogs(prev => [...prev, l]); });
       }
+
+      if (!resp.ok || !resJson?.success || !resJson?.url) {
+        setStepStatus({ formulator: 'error', linkGen: 'idle', planner: 'idle', extractor: 'idle' });
+        const detailedError = resJson?.error || (resp.status ? `Erro HTTP ${resp.status}: ${resp.statusText || 'Falha na resposta do servidor'}` : 'Falha ao processar os critérios de busca.');
+        throw new Error(detailedError);
+      }
+
+      setFormulatedUrl(resJson.url);
+      setInterpretedCriteria(resJson.criteria);
+      setInterpretedReasoning(resJson.reasoning);
+      setStepStatus({ formulator: 'done', linkGen: 'running', planner: 'idle', extractor: 'idle' });
+
+      await new Promise(r => setTimeout(r, 800));
+      setStepStatus(prev => ({ ...prev, linkGen: 'done' }));
+      await runCombinedExtraction(resJson.url, signal, resJson.criteria);
+
     } catch (err: any) {
       if (err.name === 'AbortError') return;
-      setError(err.message || 'Erro na pesquisa semântica.');
+      setError(err.message || 'Erro durante a pesquisa inteligente.');
+      setStepStatus(prev => ({
+        formulator: prev.formulator === 'running' ? 'error' : prev.formulator,
+        linkGen: prev.linkGen === 'running' ? 'error' : prev.linkGen,
+        planner: prev.planner === 'running' ? 'error' : prev.planner,
+        extractor: prev.extractor === 'running' ? 'error' : prev.extractor,
+      }));
     } finally {
-      setLoading(false);
-    }
-  };
-
-  const handleAbortExtraction = () => {
-    if (abortControllerRef.current) {
-      abortControllerRef.current.abort();
-      addLog(`🛑 Processamento cancelado pelo usuário.`);
       setLoading(false);
     }
   };
 
   const handleSandboxAgentRun = async () => {
     if (!agentPrompt || agentPrompt.trim().length < 3) {
-      setError('Por favor, digite uma instrução detalhada para o Agente.');
+      setError('Por favor, digite as instruções para o agente.');
       return;
+    }
+
+    if (abortControllerRef.current) abortControllerRef.current.abort();
+    abortControllerRef.current = new AbortController();
+    const signal = abortControllerRef.current.signal;
+
+    if (pollIntervalRef.current) {
+      clearInterval(pollIntervalRef.current);
+      pollIntervalRef.current = null;
     }
 
     setLoading(true);
     setError(null);
+    setScrapedCars([]);
     setLogs([]);
-    setGeneratedFiles([]);
+    setScrapedContent('');
+    setMetaGoal(null);
     setEnvironmentId('');
-    addLog(`🚀 [AGENT SANDBOX] Enviando instrução para o Google Cloud Container...`);
+    setGeneratedFiles([]);
+    setStepStatus({ formulator: 'running', linkGen: 'idle', planner: 'idle', extractor: 'idle' });
+
+    setLogs([`[${new Date().toLocaleTimeString()}] 🚀 Provisionando sandbox e iniciando Agente Antigravity na nuvem do Google...`]);
 
     try {
-      const data = await ScraperApiService.runSandboxAgent(agentPrompt);
-      const interactionId = data.interactionId;
-      addLog(`✨ [AGENT SANDBOX] Sessão criada com ID: ${interactionId}. Iniciando observabilidade em tempo real...`);
+      const response = await fetch('/api/agent/run', {
+        method: 'POST',
+        headers: getApiHeaders({ 'Content-Type': 'application/json' }),
+        signal,
+        body: JSON.stringify({ input: agentPrompt })
+      });
 
-      if (pollIntervalRef.current) clearInterval(pollIntervalRef.current);
+      const data = await response.json().catch(() => null);
+      if (!response.ok || !data?.success || !data?.interactionId) {
+        throw new Error(data?.error || `Falha ao iniciar interação com o Agente de Sandbox (HTTP ${response.status}).`);
+      }
+
+      const interactionId = data.interactionId;
+      setLogs(prev => [...prev, `[${new Date().toLocaleTimeString()}] 🔗 Sandbox criada! ID da Interação: ${interactionId}. Iniciando loop de execução (polling)...`]);
+
+      setStepStatus({ formulator: 'done', linkGen: 'running', planner: 'idle', extractor: 'idle' });
+
+      // Inicia polling a cada 3 segundos
+      const seenStepIds = new Set<string>();
 
       pollIntervalRef.current = setInterval(async () => {
+        if (document.hidden) return;
         try {
-          const statusData = await ScraperApiService.getSandboxStatus(interactionId);
-          if (statusData && statusData.success) {
-            if (statusData.steps && Array.isArray(statusData.steps)) {
-              const formattedLogs = statusData.steps.map((s: any) => `[${s.timestamp}] [${s.type.toUpperCase()}] ${s.name ? s.name + ': ' : ''}${s.detail}`);
-              setLogs(formattedLogs);
-            }
+          const statusRes = await fetch(`/api/agent/status/${interactionId}`, {
+            headers: getApiHeaders({}),
+          });
+          
+          if (!statusRes.ok) {
+            throw new Error(`Erro ao checar status do agente: HTTP ${statusRes.status}`);
+          }
 
-            if (statusData.environmentId && statusData.environmentId !== environmentId) {
-              setEnvironmentId(statusData.environmentId);
-            }
+          const statusData = await statusRes.json();
+          if (!statusData.success) {
+            throw new Error(statusData.error || 'Erro na resposta do status.');
+          }
 
-            if (statusData.status === 'completed') {
-              clearInterval(pollIntervalRef.current);
-              setLoading(false);
-              addLog(`🏆 [AGENT SANDBOX] Agente concluiu a missão com sucesso!`);
-              if (statusData.output) {
-                setScrapedContent(statusData.output);
+          // Atualiza os passos na tela
+          const newSteps = (statusData.steps || []).filter((s: any) => !seenStepIds.has(s.id));
+          
+          if (newSteps.length > 0) {
+            newSteps.forEach((step: any) => {
+              seenStepIds.add(step.id);
+              let icon = "⚙️";
+              let prefix = "Ação";
+              
+              if (step.type === "thought") {
+                icon = "🧠";
+                prefix = "Pensamento";
+              } else if (step.type === "code_execution_call") {
+                icon = "💻";
+                prefix = "Bash Executar";
+              } else if (step.type === "code_execution_result") {
+                icon = "🖥️";
+                prefix = "Bash Retorno";
+              } else if (step.type === "google_search_call") {
+                icon = "🌐";
+                prefix = "Google Search";
+              } else if (step.type === "url_context_call") {
+                icon = "🔗";
+                prefix = "Ler URL";
+              } else if (step.type === "model_output") {
+                icon = "🤖";
+                prefix = "Output IA";
               }
 
-              if (statusData.environmentId) {
-                fetchGeneratedFiles(statusData.environmentId);
+              // Limita o tamanho do log de retorno da console
+              let detailText = step.detail || "";
+              if (detailText.length > 400) {
+                detailText = detailText.substring(0, 400) + "... (truncado)";
               }
-            } else if (statusData.status === 'failed' || statusData.status === 'cancelled') {
-              clearInterval(pollIntervalRef.current);
-              setLoading(false);
-              setError(`O agente encerrou a execução com status: ${statusData.status}`);
+
+              setLogs(prev => [
+                ...prev,
+                `[${step.timestamp || new Date().toLocaleTimeString()}] ${icon} [${prefix}] ${detailText}`
+              ]);
+            });
+          }
+
+          // Checa se finalizou
+          if (statusData.status === "completed") {
+            clearInterval(pollIntervalRef.current);
+            pollIntervalRef.current = null;
+            setLoading(false);
+            setScrapedContent(statusData.output || "");
+            setStepStatus({ formulator: 'done', linkGen: 'done', planner: 'done', extractor: 'done' });
+            setLogs(prev => [...prev, `[${new Date().toLocaleTimeString()}] 🎉 [SUCESSO] Agente de Sandbox concluiu a tarefa com sucesso!`]);
+
+            if (statusData.environmentId) {
+              const envId = statusData.environmentId;
+              setEnvironmentId(envId);
+              setLogs(prev => [...prev, `[${new Date().toLocaleTimeString()}] 📂 Sincronizando workspace da sandbox do Google para download de arquivos...`]);
+              fetch(`/api/agent/files/${envId}`, {
+                headers: getApiHeaders({})
+              })
+              .then(res => res.json())
+              .then(filesData => {
+                if (filesData.success && filesData.files && filesData.files.length > 0) {
+                  setGeneratedFiles(filesData.files);
+                  setLogs(prev => [...prev, `[${new Date().toLocaleTimeString()}] 📁 Mapeados ${filesData.files.length} arquivos para download da sandbox.`]);
+                }
+              })
+              .catch(err => {
+                console.error("Erro ao puxar arquivos da sandbox:", err);
+              });
             }
+          } else if (statusData.status === "failed") {
+            clearInterval(pollIntervalRef.current);
+            pollIntervalRef.current = null;
+            setLoading(false);
+            setStepStatus({ formulator: 'done', linkGen: 'done', planner: 'done', extractor: 'error' });
+            setError(statusData.output || "O agente de sandbox falhou na nuvem.");
+            setLogs(prev => [...prev, `[${new Date().toLocaleTimeString()}] ❌ [FALHA] O Agente encontrou um erro crítico e encerrou a execução.`]);
+          } else if (statusData.status === "cancelled") {
+            clearInterval(pollIntervalRef.current);
+            pollIntervalRef.current = null;
+            setLoading(false);
+            setStepStatus({ formulator: 'done', linkGen: 'done', planner: 'done', extractor: 'error' });
+            setError("Execução do agente cancelada.");
+            setLogs(prev => [...prev, `[${new Date().toLocaleTimeString()}] ⚠️ [CANCELADO] A tarefa do agente foi cancelada.`]);
           }
         } catch (pollErr: any) {
-          console.error('[Agent Polling Error]', pollErr);
+          console.error("Erro no polling da sandbox:", pollErr);
+          setLogs(prev => [...prev, `[${new Date().toLocaleTimeString()}] ⚠️ [Aviso de Conexão] ${pollErr.message || pollErr}`]);
         }
       }, 3000);
 
     } catch (err: any) {
-      setError(err.message || 'Erro ao iniciar o agente sandbox.');
+      if (err.name === 'AbortError') return;
+      setError(err.message || 'Erro durante o disparo do agente sandbox.');
       setLoading(false);
     }
   };
 
-  const fetchGeneratedFiles = async (envId: string) => {
-    try {
-      addLog(`📦 [AGENT SANDBOX] Verificando arquivos criados na sandbox (${envId})...`);
-      const data = await ScraperApiService.getSandboxFiles(envId);
-      if (data && data.success && data.files) {
-        setGeneratedFiles(data.files);
-        addLog(`📂 [AGENT SANDBOX] ${data.files.length} arquivos recuperados do ambiente.`);
-      }
-    } catch (fErr: any) {
-      console.error('Error fetching generated files:', fErr);
+  const handleAbortExtraction = () => {
+    if (abortControllerRef.current) {
+      try { abortControllerRef.current.abort(); } catch (e) {}
+      abortControllerRef.current = null;
     }
-  };
-
-  const downloadFile = (fileUrl: string, fileName: string) => {
-    triggerFileDownload(fileUrl, fileName);
+    if (pollIntervalRef.current) {
+      clearInterval(pollIntervalRef.current);
+      pollIntervalRef.current = null;
+    }
+    setError('Extração interrompida pelo usuário.');
+    setLoading(false);
+    setStepStatus({ formulator: 'idle', linkGen: 'idle', planner: 'idle', extractor: 'idle' });
   };
 
   return {
-    url,
-    setUrl,
+    url, setUrl,
     loading,
-    error,
-    setError,
-    scrapedCars,
-    setScrapedCars,
-    logs,
-    setLogs,
+    error, setError,
+    scrapedCars, setScrapedCars,
+    logs, setLogs,
     scrapedContent,
-    setScrapedContent,
-    planningModel,
-    setPlanningModel,
-    extractionModel,
-    setExtractionModel,
+    planningModel, setPlanningModel,
+    extractionModel, setExtractionModel,
     metaGoal,
-    setMetaGoal,
-    activeTabMode,
-    setActiveTabMode,
-    semanticQuery,
-    setSemanticQuery,
-    agentPrompt,
-    setAgentPrompt,
-    formulatorModel,
-    setFormulatorModel,
+    activeTabMode, setActiveTabMode,
+    semanticQuery, setSemanticQuery,
+    agentPrompt, setAgentPrompt,
+    formulatorModel, setFormulatorModel,
     stepStatus,
-    setStepStatus,
     formulatedUrl,
-    setFormulatedUrl,
     interpretedCriteria,
-    setInterpretedCriteria,
     interpretedReasoning,
-    setInterpretedReasoning,
-    environmentId,
-    generatedFiles,
     handleScrape,
     handleSemanticSearch,
     handleAbortExtraction,
     handleSandboxAgentRun,
-    downloadFile
+    environmentId,
+    generatedFiles,
+    setGeneratedFiles
   };
 }

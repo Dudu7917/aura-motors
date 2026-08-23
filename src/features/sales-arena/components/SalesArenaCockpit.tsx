@@ -151,7 +151,7 @@ export default function SalesArenaCockpit({
       className="flex flex-col h-[calc(100vh-140px)] min-h-[600px] w-full max-w-7xl mx-auto rounded-3xl bg-zinc-950/85 border border-white/10 shadow-2xl shadow-black/80 overflow-hidden backdrop-blur-xl text-left"
     >
       {/* Top Cockpit Header */}
-      <div className="px-6 py-4 border-b border-white/10 bg-zinc-900/60 flex flex-wrap items-center justify-between gap-4">
+      <div className="relative z-30 px-6 py-4 border-b border-white/10 bg-zinc-900/60 flex flex-wrap items-center justify-between gap-4">
         
         {/* Left: Car & Persona Info */}
         <div className="flex items-center gap-4">

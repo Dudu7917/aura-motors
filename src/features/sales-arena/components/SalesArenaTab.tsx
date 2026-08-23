@@ -83,7 +83,7 @@ export default function SalesArenaTab() {
       className="mx-auto max-w-7xl px-4 sm:px-6 py-6 sm:py-8 space-y-6 text-left"
     >
       {/* Top Banner / Arena Title */}
-      <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 p-6 rounded-3xl bg-gradient-to-r from-amber-500/10 via-zinc-900/70 to-zinc-950/80 border border-amber-500/20 backdrop-blur-xl shadow-2xl">
+      <div className="relative z-30 flex flex-col md:flex-row items-start md:items-center justify-between gap-4 p-6 rounded-3xl bg-gradient-to-r from-amber-500/10 via-zinc-900/70 to-zinc-950/80 border border-amber-500/20 backdrop-blur-xl shadow-2xl">
         <div className="flex items-center gap-4">
           <motion.div 
             whileHover={{ scale: 1.05, rotate: 5 }}
