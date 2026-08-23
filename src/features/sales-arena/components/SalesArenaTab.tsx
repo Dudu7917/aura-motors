@@ -58,9 +58,48 @@ export default function SalesArenaTab() {
       initial={{ opacity: 0, y: 10 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.3 }}
-      className="mx-auto max-w-7xl px-4 sm:px-6 py-4 space-y-6 text-left"
+      className="mx-auto max-w-7xl px-4 sm:px-6 py-6 space-y-6 text-left"
     >
-      {/* Se houver configuração ativa de simulação, exibe o Cockpit direto */}
+      {/* Banner Principal da Arena */}
+      <div className="relative z-20 flex flex-col md:flex-row items-start md:items-center justify-between gap-4 p-6 rounded-3xl bg-zinc-900/90 border border-white/10 backdrop-blur-2xl shadow-xl">
+        <div className="flex items-center gap-4">
+          <motion.div 
+            whileHover={{ scale: 1.05, rotate: 5 }}
+            className="flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-amber-400 to-amber-600 text-black shadow-xl shadow-amber-500/20 flex-shrink-0"
+          >
+            <Trophy className="h-7 w-7 text-black" />
+          </motion.div>
+          <div>
+            <div className="flex items-center gap-2">
+              <span className="px-2.5 py-0.5 rounded-full bg-amber-500/15 border border-amber-500/30 text-amber-400 text-[11px] font-semibold uppercase tracking-wider">
+                Arena de Vendas & Negociação IA
+              </span>
+              <span className="text-zinc-400 text-xs hidden sm:inline">• Garagem do Nelsinho</span>
+            </div>
+            <h1 className="font-display text-xl sm:text-2xl font-bold text-white tracking-tight mt-1">
+              Sales Arena & Roleplay Comercial
+            </h1>
+            <p className="text-xs sm:text-sm text-zinc-300 font-normal max-w-2xl mt-0.5 leading-relaxed">
+              Treine contorno de objeções, simulação de taxas e fechamento com compradores inteligentes gerados por IA com base no estoque real.
+            </p>
+          </div>
+        </div>
+
+        {/* Botão Novo Cenário */}
+        <div className="flex items-center gap-3 self-end md:self-center">
+          <motion.button
+            whileHover={{ scale: 1.03 }}
+            whileTap={{ scale: 0.97 }}
+            onClick={() => setIsSetupModalOpen(true)}
+            className="flex items-center gap-2 px-5 py-2.5 rounded-2xl bg-amber-500 hover:bg-amber-400 text-black text-xs font-bold uppercase tracking-wider transition-all shadow-lg shadow-amber-500/20 cursor-pointer"
+          >
+            <Swords className="h-4 w-4" />
+            <span>Novo Cenário</span>
+          </motion.button>
+        </div>
+      </div>
+
+      {/* Cockpit de Negociação Ativo */}
       {activeConfig && carsList.length > 0 ? (
         <SalesArenaCockpit
           key={`${activeConfig.selectedCar.id}_${activeConfig.persona.id}_${activeConfig.mode}_${selectedModel}`}
@@ -71,14 +110,13 @@ export default function SalesArenaTab() {
           onModelChange={setSelectedModel}
         />
       ) : (
-        /* Painel de boas-vindas caso não haja veículos ou configuração */
         <motion.div 
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           className="p-12 text-center rounded-3xl bg-zinc-900/40 border border-dashed border-white/10 space-y-4"
         >
           <Trophy className="h-10 w-10 text-amber-500/50 mx-auto" />
-          <h3 className="font-display text-lg font-bold text-zinc-100">Pronto para Treinar Vendas?</h3>
+          <h3 className="font-display text-lg font-bold text-white">Pronto para Treinar Vendas?</h3>
           <p className="text-xs text-zinc-400 max-w-md mx-auto">
             Escolha um veículo do pátio e o perfil do cliente para iniciar a simulação de negociação com a IA.
           </p>
@@ -86,7 +124,7 @@ export default function SalesArenaTab() {
             whileHover={{ scale: 1.03 }}
             whileTap={{ scale: 0.97 }}
             onClick={() => setIsSetupModalOpen(true)}
-            className="px-6 py-2.5 rounded-xl bg-amber-500 text-[#09090b] text-xs font-bold uppercase cursor-pointer"
+            className="px-6 py-2.5 rounded-xl bg-amber-500 text-black text-xs font-bold uppercase cursor-pointer"
           >
             Configurar Primeiro Cenário
           </motion.button>
@@ -103,7 +141,7 @@ export default function SalesArenaTab() {
         currentModel={selectedModel}
       />
 
-      {/* Modal de Scorecard / Relatório de Mentor */}
+      {/* Modal de Scorecard */}
       {activeConfig && (
         <SalesArenaScorecardModal
           isOpen={isScorecardOpen}
