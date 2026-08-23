@@ -1,5 +1,5 @@
 import React, { useRef, useEffect } from 'react';
-import { Send, Loader2, Sparkles, User, Swords, Zap } from 'lucide-react';
+import { Send, Loader2, Sparkles, User, Swords, Zap, MessageSquare } from 'lucide-react';
 import { ArenaMessage, ArenaScenarioConfig } from '../../../shared/domain/salesArenaTypes';
 
 interface ArenaMessageFeedProps {
@@ -37,6 +37,19 @@ export default function ArenaMessageFeed({
 
   return (
     <div className="flex flex-col h-[650px] rounded-3xl bg-zinc-900/90 border border-white/10 backdrop-blur-2xl shadow-2xl overflow-hidden">
+      {/* Barra de Status do Chat */}
+      <div className="p-3.5 px-5 border-b border-white/5 bg-zinc-950/40 flex items-center justify-between">
+        <div className="flex items-center gap-2">
+          <MessageSquare className="h-4 w-4 text-amber-500" />
+          <span className="font-display font-bold text-xs uppercase tracking-wider text-zinc-200">
+            Feed de Negociação em Tempo Real
+          </span>
+        </div>
+        <span className="text-[11px] font-mono text-zinc-400">
+          {messages.length} {messages.length === 1 ? 'mensagem' : 'mensagens'}
+        </span>
+      </div>
+
       {/* Área de Mensagens do Chat */}
       <div className="flex-1 p-5 overflow-y-auto space-y-4 custom-scrollbar">
         {messages.map((msg) => {
@@ -46,7 +59,7 @@ export default function ArenaMessageFeed({
           if (isSystem) {
             return (
               <div key={msg.id} className="p-3.5 rounded-2xl bg-amber-500/10 border border-amber-500/20 text-center">
-                <p className="text-xs text-amber-300 font-mono leading-relaxed">{msg.text}</p>
+                <p className="text-xs text-amber-300 font-sans leading-relaxed">{msg.text}</p>
               </div>
             );
           }
@@ -54,18 +67,20 @@ export default function ArenaMessageFeed({
           return (
             <div
               key={msg.id}
-              className={`flex flex-col ${isUser ? 'items-end' : 'items-start'} space-y-1`}
+              className={`flex flex-col ${isUser ? 'items-end' : 'items-start'} space-y-1.5`}
             >
-              <div className="flex items-center gap-1.5 px-1 text-[10px] font-mono text-zinc-500">
-                <span>{isUser ? 'Você' : (mode === 'seller_training' ? persona.name : 'Consultor IA')}</span>
+              <div className="flex items-center gap-1.5 px-1 text-[11px] font-sans font-medium text-zinc-400">
+                <span className="font-semibold text-zinc-300">
+                  {isUser ? 'Você (Consultor)' : (mode === 'seller_training' ? persona.name : 'Consultor IA')}
+                </span>
                 <span>•</span>
-                <span>{msg.timestamp}</span>
+                <span className="font-mono text-[10px] text-zinc-500">{msg.timestamp}</span>
               </div>
 
               <div
                 className={`max-w-[85%] p-4 rounded-2xl text-xs sm:text-sm leading-relaxed shadow-md ${
                   isUser
-                    ? 'bg-gradient-to-r from-amber-500 to-yellow-500 text-zinc-950 font-medium rounded-tr-none'
+                    ? 'bg-gradient-to-r from-amber-500 to-yellow-500 text-[#09090b] font-semibold rounded-tr-none'
                     : 'bg-zinc-800/90 text-zinc-100 border border-white/10 rounded-tl-none'
                 }`}
               >
@@ -73,8 +88,8 @@ export default function ArenaMessageFeed({
               </div>
 
               {msg.detectedTechnique && (
-                <div className="flex items-center gap-1 text-[10px] font-mono text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded-md border border-emerald-500/20">
-                  <Sparkles className="h-3 w-3" />
+                <div className="flex items-center gap-1 text-[10px] font-mono font-bold text-emerald-400 bg-emerald-500/10 px-2.5 py-1 rounded-full border border-emerald-500/25">
+                  <Sparkles className="h-3 w-3 text-emerald-400" />
                   <span>Técnica detectada: {msg.detectedTechnique}</span>
                 </div>
               )}
@@ -83,8 +98,8 @@ export default function ArenaMessageFeed({
         })}
 
         {isLoading && (
-          <div className="flex items-center gap-2 text-xs font-mono text-amber-400 bg-amber-500/10 p-3 rounded-2xl border border-amber-500/20 w-fit">
-            <Loader2 className="h-4 w-4 animate-spin" />
+          <div className="flex items-center gap-2 text-xs font-mono text-amber-400 bg-amber-500/10 p-3 rounded-2xl border border-amber-500/20 w-fit animate-pulse">
+            <Loader2 className="h-4 w-4 animate-spin text-amber-500" />
             <span>{mode === 'seller_training' ? `${persona.name} está digitando a réplica...` : 'Consultor IA formulando argumento...'}</span>
           </div>
         )}
@@ -94,7 +109,7 @@ export default function ArenaMessageFeed({
 
       {/* Chips Rápidos de Argumentação */}
       <div className="p-3 border-t border-white/5 bg-zinc-950/60 flex items-center gap-2 overflow-x-auto custom-scrollbar">
-        <span className="text-[10px] font-mono uppercase font-bold text-zinc-500 shrink-0 flex items-center gap-1">
+        <span className="text-[10px] font-mono uppercase font-bold text-zinc-400 shrink-0 flex items-center gap-1">
           <Zap className="h-3 w-3 text-amber-500" />
           <span>Gatilhos Rápidos:</span>
         </span>
@@ -104,7 +119,7 @@ export default function ArenaMessageFeed({
             type="button"
             onClick={() => onSendMessage(chip.text)}
             disabled={isLoading || isEvaluating}
-            className="shrink-0 text-[11px] font-mono px-3 py-1.5 rounded-xl bg-zinc-800 hover:bg-zinc-700 text-zinc-300 hover:text-white border border-white/10 hover:border-amber-500/40 transition-all cursor-pointer disabled:opacity-50"
+            className="shrink-0 text-[11px] font-sans font-medium px-3 py-1.5 rounded-xl bg-zinc-800/80 hover:bg-zinc-700 text-zinc-200 hover:text-white border border-white/10 hover:border-amber-500/40 transition-all cursor-pointer disabled:opacity-50"
           >
             {chip.label}
           </button>
@@ -132,7 +147,7 @@ export default function ArenaMessageFeed({
           type="button"
           onClick={() => onSendMessage()}
           disabled={!inputValue.trim() || isLoading || isEvaluating}
-          className="p-3 rounded-2xl bg-amber-500 hover:bg-amber-400 text-zinc-950 font-bold transition-all cursor-pointer disabled:opacity-40 disabled:cursor-not-allowed shadow-lg shadow-amber-500/20"
+          className="p-3 rounded-2xl bg-amber-500 hover:bg-amber-400 text-[#09090b] font-bold transition-all cursor-pointer disabled:opacity-40 disabled:cursor-not-allowed shadow-lg shadow-amber-500/25"
         >
           <Send className="h-4 w-4" />
         </button>

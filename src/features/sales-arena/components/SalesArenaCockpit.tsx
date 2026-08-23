@@ -117,7 +117,7 @@ export default function SalesArenaCockpit({
       initial={{ opacity: 0, y: 15 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.35 }}
-      className="max-w-7xl mx-auto px-4 sm:px-6 py-6 space-y-6 text-left"
+      className="space-y-6 text-left"
     >
       {/* Topo do Cockpit */}
       <ArenaHeaderBar

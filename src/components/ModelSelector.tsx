@@ -16,12 +16,12 @@ export interface ModelOption {
 function getModelIcon(type: AiModelDefinition['iconType']) {
   switch (type) {
     case 'cpu':
-      return <Cpu className="h-3.5 w-3.5 text-cyan-600 dark:text-cyan-400" />;
+      return <Cpu className="h-3.5 w-3.5 text-cyan-400" />;
     case 'zap':
-      return <Zap className="h-3.5 w-3.5 text-emerald-600 dark:text-emerald-400" />;
+      return <Zap className="h-3.5 w-3.5 text-emerald-400" />;
     case 'sparkles':
     default:
-      return <Sparkles className="h-3.5 w-3.5 text-amber-600 dark:text-amber-400" />;
+      return <Sparkles className="h-3.5 w-3.5 text-amber-400" />;
   }
 }
 
@@ -84,31 +84,25 @@ export default function ModelSelector({
         type="button"
         onClick={() => setIsOpen(!isOpen)}
         className={`inline-flex items-center gap-2 rounded-xl transition-all duration-200 cursor-pointer font-sans select-none
-          border border-zinc-200/80 dark:border-white/10
-          bg-white/95 dark:bg-zinc-900/90 hover:bg-zinc-50 dark:hover:bg-zinc-800/90
-          text-zinc-800 dark:text-zinc-200 shadow-sm hover:shadow
-          ${size === 'sm' ? 'px-2.5 py-1 text-xs' : 'px-3 py-1.5 text-xs sm:text-sm'}
-          ${isOpen ? 'ring-2 ring-amber-500/30 border-amber-500/50' : ''}
+          border border-white/10 bg-zinc-900/90 hover:bg-zinc-800/90 text-zinc-100 shadow-md
+          ${size === 'sm' ? 'px-2.5 py-1 text-xs' : 'px-3.5 py-2 text-xs sm:text-sm'}
+          ${isOpen ? 'ring-2 ring-amber-500/40 border-amber-500/60' : ''}
         `}
       >
         <div className="flex items-center gap-1.5 min-w-0">
           <span className="shrink-0">{selectedModel.icon}</span>
-          <span className="font-semibold tracking-tight truncate max-w-[130px] sm:max-w-[160px]">
+          <span className="font-bold tracking-tight truncate max-w-[130px] sm:max-w-[160px] text-zinc-100">
             {selectedModel.label}
           </span>
           {selectedModel.badge && (
-            <span
-              className={`hidden sm:inline-flex items-center text-[10px] font-bold px-1.5 py-0.5 rounded-full border
-                ${selectedModel.badgeColorLight} dark:${selectedModel.badgeColorDark}
-              `}
-            >
+            <span className="hidden sm:inline-flex items-center text-[9px] font-bold px-1.5 py-0.5 rounded-full border bg-amber-500/15 border-amber-500/30 text-amber-400">
               {selectedModel.badge}
             </span>
           )}
         </div>
         <ChevronDown
-          className={`h-3.5 w-3.5 text-zinc-400 dark:text-zinc-500 transition-transform duration-200 shrink-0 ${
-            isOpen ? 'rotate-180 text-amber-500' : ''
+          className={`h-3.5 w-3.5 text-zinc-400 transition-transform duration-200 shrink-0 ${
+            isOpen ? 'rotate-180 text-amber-400' : ''
           }`}
         />
       </button>
@@ -122,17 +116,17 @@ export default function ModelSelector({
             exit={{ opacity: 0, y: -6, scale: 0.96 }}
             transition={{ duration: 0.15, ease: 'easeOut' }}
             className={`absolute z-50 mt-1.5 w-72 sm:w-80 rounded-2xl p-1.5 shadow-2xl
-              bg-white/98 dark:bg-zinc-950/98 backdrop-blur-xl
-              border border-zinc-200/90 dark:border-white/10
+              bg-zinc-950/98 backdrop-blur-2xl
+              border border-white/15
               focus:outline-none overflow-hidden
               ${align === 'right' ? 'right-0' : 'left-0'}
             `}
           >
-            <div className="px-3 py-2 border-b border-zinc-100 dark:border-white/5 mb-1 flex items-center justify-between">
-              <span className="text-[11px] font-bold uppercase tracking-wider text-zinc-600 dark:text-zinc-400">
+            <div className="px-3 py-2 border-b border-white/5 mb-1 flex items-center justify-between">
+              <span className="text-[10px] font-bold uppercase tracking-wider text-zinc-400">
                 Modelo de Inteligência Artificial
               </span>
-              <span className="text-[10px] font-mono text-zinc-600 dark:text-zinc-400">
+              <span className="text-[9px] font-mono text-amber-500/90 font-semibold">
                 Google Gemini API
               </span>
             </div>
@@ -148,15 +142,15 @@ export default function ModelSelector({
                     className={`w-full text-left p-2.5 rounded-xl transition-all duration-150 flex items-start gap-3 cursor-pointer group
                       ${
                         isSelected
-                          ? 'bg-amber-500/10 dark:bg-amber-500/15 border border-amber-500/30'
-                          : 'hover:bg-zinc-100/80 dark:hover:bg-white/5 border border-transparent'
+                          ? 'bg-amber-500/15 border border-amber-500/40 shadow-sm'
+                          : 'hover:bg-zinc-900 border border-transparent'
                       }
                     `}
                   >
                     <div className={`mt-0.5 p-1.5 rounded-lg shrink-0 ${
                       isSelected 
-                        ? 'bg-amber-500/20 text-amber-600 dark:text-amber-400' 
-                        : 'bg-zinc-100 dark:bg-zinc-800 text-zinc-500 dark:text-zinc-400 group-hover:text-zinc-800 dark:group-hover:text-zinc-200'
+                        ? 'bg-amber-500/20 text-amber-400' 
+                        : 'bg-zinc-900 text-zinc-400 group-hover:text-zinc-200'
                     }`}>
                       {model.icon}
                     </div>
@@ -164,27 +158,23 @@ export default function ModelSelector({
                     <div className="flex-1 min-w-0">
                       <div className="flex items-center gap-1.5 flex-wrap">
                         <span className={`text-xs font-bold ${
-                          isSelected ? 'text-amber-600 dark:text-amber-400' : 'text-zinc-900 dark:text-zinc-100'
+                          isSelected ? 'text-amber-400 font-luxury' : 'text-zinc-200'
                         }`}>
                           {model.label}
                         </span>
                         {model.badge && (
-                          <span
-                            className={`text-[9px] font-bold px-1.5 py-0.2 rounded-full border
-                              ${model.badgeColorLight} dark:${model.badgeColorDark}
-                            `}
-                          >
+                          <span className="text-[9px] font-bold px-1.5 py-0.2 rounded-full border bg-amber-500/10 border-amber-500/30 text-amber-400">
                             {model.badge}
                           </span>
                         )}
                       </div>
-                      <p className="text-[11px] text-zinc-600 dark:text-zinc-400 leading-tight mt-0.5 line-clamp-2">
+                      <p className="text-[10.5px] text-zinc-400 leading-tight mt-0.5 line-clamp-2">
                         {model.sublabel}
                       </p>
                     </div>
 
                     {isSelected && (
-                      <Check className="h-4 w-4 text-amber-600 dark:text-amber-400 shrink-0 mt-1" />
+                      <Check className="h-4 w-4 text-amber-400 shrink-0 mt-1" />
                     )}
                   </button>
                 );
