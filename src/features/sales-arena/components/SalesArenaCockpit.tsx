@@ -148,10 +148,10 @@ export default function SalesArenaCockpit({
       initial={{ opacity: 0, y: 15 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.35 }}
-      className="flex flex-col h-[calc(100vh-140px)] min-h-[600px] w-full max-w-7xl mx-auto rounded-3xl bg-zinc-950/85 border border-white/10 shadow-2xl shadow-black/80 overflow-hidden backdrop-blur-xl text-left"
+      className="flex flex-col h-[calc(100vh-140px)] min-h-[600px] w-full max-w-7xl mx-auto rounded-3xl bg-zinc-950/85 border border-white/10 shadow-2xl shadow-black/80 backdrop-blur-xl text-left relative"
     >
       {/* Top Cockpit Header */}
-      <div className="relative z-30 px-6 py-4 border-b border-white/10 bg-zinc-900/60 flex flex-wrap items-center justify-between gap-4">
+      <div className="relative z-30 px-6 py-4 border-b border-white/10 bg-zinc-900/60 flex flex-wrap items-center justify-between gap-4 rounded-t-3xl">
         
         {/* Left: Car & Persona Info */}
         <div className="flex items-center gap-4">
@@ -186,7 +186,7 @@ export default function SalesArenaCockpit({
           {/* Seletor Único de Modelo de IA */}
           <div className="flex items-center gap-1.5">
             <span className="text-xs text-zinc-400 font-medium hidden lg:inline">Motor IA:</span>
-            <ModelSelector value={selectedModel} onChange={onModelChange} align="right" />
+            <ModelSelector value={selectedModel} onChange={onModelChange} align="left" />
           </div>
 
           {/* Termômetro de Fechamento */}
