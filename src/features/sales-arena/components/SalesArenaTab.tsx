@@ -107,18 +107,13 @@ export default function SalesArenaTab() {
           </div>
         </div>
 
-        {/* Model Selector & Actions */}
+        {/* Actions */}
         <div className="flex items-center gap-3 self-end md:self-center flex-wrap">
-          <div className="flex items-center gap-2">
-            <span className="text-xs text-zinc-400 font-medium hidden lg:inline">Motor de IA:</span>
-            <ModelSelector value={selectedModel} onChange={setSelectedModel} align="right" />
-          </div>
-
           <motion.button
             whileHover={{ scale: 1.03 }}
             whileTap={{ scale: 0.97 }}
             onClick={() => setIsSetupModalOpen(true)}
-            className="flex items-center gap-2 px-5 py-2.5 rounded-2xl bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-300 hover:to-amber-400 text-black text-xs font-bold uppercase tracking-wider transition-all shadow-lg shadow-amber-500/20 cursor-pointer"
+            className="flex items-center gap-2 px-5 py-2.5 rounded-2xl bg-amber-500 hover:bg-amber-400 text-zinc-950 text-xs font-bold uppercase tracking-wider transition-all shadow-lg shadow-amber-500/20 cursor-pointer"
           >
             <Swords className="h-4 w-4" />
             <span>Novo Cenário</span>

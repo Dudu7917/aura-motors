@@ -348,7 +348,7 @@ export default function SalesArenaSetupModal({
               whileTap={{ scale: 0.97 }}
               type="button"
               onClick={handleStart}
-              className="flex items-center gap-2 px-6 py-2.5 rounded-xl bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-300 hover:to-amber-400 text-black text-xs font-bold uppercase tracking-wider transition-all shadow-lg shadow-amber-500/20 cursor-pointer"
+              className="flex items-center gap-2 px-6 py-2.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-zinc-950 text-xs font-bold uppercase tracking-wider transition-all shadow-lg shadow-amber-500/20 cursor-pointer"
             >
               <span>Entrar na Arena</span>
               <ChevronRight className="h-4 w-4" />

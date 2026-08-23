@@ -183,8 +183,9 @@ export default function SalesArenaCockpit({
         {/* Center/Right: Model Selector, Temperature Meter & Actions */}
         <div className="flex items-center gap-3.5 flex-wrap">
           
-          {/* Seletor de Modelo de IA */}
+          {/* Seletor Único de Modelo de IA */}
           <div className="flex items-center gap-1.5">
+            <span className="text-xs text-zinc-400 font-medium hidden lg:inline">Motor IA:</span>
             <ModelSelector value={selectedModel} onChange={onModelChange} align="right" />
           </div>
 
@@ -217,10 +218,10 @@ export default function SalesArenaCockpit({
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               onClick={() => setShowFipeSpecs(!showFipeSpecs)}
-              className="p-2.5 rounded-xl border border-white/10 bg-zinc-900/70 text-zinc-400 hover:text-white hover:bg-zinc-800 transition-colors text-xs flex items-center gap-1.5 cursor-pointer font-medium"
+              className="p-2.5 rounded-xl border border-white/10 bg-zinc-900/70 text-zinc-300 hover:text-white hover:bg-zinc-800 transition-colors text-xs flex items-center gap-1.5 cursor-pointer font-medium"
               title="Ver Ficha Técnica Rápida"
             >
-              <Info className="h-4 w-4 text-amber-500" />
+              <Info className="h-4 w-4 text-amber-400" />
               <span className="hidden sm:inline">Ficha & FIPE</span>
             </motion.button>
 
@@ -228,7 +229,7 @@ export default function SalesArenaCockpit({
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               onClick={onChangeConfig}
-              className="p-2.5 rounded-xl border border-white/10 bg-zinc-900/70 text-zinc-400 hover:text-white hover:bg-zinc-800 transition-colors text-xs flex items-center gap-1.5 cursor-pointer font-medium"
+              className="p-2.5 rounded-xl border border-white/10 bg-zinc-900/70 text-zinc-300 hover:text-white hover:bg-zinc-800 transition-colors text-xs flex items-center gap-1.5 cursor-pointer font-medium"
               title="Mudar Cenário / Carro"
             >
               <Settings2 className="h-4 w-4" />
@@ -242,7 +243,7 @@ export default function SalesArenaCockpit({
               disabled={isEvaluating || messages.length < 2}
               className={`px-4 py-2.5 rounded-xl text-xs font-bold uppercase tracking-wider flex items-center gap-2 transition-all cursor-pointer shadow-lg ${
                 messages.length >= 2
-                  ? 'bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-300 hover:to-amber-400 text-black shadow-amber-500/20'
+                  ? 'bg-amber-500 hover:bg-amber-400 text-zinc-950 shadow-amber-500/20'
                   : 'bg-zinc-800 text-zinc-500 cursor-not-allowed'
               }`}
             >
@@ -334,11 +335,11 @@ export default function SalesArenaCockpit({
 
                 <div className={`max-w-2xl rounded-2xl p-4.5 space-y-2 ${
                   isUser
-                    ? 'bg-gradient-to-br from-amber-400 to-amber-500 text-black rounded-tr-sm shadow-md font-medium'
+                    ? 'bg-amber-500 text-zinc-950 rounded-tr-sm shadow-md font-medium'
                     : 'bg-zinc-900/90 border border-white/10 text-zinc-100 rounded-tl-sm shadow-lg'
                 }`}>
                   {/* Header do Balão */}
-                  <div className="flex items-center justify-between gap-3 text-[11px] opacity-75 font-medium">
+                  <div className="flex items-center justify-between gap-3 text-[11px] opacity-80 font-medium">
                     <span className="font-bold">
                       {isUser 
                         ? (mode === 'seller_training' ? 'Você (Consultor)' : 'Você (Cliente)') 
@@ -451,7 +452,7 @@ export default function SalesArenaCockpit({
             disabled={!inputValue.trim() || isLoading || isEvaluating}
             className={`p-3.5 rounded-2xl flex items-center justify-center transition-all cursor-pointer ${
               inputValue.trim() && !isLoading
-                ? 'bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-300 hover:to-amber-400 text-black shadow-lg shadow-amber-500/20'
+                ? 'bg-amber-500 hover:bg-amber-400 text-zinc-950 shadow-lg shadow-amber-500/20'
                 : 'bg-zinc-800 text-zinc-600 cursor-not-allowed'
             }`}
           >
