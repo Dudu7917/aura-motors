@@ -1,10 +1,10 @@
-import { Sparkles, Compass, Activity, Globe, Settings, Users, Sun, Moon } from 'lucide-react';
+import { Sparkles, Compass, Activity, Settings, Users, Sun, Moon } from 'lucide-react';
 import { triggerNelsinhoMouseHover } from './MouseTelemetryDashboard';
 
 interface NavbarProps {
   onOpenAiConcierge: () => void;
-  activeTab: 'showroom' | 'metrics' | 'custom_scrape' | 'waiting_list';
-  onTabChange: (tab: 'showroom' | 'metrics' | 'custom_scrape' | 'waiting_list') => void;
+  activeTab: 'showroom' | 'metrics' | 'waiting_list';
+  onTabChange: (tab: 'showroom' | 'metrics' | 'waiting_list') => void;
   onOpenSettings: () => void;
   theme: 'light' | 'dark';
   onToggleTheme: () => void;
@@ -79,18 +79,6 @@ export default function Navbar({
           </button>
 
           <button
-            onClick={() => onTabChange('custom_scrape')}
-            className={`flex items-center space-x-1.5 px-3.5 py-1.5 rounded-full transition-all text-[10px] xl:text-[11px] uppercase tracking-wider cursor-pointer whitespace-nowrap flex-shrink-0 ${
-              activeTab === 'custom_scrape'
-                ? 'bg-amber-500 text-[#09090b] font-extrabold shadow-sm'
-                : 'text-zinc-400 hover:text-white font-medium'
-            }`}
-          >
-            <Globe className="h-3.5 w-3.5" />
-            <span>Scraper URL</span>
-          </button>
-
-          <button
             onClick={() => onTabChange('waiting_list')}
             className={`flex items-center space-x-1.5 px-3.5 py-1.5 rounded-full transition-all text-[10px] xl:text-[11px] uppercase tracking-wider cursor-pointer whitespace-nowrap flex-shrink-0 ${
               activeTab === 'waiting_list'
@@ -120,13 +108,6 @@ export default function Navbar({
               title="Métricas de Controle"
             >
               <Activity className="h-4 w-4" />
-            </button>
-            <button
-              onClick={() => onTabChange('custom_scrape')}
-              className={`p-2 rounded-full border ${activeTab === 'custom_scrape' ? 'border-amber-500/50 bg-amber-500/10 text-amber-500' : 'border-white/5 text-zinc-400'}`}
-              title="Scraper de URL"
-            >
-              <Globe className="h-4 w-4" />
             </button>
             <button
               onClick={() => onTabChange('waiting_list')}

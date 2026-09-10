@@ -11,11 +11,11 @@ export function useAppLogic() {
   const leadsLogic = useLeadsLogic();
   const scraperLogic = useScraperLogic();
 
-  const [activeTab, setActiveTab] = useState<'showroom' | 'metrics' | 'custom_scrape' | 'waiting_list'>(
+  const [activeTab, setActiveTab] = useState<'showroom' | 'metrics' | 'waiting_list'>(
     () => {
       const saved = localStorage.getItem('aura_active_tab');
-      if (saved && ['showroom', 'metrics', 'custom_scrape', 'waiting_list'].includes(saved)) {
-        return saved as 'showroom' | 'metrics' | 'custom_scrape' | 'waiting_list';
+      if (saved && ['showroom', 'metrics', 'waiting_list'].includes(saved)) {
+        return saved as 'showroom' | 'metrics' | 'waiting_list';
       }
       return 'showroom';
     }

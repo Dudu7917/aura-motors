@@ -1,19 +1,14 @@
 import React, { useState, useMemo } from 'react';
 import { Lead, Car } from '../types';
-import { AlertCircle, CheckCircle2, Sparkles, UserPlus } from 'lucide-react';
+import { CheckCircle2 } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
-import AddLeadForm from './WaitingList/AddLeadForm';
-import EditLeadModal from './WaitingList/EditLeadModal';
-import IaPitchModal from './WaitingList/IaPitchModal';
-import ConflictResolutionModals from './WaitingList/ConflictResolutionModals';
-import ImportBox from './WaitingList/ImportBox';
-import ConfirmModal from './WaitingList/ConfirmModal';
-import LeadCardItem from './WaitingList/LeadCardItem';
 import WaitingListHeader from './WaitingList/WaitingListHeader';
 import WaitingListKpis from './WaitingList/WaitingListKpis';
 import WaitingListFiltersBar, { ViewMode, StatusFilter, SortOption } from './WaitingList/WaitingListFiltersBar';
 import WaitingListKanban from './WaitingList/WaitingListKanban';
 import WaitingListRadar from './WaitingList/WaitingListRadar';
+import WaitingListListView from './WaitingList/WaitingListListView';
+import WaitingListModals from './WaitingList/WaitingListModals';
 import { getMatchingCarsWithScores } from './WaitingList/matchHelpers';
 
 interface WaitingListTabProps {
@@ -43,11 +38,11 @@ export default function WaitingListTab({
   const [showSuccessToast, setShowSuccessToast] = useState(false);
   const [toastMessage, setToastMessage] = useState('Lead registrado na fila de espera com sucesso!');
   
-  // Modais
+  // Modais de abertura
   const [showAddModal, setShowAddModal] = useState(false);
   const [showImportModal, setShowImportModal] = useState(false);
 
-  // Estados de Filtros e Visualização
+  // Filtros e Visualizações
   const [searchQuery, setSearchQuery] = useState('');
   const [viewMode, setViewMode] = useState<ViewMode>('list');
   const [statusFilter, setStatusFilter] = useState<StatusFilter>('all');
@@ -63,7 +58,7 @@ export default function WaitingListTab({
   const [pastedText, setPastedText] = useState('');
   const [leadsModel, setLeadsModel] = useState(() => localStorage.getItem('aura_leads_model') || 'gemini-3.6-flash');
 
-  // Edit / Pitch / Conflict states
+  // Pitch / Edit / Conflict states
   const [selectedEditLead, setSelectedEditLead] = useState<Lead | null>(null);
   const [pitchLead, setPitchLead] = useState<Lead | null>(null);
   const [pitchCar, setPitchCar] = useState<Car | null>(null);
@@ -276,16 +271,13 @@ export default function WaitingListTab({
     }
   };
 
-  // Contagem de matches gerais
   const matchCount = useMemo(() => {
     return leads.filter(l => getMatchingCarsWithScores(l, cars).length > 0).length;
   }, [leads, cars]);
 
-  // Filtragem e Ordenação de Alta Performance
   const filteredAndSortedLeads = useMemo(() => {
     return leads
       .filter(lead => {
-        // Filtro por busca de texto
         if (searchQuery.trim()) {
           const q = searchQuery.toLowerCase().trim();
           const matchesSearch = 
@@ -298,26 +290,17 @@ export default function WaitingListTab({
           if (!matchesSearch) return false;
         }
 
-        // Filtro por marca selecionada no KPI
         if (selectedBrandFilter) {
           const brandMatch = lead.desiredBrand.toLowerCase().includes(selectedBrandFilter.toLowerCase()) ||
                              selectedBrandFilter.toLowerCase().includes(lead.desiredBrand.toLowerCase());
           if (!brandMatch) return false;
         }
 
-        // Filtro de Status
         const matchesInStock = getMatchingCarsWithScores(lead, cars);
-        if (statusFilter === 'waiting' && (lead.contacted || matchesInStock.length > 0)) {
-          return false;
-        }
-        if (statusFilter === 'match_only' && matchesInStock.length === 0) {
-          return false;
-        }
-        if (statusFilter === 'contacted' && !lead.contacted) {
-          return false;
-        }
+        if (statusFilter === 'waiting' && (lead.contacted || matchesInStock.length > 0)) return false;
+        if (statusFilter === 'match_only' && matchesInStock.length === 0) return false;
+        if (statusFilter === 'contacted' && !lead.contacted) return false;
 
-        // Filtro de Preço
         if (priceFilter !== 'all') {
           const price = lead.maxPrice || 0;
           if (priceFilter === 'up_to_100k' && price > 100000) return false;
@@ -338,22 +321,15 @@ export default function WaitingListTab({
         if (sortBy === 'recent') {
           return new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime();
         }
-        if (sortBy === 'price_desc') {
-          return (b.maxPrice || 0) - (a.maxPrice || 0);
-        }
-        if (sortBy === 'price_asc') {
-          return (a.maxPrice || 0) - (b.maxPrice || 0);
-        }
-        if (sortBy === 'name_asc') {
-          return a.fullName.localeCompare(b.fullName);
-        }
+        if (sortBy === 'price_desc') return (b.maxPrice || 0) - (a.maxPrice || 0);
+        if (sortBy === 'price_asc') return (a.maxPrice || 0) - (b.maxPrice || 0);
+        if (sortBy === 'name_asc') return a.fullName.localeCompare(b.fullName);
         return 0;
       });
   }, [leads, cars, searchQuery, selectedBrandFilter, statusFilter, priceFilter, sortBy]);
 
   return (
     <div className="mx-auto max-w-7xl px-4 sm:px-6 py-6 sm:py-8 space-y-8 text-left">
-      
       {/* Toast de Notificação */}
       <AnimatePresence>
         {showSuccessToast && (
@@ -390,7 +366,7 @@ export default function WaitingListTab({
         }}
       />
 
-      {/* Painel Executivo de KPIs */}
+      {/* Painel de KPIs */}
       <WaitingListKpis
         leads={leads}
         cars={cars}
@@ -398,7 +374,7 @@ export default function WaitingListTab({
         selectedBrandFilter={selectedBrandFilter}
       />
 
-      {/* Barra de Filtros, Modos de Visualização e Busca */}
+      {/* Filtros e Busca */}
       <WaitingListFiltersBar
         searchQuery={searchQuery}
         setSearchQuery={setSearchQuery}
@@ -415,67 +391,36 @@ export default function WaitingListTab({
         matchCount={matchCount}
       />
 
-      {/* Visualizações Dinâmicas (Lista / Kanban / Radar) */}
+      {/* Visualizações Dinâmicas */}
       <div className="w-full">
         {viewMode === 'list' && (
-          <div className="space-y-4">
-            <AnimatePresence mode="popLayout">
-              {filteredAndSortedLeads.length === 0 ? (
-                <motion.div
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  className="bg-zinc-900/40 border border-dashed border-white/10 rounded-3xl p-12 text-center space-y-4 backdrop-blur-xl"
-                >
-                  <AlertCircle className="h-10 w-10 text-zinc-600 mx-auto" />
-                  <div className="space-y-1">
-                    <h4 className="font-luxury text-sm font-bold text-white uppercase tracking-wider">
-                      Nenhum Lead Encontrado
-                    </h4>
-                    <p className="font-display text-xs text-zinc-400 font-light max-w-sm mx-auto">
-                      {searchQuery || selectedBrandFilter || statusFilter !== 'all' || priceFilter !== 'all'
-                        ? 'Nenhum lead corresponde aos filtros atuais. Tente redefinir a busca.'
-                        : 'Ainda não há clientes cadastrados na fila de espera.'}
-                    </p>
-                  </div>
-                  <div className="pt-2 flex justify-center gap-3">
-                    <button
-                      onClick={() => setShowAddModal(true)}
-                      className="bg-amber-500 hover:bg-amber-400 text-black px-4 py-2 rounded-xl font-mono text-[10px] font-bold uppercase transition-all cursor-pointer shadow-sm flex items-center gap-1.5"
-                    >
-                      <UserPlus className="h-3.5 w-3.5" />
-                      <span>Cadastrar Primeiro Lead</span>
-                    </button>
-                  </div>
-                </motion.div>
-              ) : (
-                filteredAndSortedLeads.map((lead) => (
-                  <LeadCardItem
-                    key={lead.id}
-                    lead={lead}
-                    allCars={cars}
-                    onFilterShowroomByLead={onFilterShowroomByLead}
-                    onMarkContacted={handleMarkContacted}
-                    onEditLead={setSelectedEditLead}
-                    onRequestDelete={(l) => {
-                      setConfirmDelete({
-                        isOpen: true,
-                        title: 'Remover Lead',
-                        message: <span>Deseja remover <strong className="text-white font-semibold">{l.fullName}</strong> da fila de espera?</span>,
-                        confirmLabel: 'REMOVER',
-                        onConfirm: async () => {
-                          await onDeleteLead(l.id);
-                          setConfirmDelete(prev => ({ ...prev, isOpen: false }));
-                          showToast(`Lead ${l.fullName} removido.`);
-                        }
-                      });
-                    }}
-                    onSelectCarDetails={onSelectCarDetails}
-                    onGeneratePitch={(l, c) => handleGeneratePitch(l, c, 'vip')}
-                  />
-                ))
-              )}
-            </AnimatePresence>
-          </div>
+          <WaitingListListView
+            filteredAndSortedLeads={filteredAndSortedLeads}
+            allCars={cars}
+            searchQuery={searchQuery}
+            selectedBrandFilter={selectedBrandFilter}
+            statusFilter={statusFilter}
+            priceFilter={priceFilter}
+            onFilterShowroomByLead={onFilterShowroomByLead}
+            onMarkContacted={handleMarkContacted}
+            onEditLead={setSelectedEditLead}
+            onRequestDelete={(l) => {
+              setConfirmDelete({
+                isOpen: true,
+                title: 'Remover Lead',
+                message: <span>Deseja remover <strong className="text-white font-semibold">{l.fullName}</strong> da fila de espera?</span>,
+                confirmLabel: 'REMOVER',
+                onConfirm: async () => {
+                  await onDeleteLead(l.id);
+                  setConfirmDelete(prev => ({ ...prev, isOpen: false }));
+                  showToast(`Lead ${l.fullName} removido.`);
+                }
+              });
+            }}
+            onSelectCarDetails={onSelectCarDetails}
+            onGeneratePitch={(l, c) => handleGeneratePitch(l, c, 'vip')}
+            onOpenAddModal={() => setShowAddModal(true)}
+          />
         )}
 
         {viewMode === 'kanban' && (
@@ -500,33 +445,51 @@ export default function WaitingListTab({
         )}
       </div>
 
-      {/* Modal de Abordagem IA 2.0 */}
-      <AnimatePresence>
-        {pitchLead && pitchCar && (
-          <IaPitchModal
-            pitchLead={pitchLead}
-            pitchCar={pitchCar}
-            onClose={() => {
-              setPitchLead(null);
-              setPitchCar(null);
-              setGeneratedPitchText('');
-            }}
-            generatedPitchText={generatedPitchText}
-            setGeneratedPitchText={setGeneratedPitchText}
-            isGeneratingPitch={isGeneratingPitch}
-            onRegeneratePitch={async (tone, customNotes) => {
-              if (pitchLead && pitchCar) {
-                await handleGeneratePitch(pitchLead, pitchCar, tone, customNotes);
-              }
-            }}
-          />
-        )}
-      </AnimatePresence>
-
-      {/* Modal de Conflitos */}
-      <ConflictResolutionModals
+      {/* Todos os Modais de Suporte e Interação */}
+      <WaitingListModals
+        cars={cars}
+        showAddModal={showAddModal}
+        setShowAddModal={setShowAddModal}
+        showImportModal={showImportModal}
+        setShowImportModal={setShowImportModal}
+        isSubmitting={isSubmitting}
+        selectedEditLead={selectedEditLead}
+        setSelectedEditLead={setSelectedEditLead}
+        pitchLead={pitchLead}
+        pitchCar={pitchCar}
+        setPitchLead={setPitchLead}
+        setPitchCar={setPitchCar}
+        generatedPitchText={generatedPitchText}
+        setGeneratedPitchText={setGeneratedPitchText}
+        isGeneratingPitch={isGeneratingPitch}
         pendingConflict={pendingConflict}
         batchImportConflict={batchImportConflict}
+        confirmDelete={confirmDelete}
+        setConfirmDelete={setConfirmDelete}
+        isImporting={isImporting}
+        importResult={importResult}
+        importFileName={importFileName}
+        importMode={importMode}
+        setImportMode={setImportMode}
+        leadsModel={leadsModel}
+        setLeadsModel={setLeadsModel}
+        pastedText={pastedText}
+        setPastedText={setPastedText}
+        handleFileChange={handleFileChange}
+        handleTextImport={handleTextImport}
+        handleAddSubmit={handleAddSubmit}
+        handleGeneratePitch={handleGeneratePitch}
+        onEditSave={async (updatedLead) => {
+          setIsSubmitting(true);
+          const success = await onAddLead(updatedLead);
+          setIsSubmitting(false);
+          if (success) {
+            setSelectedEditLead(null);
+            showToast("Dados do lead atualizados!");
+          } else {
+            alert("Falha ao atualizar o lead.");
+          }
+        }}
         onResolveBatchConflict={async (resolvedLeads) => {
           if (onBatchAddLeads) {
             const success = await onBatchAddLeads(resolvedLeads);
@@ -542,112 +505,6 @@ export default function WaitingListTab({
         }}
         onCancelBatchConflict={() => setBatchImportConflict(null)}
       />
-
-      {/* Modal de Edição de Lead */}
-      <AnimatePresence>
-        {selectedEditLead && (
-          <EditLeadModal
-            lead={selectedEditLead}
-            onClose={() => setSelectedEditLead(null)}
-            onSave={async (updatedLead) => {
-              setIsSubmitting(true);
-              const success = await onAddLead(updatedLead);
-              setIsSubmitting(false);
-              if (success) {
-                setSelectedEditLead(null);
-                showToast("Dados do lead atualizados!");
-              } else {
-                alert("Falha ao atualizar o lead.");
-              }
-            }}
-            isSubmitting={isSubmitting}
-          />
-        )}
-      </AnimatePresence>
-
-      {/* Modal de Confirmação de Deleção */}
-      <AnimatePresence>
-        {confirmDelete.isOpen && (
-          <ConfirmModal
-            isOpen={confirmDelete.isOpen}
-            title={confirmDelete.title}
-            message={confirmDelete.message}
-            confirmLabel={confirmDelete.confirmLabel}
-            onConfirm={confirmDelete.onConfirm}
-            onClose={() => setConfirmDelete(prev => ({ ...prev, isOpen: false }))}
-          />
-        )}
-      </AnimatePresence>
-
-      {/* Modal: Novo Registro de Espera */}
-      <AnimatePresence>
-        {showAddModal && (
-          <div 
-            onClick={(e) => { if (e.target === e.currentTarget) setShowAddModal(false); }}
-            className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-md"
-          >
-            <motion.div
-              initial={{ opacity: 0, scale: 0.95, y: 15 }}
-              animate={{ opacity: 1, scale: 1, y: 0 }}
-              exit={{ opacity: 0, scale: 0.95, y: 15 }}
-              className="relative w-full max-w-xl bg-zinc-950 border border-white/10 rounded-3xl p-6 sm:p-7 shadow-2xl overflow-y-auto max-h-[92vh] custom-scrollbar"
-            >
-              <button
-                onClick={() => setShowAddModal(false)}
-                className="absolute top-5 right-5 text-zinc-400 hover:text-white font-mono text-xs cursor-pointer border border-white/10 rounded-full h-8 w-8 flex items-center justify-center hover:bg-white/10 transition-all z-10"
-              >
-                ✕
-              </button>
-              <AddLeadForm 
-                availableCars={cars}
-                onAddSubmit={async (leadData) => {
-                  await handleAddSubmit(leadData);
-                  setShowAddModal(false);
-                }} 
-                isSubmitting={isSubmitting} 
-              />
-            </motion.div>
-          </div>
-        )}
-      </AnimatePresence>
-
-      {/* Modal: Importar com IA */}
-      <AnimatePresence>
-        {showImportModal && (
-          <div 
-            onClick={(e) => { if (e.target === e.currentTarget) setShowImportModal(false); }}
-            className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-md"
-          >
-            <motion.div
-              initial={{ opacity: 0, scale: 0.95, y: 15 }}
-              animate={{ opacity: 1, scale: 1, y: 0 }}
-              exit={{ opacity: 0, scale: 0.95, y: 15 }}
-              className="relative w-full max-w-lg bg-zinc-950 border border-white/10 rounded-3xl p-6 sm:p-7 shadow-2xl overflow-y-auto max-h-[90vh] custom-scrollbar"
-            >
-              <button
-                onClick={() => setShowImportModal(false)}
-                className="absolute top-5 right-5 text-zinc-400 hover:text-white font-mono text-xs cursor-pointer border border-white/10 rounded-full h-8 w-8 flex items-center justify-center hover:bg-white/10 transition-all z-10"
-              >
-                ✕
-              </button>
-              <ImportBox
-                isImporting={isImporting}
-                importResult={importResult}
-                importFileName={importFileName}
-                importMode={importMode}
-                setImportMode={setImportMode}
-                leadsModel={leadsModel}
-                setLeadsModel={setLeadsModel}
-                pastedText={pastedText}
-                setPastedText={setPastedText}
-                handleFileChange={handleFileChange}
-                handleTextImport={handleTextImport}
-              />
-            </motion.div>
-          </div>
-        )}
-      </AnimatePresence>
-
     </div>
   );
 }
