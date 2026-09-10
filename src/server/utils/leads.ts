@@ -1,8 +1,9 @@
 import * as fs from "fs";
 import * as path from "path";
 import { Lead } from "../../types";
-import { Type } from "@google/genai";
+import { executeAntigravityLeadExtraction, cleanAndNormalizeLeads } from "../agent/antigravityLeadAgent";
 import { executeGemini } from "./keysManager";
+import { Type } from "@google/genai";
 
 const LOCAL_LEADS_PATH = path.join(process.cwd(), "leads-cache.json");
 
@@ -45,14 +46,15 @@ export async function saveLeadsToDatabase(leads: Lead[]): Promise<void> {
 }
 
 /**
- * Importa e extrai leads estruturados a partir de arquivos usando a API do Gemini.
+ * Importa e extrai leads estruturados usando o Agente Antigravity especializado.
+ * Suporta textos massivos (195+ leads), PDFs, imagens e arquivos CSV.
  */
 export async function importLeadsFromContent(
   req: any,
   fileData: string,
   fileName: string,
   fileType: string,
-  modelName?: string
+  modelName: string = "gemini-3.6-flash"
 ): Promise<Lead[]> {
   // Limpa prefixo de data url do base64 se existir
   let base64Clean = fileData;
@@ -67,38 +69,38 @@ export async function importLeadsFromContent(
                  fileName.endsWith(".csv") || 
                  fileName.endsWith(".json");
 
-  const prompt = `Você é o assistente inteligente de vendas da Garagem do Nelsinho.
-  Sua tarefa é analisar este conteúdo que contém uma listagem de leads (clientes interessados) procurando veículos seminovos.
-  Extraia todos os clientes com os seguintes dados:
-  - Nome completo (fullName) - obrigatório
-  - Telefone ou WhatsApp (phone) - obrigatório (tente extrair apenas números ou formatado de forma limpa, como (11) 99999-9999)
-  - E-mail (email) - opcional
-  - Marca desejada (desiredBrand) - opcional (Ex: Porsche, BMW, Toyota)
-  - Modelo ou palavras-chave desejadas (desiredModel) - opcional (Ex: Cayenne, 320i, Corolla)
-  - Ano mínimo de fabricação (minYear) - opcional (deve ser um número inteiro, ex: 2021)
-  - Ano máximo de fabricação (maxYear) - opcional (deve ser um número inteiro, ex: 2026)
-  - Preço máximo do veículo (maxPrice) - opcional (deve ser um valor numérico decimal, ex: 150000)
-  - Notas adicionais (notes) - opcional (anote qualquer detalhe extra comercial)
+  if (isText) {
+    // Decodifica o texto e processa pelo Agente Antigravity com micro-lotes (chunking)
+    const decodedText = Buffer.from(base64Clean, "base64").toString("utf-8");
+    console.log(`[Leads Utility] Executando Agente Antigravity em lote textual (${decodedText.length} caracteres, modelo: ${modelName})...`);
+    return await executeAntigravityLeadExtraction(req, decodedText, modelName);
+  }
 
-  Por favor, estruture os dados conforme o esquema solicitado em formato JSON.`;
+  // Para imagens e PDFs, extrai o texto ou dados estruturados multimodalmente
+  console.log(`[Leads Utility] Processando documento multimodal (${fileName}, tipo: ${fileType}) via IA...`);
 
-  const geminiResText = await executeGemini(req, async (ai, keyUsedName) => {
-    let contents: any[] = [];
-    
-    if (isText) {
-      const decodedText = Buffer.from(base64Clean, "base64").toString("utf-8");
-      contents = [`${prompt}\n\nConteúdo Textual da Lista:\n${decodedText}`];
-    } else {
-      contents = [
-        {
-          inlineData: {
-            data: base64Clean,
-            mimeType: fileType || "image/png"
-          }
-        },
-        prompt
-      ];
-    }
+  const visionPrompt = `Você é o Agente Antigravity de Reconhecimento Óptico e Extração de Documentos de Vendas da Garagem do Nelsinho.
+Analise com máxima atenção este documento ou planilha de leads da fila de espera.
+Extraia todos os clientes interessados contidos nele.
+REGRAS:
+1. fullName: Nome real do cliente (sem prefixos como 'Cliente', numerações ou datas de CRM).
+2. phone: Telefone com DDD.
+3. desiredBrand: Marca/Montadora correta do veículo (ex: Honda, Toyota, Volkswagen, Fiat, Chevrolet, Hyundai, Renault, Jeep, Nissan, Ford).
+4. desiredModel: Modelo do veículo desejado.
+5. minYear e maxYear: Anos do veículo (nunca use o ano de registro do CRM!).
+6. maxPrice: Valor máximo pretendido (ex: 145000 para 145k).
+7. notes: Observações comerciais (cores, versões, condições).`;
+
+  const geminiResText = await executeGemini(req, async (ai) => {
+    const contents = [
+      {
+        inlineData: {
+          data: base64Clean,
+          mimeType: fileType || "image/png"
+        }
+      },
+      visionPrompt
+    ];
 
     const resObj = await ai.models.generateContent({
       model: modelName || "gemini-3.7-flash",
@@ -143,21 +145,6 @@ export async function importLeadsFromContent(
   const parsed = JSON.parse(cleanJsonText);
   const rawLeads = parsed.leads || [];
 
-  // Mapeia e higieniza cada lead para o formato final com IDs e timestamps
-  const timestamp = new Date().toISOString();
-  const leads: Lead[] = rawLeads.map((l: any, index: number) => ({
-    id: `lead_import_${Date.now()}_${index}`,
-    fullName: String(l.fullName || 'Cliente Importado'),
-    phone: String(l.phone || ''),
-    email: l.email ? String(l.email) : undefined,
-    desiredBrand: String(l.desiredBrand || ''),
-    desiredModel: String(l.desiredModel || ''),
-    minYear: l.minYear ? Number(l.minYear) : undefined,
-    maxYear: l.maxYear ? Number(l.maxYear) : undefined,
-    maxPrice: l.maxPrice ? Number(l.maxPrice) : undefined,
-    notes: l.notes ? String(l.notes) : undefined,
-    createdAt: timestamp
-  }));
-
-  return leads;
+  return cleanAndNormalizeLeads(rawLeads);
 }
+
