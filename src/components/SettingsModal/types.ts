@@ -15,7 +15,7 @@ export interface SettingsModalProps {
   setNelsinhoModel?: (model: string) => void;
 }
 
-export type SettingsTabType = 'sync' | 'keys' | 'quota';
+export type SettingsTabType = 'sync' | 'ai-specs' | 'keys' | 'quota';
 
 export const SERVICE_OPTIONS: { value: ApiKeyEntry['service']; label: string; icon: React.ReactNode; color: string }[] = [
   { value: 'gemini', label: 'Google Gemini', icon: null, color: 'text-purple-400' },

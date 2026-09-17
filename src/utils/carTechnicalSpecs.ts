@@ -578,7 +578,9 @@ export function resolveRealCarSpecs(
         acceleration: entry.spec.acceleration,
         topSpeed: entry.spec.topSpeed,
         rangeOrdisplacement: kmText && kmText.length > 0 ? kmText : entry.spec.displacement,
-        weight: entry.spec.weight || 1250
+        weight: entry.spec.weight || 1250,
+        specSource: 'catalog',
+        specConfidence: 99
       };
     }
   }
@@ -700,6 +702,63 @@ export function resolveRealCarSpecs(
     acceleration: resolvedAccel,
     topSpeed: resolvedTopSpeed,
     rangeOrdisplacement: kmText && kmText.length > 0 ? kmText : displacementDesc,
-    weight: resolvedWeight
+    weight: resolvedWeight,
+    specSource: 'heuristic',
+    specConfidence: 85
   };
 }
+
+/**
+ * Avalia e detalha a origem e método de aferição da potência (CV) de um veículo
+ */
+export function identifyCarSpecOrigin(car: {
+  name: string;
+  brand?: string;
+  year?: number;
+  specs?: Partial<Specs>;
+}) {
+  const currentSource = car.specs?.specSource;
+  const currentModel = car.specs?.aiModelUsed;
+  const confidence = car.specs?.specConfidence;
+
+  if (currentSource === 'ai') {
+    return {
+      source: 'ai' as const,
+      label: 'Gerado via IA (Gemini)',
+      badgeColor: 'bg-purple-500/20 text-purple-300 border-purple-500/30',
+      description: `Potência aferida e calibrada dinamicamente via LLM (${currentModel || 'Gemini 3.5 Flash-Lite'}).`,
+      confidence: confidence || 96,
+      modelName: currentModel || 'gemini-3.5-flash-lite'
+    };
+  }
+
+  // Verifica se há correspondência no catálogo oficial de engenharia
+  const normalizedName = (car.name || '').toLowerCase();
+  const normalizedBrand = (car.brand || '').toLowerCase();
+  const searchStr = `${normalizedBrand} ${normalizedName}`;
+
+  for (const entry of BRAZILIAN_ENGINE_DATABASE) {
+    if (entry.brand && normalizedBrand && !normalizedBrand.includes(entry.brand.toLowerCase())) {
+      if (!searchStr.includes(entry.brand.toLowerCase())) continue;
+    }
+    if (entry.pattern.test(searchStr)) {
+      return {
+        source: 'catalog' as const,
+        label: 'Homologação Oficial de Fábrica',
+        badgeColor: 'bg-emerald-500/20 text-emerald-300 border-emerald-500/30',
+        description: `Especificação direta da engenharia da montadora (${entry.spec.displacement}).`,
+        confidence: 99,
+        enginePattern: entry.spec.displacement
+      };
+    }
+  }
+
+  return {
+    source: 'heuristic' as const,
+    label: 'Inferência Heurística de Motor',
+    badgeColor: 'bg-amber-500/20 text-amber-300 border-amber-500/30',
+    description: 'Estimado com base no volume de motor e aspiração da linha nacional.',
+    confidence: 85
+  };
+}
+

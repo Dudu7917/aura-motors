@@ -137,11 +137,14 @@ Retorne um array JSON com um objeto para cada veículo mantendo o "index".`;
       parsedAiSpecs.forEach((aiSpec) => {
         if (typeof aiSpec.index === "number" && baseResolvedCars[aiSpec.index]) {
           const targetCar = baseResolvedCars[aiSpec.index];
+          let updatedByAi = false;
           if (aiSpec.power && aiSpec.power > 50 && aiSpec.power < 1500) {
             targetCar.specs.power = aiSpec.power;
+            updatedByAi = true;
           }
           if (aiSpec.torque && aiSpec.torque > 50) {
             targetCar.specs.torque = aiSpec.torque;
+            updatedByAi = true;
           }
           if (aiSpec.acceleration && aiSpec.acceleration > 2.0 && aiSpec.acceleration < 25.0) {
             targetCar.specs.acceleration = aiSpec.acceleration;
@@ -154,6 +157,11 @@ Retorne um array JSON com um objeto para cada veículo mantendo o "index".`;
           }
           if (aiSpec.engineDescription) {
             targetCar.specs.engineDescription = aiSpec.engineDescription;
+          }
+          if (updatedByAi) {
+            targetCar.specs.specSource = 'ai';
+            targetCar.specs.specConfidence = 96;
+            targetCar.specs.aiModelUsed = modelName || 'gemini-3.5-flash-lite';
           }
         }
       });

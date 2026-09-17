@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { X, Sliders, Key, Activity, Database } from 'lucide-react';
+import { X, Sliders, Key, Activity, Database, Sparkles } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { ApiKeyEntry, getApiKeysList, saveApiKeysList, getFallbackMode, setFallbackMode } from '../utils/apiKeyHelper';
 import { SettingsModalProps, SettingsTabType } from './SettingsModal/types';
 import SyncSettingsTab from './SettingsModal/SyncSettingsTab';
 import ApiKeysTab from './SettingsModal/ApiKeysTab';
 import ApiQuotaMonitor from './Telemetry/ApiQuotaMonitor';
+import AiSpecsAuditTab from './SettingsModal/AiSpecsAuditTab';
 import { TelemetryData } from './Telemetry/TelemetryStats';
 
 export default function SettingsModal({
@@ -184,6 +185,7 @@ export default function SettingsModal({
         <div className="flex items-center gap-2 border-b border-white/5 py-4 overflow-x-auto">
           {[
             { id: 'sync' as const, label: 'Sincronização de Estoque', icon: Database },
+            { id: 'ai-specs' as const, label: 'Auditoria de CV por IA', icon: Sparkles },
             { id: 'keys' as const, label: 'Chaves de API & Fallback', icon: Key },
             { id: 'quota' as const, label: 'Monitor de Quota de IA', icon: Activity },
           ].map((tab) => {
@@ -221,6 +223,15 @@ export default function SettingsModal({
                 onTriggerScraping={onTriggerScraping}
                 telemetry={telemetry}
                 fetchTelemetry={fetchTelemetry}
+              />
+            )}
+
+            {activeTab === 'ai-specs' && (
+              <AiSpecsAuditTab
+                carsList={carsList}
+                nelsinhoModel={nelsinhoModel}
+                onTriggerScraping={onTriggerScraping}
+                isScraping={isScraping}
               />
             )}
 

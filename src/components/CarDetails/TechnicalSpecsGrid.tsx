@@ -1,7 +1,8 @@
 import React from 'react';
 import { Car } from '../../types';
-import { Gauge } from 'lucide-react';
+import { Gauge, Sparkles, ShieldCheck } from 'lucide-react';
 import { motion } from 'motion/react';
+import { identifyCarSpecOrigin } from '../../utils/carTechnicalSpecs';
 
 interface TechnicalSpecsGridProps {
   car: Car;
@@ -76,7 +77,23 @@ export default function TechnicalSpecsGrid({ car }: TechnicalSpecsGridProps) {
         >
           <span className="font-mono text-[8px] uppercase tracking-widest text-zinc-500 block mb-1">POTÊNCIA DO MOTOR</span>
           <strong className="font-display text-lg font-bold text-white tracking-tight">{car.specs.power} cv</strong>
-          <span className="font-mono text-[8px] text-emerald-400 block mt-0.5 font-semibold">Ficha Real Homologada</span>
+          {(() => {
+            const origin = identifyCarSpecOrigin(car);
+            if (origin.source === 'ai') {
+              return (
+                <span className="font-mono text-[8px] text-purple-400 block mt-0.5 font-semibold flex items-center gap-1">
+                  <Sparkles className="h-2.5 w-2.5" />
+                  Gerado por IA ({car.specs.aiModelUsed || 'Gemini'})
+                </span>
+              );
+            }
+            return (
+              <span className="font-mono text-[8px] text-emerald-400 block mt-0.5 font-semibold flex items-center gap-1">
+                <ShieldCheck className="h-2.5 w-2.5" />
+                Ficha Real Homologada
+              </span>
+            );
+          })()}
         </motion.div>
 
         <motion.div 

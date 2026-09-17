@@ -38,7 +38,10 @@ export function useAppLogic() {
                 acceleration: real.acceleration,
                 topSpeed: real.topSpeed,
                 weight: real.weight,
-                rangeOrdisplacement: real.rangeOrdisplacement
+                rangeOrdisplacement: real.rangeOrdisplacement,
+                specSource: car.specs?.specSource || real.specSource || 'catalog',
+                specConfidence: car.specs?.specConfidence || real.specConfidence || 99,
+                aiModelUsed: car.specs?.aiModelUsed
               }
             };
           });

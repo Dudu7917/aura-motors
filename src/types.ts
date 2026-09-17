@@ -21,6 +21,9 @@ export interface Specs {
   torque: number; // Nm
   rangeOrdisplacement: string; // e.g. "620 km" or "6.5L V12"
   weight: number; // kg
+  specSource?: 'ai' | 'catalog' | 'heuristic';
+  specConfidence?: number; // 0 to 100
+  aiModelUsed?: string;
 }
 
 export interface Car {
