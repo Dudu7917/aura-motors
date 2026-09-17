@@ -76,7 +76,7 @@ export default function TechnicalSpecsGrid({ car }: TechnicalSpecsGridProps) {
         >
           <span className="font-mono text-[8px] uppercase tracking-widest text-zinc-500 block mb-1">POTÊNCIA DO MOTOR</span>
           <strong className="font-display text-lg font-bold text-white tracking-tight">{car.specs.power} cv</strong>
-          <span className="font-mono text-[8px] text-zinc-550 block mt-0.5">Refinada por IA</span>
+          <span className="font-mono text-[8px] text-emerald-400 block mt-0.5 font-semibold">Ficha Real Homologada</span>
         </motion.div>
 
         <motion.div 
@@ -95,15 +95,23 @@ export default function TechnicalSpecsGrid({ car }: TechnicalSpecsGridProps) {
         initial="hidden"
         whileInView="show"
         viewport={{ once: true, margin: "-50px" }}
-        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3"
+        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3"
       >
         <motion.div 
           variants={cardVariants}
           whileHover={{ y: -2, borderColor: "rgba(255,255,255,0.1)" }}
           className="bg-zinc-900/20 border border-white/5 rounded-xl p-3 flex items-center justify-between font-mono text-[10px] transition-all"
         >
+          <span className="text-zinc-500 uppercase tracking-widest">Torque</span>
+          <span className="text-zinc-300 font-bold">{car.specs.torque} Nm</span>
+        </motion.div>
+        <motion.div 
+          variants={cardVariants}
+          whileHover={{ y: -2, borderColor: "rgba(255,255,255,0.1)" }}
+          className="bg-zinc-900/20 border border-white/5 rounded-xl p-3 flex items-center justify-between font-mono text-[10px] transition-all"
+        >
           <span className="text-zinc-500 uppercase tracking-widest">Aceleração (0-100)</span>
-          <span className="text-zinc-300 font-bold">{car.specs.acceleration} segundos</span>
+          <span className="text-zinc-300 font-bold">{car.specs.acceleration}s</span>
         </motion.div>
         <motion.div 
           variants={cardVariants}
@@ -118,7 +126,7 @@ export default function TechnicalSpecsGrid({ car }: TechnicalSpecsGridProps) {
           whileHover={{ y: -2, borderColor: "rgba(255,255,255,0.1)" }}
           className="bg-zinc-900/20 border border-white/5 rounded-xl p-3 flex items-center justify-between font-mono text-[10px] transition-all"
         >
-          <span className="text-zinc-500 uppercase tracking-widest">Velocidade Máxima</span>
+          <span className="text-zinc-500 uppercase tracking-widest">Velocidade Máx.</span>
           <span className="text-zinc-300 font-bold">{car.specs.topSpeed} km/h</span>
         </motion.div>
         <motion.div 
@@ -126,7 +134,7 @@ export default function TechnicalSpecsGrid({ car }: TechnicalSpecsGridProps) {
           whileHover={{ y: -2, borderColor: "rgba(255,255,255,0.1)" }}
           className="bg-zinc-900/20 border border-white/5 rounded-xl p-3 flex items-center justify-between font-mono text-[10px] transition-all"
         >
-          <span className="text-zinc-500 uppercase tracking-widest">Peso do Veículo</span>
+          <span className="text-zinc-500 uppercase tracking-widest">Peso</span>
           <span className="text-zinc-300 font-bold">{car.specs.weight} kg</span>
         </motion.div>
       </motion.div>

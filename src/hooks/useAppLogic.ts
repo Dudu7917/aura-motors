@@ -5,6 +5,7 @@ import { getApiHeaders } from '../utils/apiKeyHelper';
 import { useLeadsLogic } from './useLeadsLogic';
 import { useScraperLogic } from './useScraperLogic';
 import { deduplicateCars } from '../utils/carDeduplicator';
+import { resolveRealCarSpecs } from '../utils/carTechnicalSpecs';
 import { io } from 'socket.io-client';
 
 export function useAppLogic() {
@@ -26,7 +27,21 @@ export function useAppLogic() {
       try {
         const parsed = JSON.parse(cached);
         if (Array.isArray(parsed) && parsed.length > 0) {
-          return parsed;
+          return parsed.map((car: Car) => {
+            const real = resolveRealCarSpecs(car.name, car.brand, car.year, car.specs?.rangeOrdisplacement);
+            return {
+              ...car,
+              specs: {
+                ...car.specs,
+                power: real.power,
+                torque: real.torque,
+                acceleration: real.acceleration,
+                topSpeed: real.topSpeed,
+                weight: real.weight,
+                rangeOrdisplacement: real.rangeOrdisplacement
+              }
+            };
+          });
         }
       } catch (e) {}
     }
@@ -52,7 +67,26 @@ export function useAppLogic() {
   
   const [selectedCarDetails, setSelectedCarDetails] = useState<Car | null>(() => {
     const cached = localStorage.getItem('aura_selected_car_details');
-    return cached ? JSON.parse(cached) : null;
+    if (!cached) return null;
+    try {
+      const parsed = JSON.parse(cached);
+      if (parsed) {
+        const real = resolveRealCarSpecs(parsed.name, parsed.brand, parsed.year, parsed.specs?.rangeOrdisplacement);
+        return {
+          ...parsed,
+          specs: {
+            ...parsed.specs,
+            power: real.power,
+            torque: real.torque,
+            acceleration: real.acceleration,
+            topSpeed: real.topSpeed,
+            weight: real.weight,
+            rangeOrdisplacement: real.rangeOrdisplacement
+          }
+        };
+      }
+    } catch (e) {}
+    return null;
   });
   const [aiConciergePreloadedQuery, setAiConciergePreloadedQuery] = useState('');
   
@@ -61,7 +95,7 @@ export function useAppLogic() {
   const [isSettingsOpen, setIsSettingsOpen] = useState(false);
 
   const [nelsinhoModel, setNelsinhoModel] = useState<string>(
-    () => localStorage.getItem('aura_nelsinho_model') || 'gemini-3.7-flash'
+    () => localStorage.getItem('aura_nelsinho_model') || 'gemini-3.5-flash-lite'
   );
 
   const [theme, setTheme] = useState<'light' | 'dark'>(

@@ -1,5 +1,6 @@
 import * as cheerio from "cheerio";
 import { isPlaceholderOrInvalidImage, getHighResCarFallbackImage } from "./nelsinhoDetailParser";
+import { resolveRealCarSpecs } from "../../utils/carTechnicalSpecs";
 
 export async function runCheerioScrapeFallback(NELSINHO_FALLBACK_STOCKS: any[]): Promise<any[]> {
   const targetUrl = "https://www.garagemdonelsinho.com.br/Veiculos";
@@ -142,14 +143,7 @@ export async function runCheerioScrapeFallback(NELSINHO_FALLBACK_STOCKS: any[]):
       description: `Este magnífico ${name} ano modelo ${yearNum} conta com apenas ${kmText} rodados! Superbamente revisado pela equipe técnica da Garagem do Nelsinho. Veículo com vistoria cautelar 100% aprovada, estofamento higienizado, mecânica periciada sob rigorosa aprovação, perfeito para rodar diário com imbatível custo-benefício.`,
       year: yearNum,
       isAvailableForTestDrive: true,
-      specs: {
-        acceleration: index % 2 === 0 ? 9.8 : 11.2,
-        topSpeed: index % 2 === 0 ? 195 : 178,
-        power: index % 2 === 0 ? 128 : 115,
-        torque: index % 2 === 0 ? 200 : 155,
-        rangeOrdisplacement: kmText,
-        weight: 1210
-      },
+      specs: resolveRealCarSpecs(name, brand, yearNum, kmText),
       paints: [
         { name: "Cinza Platinum", hex: "#475569", price: 0, class: "bg-slate-600" },
         { name: "Branco Diamante", hex: "#FFFFFF", price: 0, class: "bg-white border" },

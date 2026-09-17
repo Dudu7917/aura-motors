@@ -15,6 +15,7 @@ import {
   getCustomPlannerPrompt,
   getCustomScraperPrompt
 } from "./prompts";
+import { resolveRealCarSpecs } from "../../utils/carTechnicalSpecs";
 
 export async function runJinaFallback(url: string, customRoutingLogs: string[], req?: any): Promise<string> {
   const { text } = await executeJina(req || {}, url, customRoutingLogs);
@@ -428,12 +429,10 @@ ${cleanText.substring(0, 100000)}
           year: car.year || 2021,
           isAvailableForTestDrive: true,
           specs: {
-            acceleration: car.specs?.acceleration || 9.5,
-            topSpeed: car.specs?.topSpeed || 190,
-            power: car.specs?.power || 135,
-            torque: car.specs?.torque || 180,
-            rangeOrdisplacement: car.kmText || car.specs?.rangeOrdisplacement || "Disponível",
-            weight: car.specs?.weight || 1250
+            ...resolveRealCarSpecs(car.name, car.brand, car.year, car.kmText),
+            ...(car.specs?.power ? { power: car.specs.power } : {}),
+            ...(car.specs?.torque ? { torque: car.specs.torque } : {}),
+            ...(car.specs?.acceleration ? { acceleration: car.specs.acceleration } : {})
           },
           paints: paintList,
           wheels: wheelList,

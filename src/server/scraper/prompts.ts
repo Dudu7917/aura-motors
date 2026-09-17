@@ -85,13 +85,13 @@ Análise a página do site e extraia as seguintes informações precisas:
 6. "description": A descrição de vendas do anúncio ou um excelente resumo dos pontos fortes.
 7. "features": Uma lista completa com TODOS os opcionais, acessórios e itens especiais que constam na página.
 8. "gallery": Links reais de fotos do carro que aparecem no markdown (sejam de Jina, galeria do anúncio etc.), filtrando apenas imagens válidas que não de avatar, logo ou cookies.
-9. "specs": Especificações do carro:
-   - "acceleration": Aceleração de 0 a 100 em segundos (se não achar use valores aproximados de engenharia).
-   - "topSpeed": Velocidade máxima em km/h.
-   - "power": Potência em cavalos (CV).
-   - "torque": Torque em Nm ou kgfm.
-   - "rangeOrdisplacement": Tamanho do motor ou autonomia de bateria (ex: "1.3 Turbo Flex", "Autonomia de 400km").
-   - "weight": Peso em kg.
+9. "specs": Especificações técnicas REAIS homologadas de fábrica para o modelo no Brasil:
+   - "power": Potência máxima REAL em cavalos-vapor (CV) conforme a motorização oficial homologada no Brasil (ex: 1.4 TSI = 150 cv, 1.3 Turbo 270 = 185 cv, 1.0 200 TSI = 128 cv, 1.0 170 TSI = 116 cv, 2.0 Civic = 155 cv, 3.2 Diesel Ranger = 200 cv, 2.8 Diesel Hilux = 177 cv, 1.4 Prisma = 106 cv, 1.8 HR-V = 140 cv). NUNCA invente ou use números genéricos.
+   - "torque": Torque máximo oficial de fábrica em Nm (ou kgfm convertido para Nm).
+   - "acceleration": Aceleração real de 0 a 100 km/h em segundos homologada (ex: 8.1, 8.6, 9.6, 10.1).
+   - "topSpeed": Velocidade máxima homologada em km/h (ex: 192, 204, 210).
+   - "rangeOrdisplacement": Motorização/cilindrada real de fábrica (ex: "1.3 Turbo 270 Flex", "1.4 16V TSI Flex", "3.2L Duratorq Diesel").
+   - "weight": Peso em ordem de marcha em kg.
 10. "sellerNotes": Uma resenha de observações ou destaques citados pelo vendedor (ex: "Mais completo da categoria", "Procedência atestada", "Garantia estendida").
 11. "laudoCompleto": Um parecer pericial de IA em português sobre um diagnóstico prévio do anúncio (atestando se há menção a laudo cautelar aprovado, histórico de revisões, estado de pintura mencionado, raridade do lote ou nível de conservação do patamar).
 12. "sellerName": Nome do vendedor ou concessionária que está anunciando. (NÃO extraia telefones).

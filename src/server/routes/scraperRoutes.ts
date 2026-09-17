@@ -1,6 +1,7 @@
 import { Router } from "express";
 import DynamicStocks from "../../dynamic-stock.json";
 import { handleScrape, handleCustomScrape, lastTelemetry, handleInterpretSearch, handleScrapeVehicleDetails } from "../scraper";
+import { enrichCarsSpecsWithGemini } from "../scraper/specsEnricher";
 import { handleFipePrice } from "../fipe";
 import { getAllMetrics } from "../utils/apiMonitor";
 import { loadSettings, updateSchedulerSettings } from "../utils/scheduler";
@@ -26,6 +27,18 @@ router.post("/interpret-search", async (req, res) => {
 // Endpoint para extração profunda de detalhes
 router.post("/scrape-vehicle-details", async (req, res) => {
   await handleScrapeVehicleDetails(req, res);
+});
+
+// Endpoint de enriquecimento e validação de ficha técnica real via Gemini 3.5 Flash-Lite
+router.post("/enrich-specs", async (req, res) => {
+  try {
+    const { cars, modelName = "gemini-3.5-flash-lite" } = req.body;
+    const carsToEnrich = cars && Array.isArray(cars) && cars.length > 0 ? cars : NELSINHO_FALLBACK_STOCKS;
+    const enriched = await enrichCarsSpecsWithGemini(carsToEnrich, modelName, req);
+    res.json({ success: true, model: modelName, data: enriched });
+  } catch (err: any) {
+    res.status(500).json({ success: false, error: err.message || err });
+  }
 });
 
 // Endpoint para consulta de preço médio da Tabela FIPE

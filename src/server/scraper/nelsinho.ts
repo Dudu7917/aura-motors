@@ -22,10 +22,12 @@ async function mapConcurrent<T, R>(items: T[], limit: number, fn: (item: T) => P
 }
 import { parseModelYear } from "./webmotorsHelpers";
 import { deduplicateCars } from "../../utils/carDeduplicator";
+import { resolveRealCarSpecs } from "../../utils/carTechnicalSpecs";
+import { enrichCarsSpecsWithGemini } from "./specsEnricher";
 
 export async function handleScrape(req: any, res: any, NELSINHO_FALLBACK_STOCKS: any[]) {
   const forceRefresh = req?.query?.force === "true";
-  const selectedModel = (req?.query?.modelName as string) || "gemini-3.7-flash";
+  const selectedModel = (req?.query?.modelName as string) || "gemini-3.5-flash-lite";
   try {
     const result = await performNelsinhoScrape(req, selectedModel, forceRefresh, NELSINHO_FALLBACK_STOCKS);
     return res.json(result);
@@ -234,14 +236,7 @@ export async function performNelsinhoScrape(
         description: car.description || `Este esplêndido ${car.name} ano modelo ${yearNum} está disponível.`,
         year: yearNum,
         isAvailableForTestDrive: true,
-        specs: {
-          acceleration: index % 2 === 0 ? 9.5 : 11.0,
-          topSpeed: index % 2 === 0 ? 198 : 180,
-          power: index % 2 === 0 ? 130 : 116,
-          torque: index % 2 === 0 ? 205 : 160,
-          rangeOrdisplacement: kmText,
-          weight: 1220
-        },
+        specs: resolveRealCarSpecs(car.name, brand, yearNum, kmText),
         paints: [
           { name: "Cinza Platinum", hex: "#475569", price: 0, class: "bg-slate-600" },
           { name: "Branco Diamante", hex: "#FFFFFF", price: 0, class: "bg-white border" },
@@ -371,12 +366,16 @@ export async function performNelsinhoScrape(
       }
     });
 
+    // Enriquecimento de especificações técnicas reais via Gemini 3.5 Flash-Lite
+    lastTelemetry.routingLogs.push(`[${new Date().toLocaleTimeString('pt-BR')}] ⚡ Validando potência real (cv) e ficha técnica oficial via ${selectedModel}...`);
+    const finalEnrichedCars = await enrichCarsSpecsWithGemini(finalUniqueStocks, selectedModel, req);
+
     lastTelemetry.status = "success";
-    lastTelemetry.finalCarsCount = finalUniqueStocks.length;
+    lastTelemetry.finalCarsCount = finalEnrichedCars.length;
     lastTelemetry.source = scraperSource;
 
-    await saveCarsToDatabase(finalUniqueStocks);
-    return { success: true, source: scraperSource, data: finalUniqueStocks };
+    await saveCarsToDatabase(finalEnrichedCars);
+    return { success: true, source: scraperSource, data: finalEnrichedCars };
 
   } catch (error: any) {
     // Tenta carregar o cache antigo em caso de erro no processamento

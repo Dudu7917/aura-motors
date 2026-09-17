@@ -3,9 +3,11 @@ import { Sliders, ChevronDown, ChevronUp, Cpu, RefreshCw } from 'lucide-react';
 import CustomSelect from '../CustomSelect';
 
 export const AVAILABLE_MODELS = [
-  { value: 'gemini-3.5-flash', label: 'Gemini 3.5 Flash', tier: 'top' },
+  { value: 'gemini-3.5-flash-lite', label: 'Gemini 3.5 Flash Lite', tier: 'top' },
+  { value: 'gemini-3.7-flash', label: 'Gemini 3.7 Flash', tier: 'top' },
+  { value: 'gemini-3.6-flash', label: 'Gemini 3.6 Flash', tier: 'top' },
+  { value: 'gemini-3.5-flash', label: 'Gemini 3.5 Flash', tier: 'mid' },
   { value: 'gemini-3.1-flash-lite', label: 'Gemini 3.1 Flash Lite', tier: 'mid' },
-  { value: 'gemini-3-flash-preview', label: 'Gemini 3 Flash Preview', tier: 'mid' },
   { value: 'gemini-2.5-flash', label: 'Gemini 2.5 Flash', tier: 'base' },
   { value: 'gemini-2.5-flash-lite', label: 'Gemini 2.5 Flash Lite', tier: 'base' },
 ];

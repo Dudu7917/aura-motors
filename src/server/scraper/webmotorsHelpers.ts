@@ -2,6 +2,8 @@
  * Funções auxiliares para raspagem do Webmotors e tratamento de NextData
  */
 
+import { resolveRealCarSpecs } from "../../utils/carTechnicalSpecs";
+
 export function parseModelYear(val: any): number {
   if (typeof val === 'number' && !isNaN(val) && val > 1900 && val < 2100) {
     return val;
@@ -344,22 +346,6 @@ export function mapWebmotorsObjectToCar(obj: any, baseUrl: string, idx: number):
     ];
   }
   
-  const isTurbo = lowerName.includes("turbo") || lowerName.includes("1.0t") || lowerName.includes("1.4t");
-  const is10 = lowerName.includes("1.0");
-  const is20 = lowerName.includes("2.0");
-  
-  let power = 120;
-  if (is10) power = isTurbo ? 116 : 80;
-  else if (is20) power = isTurbo ? 190 : 155;
-  else if (lowerName.includes("1.4")) power = isTurbo ? 150 : 105;
-  else if (lowerName.includes("1.8")) power = 144;
-  else if (lowerName.includes("1.6")) power = 120;
-  
-  const torque = Math.round(power * 1.3);
-  const acceleration = isTurbo ? 8.9 : (is10 ? 12.8 : 10.2);
-  const topSpeed = isTurbo ? 210 : (is10 ? 165 : 190);
-  const weight = category === "suv" ? 1450 : 1205;
-  
   const description = `Este legítimo ${make} traz excelente nível de acabamento, ótimo custo-benefício e excelente liquidez de mercado com o selo de procedência Nelsinho Garagem.`;
   
   let sellerName = "Concessionária Webmotors";
@@ -382,14 +368,7 @@ export function mapWebmotorsObjectToCar(obj: any, baseUrl: string, idx: number):
     description,
     year,
     isAvailableForTestDrive: true,
-    specs: {
-      acceleration,
-      topSpeed,
-      power,
-      torque,
-      rangeOrdisplacement: kmText,
-      weight
-    },
+    specs: resolveRealCarSpecs(name, make, year, kmText),
     paints: [
       { name: "Metálico Premium", hex: "#4B5563", price: 0, class: "bg-gray-600" },
       { name: "Branco Perolizado", hex: "#F3F4F6", price: 0, class: "bg-gray-100 border" },

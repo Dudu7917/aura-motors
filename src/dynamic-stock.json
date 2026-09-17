@@ -11,12 +11,12 @@
     "year": 2018,
     "isAvailableForTestDrive": true,
     "specs": {
-      "acceleration": 9.8,
-      "topSpeed": 195,
-      "power": 128,
-      "torque": 200,
+      "acceleration": 8.9,
+      "topSpeed": 204,
+      "power": 150,
+      "torque": 250,
       "rangeOrdisplacement": "130.150 km",
-      "weight": 1210
+      "weight": 1405
     },
     "paints": [
       {
@@ -59,12 +59,12 @@
     "year": 2018,
     "isAvailableForTestDrive": true,
     "specs": {
-      "acceleration": 11.2,
-      "topSpeed": 178,
-      "power": 115,
-      "torque": 155,
+      "acceleration": 8.3,
+      "topSpeed": 215,
+      "power": 184,
+      "torque": 290,
       "rangeOrdisplacement": "52.007 km",
-      "weight": 1210
+      "weight": 1720
     },
     "paints": [
       {
@@ -107,12 +107,12 @@
     "year": 2015,
     "isAvailableForTestDrive": true,
     "specs": {
-      "acceleration": 9.8,
-      "topSpeed": 195,
-      "power": 128,
-      "torque": 200,
+      "acceleration": 10.1,
+      "topSpeed": 180,
+      "power": 106,
+      "torque": 136,
       "rangeOrdisplacement": "80.428 km",
-      "weight": 1210
+      "weight": 1048
     },
     "paints": [
       {
@@ -155,12 +155,12 @@
     "year": 2025,
     "isAvailableForTestDrive": true,
     "specs": {
-      "acceleration": 11.2,
-      "topSpeed": 178,
-      "power": 115,
-      "torque": 155,
+      "acceleration": 8.1,
+      "topSpeed": 210,
+      "power": 185,
+      "torque": 270,
       "rangeOrdisplacement": "31.409 km",
-      "weight": 1210
+      "weight": 1304
     },
     "paints": [
       {
@@ -203,12 +203,12 @@
     "year": 2025,
     "isAvailableForTestDrive": true,
     "specs": {
-      "acceleration": 9.8,
-      "topSpeed": 195,
-      "power": 128,
-      "torque": 200,
+      "acceleration": 8.1,
+      "topSpeed": 210,
+      "power": 185,
+      "torque": 270,
       "rangeOrdisplacement": "18.768 km",
-      "weight": 1210
+      "weight": 1304
     },
     "paints": [
       {
@@ -251,12 +251,12 @@
     "year": 2014,
     "isAvailableForTestDrive": true,
     "specs": {
-      "acceleration": 11.2,
-      "topSpeed": 178,
-      "power": 115,
-      "torque": 155,
+      "acceleration": 12.8,
+      "topSpeed": 164,
+      "power": 88,
+      "torque": 125,
       "rangeOrdisplacement": "100.756 km",
-      "weight": 1210
+      "weight": 1115
     },
     "paints": [
       {
@@ -299,12 +299,12 @@
     "year": 2025,
     "isAvailableForTestDrive": true,
     "specs": {
-      "acceleration": 9.8,
-      "topSpeed": 195,
-      "power": 128,
-      "torque": 200,
+      "acceleration": 8.1,
+      "topSpeed": 210,
+      "power": 185,
+      "torque": 270,
       "rangeOrdisplacement": "9.420 km",
-      "weight": 1210
+      "weight": 1304
     },
     "paints": [
       {
@@ -347,12 +347,12 @@
     "year": 2023,
     "isAvailableForTestDrive": true,
     "specs": {
-      "acceleration": 11.2,
-      "topSpeed": 178,
-      "power": 115,
-      "torque": 155,
+      "acceleration": 11.6,
+      "topSpeed": 180,
+      "power": 200,
+      "torque": 470,
       "rangeOrdisplacement": "60.588 km",
-      "weight": 1210
+      "weight": 2240
     },
     "paints": [
       {
@@ -395,12 +395,12 @@
     "year": 2018,
     "isAvailableForTestDrive": true,
     "specs": {
-      "acceleration": 9.8,
+      "acceleration": 10,
       "topSpeed": 195,
-      "power": 128,
-      "torque": 200,
+      "power": 155,
+      "torque": 195,
       "rangeOrdisplacement": "72.062 km",
-      "weight": 1210
+      "weight": 1285
     },
     "paints": [
       {
@@ -443,12 +443,12 @@
     "year": 2013,
     "isAvailableForTestDrive": true,
     "specs": {
-      "acceleration": 11.2,
-      "topSpeed": 178,
-      "power": 115,
-      "torque": 155,
+      "acceleration": 13.5,
+      "topSpeed": 172,
+      "power": 101,
+      "torque": 130,
       "rangeOrdisplacement": "130.080 km",
-      "weight": 1210
+      "weight": 1100
     },
     "paints": [
       {
@@ -491,12 +491,12 @@
     "year": 2021,
     "isAvailableForTestDrive": true,
     "specs": {
-      "acceleration": 9.8,
-      "topSpeed": 195,
-      "power": 128,
-      "torque": 200,
+      "acceleration": 11.2,
+      "topSpeed": 175,
+      "power": 140,
+      "torque": 174,
       "rangeOrdisplacement": "44.161 km",
-      "weight": 1210
+      "weight": 1276
     },
     "paints": [
       {
@@ -540,11 +540,11 @@
     "isAvailableForTestDrive": true,
     "specs": {
       "acceleration": 11.2,
-      "topSpeed": 178,
-      "power": 115,
-      "torque": 155,
+      "topSpeed": 175,
+      "power": 140,
+      "torque": 174,
       "rangeOrdisplacement": "97.029 km",
-      "weight": 1210
+      "weight": 1276
     },
     "paints": [
       {
@@ -587,12 +587,12 @@
     "year": 2020,
     "isAvailableForTestDrive": true,
     "specs": {
-      "acceleration": 9.8,
-      "topSpeed": 195,
-      "power": 128,
-      "torque": 200,
+      "acceleration": 9.7,
+      "topSpeed": 188,
+      "power": 166,
+      "torque": 205,
       "rangeOrdisplacement": "72.300 km",
-      "weight": 1210
+      "weight": 1399
     },
     "paints": [
       {
@@ -635,12 +635,12 @@
     "year": 2021,
     "isAvailableForTestDrive": true,
     "specs": {
-      "acceleration": 11.2,
-      "topSpeed": 178,
-      "power": 115,
-      "torque": 155,
+      "acceleration": 10.7,
+      "topSpeed": 180,
+      "power": 120,
+      "torque": 175,
       "rangeOrdisplacement": "47.382 km",
-      "weight": 1210
+      "weight": 1270
     },
     "paints": [
       {
@@ -683,12 +683,12 @@
     "year": 2025,
     "isAvailableForTestDrive": true,
     "specs": {
-      "acceleration": 9.8,
-      "topSpeed": 195,
-      "power": 128,
-      "torque": 200,
+      "acceleration": 10.7,
+      "topSpeed": 180,
+      "power": 120,
+      "torque": 175,
       "rangeOrdisplacement": "36.000 km",
-      "weight": 1210
+      "weight": 1270
     },
     "paints": [
       {
@@ -731,12 +731,12 @@
     "year": 2026,
     "isAvailableForTestDrive": true,
     "specs": {
-      "acceleration": 11.2,
-      "topSpeed": 178,
-      "power": 115,
-      "torque": 155,
+      "acceleration": 14.5,
+      "topSpeed": 161,
+      "power": 80,
+      "torque": 102,
       "rangeOrdisplacement": "85.000 km",
-      "weight": 1210
+      "weight": 989
     },
     "paints": [
       {
@@ -779,12 +779,12 @@
     "year": 2020,
     "isAvailableForTestDrive": true,
     "specs": {
-      "acceleration": 9.8,
-      "topSpeed": 195,
-      "power": 128,
-      "torque": 200,
+      "acceleration": 10.7,
+      "topSpeed": 180,
+      "power": 120,
+      "torque": 175,
       "rangeOrdisplacement": "40.535 km",
-      "weight": 1210
+      "weight": 1270
     },
     "paints": [
       {
@@ -827,12 +827,12 @@
     "year": 2024,
     "isAvailableForTestDrive": true,
     "specs": {
-      "acceleration": 11.2,
-      "topSpeed": 178,
-      "power": 115,
-      "torque": 155,
+      "acceleration": 8.1,
+      "topSpeed": 210,
+      "power": 185,
+      "torque": 270,
       "rangeOrdisplacement": "46.754 km",
-      "weight": 1210
+      "weight": 1304
     },
     "paints": [
       {
@@ -875,12 +875,12 @@
     "year": 2024,
     "isAvailableForTestDrive": true,
     "specs": {
-      "acceleration": 9.8,
-      "topSpeed": 195,
-      "power": 128,
-      "torque": 200,
+      "acceleration": 8.1,
+      "topSpeed": 210,
+      "power": 185,
+      "torque": 270,
       "rangeOrdisplacement": "22.079 km",
-      "weight": 1210
+      "weight": 1304
     },
     "paints": [
       {
@@ -923,12 +923,12 @@
     "year": 2023,
     "isAvailableForTestDrive": true,
     "specs": {
-      "acceleration": 11.2,
-      "topSpeed": 178,
-      "power": 115,
-      "torque": 155,
+      "acceleration": 8.1,
+      "topSpeed": 210,
+      "power": 185,
+      "torque": 270,
       "rangeOrdisplacement": "47.203 km",
-      "weight": 1210
+      "weight": 1304
     },
     "paints": [
       {
@@ -971,12 +971,12 @@
     "year": 2018,
     "isAvailableForTestDrive": true,
     "specs": {
-      "acceleration": 9.8,
-      "topSpeed": 195,
-      "power": 128,
-      "torque": 200,
+      "acceleration": 11.1,
+      "topSpeed": 182,
+      "power": 139,
+      "torque": 193,
       "rangeOrdisplacement": "53.763 km",
-      "weight": 1210
+      "weight": 1448
     },
     "paints": [
       {
@@ -1019,12 +1019,12 @@
     "year": 2018,
     "isAvailableForTestDrive": true,
     "specs": {
-      "acceleration": 11.2,
-      "topSpeed": 178,
-      "power": 115,
-      "torque": 155,
+      "acceleration": 11.1,
+      "topSpeed": 182,
+      "power": 139,
+      "torque": 193,
       "rangeOrdisplacement": "55.273 km",
-      "weight": 1210
+      "weight": 1448
     },
     "paints": [
       {
@@ -1067,12 +1067,12 @@
     "year": 2018,
     "isAvailableForTestDrive": true,
     "specs": {
-      "acceleration": 9.8,
-      "topSpeed": 195,
-      "power": 128,
-      "torque": 200,
+      "acceleration": 11.1,
+      "topSpeed": 182,
+      "power": 139,
+      "torque": 193,
       "rangeOrdisplacement": "76.980 km",
-      "weight": 1210
+      "weight": 1448
     },
     "paints": [
       {
@@ -1115,12 +1115,12 @@
     "year": 2019,
     "isAvailableForTestDrive": true,
     "specs": {
-      "acceleration": 11.2,
-      "topSpeed": 178,
-      "power": 115,
+      "acceleration": 12,
+      "topSpeed": 175,
+      "power": 114,
       "torque": 155,
       "rangeOrdisplacement": "73.137 km",
-      "weight": 1210
+      "weight": 1136
     },
     "paints": [
       {
@@ -1163,12 +1163,12 @@
     "year": 2016,
     "isAvailableForTestDrive": true,
     "specs": {
-      "acceleration": 9.8,
-      "topSpeed": 195,
-      "power": 128,
-      "torque": 200,
+      "acceleration": 11,
+      "topSpeed": 186,
+      "power": 144,
+      "torque": 186,
       "rangeOrdisplacement": "88.466 km",
-      "weight": 1210
+      "weight": 1290
     },
     "paints": [
       {
@@ -1211,12 +1211,12 @@
     "year": 2016,
     "isAvailableForTestDrive": true,
     "specs": {
-      "acceleration": 11.2,
-      "topSpeed": 178,
-      "power": 115,
-      "torque": 155,
+      "acceleration": 11.8,
+      "topSpeed": 180,
+      "power": 177,
+      "torque": 450,
       "rangeOrdisplacement": "142.801 km",
-      "weight": 1210
+      "weight": 2090
     },
     "paints": [
       {
@@ -1259,12 +1259,12 @@
     "year": 2019,
     "isAvailableForTestDrive": true,
     "specs": {
-      "acceleration": 9.8,
-      "topSpeed": 195,
-      "power": 128,
-      "torque": 200,
+      "acceleration": 11.8,
+      "topSpeed": 175,
+      "power": 110,
+      "torque": 149,
       "rangeOrdisplacement": "72.909 km",
-      "weight": 1210
+      "weight": 1130
     },
     "paints": [
       {
@@ -1307,12 +1307,12 @@
     "year": 2021,
     "isAvailableForTestDrive": true,
     "specs": {
-      "acceleration": 11.2,
-      "topSpeed": 178,
-      "power": 115,
-      "torque": 155,
+      "acceleration": 9.6,
+      "topSpeed": 192,
+      "power": 128,
+      "torque": 200,
       "rangeOrdisplacement": "33.221 km",
-      "weight": 1210
+      "weight": 1238
     },
     "paints": [
       {
@@ -1355,12 +1355,12 @@
     "year": 2021,
     "isAvailableForTestDrive": true,
     "specs": {
-      "acceleration": 9.8,
-      "topSpeed": 195,
+      "acceleration": 9.6,
+      "topSpeed": 192,
       "power": 128,
       "torque": 200,
       "rangeOrdisplacement": "23.733 km",
-      "weight": 1210
+      "weight": 1238
     },
     "paints": [
       {
@@ -1403,12 +1403,12 @@
     "year": 2024,
     "isAvailableForTestDrive": true,
     "specs": {
-      "acceleration": 11.2,
-      "topSpeed": 178,
-      "power": 115,
-      "torque": 155,
+      "acceleration": 10.1,
+      "topSpeed": 190,
+      "power": 116,
+      "torque": 165,
       "rangeOrdisplacement": "60.680 km",
-      "weight": 1210
+      "weight": 1145
     },
     "paints": [
       {
@@ -1451,12 +1451,12 @@
     "year": 2019,
     "isAvailableForTestDrive": true,
     "specs": {
-      "acceleration": 9.8,
-      "topSpeed": 195,
+      "acceleration": 9.6,
+      "topSpeed": 192,
       "power": 128,
       "torque": 200,
       "rangeOrdisplacement": "79.898 km",
-      "weight": 1210
+      "weight": 1238
     },
     "paints": [
       {
@@ -1499,12 +1499,12 @@
     "year": 2025,
     "isAvailableForTestDrive": true,
     "specs": {
-      "acceleration": 11.2,
-      "topSpeed": 178,
-      "power": 115,
-      "torque": 155,
+      "acceleration": 8.6,
+      "topSpeed": 202,
+      "power": 150,
+      "torque": 250,
       "rangeOrdisplacement": "22.000 km",
-      "weight": 1210
+      "weight": 1300
     },
     "paints": [
       {
@@ -1547,12 +1547,12 @@
     "year": 2025,
     "isAvailableForTestDrive": true,
     "specs": {
-      "acceleration": 9.8,
-      "topSpeed": 195,
-      "power": 128,
-      "torque": 200,
+      "acceleration": 8.6,
+      "topSpeed": 202,
+      "power": 150,
+      "torque": 250,
       "rangeOrdisplacement": "30.000 km",
-      "weight": 1210
+      "weight": 1300
     },
     "paints": [
       {
@@ -1595,12 +1595,12 @@
     "year": 2025,
     "isAvailableForTestDrive": true,
     "specs": {
-      "acceleration": 11.2,
-      "topSpeed": 178,
-      "power": 115,
-      "torque": 155,
+      "acceleration": 9.6,
+      "topSpeed": 192,
+      "power": 128,
+      "torque": 200,
       "rangeOrdisplacement": "31.761 km",
-      "weight": 1210
+      "weight": 1238
     },
     "paints": [
       {
@@ -1643,12 +1643,12 @@
     "year": 2025,
     "isAvailableForTestDrive": true,
     "specs": {
-      "acceleration": 9.8,
-      "topSpeed": 195,
+      "acceleration": 9.6,
+      "topSpeed": 192,
       "power": 128,
       "torque": 200,
       "rangeOrdisplacement": "79.457 km",
-      "weight": 1210
+      "weight": 1238
     },
     "paints": [
       {
@@ -1691,12 +1691,12 @@
     "year": 2025,
     "isAvailableForTestDrive": true,
     "specs": {
-      "acceleration": 11.2,
-      "topSpeed": 178,
-      "power": 115,
-      "torque": 155,
+      "acceleration": 8.6,
+      "topSpeed": 202,
+      "power": 150,
+      "torque": 250,
       "rangeOrdisplacement": "64.394 km",
-      "weight": 1210
+      "weight": 1300
     },
     "paints": [
       {
