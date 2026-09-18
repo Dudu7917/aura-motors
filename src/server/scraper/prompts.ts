@@ -20,6 +20,7 @@ Importante:
 6. Mapeie o campo "brand" com a marca correta (Chevrolet, Fiat, Jeep, Toyota, etc.) capitalizada.
 7. Extraia o link da imagem ("image"). A url da imagem estará dentro da sintaxe Markdown: \`[![Image](imagem_url)](detail_url)\`. Retire a \`imagem_url\`.
 8. Extraia o nome da loja ou vendedor responsável no campo "sellerName" (ex: "Garagem do Nelsinho", "Loja Matriz"). NÃO extraia telefones.
+9. Extraia a cor externa do veículo ("color") mencionada no anúncio ou evidente (ex: "Branco", "Preto", "Prata", "Cinza", "Vermelho", "Azul", "Grafite", "Marrom", "Verde", "Dourado", "Laranja", "Vinho").
 
 Trecho de Estoque:
 ${chunk}
@@ -66,6 +67,7 @@ Regras de Mapeamento Básico:
 7. "category": Categorize estritamente em um de: 'suv', 'electric', 'hypercars', ou 'classics'.
 8. "detailUrl": Se houver link direto do carro no anúncio, use-o; caso contrário passe vazio.
 9. "sellerName": Nome do vendedor ou loja anunciante se presente (ex: "Garagem do Nelsinho", "Vendedor João"). NÃO extraia telefones.
+10. "color": Cor externa anunciada do veículo (ex: "Branco", "Preto", "Prata", "Cinza", "Vermelho", "Azul", "Grafite", "Marrom", "Verde", "Bege", "Dourado", "Laranja", "Vinho"). Se o anúncio especificar a nuance da pintura de fábrica (ex: "Branco Polar", "Preto Ninja", "Prata Bari", "Cinza Silverstone"), extraia a nuance completa.
 
 Markdown recebido:
 ${markdownResult.substring(0, 450000)}
@@ -95,6 +97,7 @@ Análise a página do site e extraia as seguintes informações precisas:
 10. "sellerNotes": Uma resenha de observações ou destaques citados pelo vendedor (ex: "Mais completo da categoria", "Procedência atestada", "Garantia estendida").
 11. "laudoCompleto": Um parecer pericial de IA em português sobre um diagnóstico prévio do anúncio (atestando se há menção a laudo cautelar aprovado, histórico de revisões, estado de pintura mencionado, raridade do lote ou nível de conservação do patamar).
 12. "sellerName": Nome do vendedor ou concessionária que está anunciando. (NÃO extraia telefones).
+13. "color": Cor externa oficial ou anunciada do veículo (ex: "Branco Polar", "Preto Carbono", "Prata Bari", "Cinza Grafite", "Vermelho Colorado", "Azul Gravidade"). Extraia a cor e acabamento da pintura.
 
 Estude este markdown para extrair o máximo de opcionais, fotos e descrições detalhadas escondidas no anúncio:
 ${markdownResult.substring(0, 400000)}

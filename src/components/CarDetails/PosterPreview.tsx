@@ -69,7 +69,12 @@ export default function PosterPreview({ car, config, qrCodeUrl }: PosterPreviewP
               <strong className="font-display text-[11px] font-bold text-zinc-900">{car.specs.power} cv</strong>
             </div>
           )}
-          {config.showStatus && (
+          {car.color ? (
+            <div className="pl-1 pt-0.5">
+              <span className="font-mono text-[6px] text-zinc-400 block uppercase">COR</span>
+              <strong className="font-display text-[11px] font-bold text-zinc-900 uppercase truncate block">{car.color}</strong>
+            </div>
+          ) : config.showStatus && (
             <div className="pl-1 pt-0.5">
               <span className="font-mono text-[6px] text-zinc-400 block uppercase">STATUS</span>
               <strong className="font-display text-[11px] font-bold text-emerald-600 uppercase">Periciado</strong>

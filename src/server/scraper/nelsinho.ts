@@ -4,26 +4,13 @@ import { runCheerioScrapeFallback } from "./cheerioFallback";
 import { getNelsinhoScraperPrompt } from "./prompts";
 import { recordApiCall } from "../utils/apiMonitor";
 import { executeGemini, executeJina } from "../utils/keysManager";
-import { saveCarsToDatabase, getCarsFromDatabase } from "../utils/firebase";
-import { parseVehicleDetails, isPlaceholderOrInvalidImage, getHighResCarFallbackImage } from "./nelsinhoDetailParser";
-
-async function mapConcurrent<T, R>(items: T[], limit: number, fn: (item: T) => Promise<R>): Promise<R[]> {
-  const results: R[] = new Array(items.length);
-  let index = 0;
-  async function worker() {
-    while (index < items.length) {
-      const i = index++;
-      results[i] = await fn(items[i]);
-    }
-  }
-  const workers = Array.from({ length: Math.min(limit, items.length) }, () => worker());
-  await Promise.all(workers);
-  return results;
-}
+import { getCarsFromDatabase } from "../utils/firebase";
+import { isPlaceholderOrInvalidImage, getHighResCarFallbackImage, mapConcurrent } from "./imageHelpers";
 import { parseModelYear } from "./webmotorsHelpers";
-import { deduplicateCars } from "../../utils/carDeduplicator";
 import { resolveRealCarSpecs } from "../../utils/carTechnicalSpecs";
-import { enrichCarsSpecsWithGemini } from "./specsEnricher";
+import { normalizeCarColor, extractColorFromAdText, generateCarPaints } from "../../utils/carColorHelper";
+import { extractColorFromImageUrl } from "./imageColorExtractor";
+import { finalizeNelsinhoStock } from "./nelsinhoPostProcessor";
 
 export async function handleScrape(req: any, res: any, NELSINHO_FALLBACK_STOCKS: any[]) {
   const forceRefresh = req?.query?.force === "true";
@@ -51,7 +38,7 @@ export async function performNelsinhoScrape(
       if (cache) {
         const cacheTime = new Date(cache.timestamp).getTime();
         const now = Date.now();
-        const cacheMaxAge = 25 * 60 * 1000; // 25 minutos (alinhado com a Auto-Captura de 30m)
+        const cacheMaxAge = 25 * 60 * 1000;
         if (now - cacheTime < cacheMaxAge) {
           if (!lastTelemetry.routingLogs || lastTelemetry.routingLogs.length === 0) {
             lastTelemetry.timestamp = cache.timestamp;
@@ -60,7 +47,7 @@ export async function performNelsinhoScrape(
             lastTelemetry.source = cache.source;
             lastTelemetry.routingLogs = [
               `[${new Date().toLocaleTimeString('pt-BR')}] Sincronização carregada a partir do cache (${cache.source}).`,
-              `[${new Date().toLocaleTimeString('pt-BR')}] Dados atualizados em: ${new Date(cache.timestamp).toLocaleTimeString('pt-BR')} (próxima auto-captura em breve).`
+              `[${new Date().toLocaleTimeString('pt-BR')}] Dados atualizados em: ${new Date(cache.timestamp).toLocaleTimeString('pt-BR')}.`
             ];
           }
           return { success: true, source: cache.source, data: cache.cars, cachedAt: cache.timestamp };
@@ -85,7 +72,7 @@ export async function performNelsinhoScrape(
   lastTelemetry.chunks = [];
   lastTelemetry.routingLogs = [
     `[${new Date().toLocaleTimeString('pt-BR')}] Sincronização iniciada.`,
-    `[${new Date().toLocaleTimeString('pt-BR')}] Modelo selecionado pelo sistema: ${selectedModel}.`,
+    `[${new Date().toLocaleTimeString('pt-BR')}] Modelo selecionado: ${selectedModel}.`,
     `[${new Date().toLocaleTimeString('pt-BR')}] Requisitando estoque ao vivo através da Jina Reader API...`
   ];
 
@@ -156,6 +143,7 @@ export async function performNelsinhoScrape(
                               description: { type: Type.STRING },
                               detailUrl: { type: Type.STRING },
                               kmText: { type: Type.STRING },
+                              color: { type: Type.STRING },
                               sellerName: { type: Type.STRING }
                             },
                             required: ["name", "brand", "price", "year", "category", "image"]
@@ -208,7 +196,7 @@ export async function performNelsinhoScrape(
       throw new Error("Nenhum dado válido extraído de nenhum dos chunks pelo Gemini.");
     }
 
-    scrapedCarsRaw = aiExtractedCars.map((car: any, index: number) => {
+    scrapedCarsRaw = await mapConcurrent(aiExtractedCars, 6, async (car: any, index: number) => {
       let imageUrl = car.image || "";
       if (imageUrl && !imageUrl.startsWith("http")) {
         imageUrl = `https://www.garagemdonelsinho.com.br${imageUrl.startsWith('/') ? '' : '/'}${imageUrl}`;
@@ -225,6 +213,25 @@ export async function performNelsinhoScrape(
         detailUrl = `https://www.garagemdonelsinho.com.br${detailUrl.startsWith('/') ? '' : '/'}${detailUrl}`;
       }
 
+      let detectedColor = extractColorFromAdText(car.name, car.description);
+      let detectedHex: string | undefined = undefined;
+
+      if (!detectedColor && imageUrl && !isPlaceholderOrInvalidImage(imageUrl)) {
+        const imgColor = await extractColorFromImageUrl(imageUrl);
+        if (imgColor) {
+          detectedColor = imgColor.color;
+          detectedHex = imgColor.hex;
+        }
+      }
+
+      if (!detectedColor && car.color && car.color.toLowerCase() !== 'branco') {
+        detectedColor = car.color;
+      }
+
+      const normColor = normalizeCarColor(detectedColor || "Cinza Chumbo");
+      const color = normColor.name;
+      const paints = generateCarPaints(color, detectedHex || normColor.hex);
+
       return {
         id: `scraped-${index}-${brand.toLowerCase()}-${yearNum}`,
         name: car.name,
@@ -235,13 +242,10 @@ export async function performNelsinhoScrape(
         image: imageUrl,
         description: car.description || `Este esplêndido ${car.name} ano modelo ${yearNum} está disponível.`,
         year: yearNum,
+        color,
         isAvailableForTestDrive: true,
         specs: resolveRealCarSpecs(car.name, brand, yearNum, kmText),
-        paints: [
-          { name: "Cinza Platinum", hex: "#475569", price: 0, class: "bg-slate-600" },
-          { name: "Branco Diamante", hex: "#FFFFFF", price: 0, class: "bg-white border" },
-          { name: "Preto Carbono", hex: "#0F172A", price: 1500, class: "bg-slate-900" }
-        ],
+        paints,
         wheels: [
           { name: "Rodas de Liga Leve Originais de Fábrica", size: '16"', image: "Original16", price: 0 }
         ],
@@ -258,19 +262,16 @@ export async function performNelsinhoScrape(
       scrapedCarsRaw = await runCheerioScrapeFallback(NELSINHO_FALLBACK_STOCKS);
       scraperSource = "fallback_cheerio";
     } catch (fallbackError: any) {
-      // Em caso de falha de conexão ou geral, tenta carregar o cache antigo do banco para não limpar os dados
       try {
         const dbCache = await getCarsFromDatabase();
         if (dbCache && dbCache.cars && dbCache.cars.length > 0) {
           lastTelemetry.status = "success";
-          lastTelemetry.error = `Falha no scraping (Gemini e Cheerio), utilizando cache anterior. Erro: ${errorMsg}`;
+          lastTelemetry.error = `Falha no scraping, utilizando cache anterior: ${errorMsg}`;
           lastTelemetry.source = dbCache.source;
           lastTelemetry.finalCarsCount = dbCache.cars.length;
           return { success: true, source: dbCache.source, data: dbCache.cars, cachedAt: dbCache.timestamp };
         }
-      } catch (cacheErr: any) {
-        console.error("[AIScraper Fallback Cache] Falha ao recuperar cache do BD:", cacheErr.message || cacheErr);
-      }
+      } catch (cacheErr: any) {}
 
       const finalBackup = [...NELSINHO_FALLBACK_STOCKS];
       finalBackup.forEach((vehicle) => {
@@ -291,117 +292,5 @@ export async function performNelsinhoScrape(
     }
   }
 
-  try {
-    // Buscar cache atual do banco de dados para reutilização de fotos e opcionais
-    let cachedCars: any[] = [];
-    try {
-      const dbCache = await getCarsFromDatabase();
-      if (dbCache && dbCache.cars) {
-        cachedCars = dbCache.cars;
-      }
-    } catch (e: any) {
-      console.warn("[AIScraper Cache Otimização] Falha ao carregar cache para otimização de imagens:", e.message || e);
-    }
-
-    // Processamento de detalhes de cada carro com concorrência controlada (limite de 5 simultâneos)
-    const scrapedCars = await mapConcurrent(scrapedCarsRaw, 5, async (car) => {
-      const match = cachedCars.find(c => 
-        (car.detailUrl && c.detailUrl === car.detailUrl) || 
-        (c.name.toLowerCase() === car.name.toLowerCase() && c.year === car.year)
-      );
-
-      if (match && match.gallery && match.gallery.length > 1 && !isPlaceholderOrInvalidImage(match.image)) {
-        lastTelemetry.routingLogs.push(`[${new Date().toLocaleTimeString('pt-BR')}]   -> Reutilizando fotos/detalhes em cache para: ${car.name}`);
-        return {
-          ...car,
-          id: match.id,
-          image: match.image || car.image,
-          gallery: match.gallery,
-          features: match.features || car.features,
-          description: match.description || car.description,
-          specs: {
-            ...car.specs,
-            ...match.specs
-          }
-        };
-      }
-
-      lastTelemetry.routingLogs.push(`[${new Date().toLocaleTimeString('pt-BR')}]   -> Buscando detalhes na web para: ${car.name}`);
-      return await parseVehicleDetails(car);
-    });
-
-    const cleanVehicleCompare = (name: string): string => {
-      return name.toLowerCase()
-        .replace(/honda|fiat|chevrolet|gm|ford|toyota|jeep|volkswagen|vw|hyundai|renault|nissan|mitsubishi|peugeot|citroen|chery|byd|gwm|ram|bmw|mercedes|audi/gi, '')
-        .replace(/[^a-z0-9]/gi, '').trim();
-    };
-
-    const cleanScraped = deduplicateCars(scrapedCars);
-    const combinedStocks = [...cleanScraped];
-    if (combinedStocks.length === 0) {
-      for (const fallbackVehicle of NELSINHO_FALLBACK_STOCKS) {
-        const cleanFallback = cleanVehicleCompare(fallbackVehicle.name);
-        const alreadyHas = combinedStocks.some(v => {
-          if (v.name.toLowerCase() === fallbackVehicle.name.toLowerCase()) return true;
-          if (v.year === fallbackVehicle.year) {
-            const cleanV = cleanVehicleCompare(v.name);
-            if (cleanV === cleanFallback || cleanV.includes(cleanFallback) || cleanFallback.includes(cleanV)) return true;
-          }
-          return false;
-        });
-        if (!alreadyHas) combinedStocks.push(fallbackVehicle);
-      }
-    }
-
-    const finalUniqueStocks = deduplicateCars(combinedStocks);
-
-    finalUniqueStocks.forEach((vehicle) => {
-      if (!vehicle.detailUrl) {
-        vehicle.detailUrl = `https://www.garagemdonelsinho.com.br/Veiculos?busca=${encodeURIComponent(vehicle.name)}`;
-      }
-      if (isPlaceholderOrInvalidImage(vehicle.image) || !vehicle.gallery || vehicle.gallery.length === 0 || isPlaceholderOrInvalidImage(vehicle.gallery[0])) {
-        const fallback = getHighResCarFallbackImage(vehicle.brand, vehicle.category, vehicle.name);
-        vehicle.image = fallback.image;
-        vehicle.gallery = fallback.gallery;
-      }
-    });
-
-    // Enriquecimento de especificações técnicas reais via Gemini 3.5 Flash-Lite
-    lastTelemetry.routingLogs.push(`[${new Date().toLocaleTimeString('pt-BR')}] ⚡ Validando potência real (cv) e ficha técnica oficial via ${selectedModel}...`);
-    const finalEnrichedCars = await enrichCarsSpecsWithGemini(finalUniqueStocks, selectedModel, req);
-
-    lastTelemetry.status = "success";
-    lastTelemetry.finalCarsCount = finalEnrichedCars.length;
-    lastTelemetry.source = scraperSource;
-
-    await saveCarsToDatabase(finalEnrichedCars);
-    return { success: true, source: scraperSource, data: finalEnrichedCars };
-
-  } catch (error: any) {
-    // Tenta carregar o cache antigo em caso de erro no processamento
-    try {
-      const dbCache = await getCarsFromDatabase();
-      if (dbCache && dbCache.cars && dbCache.cars.length > 0) {
-        lastTelemetry.status = "success";
-        lastTelemetry.error = `Falha no processamento final do scraping, utilizando cache anterior. Erro: ${error.message || error}`;
-        lastTelemetry.source = dbCache.source;
-        lastTelemetry.finalCarsCount = dbCache.cars.length;
-        return { success: true, source: dbCache.source, data: dbCache.cars, cachedAt: dbCache.timestamp };
-      }
-    } catch (cacheErr: any) {
-      console.error("[AIScraper Final Fallback Cache] Falha ao recuperar cache do BD:", cacheErr.message || cacheErr);
-    }
-
-    const backupStocks = [...NELSINHO_FALLBACK_STOCKS];
-    backupStocks.forEach((vehicle) => {
-      if (!vehicle.detailUrl) {
-        vehicle.detailUrl = `https://www.garagemdonelsinho.com.br/Veiculos?busca=${encodeURIComponent(vehicle.name)}`;
-      }
-    });
-    lastTelemetry.status = "warning";
-    lastTelemetry.error = `Falha geral final: ${error.message || error}`;
-    lastTelemetry.source = "fallback_static";
-    lastTelemetry.finalCarsCount = backupStocks.length;
-    return { success: true, source: "fallback_static", data: backupStocks };
-  }
+  return await finalizeNelsinhoStock(scrapedCarsRaw, selectedModel, scraperSource, NELSINHO_FALLBACK_STOCKS, req);
 }

@@ -94,7 +94,7 @@ export default function CarCardSlot({
         </div>
 
         <div className="min-w-0 flex-1">
-          <div className="flex items-center gap-1.5">
+          <div className="flex items-center gap-1.5 flex-wrap">
             <span className="font-mono text-[9px] font-bold text-amber-500 uppercase tracking-widest">
               {car.brand}
             </span>
@@ -102,6 +102,18 @@ export default function CarCardSlot({
             <span className="font-mono text-[9px] text-zinc-400">
               {car.year}
             </span>
+            {car.color && (
+              <>
+                <span className="text-zinc-600">•</span>
+                <span className="font-mono text-[8.5px] text-zinc-300 flex items-center gap-1">
+                  <span 
+                    className="h-2 w-2 rounded-full border border-white/20 shadow-inner flex-shrink-0"
+                    style={{ backgroundColor: car.paints?.[0]?.hex || '#A1A1AA' }}
+                  />
+                  {car.color}
+                </span>
+              </>
+            )}
           </div>
 
           <h4 className="font-display text-xs sm:text-sm font-bold text-white leading-snug break-words" title={car.name}>

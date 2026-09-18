@@ -5,9 +5,37 @@ import { enrichCarsSpecsWithGemini } from "../scraper/specsEnricher";
 import { handleFipePrice } from "../fipe";
 import { getAllMetrics } from "../utils/apiMonitor";
 import { loadSettings, updateSchedulerSettings } from "../utils/scheduler";
+import { extractColorFromImageUrl } from "../scraper/imageColorExtractor";
+import { normalizeCarColor, generateCarPaints } from "../../utils/carColorHelper";
 
 const router = Router();
 const NELSINHO_FALLBACK_STOCKS = DynamicStocks;
+
+// Endpoint para detecção precisa com IA Gemini 3.1 Flash Lite da cor da lataria a partir de imagem
+router.post(["/detect-color", "/cars/detect-color"], async (req, res) => {
+  try {
+    const { imageUrl, carName } = req.body;
+    if (!imageUrl) {
+      return res.status(400).json({ success: false, error: "imageUrl é obrigatória" });
+    }
+
+    const detected = await extractColorFromImageUrl(imageUrl, carName, req);
+    const norm = normalizeCarColor(detected?.color || "Cinza Chumbo");
+    const paints = generateCarPaints(norm.name, detected?.hex || norm.hex);
+
+    res.json({
+      success: true,
+      color: norm.name,
+      hex: detected?.hex || norm.hex,
+      paints,
+      carName,
+      confidence: detected?.confidence || 0.95,
+      method: detected?.method || "gemini-3.1-flash-lite"
+    });
+  } catch (err: any) {
+    res.status(500).json({ success: false, error: err.message || err });
+  }
+});
 
 // Endpoint de web scraping para Garagem do Nelsinho
 router.get("/scrape", async (req, res) => {

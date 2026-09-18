@@ -1,7 +1,7 @@
 import React from 'react';
 import { Car } from '../../types';
 import { motion } from 'motion/react';
-import { ArrowLeft, Check, Link2, MessageSquare, User } from 'lucide-react';
+import { ArrowLeft, Check, Link2, MessageSquare, User, Sparkles, RefreshCw } from 'lucide-react';
 
 interface CarDetailsHeaderProps {
   onBack: () => void;
@@ -10,6 +10,8 @@ interface CarDetailsHeaderProps {
   handleCopyWhatsAppText: () => void;
   copiedWhatsApp: boolean;
   car: Car;
+  onDetectColor?: () => void;
+  isDetectingColor?: boolean;
 }
 
 const itemVariants = {
@@ -32,6 +34,8 @@ export default function CarDetailsHeader({
   handleCopyWhatsAppText,
   copiedWhatsApp,
   car,
+  onDetectColor,
+  isDetectingColor = false,
 }: CarDetailsHeaderProps) {
   return (
     <motion.div 
@@ -69,6 +73,30 @@ export default function CarDetailsHeader({
           <User className="h-3 w-3 text-amber-500" />
           <span className="text-white font-bold">{car.sellerName || "Garagem do Nelsinho"}</span>
         </div>
+        {car.color && (
+          <button
+            type="button"
+            onClick={onDetectColor}
+            title={onDetectColor ? "Cor identificada com IA (Gemini 3.1 Flash Lite). Clique para reanalisar a lataria." : "Cor identificada com IA (Gemini 3.1 Flash Lite)"}
+            className={`flex items-center space-x-1.5 bg-zinc-900 border border-white/10 px-2.5 py-1 rounded-md text-zinc-300 transition-all ${
+              onDetectColor ? 'hover:border-amber-500/50 hover:bg-zinc-800 cursor-pointer group' : ''
+            }`}
+          >
+            <span 
+              className="h-2 w-2 rounded-full border border-white/30 shadow-inner flex-shrink-0"
+              style={{ backgroundColor: car.paints?.[0]?.hex || '#A1A1AA' }}
+            />
+            <span className="text-white font-bold">{car.color}</span>
+            <span className="text-[8px] bg-amber-500/10 text-amber-400/90 font-mono px-1 py-0.2 rounded border border-amber-500/20">
+              Gemini 3.1
+            </span>
+            {isDetectingColor ? (
+              <RefreshCw className="h-2.5 w-2.5 text-amber-500 animate-spin ml-0.5" />
+            ) : onDetectColor ? (
+              <Sparkles className="h-2.5 w-2.5 text-zinc-500 group-hover:text-amber-400 ml-0.5 transition-colors" />
+            ) : null}
+          </button>
+        )}
         <span className="text-zinc-600">/</span>
         <span className="text-amber-500 font-semibold">{car.brand}</span>
         <span className="text-zinc-600">/</span>

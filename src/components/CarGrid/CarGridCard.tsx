@@ -138,10 +138,21 @@ export default function CarGridCard({
 
         <div className="absolute inset-0 bg-gradient-to-t from-zinc-950/70 to-transparent pointer-events-none" />
         
-        {/* Category badgework */}
-        <span className="absolute top-4 left-4 rounded-full bg-zinc-950/80 border border-white/10 px-3.5 py-1 font-mono text-[9px] uppercase tracking-widest text-zinc-300 font-semibold shadow-lg z-10">
-          {car.brand}
-        </span>
+        {/* Category & Color badgework */}
+        <div className="absolute top-4 left-4 flex items-center gap-1.5 z-10">
+          <span className="rounded-full bg-zinc-950/80 border border-white/10 px-3.5 py-1 font-mono text-[9px] uppercase tracking-widest text-zinc-300 font-semibold shadow-lg">
+            {car.brand}
+          </span>
+          {car.color && (
+            <span className="rounded-full bg-zinc-950/85 border border-white/15 px-2.5 py-1 font-mono text-[8.5px] uppercase tracking-wider text-zinc-200 font-semibold shadow-lg flex items-center gap-1.5 backdrop-blur-sm">
+              <span 
+                className="h-2 w-2 rounded-full border border-white/30 shadow-inner flex-shrink-0"
+                style={{ backgroundColor: car.paints?.[0]?.hex || '#A1A1AA' }}
+              />
+              <span>{car.color}</span>
+            </span>
+          )}
+        </div>
 
         {/* Pulsating live-stock indicator badges */}
         {isLastUnit && (

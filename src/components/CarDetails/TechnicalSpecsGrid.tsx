@@ -112,47 +112,90 @@ export default function TechnicalSpecsGrid({ car }: TechnicalSpecsGridProps) {
         initial="hidden"
         whileInView="show"
         viewport={{ once: true, margin: "-50px" }}
-        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3"
+        className="grid grid-cols-2 sm:grid-cols-3 gap-2.5"
       >
         <motion.div 
           variants={cardVariants}
-          whileHover={{ y: -2, borderColor: "rgba(255,255,255,0.1)" }}
-          className="bg-zinc-900/20 border border-white/5 rounded-xl p-3 flex items-center justify-between font-mono text-[10px] transition-all"
+          whileHover={{ y: -2, borderColor: "rgba(255,255,255,0.12)" }}
+          className="bg-zinc-900/30 border border-white/5 rounded-xl px-3.5 py-2.5 flex items-center justify-between font-mono text-[10px] transition-all duration-200 cursor-default"
         >
-          <span className="text-zinc-500 uppercase tracking-widest">Torque</span>
-          <span className="text-zinc-300 font-bold">{car.specs.torque} Nm</span>
+          <span className="text-zinc-500 uppercase tracking-wider font-semibold whitespace-nowrap flex-shrink-0">
+            Cor Externa
+          </span>
+          <span className="text-zinc-200 font-bold flex items-center gap-1.5 min-w-0 pl-2">
+            <span 
+              className="h-2.5 w-2.5 rounded-full border border-white/30 shadow-inner flex-shrink-0"
+              style={{ backgroundColor: car.paints?.[0]?.hex || '#A1A1AA' }}
+            />
+            <span className="truncate" title={car.color || 'Original'}>
+              {car.color || 'Original'}
+            </span>
+          </span>
         </motion.div>
+
         <motion.div 
           variants={cardVariants}
-          whileHover={{ y: -2, borderColor: "rgba(255,255,255,0.1)" }}
-          className="bg-zinc-900/20 border border-white/5 rounded-xl p-3 flex items-center justify-between font-mono text-[10px] transition-all"
+          whileHover={{ y: -2, borderColor: "rgba(255,255,255,0.12)" }}
+          className="bg-zinc-900/30 border border-white/5 rounded-xl px-3.5 py-2.5 flex items-center justify-between font-mono text-[10px] transition-all duration-200 cursor-default"
         >
-          <span className="text-zinc-500 uppercase tracking-widest">Aceleração (0-100)</span>
-          <span className="text-zinc-300 font-bold">{car.specs.acceleration}s</span>
+          <span className="text-zinc-500 uppercase tracking-wider font-semibold whitespace-nowrap flex-shrink-0">
+            Câmbio
+          </span>
+          <span className="text-amber-400 font-bold pl-2 whitespace-nowrap">
+            {(car.name.toLowerCase().includes('manual') || car.description?.toLowerCase().includes('manual')) ? 'Manual' : 'Automático'}
+          </span>
         </motion.div>
+
         <motion.div 
           variants={cardVariants}
-          whileHover={{ y: -2, borderColor: "rgba(255,255,255,0.1)" }}
-          className="bg-zinc-900/20 border border-white/5 rounded-xl p-3 flex items-center justify-between font-mono text-[10px] transition-all"
+          whileHover={{ y: -2, borderColor: "rgba(255,255,255,0.12)" }}
+          className="bg-zinc-900/30 border border-white/5 rounded-xl px-3.5 py-2.5 flex items-center justify-between font-mono text-[10px] transition-all duration-200 cursor-default"
         >
-          <span className="text-zinc-500 uppercase tracking-widest font-bold">Câmbio</span>
-          <span className="text-amber-500 font-bold">{(car.name.toLowerCase().includes('manual') || car.description?.toLowerCase().includes('manual')) ? 'Manual' : 'Automático'}</span>
+          <span className="text-zinc-500 uppercase tracking-wider font-semibold whitespace-nowrap flex-shrink-0">
+            Torque
+          </span>
+          <span className="text-zinc-200 font-bold pl-2 whitespace-nowrap">
+            {car.specs.torque} Nm
+          </span>
         </motion.div>
+
         <motion.div 
           variants={cardVariants}
-          whileHover={{ y: -2, borderColor: "rgba(255,255,255,0.1)" }}
-          className="bg-zinc-900/20 border border-white/5 rounded-xl p-3 flex items-center justify-between font-mono text-[10px] transition-all"
+          whileHover={{ y: -2, borderColor: "rgba(255,255,255,0.12)" }}
+          className="bg-zinc-900/30 border border-white/5 rounded-xl px-3.5 py-2.5 flex items-center justify-between font-mono text-[10px] transition-all duration-200 cursor-default"
         >
-          <span className="text-zinc-500 uppercase tracking-widest">Velocidade Máx.</span>
-          <span className="text-zinc-300 font-bold">{car.specs.topSpeed} km/h</span>
+          <span className="text-zinc-500 uppercase tracking-wider font-semibold whitespace-nowrap flex-shrink-0">
+            0-100 km/h
+          </span>
+          <span className="text-zinc-200 font-bold pl-2 whitespace-nowrap">
+            {car.specs.acceleration}s
+          </span>
         </motion.div>
+
         <motion.div 
           variants={cardVariants}
-          whileHover={{ y: -2, borderColor: "rgba(255,255,255,0.1)" }}
-          className="bg-zinc-900/20 border border-white/5 rounded-xl p-3 flex items-center justify-between font-mono text-[10px] transition-all"
+          whileHover={{ y: -2, borderColor: "rgba(255,255,255,0.12)" }}
+          className="bg-zinc-900/30 border border-white/5 rounded-xl px-3.5 py-2.5 flex items-center justify-between font-mono text-[10px] transition-all duration-200 cursor-default"
         >
-          <span className="text-zinc-500 uppercase tracking-widest">Peso</span>
-          <span className="text-zinc-300 font-bold">{car.specs.weight} kg</span>
+          <span className="text-zinc-500 uppercase tracking-wider font-semibold whitespace-nowrap flex-shrink-0">
+            Velocidade Máx.
+          </span>
+          <span className="text-zinc-200 font-bold pl-2 whitespace-nowrap">
+            {car.specs.topSpeed} km/h
+          </span>
+        </motion.div>
+
+        <motion.div 
+          variants={cardVariants}
+          whileHover={{ y: -2, borderColor: "rgba(255,255,255,0.12)" }}
+          className="bg-zinc-900/30 border border-white/5 rounded-xl px-3.5 py-2.5 flex items-center justify-between font-mono text-[10px] transition-all duration-200 cursor-default"
+        >
+          <span className="text-zinc-500 uppercase tracking-wider font-semibold whitespace-nowrap flex-shrink-0">
+            Peso
+          </span>
+          <span className="text-zinc-200 font-bold pl-2 whitespace-nowrap">
+            {car.specs.weight} kg
+          </span>
         </motion.div>
       </motion.div>
     </div>

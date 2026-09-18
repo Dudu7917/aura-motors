@@ -130,14 +130,19 @@ export async function executeGemini<T>(
         }
       });
       
-      const timeoutPromise = new Promise<never>((_, reject) =>
-        setTimeout(() => reject(new Error("Timeout de 60s na resposta da API Gemini")), 60000)
-      );
+      let timeoutHandle: NodeJS.Timeout;
+      const timeoutPromise = new Promise<never>((_, reject) => {
+        timeoutHandle = setTimeout(() => reject(new Error("Timeout de 60s na resposta da API Gemini")), 60000);
+      });
 
-      return await Promise.race([
-        callback(ai, k.name, k.key),
-        timeoutPromise
-      ]);
+      try {
+        return await Promise.race([
+          callback(ai, k.name, k.key),
+          timeoutPromise
+        ]);
+      } finally {
+        clearTimeout(timeoutHandle!);
+      }
     } catch (err: any) {
       lastError = err;
       console.warn(`[KeysManager] Falha no Gemini com chave "${k.name}":`, err.message || err);

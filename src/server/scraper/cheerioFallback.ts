@@ -1,6 +1,7 @@
 import * as cheerio from "cheerio";
 import { isPlaceholderOrInvalidImage, getHighResCarFallbackImage } from "./nelsinhoDetailParser";
 import { resolveRealCarSpecs } from "../../utils/carTechnicalSpecs";
+import { normalizeCarColor, extractColorFromAdText, generateCarPaints } from "../../utils/carColorHelper";
 
 export async function runCheerioScrapeFallback(NELSINHO_FALLBACK_STOCKS: any[]): Promise<any[]> {
   const targetUrl = "https://www.garagemdonelsinho.com.br/Veiculos";
@@ -131,6 +132,11 @@ export async function runCheerioScrapeFallback(NELSINHO_FALLBACK_STOCKS: any[]):
     const finalImage = imageUrl || fallbackImg.image;
     const finalGallery = [finalImage, ...fallbackImg.gallery.slice(1)];
 
+    const detectedColor = extractColorFromAdText(name, fullTextForRegex);
+    const norm = normalizeCarColor(detectedColor || "Cinza Chumbo");
+    const color = norm.name;
+    const paints = generateCarPaints(color, norm.hex);
+
     scrapedCarsRaw.push({
       id: `scraped-${index}-${brand.toLowerCase()}-${yearNum}`,
       name,
@@ -142,13 +148,10 @@ export async function runCheerioScrapeFallback(NELSINHO_FALLBACK_STOCKS: any[]):
       gallery: finalGallery,
       description: `Este magnífico ${name} ano modelo ${yearNum} conta com apenas ${kmText} rodados! Superbamente revisado pela equipe técnica da Garagem do Nelsinho. Veículo com vistoria cautelar 100% aprovada, estofamento higienizado, mecânica periciada sob rigorosa aprovação, perfeito para rodar diário com imbatível custo-benefício.`,
       year: yearNum,
+      color,
       isAvailableForTestDrive: true,
       specs: resolveRealCarSpecs(name, brand, yearNum, kmText),
-      paints: [
-        { name: "Cinza Platinum", hex: "#475569", price: 0, class: "bg-slate-600" },
-        { name: "Branco Diamante", hex: "#FFFFFF", price: 0, class: "bg-white border" },
-        { name: "Preto Carbono", hex: "#0F172A", price: 1500, class: "bg-slate-900" }
-      ],
+      paints,
       wheels: [
         { name: "Rodas de Alumínio Diamantadas Originais", size: '16"', image: "Original16", price: 0 }
       ],

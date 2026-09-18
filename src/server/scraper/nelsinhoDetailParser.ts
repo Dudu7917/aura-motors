@@ -1,84 +1,11 @@
 import * as cheerio from "cheerio";
+import { isPlaceholderOrInvalidImage, getHighResCarFallbackImage } from "./imageHelpers";
+import { normalizeCarColor, extractColorFromAdText, generateCarPaints } from "../../utils/carColorHelper";
+import { extractColorFromImageUrl } from "./imageColorExtractor";
 
-export function isPlaceholderOrInvalidImage(url: string | null | undefined): boolean {
-  if (!url || typeof url !== 'string') return true;
-  const clean = url.trim().toLowerCase();
-  if (clean.length < 10) return true;
-  if (!clean.startsWith('http') && !clean.startsWith('data:image')) return true;
-
-  const invalidKeywords = [
-    'nao-disponivel', 'nao_disponivel', 'naodisponivel',
-    'indisponivel', 'sem-foto', 'sem_foto', 'semfoto',
-    'no-image', 'noimage', 'no-photo', 'nopic',
-    'placeholder', 'pixel', 'transparent', 'logo',
-    'avatar', 'icon', 'banner', 'favicon', 'social',
-    'whatsapp', 'loader', 'loading', 'gif', 'default-car',
-    'sem_imagem', 'imagem-nao', 'imagem_nao', 'badge',
-    'theme', 'assets/img/nao'
-  ];
-
-  return invalidKeywords.some(kw => clean.includes(kw));
-}
-
-export function getHighResCarFallbackImage(brand?: string, category?: string, name?: string): { image: string; gallery: string[] } {
-  const b = (brand || '').toLowerCase();
-  const c = (category || '').toLowerCase();
-  const n = (name || '').toLowerCase();
-
-  let primary = "https://images.unsplash.com/photo-1549399542-7e3f8b79c341?q=80&w=1200&auto=format&fit=crop";
-  let extra1 = "https://images.unsplash.com/photo-1552519507-da3b142c6e3d?q=80&w=1200&auto=format&fit=crop";
-  let extra2 = "https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=1200&auto=format&fit=crop";
-
-  if (n.includes('ka') || b.includes('ford')) {
-    primary = "https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?q=80&w=1200&auto=format&fit=crop";
-    extra1 = "https://images.unsplash.com/photo-1551522435-a13afa10f103?q=80&w=1200&auto=format&fit=crop";
-    extra2 = "https://images.unsplash.com/photo-1549399542-7e3f8b79c341?q=80&w=1200&auto=format&fit=crop";
-  } else if (b.includes('audi') || n.includes('q3')) {
-    primary = "https://images.unsplash.com/photo-1603584173870-7f23fdae1b7a?q=80&w=1200&auto=format&fit=crop";
-    extra1 = "https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?q=80&w=1200&auto=format&fit=crop";
-    extra2 = "https://images.unsplash.com/photo-1614162692292-7ac56d7f7f1e?q=80&w=1200&auto=format&fit=crop";
-  } else if (b.includes('bmw') || n.includes('x3') || n.includes('320i')) {
-    primary = "https://images.unsplash.com/photo-1555215695-3004980ad54e?q=80&w=1200&auto=format&fit=crop";
-    extra1 = "https://images.unsplash.com/photo-1580273916550-e323be2ae537?q=80&w=1200&auto=format&fit=crop";
-    extra2 = "https://images.unsplash.com/photo-1523983388277-336a66bf9bcd?q=80&w=1200&auto=format&fit=crop";
-  } else if (b.includes('jeep') || n.includes('compass') || n.includes('renegade') || c === 'suv') {
-    primary = "https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?q=80&w=1200&auto=format&fit=crop";
-    extra1 = "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?q=80&w=1200&auto=format&fit=crop";
-    extra2 = "https://images.unsplash.com/photo-1563720223185-11003d516935?q=80&w=1200&auto=format&fit=crop";
-  } else if (b.includes('honda') || n.includes('civic') || n.includes('fit') || n.includes('hr-v')) {
-    primary = "https://images.unsplash.com/photo-1617814076367-b759c7d7e738?q=80&w=1200&auto=format&fit=crop";
-    extra1 = "https://images.unsplash.com/photo-1590362891991-f776e747a588?q=80&w=1200&auto=format&fit=crop";
-    extra2 = "https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?q=80&w=1200&auto=format&fit=crop";
-  } else if (b.includes('toyota') || n.includes('corolla') || n.includes('hilux') || n.includes('yaris')) {
-    primary = "https://images.unsplash.com/photo-1621007947382-bb3c3994e3fb?q=80&w=1200&auto=format&fit=crop";
-    extra1 = "https://images.unsplash.com/photo-1590362891991-f776e747a588?q=80&w=1200&auto=format&fit=crop";
-    extra2 = "https://images.unsplash.com/photo-1550355291-bbee04a92027?q=80&w=1200&auto=format&fit=crop";
-  } else if (b.includes('chevrolet') || b.includes('gm') || n.includes('onix') || n.includes('cruze') || n.includes('tracker') || n.includes('prisma')) {
-    primary = "https://images.unsplash.com/photo-1552519507-da3b142c6e3d?q=80&w=1200&auto=format&fit=crop";
-    extra1 = "https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=1200&auto=format&fit=crop";
-    extra2 = "https://images.unsplash.com/photo-1542282088-72c9c27ed0cd?q=80&w=1200&auto=format&fit=crop";
-  } else if (b.includes('fiat') || n.includes('argo') || n.includes('toro') || n.includes('mobi') || n.includes('cronos')) {
-    primary = "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?q=80&w=1200&auto=format&fit=crop";
-    extra1 = "https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?q=80&w=1200&auto=format&fit=crop";
-    extra2 = "https://images.unsplash.com/photo-1552519507-da3b142c6e3d?q=80&w=1200&auto=format&fit=crop";
-  } else if (b.includes('volkswagen') || b.includes('vw') || n.includes('polo') || n.includes('gol') || n.includes('t-cross') || n.includes('virtus')) {
-    primary = "https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=1200&auto=format&fit=crop";
-    extra1 = "https://images.unsplash.com/photo-1542282088-72c9c27ed0cd?q=80&w=1200&auto=format&fit=crop";
-    extra2 = "https://images.unsplash.com/photo-1550355291-bbee04a92027?q=80&w=1200&auto=format&fit=crop";
-  } else if (c === 'electric' || b.includes('byd') || b.includes('gwm')) {
-    primary = "https://images.unsplash.com/photo-1563720223185-11003d516935?q=80&w=1200&auto=format&fit=crop";
-    extra1 = "https://images.unsplash.com/photo-1555215695-3004980ad54e?q=80&w=1200&auto=format&fit=crop";
-    extra2 = "https://images.unsplash.com/photo-1617814076367-b759c7d7e738?q=80&w=1200&auto=format&fit=crop";
-  }
-
-  return {
-    image: primary,
-    gallery: [primary, extra1, extra2]
-  };
-}
+export { isPlaceholderOrInvalidImage, getHighResCarFallbackImage };
 
 export async function parseVehicleDetails(car: any): Promise<any> {
-  // Limpa imagem inicial caso seja placeholder
   if (isPlaceholderOrInvalidImage(car.image)) {
     car.image = "";
   }
@@ -90,6 +17,21 @@ export async function parseVehicleDetails(car: any): Promise<any> {
       ? car.gallery
       : fallback.gallery;
     car.features = car.features || ["Laudo de vistoria cautelar aprovado", "Garantia de km real", "Procedência total garantida"];
+    let detectedColor = extractColorFromAdText(car.name, car.description);
+    let detectedHex: string | undefined = undefined;
+    if (!detectedColor && car.image && !isPlaceholderOrInvalidImage(car.image)) {
+      const imgColor = await extractColorFromImageUrl(car.image);
+      if (imgColor) {
+        detectedColor = imgColor.color;
+        detectedHex = imgColor.hex;
+      }
+    }
+    if (!detectedColor && car.color && car.color.toLowerCase() !== 'branco') {
+      detectedColor = car.color;
+    }
+    const norm = normalizeCarColor(detectedColor || "Cinza Chumbo");
+    car.color = norm.name;
+    car.paints = generateCarPaints(car.color, detectedHex || norm.hex);
     return car;
   }
 
@@ -109,6 +51,21 @@ export async function parseVehicleDetails(car: any): Promise<any> {
         ? car.gallery
         : fallback.gallery;
       car.features = car.features || ["Laudo de vistoria cautelar aprovado", "Garantia de km real", "Excelente procedência"];
+      let detectedColor = extractColorFromAdText(car.name, car.description);
+      let detectedHex: string | undefined = undefined;
+      if (!detectedColor && car.image && !isPlaceholderOrInvalidImage(car.image)) {
+        const imgColor = await extractColorFromImageUrl(car.image);
+        if (imgColor) {
+          detectedColor = imgColor.color;
+          detectedHex = imgColor.hex;
+        }
+      }
+      if (!detectedColor && car.color && car.color.toLowerCase() !== 'branco') {
+        detectedColor = car.color;
+      }
+      const norm = normalizeCarColor(detectedColor || "Cinza Chumbo");
+      car.color = norm.name;
+      car.paints = generateCarPaints(car.color, detectedHex || norm.hex);
       return car;
     }
 
@@ -123,7 +80,7 @@ export async function parseVehicleDetails(car: any): Promise<any> {
 
     const foundPhotos: string[] = [];
 
-    // 1. Extração via Meta Tags OG e Twitter
+    // 1. Meta Tags OG e Twitter
     const ogImage = $detail('meta[property="og:image"]').attr("content") || $detail('meta[name="twitter:image"]').attr("content");
     if (ogImage && !isPlaceholderOrInvalidImage(ogImage)) {
       let fullUrl = ogImage;
@@ -133,7 +90,7 @@ export async function parseVehicleDetails(car: any): Promise<any> {
       if (!isPlaceholderOrInvalidImage(fullUrl)) foundPhotos.push(fullUrl);
     }
 
-    // 2. Extração via Tags Img e Anchors com suporte a data-src, srcset, etc.
+    // 2. Tags Img e Anchors
     $detail("img, a, div[data-src], div[style*='background-image']").each((_, element) => {
       let srcCandidates: string[] = [];
       const el = $detail(element);
@@ -178,7 +135,7 @@ export async function parseVehicleDetails(car: any): Promise<any> {
       }
     });
 
-    // 3. Extração via Regex no HTML completo (procurando URLs da CDN do Auto Certo ou da loja)
+    // 3. Regex no HTML completo
     const regexPhotos = detailHtml.match(/https?:\/\/[^\s"'<>)]+?\.(?:jpg|jpeg|png|webp|jfif)/gi) || [];
     for (const photoUrl of regexPhotos) {
       const cleanUrl = photoUrl.replace(/[),;.\\]+$/, '').replace(/["'\]\}]+$/, '');
@@ -188,7 +145,6 @@ export async function parseVehicleDetails(car: any): Promise<any> {
     }
 
     const validGallery = foundPhotos.filter(url => !isPlaceholderOrInvalidImage(url));
-    
     if (validGallery.length > 0) {
       car.gallery = validGallery;
       car.image = validGallery[0];
@@ -198,13 +154,13 @@ export async function parseVehicleDetails(car: any): Promise<any> {
       car.gallery = fallback.gallery;
     }
 
+    // Opcionais
     const features: string[] = [];
     const optionSelectors = [
       ".opcionais li", ".item-opcional", ".acessorios li", 
       ".lista-opcionais span", ".car-features li", ".especificacoes li",
       "p.item_opcional", "div.opcionais-item"
     ];
-
     optionSelectors.forEach(selector => {
       $detail(selector).each((_, featEl) => {
         const text = $detail(featEl).text().trim().replace(/[\n\t]/g, ' ');
@@ -218,21 +174,19 @@ export async function parseVehicleDetails(car: any): Promise<any> {
       $detail("li, span").each((_, featEl) => {
         const text = $detail(featEl).text().trim();
         const commonTerms = ["ar condicionado", "direção hid", "trava", "alarme", "abs", "airbag", "banco", "teto solar", "multimídia", "câmera", "sensor", "rodas", "retrovisor", "vidro"];
-        const matches = commonTerms.some(term => text.toLowerCase().includes(term));
-        if (matches && text.length > 3 && text.length < 40 && !features.includes(text)) {
+        if (commonTerms.some(term => text.toLowerCase().includes(term)) && text.length > 3 && text.length < 40 && !features.includes(text)) {
           features.push(text);
         }
       });
     }
-
     car.features = features.length > 0 ? features : ["Laudo de vistoria cautelar aprovado", "Quilometragem certificada", "Banco com ajuste de altura", "Procedência 100% em dia"];
 
+    // Descrição
     const descriptionSelectors = [
       ".descricao-veiculo", ".descricao", ".descr", "#descricao",
       ".detailed-description", ".texto-descritivo", ".vehicle-description",
       "div.obs", "div.observacoes"
     ];
-
     let realDescription = "";
     for (const selector of descriptionSelectors) {
       const txt = $detail(selector).text().trim().replace(/\s+/g, ' ');
@@ -241,18 +195,14 @@ export async function parseVehicleDetails(car: any): Promise<any> {
         break;
       }
     }
+    if (realDescription) car.description = realDescription;
 
-    if (realDescription) {
-      car.description = realDescription;
-    }
-
-    // Extração do Nome do Vendedor / Anunciante
+    // Vendedor
     const sellerSelectors = [
       ".vendedor", ".nome-vendedor", ".vendedor-nome", ".contato-nome",
       ".loja", ".anunciante", "#vendedor", "span.vendedor", "p.vendedor",
       ".seller-name", ".contact-name", ".dados-loja"
     ];
-
     let extractedSellerName = car.sellerName || "";
     for (const sel of sellerSelectors) {
       const txt = $detail(sel).first().text().trim().replace(/\s+/g, ' ');
@@ -263,6 +213,44 @@ export async function parseVehicleDetails(car: any): Promise<any> {
     }
     car.sellerName = extractedSellerName || "Garagem do Nelsinho";
 
+    // Extração da Cor do Veículo
+    let extractedColor = "";
+    let detectedHex: string | undefined = undefined;
+
+    const colorMatch = detailHtml.match(/(?:Cor|Pintura)[\s:]*<[^>]+>[\s:]*([A-Za-zÀ-ÿ\s]{3,20})/i) ||
+                       detailHtml.match(/(?:Cor|Pintura)[\s:]+([A-Za-zÀ-ÿ]{3,15})/i);
+    if (colorMatch && colorMatch[1]) {
+      const cand = colorMatch[1].trim();
+      if (!cand.toLowerCase().includes("veiculo")) {
+        extractedColor = cand;
+      }
+    }
+    if (!extractedColor) {
+      extractedColor = extractColorFromAdText(car.name, `${car.description || ''} ${realDescription}`) || "";
+    }
+    // Se não encontrou no texto ou se a cor prévia era o falso "Branco" padrão, analisa a imagem da lataria
+    if ((!extractedColor || (car.color && car.color.toLowerCase() === "branco")) && car.image && !isPlaceholderOrInvalidImage(car.image)) {
+      const imgColor = await extractColorFromImageUrl(car.image);
+      if (imgColor) {
+        extractedColor = imgColor.color;
+        detectedHex = imgColor.hex;
+      }
+    }
+    if (!extractedColor && car.gallery && car.gallery[0] && !isPlaceholderOrInvalidImage(car.gallery[0])) {
+      const imgColor = await extractColorFromImageUrl(car.gallery[0]);
+      if (imgColor) {
+        extractedColor = imgColor.color;
+        detectedHex = imgColor.hex;
+      }
+    }
+    if (!extractedColor && car.color && car.color.toLowerCase() !== "branco") {
+      extractedColor = car.color;
+    }
+
+    const norm = normalizeCarColor(extractedColor || "Cinza Chumbo");
+    car.color = norm.name;
+    car.paints = generateCarPaints(car.color, detectedHex || norm.hex);
+
     return car;
   } catch (e) {
     const fallback = getHighResCarFallbackImage(car.brand, car.category, car.name);
@@ -271,7 +259,21 @@ export async function parseVehicleDetails(car: any): Promise<any> {
       ? car.gallery
       : fallback.gallery;
     car.features = car.features || ["Laudo de vistoria cautelar aprovado", "Quilometragem real estipulada", "Revisão sob garantia"];
+    let detectedColor = extractColorFromAdText(car.name, car.description);
+    let detectedHex: string | undefined = undefined;
+    if (!detectedColor && car.image && !isPlaceholderOrInvalidImage(car.image)) {
+      const imgColor = await extractColorFromImageUrl(car.image);
+      if (imgColor) {
+        detectedColor = imgColor.color;
+        detectedHex = imgColor.hex;
+      }
+    }
+    if (!detectedColor && car.color && car.color.toLowerCase() !== 'branco') {
+      detectedColor = car.color;
+    }
+    const norm = normalizeCarColor(detectedColor || "Cinza Chumbo");
+    car.color = norm.name;
+    car.paints = generateCarPaints(car.color, detectedHex || norm.hex);
     return car;
   }
 }
-

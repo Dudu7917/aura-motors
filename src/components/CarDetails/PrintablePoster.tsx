@@ -69,7 +69,12 @@ export default function PrintablePoster({ car, config, qrCodeUrl }: PrintablePos
               <strong className="font-display text-xl font-bold text-zinc-900">{car.specs.power} cv</strong>
             </div>
           )}
-          {config.showStatus && (
+          {car.color ? (
+            <div className="pl-2 pt-2">
+              <span className="font-mono text-[9px] text-zinc-400 block uppercase mb-0.5">COR DO VEÍCULO</span>
+              <strong className="font-display text-xl font-bold text-zinc-900 uppercase">{car.color}</strong>
+            </div>
+          ) : config.showStatus && (
             <div className="pl-2 pt-2">
               <span className="font-mono text-[9px] text-zinc-400 block uppercase mb-0.5">STATUS CAUTELAR</span>
               <strong className="font-display text-xl font-bold text-emerald-600 uppercase">Sem retoques / Periciado</strong>

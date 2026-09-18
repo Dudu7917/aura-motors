@@ -169,6 +169,8 @@ export default function DeepScrapePanel({ car, onEnrich, onScrapeStateChange }: 
         year: fresh.year || car.year,
         image: primaryImage,
         description: fresh.description || car.description,
+        color: fresh.color || car.color,
+        paints: fresh.paints && fresh.paints.length > 0 ? fresh.paints : car.paints,
         specs: mergedSpecs,
         gallery: mergedGallery,
         features: mergedFeatures,

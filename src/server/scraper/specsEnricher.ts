@@ -68,7 +68,7 @@ ${JSON.stringify(carsToQuery, null, 2)}
 
 Retorne um array JSON com um objeto para cada veículo mantendo o "index".`;
 
-    const modelsToTry = [modelName, "gemini-3.5-flash-lite", "gemini-3.1-flash-lite", "gemini-3.7-flash"];
+    const modelsToTry = [modelName, "gemini-3.5-flash-lite", "gemini-3.1-flash-lite", "gemini-2.5-flash"];
     const uniqueModels = Array.from(new Set(modelsToTry));
 
     let geminiResultText = "";

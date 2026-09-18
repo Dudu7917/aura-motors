@@ -14,6 +14,8 @@ import CarDetailsHeader from './CarDetails/CarDetailsHeader';
 import MatchingLeadsSection from './CarDetails/MatchingLeadsSection';
 import DeliveryGuidelines from './CarDetails/DeliveryGuidelines';
 import { generateWhatsAppText } from '../utils/whatsappFormatter';
+import { getApiHeaders } from '../utils/apiKeyHelper';
+import { LUXURY_CARS } from '../data';
 
 export interface CarDetailsPageProps {
   car: Car;
@@ -30,7 +32,16 @@ export default function CarDetailsPage({
   onBack,
   onOpenAiConcierge
 }: CarDetailsPageProps) {
-  const [currentCar, setCurrentCar] = useState<Car>(car);
+  const [currentCar, setCurrentCar] = useState<Car>(() => {
+    const stockMatch = LUXURY_CARS.find(c => c.id === car.id || c.name === car.name);
+    const resolvedColor = (car.color && car.color.toLowerCase() !== 'branco' ? car.color : stockMatch?.color) || stockMatch?.color || car.color || 'Cinza Chumbo';
+    const resolvedPaints = (car.paints && car.paints.length > 0 && car.color && car.color.toLowerCase() !== 'branco') ? car.paints : (stockMatch?.paints || car.paints);
+    return {
+      ...car,
+      color: resolvedColor,
+      paints: resolvedPaints
+    };
+  });
   const [galleryImages, setGalleryImages] = useState<string[]>([]);
   const [activeImage, setActiveImage] = useState<string>(car.image);
   const [copied, setCopied] = useState(false);
@@ -39,6 +50,60 @@ export default function CarDetailsPage({
   const [downloadProgress, setDownloadProgress] = useState(0);
   const [isPrintPosterOpen, setIsPrintPosterOpen] = useState(false);
   const [isScraping, setIsScraping] = useState(false);
+  const [isDetectingColor, setIsDetectingColor] = useState(false);
+
+  useEffect(() => {
+    const stockMatch = LUXURY_CARS.find(c => c.id === car.id || c.name === car.name);
+    const resolvedColor = stockMatch?.color || car.color || 'Cinza Chumbo';
+    const resolvedPaints = (stockMatch?.paints && stockMatch.paints.length > 0) ? stockMatch.paints : car.paints;
+    setCurrentCar({
+      ...car,
+      color: resolvedColor,
+      paints: resolvedPaints
+    });
+  }, [car]);
+
+  const handleDetectColor = async () => {
+    const targetImage = activeImage || currentCar.image;
+    if (!targetImage) return;
+    setIsDetectingColor(true);
+    try {
+      const res = await fetch('/api/cars/detect-color', {
+        method: 'POST',
+        headers: getApiHeaders({ 'Content-Type': 'application/json' }),
+        body: JSON.stringify({ imageUrl: targetImage, carName: currentCar.name })
+      });
+      const data = await res.json();
+      if (data.success && data.color) {
+        const updatedCar = {
+          ...currentCar,
+          color: data.color,
+          paints: data.paints || currentCar.paints
+        };
+        setCurrentCar(updatedCar);
+
+        // Atualiza cache de detalhes e lista no localStorage para manter a cor identificada por IA
+        try {
+          localStorage.setItem('aura_selected_car_details', JSON.stringify(updatedCar));
+          const cachedListRaw = localStorage.getItem('aura_cars_list');
+          if (cachedListRaw) {
+            const list = JSON.parse(cachedListRaw);
+            const idx = list.findIndex((c: Car) => c.id === updatedCar.id || c.name === updatedCar.name);
+            if (idx !== -1) {
+              list[idx] = { ...list[idx], color: updatedCar.color, paints: updatedCar.paints };
+              localStorage.setItem('aura_cars_list', JSON.stringify(list));
+            }
+          }
+        } catch {
+          // localStorage seguro
+        }
+      }
+    } catch (e) {
+      console.error(e);
+    } finally {
+      setIsDetectingColor(false);
+    }
+  };
 
   // Estados da Extração em Profundidade (Deep Scraping)
   const [isEnriched, setIsEnriched] = useState<boolean>(false);
@@ -189,6 +254,8 @@ export default function CarDetailsPage({
           handleCopyWhatsAppText={handleCopyWhatsAppText}
           copiedWhatsApp={copiedWhatsApp}
           car={currentCar}
+          onDetectColor={handleDetectColor}
+          isDetectingColor={isDetectingColor}
         />
 
         <div className="grid gap-8 lg:grid-cols-12">

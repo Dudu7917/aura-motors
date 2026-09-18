@@ -99,13 +99,21 @@ export default function DetailedSpecTable({ car1, car2 }: DetailedSpecTableProps
 
       {/* Colors */}
       <div className="grid grid-cols-3 py-2.5 border-b border-white/5 items-center">
-        <span className="text-zinc-400 uppercase font-medium">Cor de Acabamento</span>
-        <span className="text-zinc-300 text-center uppercase">
-          {car1.paints?.map(p => p.name).join(', ') || 'Original'}
-        </span>
-        <span className="text-zinc-300 text-center uppercase">
-          {car2.paints?.map(p => p.name).join(', ') || 'Original'}
-        </span>
+        <span className="text-zinc-400 uppercase font-medium">Cor do Veículo</span>
+        <div className="text-zinc-300 text-center uppercase flex items-center justify-center gap-1.5">
+          <span 
+            className="h-2.5 w-2.5 rounded-full border border-white/30 shadow-inner flex-shrink-0"
+            style={{ backgroundColor: car1.paints?.[0]?.hex || '#A1A1AA' }}
+          />
+          <span>{car1.color || car1.paints?.[0]?.name || 'Original'}</span>
+        </div>
+        <div className="text-zinc-300 text-center uppercase flex items-center justify-center gap-1.5">
+          <span 
+            className="h-2.5 w-2.5 rounded-full border border-white/30 shadow-inner flex-shrink-0"
+            style={{ backgroundColor: car2.paints?.[0]?.hex || '#A1A1AA' }}
+          />
+          <span>{car2.color || car2.paints?.[0]?.name || 'Original'}</span>
+        </div>
       </div>
 
       {/* Highlights */}

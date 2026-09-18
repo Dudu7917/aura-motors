@@ -28,9 +28,14 @@ export function useAppLogic() {
         const parsed = JSON.parse(cached);
         if (Array.isArray(parsed) && parsed.length > 0) {
           return parsed.map((car: Car) => {
+            const stockMatch = LUXURY_CARS.find(c => c.id === car.id || c.name === car.name);
             const real = resolveRealCarSpecs(car.name, car.brand, car.year, car.specs?.rangeOrdisplacement);
+            const resolvedColor = stockMatch?.color || car.color || 'Cinza Chumbo';
+            const resolvedPaints = (stockMatch?.paints && stockMatch.paints.length > 0) ? stockMatch.paints : car.paints;
             return {
               ...car,
+              color: resolvedColor,
+              paints: resolvedPaints,
               specs: {
                 ...car.specs,
                 power: real.power,
@@ -74,9 +79,14 @@ export function useAppLogic() {
     try {
       const parsed = JSON.parse(cached);
       if (parsed) {
+        const stockMatch = LUXURY_CARS.find(c => c.id === parsed.id || c.name === parsed.name);
         const real = resolveRealCarSpecs(parsed.name, parsed.brand, parsed.year, parsed.specs?.rangeOrdisplacement);
+        const resolvedColor = stockMatch?.color || parsed.color || 'Cinza Chumbo';
+        const resolvedPaints = (stockMatch?.paints && stockMatch.paints.length > 0) ? stockMatch.paints : (parsed.paints || []);
         return {
           ...parsed,
+          color: resolvedColor,
+          paints: resolvedPaints,
           specs: {
             ...parsed.specs,
             power: real.power,

@@ -46,6 +46,7 @@ export interface Car {
   detailUrl?: string;
   sellerName?: string;
   sellerPhone?: string;
+  color?: string; // Cor externa extraída do anúncio
 }
 
 export interface AgentAction {

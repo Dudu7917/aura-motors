@@ -4,10 +4,56 @@
       "id": "scraped-0-audi-2018",
       "name": "AUDI Q3 1.4 TFSI AMBIENTE FLEX 4P S TRONIC",
       "brand": "Audi",
-      "role": "Audi Destaque no Estoque",
+      "role": "Audi Inteligência Artificial Jina",
       "category": "suv",
       "price": 93970,
       "image": "https://www.autocerto.com/fotos/6983/4636335/1.jpg",
+      "description": "1.4 TFSI AMBIENTE FLEX 4P S TRONIC",
+      "year": 2018,
+      "color": "Preto",
+      "isAvailableForTestDrive": true,
+      "specs": {
+        "power": 150,
+        "torque": 250,
+        "acceleration": 8.9,
+        "topSpeed": 204,
+        "rangeOrdisplacement": "130.150 km",
+        "weight": 1405,
+        "specSource": "ai",
+        "specConfidence": 96,
+        "engineDescription": "1.4 16V TFSI Flex",
+        "aiModelUsed": "gemini-3.1-flash-lite"
+      },
+      "paints": [
+        {
+          "name": "Preto (Cor Original)",
+          "hex": "#000000",
+          "price": 0,
+          "class": "bg-slate-950"
+        },
+        {
+          "name": "Branco Fábrica",
+          "hex": "#F8FAFC",
+          "price": 0,
+          "class": "bg-slate-100"
+        },
+        {
+          "name": "Prata Fábrica",
+          "hex": "#94A3B8",
+          "price": 1850,
+          "class": "bg-slate-400"
+        }
+      ],
+      "wheels": [
+        {
+          "name": "Rodas de Liga Leve Originais de Fábrica",
+          "size": "16\"",
+          "image": "Original16",
+          "price": 0
+        }
+      ],
+      "detailUrl": "https://www.garagemdonelsinho.com.br/Veiculo/q3-1.4-tfsi-ambiente-flex-4p-s-tronic-2018/4636335/detalhes",
+      "sellerName": "Garagem do Nelsinho",
       "gallery": [
         "https://www.autocerto.com/fotos/6983/4636335/1.jpg",
         "https://www.autocerto.com/fotos/6983/4636335/2.jpg",
@@ -31,46 +77,6 @@
         "https://www.autocerto.com/fotos/6983/4636335/20.jpg",
         "https://www.autocerto.com/fabricantes/audi.webp"
       ],
-      "description": "1.4 TFSI AMBIENTE FLEX 4P S TRONIC",
-      "year": 2018,
-      "isAvailableForTestDrive": true,
-      "specs": {
-        "acceleration": 9.5,
-        "topSpeed": 198,
-        "power": 130,
-        "torque": 205,
-        "rangeOrdisplacement": "130.150 km",
-        "weight": 1220
-      },
-      "paints": [
-        {
-          "name": "Cinza Platinum",
-          "hex": "#475569",
-          "price": 0,
-          "class": "bg-slate-600"
-        },
-        {
-          "name": "Branco Diamante",
-          "hex": "#FFFFFF",
-          "price": 0,
-          "class": "bg-white border"
-        },
-        {
-          "name": "Preto Carbono",
-          "hex": "#0F172A",
-          "price": 1500,
-          "class": "bg-slate-900"
-        }
-      ],
-      "wheels": [
-        {
-          "name": "Rodas de Alumínio Diamantadas Originais",
-          "size": "16\"",
-          "image": "Original16",
-          "price": 0
-        }
-      ],
-      "detailUrl": "https://www.garagemdonelsinho.com.br/Veiculo/q3-1.4-tfsi-ambiente-flex-4p-s-tronic-2018/4636335/detalhes",
       "features": [
         "Ar condicionado",
         "Vidros elétricos",
@@ -85,10 +91,56 @@
       "id": "scraped-1-chery-2024",
       "name": "CHERY TIGGO 8 1.6 TGDI GASOLINA TXS MAX DRIVE DCT",
       "brand": "Chery",
-      "role": "Chery Destaque no Estoque",
-      "category": "classics",
+      "role": "Chery Inteligência Artificial Jina",
+      "category": "suv",
       "price": 146970,
       "image": "https://www.autocerto.com/fotos/6983/4993270/1_043016.jpg",
+      "description": "1.6 TGDI GASOLINA TXS MAX DRIVE DCT",
+      "year": 2024,
+      "color": "Branco",
+      "isAvailableForTestDrive": true,
+      "specs": {
+        "power": 187,
+        "torque": 275,
+        "acceleration": 8.8,
+        "topSpeed": 196,
+        "rangeOrdisplacement": "47.061 km",
+        "weight": 1569,
+        "specSource": "ai",
+        "specConfidence": 96,
+        "engineDescription": "1.6 16V TGDI Gasolina",
+        "aiModelUsed": "gemini-3.1-flash-lite"
+      },
+      "paints": [
+        {
+          "name": "Branco (Cor Original)",
+          "hex": "#FFFFFF",
+          "price": 0,
+          "class": "bg-slate-100"
+        },
+        {
+          "name": "Preto Fábrica",
+          "hex": "#0F172A",
+          "price": 1850,
+          "class": "bg-slate-950"
+        },
+        {
+          "name": "Prata Fábrica",
+          "hex": "#94A3B8",
+          "price": 1850,
+          "class": "bg-slate-400"
+        }
+      ],
+      "wheels": [
+        {
+          "name": "Rodas de Liga Leve Originais de Fábrica",
+          "size": "16\"",
+          "image": "Original16",
+          "price": 0
+        }
+      ],
+      "detailUrl": "https://www.garagemdonelsinho.com.br/Veiculo/tiggo-8-1.6-tgdi-gasolina-txs-max-drive-dct-2024/4993270/detalhes",
+      "sellerName": "Garagem do Nelsinho",
       "gallery": [
         "https://www.autocerto.com/fotos/6983/4993270/1_043016.jpg",
         "https://www.autocerto.com/fotos/6983/4993270/1_043020.jpg",
@@ -103,46 +155,6 @@
         "https://www.autocerto.com/fotos/6983/4993270/1_043043.jpg",
         "https://www.autocerto.com/fabricantes/chery.webp"
       ],
-      "description": "1.6 TGDI GASOLINA TXS MAX DRIVE DCT",
-      "year": 2024,
-      "isAvailableForTestDrive": true,
-      "specs": {
-        "acceleration": 11,
-        "topSpeed": 180,
-        "power": 116,
-        "torque": 160,
-        "rangeOrdisplacement": "47.061 km",
-        "weight": 1220
-      },
-      "paints": [
-        {
-          "name": "Cinza Platinum",
-          "hex": "#475569",
-          "price": 0,
-          "class": "bg-slate-600"
-        },
-        {
-          "name": "Branco Diamante",
-          "hex": "#FFFFFF",
-          "price": 0,
-          "class": "bg-white border"
-        },
-        {
-          "name": "Preto Carbono",
-          "hex": "#0F172A",
-          "price": 1500,
-          "class": "bg-slate-900"
-        }
-      ],
-      "wheels": [
-        {
-          "name": "Rodas de Alumínio Diamantadas Originais",
-          "size": "16\"",
-          "image": "Original16",
-          "price": 0
-        }
-      ],
-      "detailUrl": "https://www.garagemdonelsinho.com.br/Veiculo/tiggo-8-1.6-tgdi-gasolina-txs-max-drive-dct-2024/4993270/detalhes",
       "features": [
         "Ar condicionado",
         "Bancos de Couro",
@@ -164,83 +176,59 @@
       ]
     },
     {
-      "id": "scraped-2-chevrolet-2024",
-      "name": "CHEVROLET ONIX 1.0 TURBO FLEX PLUS LT MANUAL",
+      "id": "scraped-3-chevrolet-2019",
+      "name": "CHEVROLET ONIX 1.4 MPFI ACTIV 8V FLEX 4P AUTOMÁTICO",
       "brand": "Chevrolet",
-      "role": "Chevrolet Destaque no Estoque",
+      "role": "Chevrolet Inteligência Artificial Jina",
       "category": "classics",
-      "price": 73700,
-      "image": "https://www.autocerto.com/fabricantes/chevrolet.webp",
-      "gallery": [
-        "https://www.autocerto.com/fabricantes/chevrolet.webp"
-      ],
-      "description": "Este magnífico CHEVROLET ONIX 1.0 TURBO FLEX PLUS LT MANUAL ano modelo 2024 conta com apenas 30.699 km rodados! Superbamente revisado pela equipe técnica da Garagem do Nelsinho. Veículo com vistoria cautelar 100% aprovada, estofamento higienizado, mecânica periciada sob rigorosa aprovação, perfeito para rodar diário com imbatível custo-benefício.",
-      "year": 2024,
+      "price": 69900,
+      "image": "https://www.autocerto.com/fotos/6983/5340013/1_054815.jpg",
+      "description": "1.4 MPFI ACTIV 8V FLEX 4P AUTOMÁTICO",
+      "year": 2019,
+      "color": "Branco",
       "isAvailableForTestDrive": true,
       "specs": {
-        "acceleration": 9.8,
-        "topSpeed": 195,
-        "power": 128,
-        "torque": 200,
-        "rangeOrdisplacement": "30.699 km",
-        "weight": 1210
+        "power": 106,
+        "torque": 139,
+        "acceleration": 10.5,
+        "topSpeed": 171,
+        "rangeOrdisplacement": "82.433 km",
+        "weight": 1109,
+        "specSource": "ai",
+        "specConfidence": 96,
+        "engineDescription": "1.4 8V MPFI Flex",
+        "aiModelUsed": "gemini-3.1-flash-lite"
       },
       "paints": [
         {
-          "name": "Cinza Platinum",
-          "hex": "#475569",
-          "price": 0,
-          "class": "bg-slate-600"
-        },
-        {
-          "name": "Branco Diamante",
+          "name": "Branco (Cor Original)",
           "hex": "#FFFFFF",
           "price": 0,
-          "class": "bg-white border"
+          "class": "bg-slate-100"
         },
         {
-          "name": "Preto Carbono",
+          "name": "Preto Fábrica",
           "hex": "#0F172A",
-          "price": 1500,
-          "class": "bg-slate-900"
+          "price": 1850,
+          "class": "bg-slate-950"
+        },
+        {
+          "name": "Prata Fábrica",
+          "hex": "#94A3B8",
+          "price": 1850,
+          "class": "bg-slate-400"
         }
       ],
       "wheels": [
         {
-          "name": "Rodas de Alumínio Diamantadas Originais",
+          "name": "Rodas de Liga Leve Originais de Fábrica",
           "size": "16\"",
           "image": "Original16",
           "price": 0
         }
       ],
-      "detailUrl": "https://www.garagemdonelsinho.com.br/Veiculo/onix-1.0-turbo-flex-plus-lt-manual-2024/5475005/detalhes",
-      "features": [
-        "Ar condicionado",
-        "Vidros elétricos",
-        "Freios ABS",
-        "Rodas de liga leve",
-        "Travas elétricas",
-        "Ar condicionado Digital",
-        "Multimídia",
-        "Vidros elétricos Traseiros",
-        "Banco do motorista com ajuste de altura",
-        "Sensor de estacionamento",
-        "Airbag de cortina",
-        "Airbag laterais",
-        "Airbag motorista",
-        "Airbag passageiro",
-        "Câmera de ré"
-      ],
-      "sellerName": "Garagem do Nelsinho"
-    },
-    {
-      "id": "scraped-3-chevrolet-2019",
-      "name": "CHEVROLET ONIX 1.4 MPFI ACTIV 8V FLEX 4P AUTOMÁTICO",
-      "brand": "Chevrolet",
-      "role": "Chevrolet Destaque no Estoque",
-      "category": "classics",
-      "price": 69900,
-      "image": "https://www.autocerto.com/fotos/6983/5340013/1_054815.jpg",
+      "detailUrl": "https://www.garagemdonelsinho.com.br/Veiculo/onix-1.4-mpfi-activ-8v-flex-4p-automatico-2019/5340013/detalhes",
+      "sellerName": "Garagem do Nelsinho",
       "gallery": [
         "https://www.autocerto.com/fotos/6983/5340013/1_054815.jpg",
         "https://www.autocerto.com/fotos/6983/5340013/1_054816.jpg",
@@ -264,46 +252,6 @@
         "https://www.autocerto.com/fotos/6983/5340013/1_054838.jpg",
         "https://www.autocerto.com/fabricantes/chevrolet.webp"
       ],
-      "description": "1.4 MPFI ACTIV 8V FLEX 4P AUTOMÁTICO",
-      "year": 2019,
-      "isAvailableForTestDrive": true,
-      "specs": {
-        "acceleration": 11,
-        "topSpeed": 180,
-        "power": 116,
-        "torque": 160,
-        "rangeOrdisplacement": "82.433 km",
-        "weight": 1220
-      },
-      "paints": [
-        {
-          "name": "Cinza Platinum",
-          "hex": "#475569",
-          "price": 0,
-          "class": "bg-slate-600"
-        },
-        {
-          "name": "Branco Diamante",
-          "hex": "#FFFFFF",
-          "price": 0,
-          "class": "bg-white border"
-        },
-        {
-          "name": "Preto Carbono",
-          "hex": "#0F172A",
-          "price": 1500,
-          "class": "bg-slate-900"
-        }
-      ],
-      "wheels": [
-        {
-          "name": "Rodas de Alumínio Diamantadas Originais",
-          "size": "16\"",
-          "image": "Original16",
-          "price": 0
-        }
-      ],
-      "detailUrl": "https://www.garagemdonelsinho.com.br/Veiculo/onix-1.4-mpfi-activ-8v-flex-4p-automatico-2019/5340013/detalhes",
       "features": [
         "Ar condicionado",
         "Retrovisores elétricos",
@@ -325,10 +273,56 @@
       "id": "scraped-4-fiat-2023",
       "name": "FIAT FASTBACK 1.3 TURBO 270 FLEX LIMITED EDITION AT6",
       "brand": "Fiat",
-      "role": "Fiat Destaque no Estoque",
+      "role": "Fiat Inteligência Artificial Jina",
       "category": "suv",
       "price": 111900,
       "image": "https://www.autocerto.com/fotos/6983/5347003/1_092757.jpg",
+      "description": "1.3 TURBO 270 FLEX LIMITED EDITION AT6",
+      "year": 2023,
+      "color": "Branco",
+      "isAvailableForTestDrive": true,
+      "specs": {
+        "power": 185,
+        "torque": 270,
+        "acceleration": 9.2,
+        "topSpeed": 210,
+        "rangeOrdisplacement": "45.300 km",
+        "weight": 1304,
+        "specSource": "ai",
+        "specConfidence": 96,
+        "engineDescription": "1.3 16V Turbo 270 Flex",
+        "aiModelUsed": "gemini-3.1-flash-lite"
+      },
+      "paints": [
+        {
+          "name": "Branco (Cor Original)",
+          "hex": "#F8FAFC",
+          "price": 0,
+          "class": "bg-slate-100"
+        },
+        {
+          "name": "Preto Fábrica",
+          "hex": "#0F172A",
+          "price": 1850,
+          "class": "bg-slate-950"
+        },
+        {
+          "name": "Prata Fábrica",
+          "hex": "#94A3B8",
+          "price": 1850,
+          "class": "bg-slate-400"
+        }
+      ],
+      "wheels": [
+        {
+          "name": "Rodas de Liga Leve Originais de Fábrica",
+          "size": "16\"",
+          "image": "Original16",
+          "price": 0
+        }
+      ],
+      "detailUrl": "https://www.garagemdonelsinho.com.br/Veiculo/fastback-1.3-turbo-270-flex-limited-edition-at6-2023/5347003/detalhes",
+      "sellerName": "Garagem do Nelsinho",
       "gallery": [
         "https://www.autocerto.com/fotos/6983/5347003/1_092757.jpg",
         "https://www.autocerto.com/fotos/6983/5347003/1_092759.jpg",
@@ -352,46 +346,6 @@
         "https://www.autocerto.com/fotos/6983/5347003/1_092819.jpg",
         "https://www.autocerto.com/fabricantes/fiat.webp"
       ],
-      "description": "1.3 TURBO 270 FLEX LIMITED EDITION AT6",
-      "year": 2023,
-      "isAvailableForTestDrive": true,
-      "specs": {
-        "acceleration": 9.5,
-        "topSpeed": 198,
-        "power": 130,
-        "torque": 205,
-        "rangeOrdisplacement": "45.300 km",
-        "weight": 1220
-      },
-      "paints": [
-        {
-          "name": "Cinza Platinum",
-          "hex": "#475569",
-          "price": 0,
-          "class": "bg-slate-600"
-        },
-        {
-          "name": "Branco Diamante",
-          "hex": "#FFFFFF",
-          "price": 0,
-          "class": "bg-white border"
-        },
-        {
-          "name": "Preto Carbono",
-          "hex": "#0F172A",
-          "price": 1500,
-          "class": "bg-slate-900"
-        }
-      ],
-      "wheels": [
-        {
-          "name": "Rodas de Alumínio Diamantadas Originais",
-          "size": "16\"",
-          "image": "Original16",
-          "price": 0
-        }
-      ],
-      "detailUrl": "https://www.garagemdonelsinho.com.br/Veiculo/fastback-1.3-turbo-270-flex-limited-edition-at6-2023/5347003/detalhes",
       "features": [
         "Ar condicionado",
         "Bancos de Couro",
@@ -417,13 +371,126 @@
       ]
     },
     {
+      "id": "scraped-4-fiat-2022",
+      "name": "FIAT MOBI 1.0 EVO FLEX LIKE. MANUAL",
+      "brand": "Fiat",
+      "role": "Fiat Inteligência Artificial Jina",
+      "category": "classics",
+      "price": 55970,
+      "image": "https://www.autocerto.com/fabricantes/fiat.webp",
+      "description": "Este esplêndido FIAT MOBI 1.0 EVO FLEX LIKE. MANUAL ano modelo 2022 está disponível.",
+      "year": 2022,
+      "color": "Vermelho",
+      "isAvailableForTestDrive": true,
+      "specs": {
+        "power": 75,
+        "torque": 97,
+        "acceleration": 14.7,
+        "topSpeed": 153,
+        "rangeOrdisplacement": "18.934 km",
+        "weight": 961,
+        "specSource": "ai",
+        "specConfidence": 96,
+        "engineDescription": "1.0 8V EVO Flex",
+        "aiModelUsed": "gemini-3.1-flash-lite"
+      },
+      "paints": [
+        {
+          "name": "Vermelho (Cor Original)",
+          "hex": "#8B0026",
+          "price": 0,
+          "class": "bg-red-600"
+        },
+        {
+          "name": "Branco Fábrica",
+          "hex": "#F8FAFC",
+          "price": 0,
+          "class": "bg-slate-100"
+        },
+        {
+          "name": "Preto Fábrica",
+          "hex": "#0F172A",
+          "price": 1850,
+          "class": "bg-slate-950"
+        }
+      ],
+      "wheels": [
+        {
+          "name": "Rodas de Liga Leve Originais de Fábrica",
+          "size": "16\"",
+          "image": "Original16",
+          "price": 0
+        }
+      ],
+      "detailUrl": "https://www.garagemdonelsinho.com.br/Veiculo/mobi-1.0-evo-flex-like.-manual-2022/5524458/detalhes",
+      "sellerName": "Garagem do Nelsinho",
+      "gallery": [
+        "https://www.autocerto.com/fabricantes/fiat.webp"
+      ],
+      "features": [
+        "Ar condicionado",
+        "Vidros elétricos",
+        "Freios ABS",
+        "Vidros elétricos Traseiros",
+        "Banco do motorista com ajuste de altura",
+        "Airbag motorista",
+        "Airbag passageiro"
+      ]
+    },
+    {
       "id": "scraped-5-fiat-2022",
       "name": "FIAT TORO 1.3 TURBO 270 FLEX FREEDOM AT6",
       "brand": "Fiat",
-      "role": "Fiat Destaque no Estoque",
+      "role": "Fiat Inteligência Artificial Jina",
       "category": "suv",
       "price": 114970,
       "image": "https://www.autocerto.com/fotos/6983/5448993/1_104940.jpg",
+      "description": "1.3 TURBO 270 FLEX FREEDOM AT6",
+      "year": 2022,
+      "color": "Cinza Grafite",
+      "isAvailableForTestDrive": true,
+      "specs": {
+        "power": 185,
+        "torque": 270,
+        "acceleration": 9.8,
+        "topSpeed": 200,
+        "rangeOrdisplacement": "25.430 km",
+        "weight": 1646,
+        "specSource": "ai",
+        "specConfidence": 96,
+        "engineDescription": "1.3 16V Turbo 270 Flex",
+        "aiModelUsed": "gemini-3.1-flash-lite"
+      },
+      "paints": [
+        {
+          "name": "Cinza Grafite (Cor Original)",
+          "hex": "#4A4A4A",
+          "price": 0,
+          "class": "bg-slate-600"
+        },
+        {
+          "name": "Branco Fábrica",
+          "hex": "#F8FAFC",
+          "price": 0,
+          "class": "bg-slate-100"
+        },
+        {
+          "name": "Preto Fábrica",
+          "hex": "#0F172A",
+          "price": 1850,
+          "class": "bg-slate-950"
+        }
+      ],
+      "wheels": [
+        {
+          "name": "Rodas de Liga Leve Originais de Fábrica",
+          "size": "16\"",
+          "image": "Original16",
+          "price": 0
+        }
+      ],
+      "detailUrl": "https://www.garagemdonelsinho.com.br/Veiculo/toro-1.3-turbo-270-flex-freedom-at6-2022/5448993/detalhes",
+      "sellerName": "Garagem do Nelsinho",
       "gallery": [
         "https://www.autocerto.com/fotos/6983/5448993/1_104940.jpg",
         "https://www.autocerto.com/fotos/6983/5448993/1_104941.jpg",
@@ -448,46 +515,6 @@
         "https://www.autocerto.com/fotos/6983/5448993/1_105000.jpg",
         "https://www.autocerto.com/fabricantes/fiat.webp"
       ],
-      "description": "1.3 TURBO 270 FLEX FREEDOM AT6",
-      "year": 2022,
-      "isAvailableForTestDrive": true,
-      "specs": {
-        "acceleration": 11,
-        "topSpeed": 180,
-        "power": 116,
-        "torque": 160,
-        "rangeOrdisplacement": "25.430 km",
-        "weight": 1220
-      },
-      "paints": [
-        {
-          "name": "Cinza Platinum",
-          "hex": "#475569",
-          "price": 0,
-          "class": "bg-slate-600"
-        },
-        {
-          "name": "Branco Diamante",
-          "hex": "#FFFFFF",
-          "price": 0,
-          "class": "bg-white border"
-        },
-        {
-          "name": "Preto Carbono",
-          "hex": "#0F172A",
-          "price": 1500,
-          "class": "bg-slate-900"
-        }
-      ],
-      "wheels": [
-        {
-          "name": "Rodas de Alumínio Diamantadas Originais",
-          "size": "16\"",
-          "image": "Original16",
-          "price": 0
-        }
-      ],
-      "detailUrl": "https://www.garagemdonelsinho.com.br/Veiculo/toro-1.3-turbo-270-flex-freedom-at6-2022/5448993/detalhes",
       "features": [
         "Ar condicionado",
         "Bancos de Couro",
@@ -513,10 +540,56 @@
       "id": "scraped-6-fiat-2019",
       "name": "FIAT TORO 1.8 16V EVO FLEX FREEDOM AT6",
       "brand": "Fiat",
-      "role": "Fiat Destaque no Estoque",
+      "role": "Fiat Inteligência Artificial Jina",
       "category": "suv",
       "price": 88900,
       "image": "https://www.autocerto.com/fotos/6983/5443158/1_091858.jpg",
+      "description": "1.8 16V EVO FLEX FREEDOM AT6",
+      "year": 2019,
+      "color": "Prata",
+      "isAvailableForTestDrive": true,
+      "specs": {
+        "power": 139,
+        "torque": 189,
+        "acceleration": 12,
+        "topSpeed": 175,
+        "rangeOrdisplacement": "63.898 km",
+        "weight": 1619,
+        "specSource": "ai",
+        "specConfidence": 96,
+        "engineDescription": "1.8 16V E.TorQ Flex",
+        "aiModelUsed": "gemini-3.1-flash-lite"
+      },
+      "paints": [
+        {
+          "name": "Prata (Cor Original)",
+          "hex": "#94A3B8",
+          "price": 0,
+          "class": "bg-slate-400"
+        },
+        {
+          "name": "Branco Fábrica",
+          "hex": "#F8FAFC",
+          "price": 0,
+          "class": "bg-slate-100"
+        },
+        {
+          "name": "Preto Fábrica",
+          "hex": "#0F172A",
+          "price": 1850,
+          "class": "bg-slate-950"
+        }
+      ],
+      "wheels": [
+        {
+          "name": "Rodas de Liga Leve Originais de Fábrica",
+          "size": "16\"",
+          "image": "Original16",
+          "price": 0
+        }
+      ],
+      "detailUrl": "https://www.garagemdonelsinho.com.br/Veiculo/toro-1.8-16v-evo-flex-freedom-at6-2019/5443158/detalhes",
+      "sellerName": "Garagem do Nelsinho",
       "gallery": [
         "https://www.autocerto.com/fotos/6983/5443158/1_091858.jpg",
         "https://www.autocerto.com/fotos/6983/5443158/1_091859.jpg",
@@ -540,46 +613,6 @@
         "https://www.autocerto.com/fotos/6983/5443158/2_091917.jpg",
         "https://www.autocerto.com/fabricantes/fiat.webp"
       ],
-      "description": "1.8 16V EVO FLEX FREEDOM AT6",
-      "year": 2019,
-      "isAvailableForTestDrive": true,
-      "specs": {
-        "acceleration": 9.5,
-        "topSpeed": 198,
-        "power": 130,
-        "torque": 205,
-        "rangeOrdisplacement": "63.898 km",
-        "weight": 1220
-      },
-      "paints": [
-        {
-          "name": "Cinza Platinum",
-          "hex": "#475569",
-          "price": 0,
-          "class": "bg-slate-600"
-        },
-        {
-          "name": "Branco Diamante",
-          "hex": "#FFFFFF",
-          "price": 0,
-          "class": "bg-white border"
-        },
-        {
-          "name": "Preto Carbono",
-          "hex": "#0F172A",
-          "price": 1500,
-          "class": "bg-slate-900"
-        }
-      ],
-      "wheels": [
-        {
-          "name": "Rodas de Alumínio Diamantadas Originais",
-          "size": "16\"",
-          "image": "Original16",
-          "price": 0
-        }
-      ],
-      "detailUrl": "https://www.garagemdonelsinho.com.br/Veiculo/toro-1.8-16v-evo-flex-freedom-at6-2019/5443158/detalhes",
       "features": [
         "Ar condicionado",
         "Bancos de Couro",
@@ -603,10 +636,56 @@
       "id": "scraped-7-honda-2024",
       "name": "HONDA CITY 1.5 i-VTEC FLEX HATCH EXL CVT",
       "brand": "Honda",
-      "role": "Honda Destaque no Estoque",
-      "category": "classics",
+      "role": "Honda Inteligência Artificial Jina",
+      "category": "hypercars",
       "price": 109970,
       "image": "https://www.autocerto.com/fotos/6983/5374230/1_092749.jpg",
+      "description": "1.5 i-VTEC FLEX HATCH EXL CVT",
+      "year": 2024,
+      "color": "Branco",
+      "isAvailableForTestDrive": true,
+      "specs": {
+        "power": 126,
+        "torque": 155,
+        "acceleration": 10.6,
+        "topSpeed": 175,
+        "rangeOrdisplacement": "40.300 km",
+        "weight": 1208,
+        "specSource": "ai",
+        "specConfidence": 96,
+        "engineDescription": "1.5 16V i-VTEC Flex",
+        "aiModelUsed": "gemini-3.1-flash-lite"
+      },
+      "paints": [
+        {
+          "name": "Branco (Cor Original)",
+          "hex": "#FFFFFF",
+          "price": 0,
+          "class": "bg-slate-100"
+        },
+        {
+          "name": "Preto Fábrica",
+          "hex": "#0F172A",
+          "price": 1850,
+          "class": "bg-slate-950"
+        },
+        {
+          "name": "Prata Fábrica",
+          "hex": "#94A3B8",
+          "price": 1850,
+          "class": "bg-slate-400"
+        }
+      ],
+      "wheels": [
+        {
+          "name": "Rodas de Liga Leve Originais de Fábrica",
+          "size": "16\"",
+          "image": "Original16",
+          "price": 0
+        }
+      ],
+      "detailUrl": "https://www.garagemdonelsinho.com.br/Veiculo/city-1.5-i-vtec-flex-hatch-exl-cvt-2024/5374230/detalhes",
+      "sellerName": "Garagem do Nelsinho",
       "gallery": [
         "https://www.autocerto.com/fotos/6983/5374230/1_092749.jpg",
         "https://www.autocerto.com/fotos/6983/5374230/1_092750.jpg",
@@ -631,46 +710,6 @@
         "https://www.autocerto.com/fotos/6983/5374230/1_092810.jpg",
         "https://www.autocerto.com/fabricantes/honda.webp"
       ],
-      "description": "1.5 i-VTEC FLEX HATCH EXL CVT",
-      "year": 2024,
-      "isAvailableForTestDrive": true,
-      "specs": {
-        "acceleration": 11,
-        "topSpeed": 180,
-        "power": 116,
-        "torque": 160,
-        "rangeOrdisplacement": "40.300 km",
-        "weight": 1220
-      },
-      "paints": [
-        {
-          "name": "Cinza Platinum",
-          "hex": "#475569",
-          "price": 0,
-          "class": "bg-slate-600"
-        },
-        {
-          "name": "Branco Diamante",
-          "hex": "#FFFFFF",
-          "price": 0,
-          "class": "bg-white border"
-        },
-        {
-          "name": "Preto Carbono",
-          "hex": "#0F172A",
-          "price": 1500,
-          "class": "bg-slate-900"
-        }
-      ],
-      "wheels": [
-        {
-          "name": "Rodas de Alumínio Diamantadas Originais",
-          "size": "16\"",
-          "image": "Original16",
-          "price": 0
-        }
-      ],
-      "detailUrl": "https://www.garagemdonelsinho.com.br/Veiculo/city-1.5-i-vtec-flex-hatch-exl-cvt-2024/5374230/detalhes",
       "features": [
         "Ar condicionado",
         "Bancos de Couro",
@@ -697,10 +736,56 @@
       "id": "scraped-8-honda-2017",
       "name": "HONDA CITY 1.5 LX 16V FLEX 4P AUTOMÁTICO",
       "brand": "Honda",
-      "role": "Honda Destaque no Estoque",
-      "category": "classics",
+      "role": "Honda Inteligência Artificial Jina",
+      "category": "hypercars",
       "price": 78970,
       "image": "https://www.autocerto.com/fotos/6983/5182914/1_110344.jpg",
+      "description": "1.5 LX 16V FLEX 4P AUTOMÁTICO",
+      "year": 2017,
+      "color": "Branco",
+      "isAvailableForTestDrive": true,
+      "specs": {
+        "power": 116,
+        "torque": 150,
+        "acceleration": 11.3,
+        "topSpeed": 175,
+        "rangeOrdisplacement": "111.004 km",
+        "weight": 1136,
+        "specSource": "ai",
+        "specConfidence": 96,
+        "engineDescription": "1.5 16V i-VTEC Flex",
+        "aiModelUsed": "gemini-3.1-flash-lite"
+      },
+      "paints": [
+        {
+          "name": "Branco (Cor Original)",
+          "hex": "#FFFFFF",
+          "price": 0,
+          "class": "bg-slate-100"
+        },
+        {
+          "name": "Preto Fábrica",
+          "hex": "#0F172A",
+          "price": 1850,
+          "class": "bg-slate-950"
+        },
+        {
+          "name": "Prata Fábrica",
+          "hex": "#94A3B8",
+          "price": 1850,
+          "class": "bg-slate-400"
+        }
+      ],
+      "wheels": [
+        {
+          "name": "Rodas de Liga Leve Originais de Fábrica",
+          "size": "16\"",
+          "image": "Original16",
+          "price": 0
+        }
+      ],
+      "detailUrl": "https://www.garagemdonelsinho.com.br/Veiculo/city-1.5-lx-16v-flex-4p-automatico-2017/5182914/detalhes",
+      "sellerName": "Garagem do Nelsinho",
       "gallery": [
         "https://www.autocerto.com/fotos/6983/5182914/1_110344.jpg",
         "https://www.autocerto.com/fotos/6983/5182914/2_110344.jpg",
@@ -724,46 +809,6 @@
         "https://www.autocerto.com/fotos/6983/5182914/1_110404.jpg",
         "https://www.autocerto.com/fabricantes/honda.webp"
       ],
-      "description": "1.5 LX 16V FLEX 4P AUTOMÁTICO",
-      "year": 2017,
-      "isAvailableForTestDrive": true,
-      "specs": {
-        "acceleration": 9.5,
-        "topSpeed": 198,
-        "power": 130,
-        "torque": 205,
-        "rangeOrdisplacement": "111.004 km",
-        "weight": 1220
-      },
-      "paints": [
-        {
-          "name": "Cinza Platinum",
-          "hex": "#475569",
-          "price": 0,
-          "class": "bg-slate-600"
-        },
-        {
-          "name": "Branco Diamante",
-          "hex": "#FFFFFF",
-          "price": 0,
-          "class": "bg-white border"
-        },
-        {
-          "name": "Preto Carbono",
-          "hex": "#0F172A",
-          "price": 1500,
-          "class": "bg-slate-900"
-        }
-      ],
-      "wheels": [
-        {
-          "name": "Rodas de Alumínio Diamantadas Originais",
-          "size": "16\"",
-          "image": "Original16",
-          "price": 0
-        }
-      ],
-      "detailUrl": "https://www.garagemdonelsinho.com.br/Veiculo/city-1.5-lx-16v-flex-4p-automatico-2017/5182914/detalhes",
       "features": [
         "Ar condicionado",
         "Bancos de Couro",
@@ -784,10 +829,56 @@
       "id": "scraped-9-honda-2018",
       "name": "HONDA CIVIC 2.0 16V FLEXONE EXL 4P CVT",
       "brand": "Honda",
-      "role": "Honda Destaque no Estoque",
+      "role": "Honda Inteligência Artificial Jina",
       "category": "hypercars",
       "price": 112900,
       "image": "https://www.autocerto.com/fotos/6983/5268439/1_092622.jpg",
+      "description": "2.0 16V FLEXONE EXL 4P CVT",
+      "year": 2018,
+      "color": "Prata",
+      "isAvailableForTestDrive": true,
+      "specs": {
+        "power": 155,
+        "torque": 191,
+        "acceleration": 9.8,
+        "topSpeed": 202,
+        "rangeOrdisplacement": "83.300 km",
+        "weight": 1326,
+        "specSource": "ai",
+        "specConfidence": 96,
+        "engineDescription": "2.0 16V i-VTEC FlexOne",
+        "aiModelUsed": "gemini-3.1-flash-lite"
+      },
+      "paints": [
+        {
+          "name": "Prata (Cor Original)",
+          "hex": "#A5A9AC",
+          "price": 0,
+          "class": "bg-slate-400"
+        },
+        {
+          "name": "Branco Fábrica",
+          "hex": "#F8FAFC",
+          "price": 0,
+          "class": "bg-slate-100"
+        },
+        {
+          "name": "Preto Fábrica",
+          "hex": "#0F172A",
+          "price": 1850,
+          "class": "bg-slate-950"
+        }
+      ],
+      "wheels": [
+        {
+          "name": "Rodas de Liga Leve Originais de Fábrica",
+          "size": "16\"",
+          "image": "Original16",
+          "price": 0
+        }
+      ],
+      "detailUrl": "https://www.garagemdonelsinho.com.br/Veiculo/civic-2.0-16v-flexone-exl-4p-cvt-2018/5268439/detalhes",
+      "sellerName": "Garagem do Nelsinho",
       "gallery": [
         "https://www.autocerto.com/fotos/6983/5268439/1_092622.jpg",
         "https://www.autocerto.com/fotos/6983/5268439/1_092623.jpg",
@@ -811,46 +902,6 @@
         "https://www.autocerto.com/fotos/6983/5268439/1_092648.jpg",
         "https://www.autocerto.com/fabricantes/honda.webp"
       ],
-      "description": "2.0 16V FLEXONE EXL 4P CVT",
-      "year": 2018,
-      "isAvailableForTestDrive": true,
-      "specs": {
-        "acceleration": 11,
-        "topSpeed": 180,
-        "power": 116,
-        "torque": 160,
-        "rangeOrdisplacement": "83.300 km",
-        "weight": 1220
-      },
-      "paints": [
-        {
-          "name": "Cinza Platinum",
-          "hex": "#475569",
-          "price": 0,
-          "class": "bg-slate-600"
-        },
-        {
-          "name": "Branco Diamante",
-          "hex": "#FFFFFF",
-          "price": 0,
-          "class": "bg-white border"
-        },
-        {
-          "name": "Preto Carbono",
-          "hex": "#0F172A",
-          "price": 1500,
-          "class": "bg-slate-900"
-        }
-      ],
-      "wheels": [
-        {
-          "name": "Rodas de Alumínio Diamantadas Originais",
-          "size": "16\"",
-          "image": "Original16",
-          "price": 0
-        }
-      ],
-      "detailUrl": "https://www.garagemdonelsinho.com.br/Veiculo/civic-2.0-16v-flexone-exl-4p-cvt-2018/5268439/detalhes",
       "features": [
         "Ar condicionado",
         "Bancos de Couro",
@@ -875,10 +926,56 @@
       "id": "scraped-10-honda-2019",
       "name": "HONDA CIVIC 2.0 16V FLEXONE EX 4P CVT",
       "brand": "Honda",
-      "role": "Honda Destaque no Estoque",
+      "role": "Honda Inteligência Artificial Jina",
       "category": "hypercars",
-      "price": 114970,
+      "price": 112970,
       "image": "https://www.autocerto.com/fotos/6983/4880208/1_112327.jpg",
+      "description": "2.0 16V FLEXONE EX 4P CVT",
+      "year": 2019,
+      "color": "Branco",
+      "isAvailableForTestDrive": true,
+      "specs": {
+        "power": 155,
+        "torque": 191,
+        "acceleration": 9.8,
+        "topSpeed": 202,
+        "rangeOrdisplacement": "72.062 km",
+        "weight": 1326,
+        "specSource": "ai",
+        "specConfidence": 96,
+        "engineDescription": "2.0 16V i-VTEC FlexOne",
+        "aiModelUsed": "gemini-3.1-flash-lite"
+      },
+      "paints": [
+        {
+          "name": "Branco (Cor Original)",
+          "hex": "#FFFFFF",
+          "price": 0,
+          "class": "bg-slate-100"
+        },
+        {
+          "name": "Preto Fábrica",
+          "hex": "#0F172A",
+          "price": 1850,
+          "class": "bg-slate-950"
+        },
+        {
+          "name": "Prata Fábrica",
+          "hex": "#94A3B8",
+          "price": 1850,
+          "class": "bg-slate-400"
+        }
+      ],
+      "wheels": [
+        {
+          "name": "Rodas de Liga Leve Originais de Fábrica",
+          "size": "16\"",
+          "image": "Original16",
+          "price": 0
+        }
+      ],
+      "detailUrl": "https://www.garagemdonelsinho.com.br/Veiculo/civic-2.0-16v-flexone-ex-4p-cvt-2019/4880208/detalhes",
+      "sellerName": "Garagem do Nelsinho",
       "gallery": [
         "https://www.autocerto.com/fotos/6983/4880208/1_112327.jpg",
         "https://www.autocerto.com/fotos/6983/4880208/1_112328.jpg",
@@ -902,46 +999,6 @@
         "https://www.autocerto.com/fotos/6983/4880208/1_112346.jpg",
         "https://www.autocerto.com/fabricantes/honda.webp"
       ],
-      "description": "2.0 16V FLEXONE EX 4P CVT",
-      "year": 2019,
-      "isAvailableForTestDrive": true,
-      "specs": {
-        "acceleration": 9.5,
-        "topSpeed": 198,
-        "power": 130,
-        "torque": 205,
-        "rangeOrdisplacement": "72.062 km",
-        "weight": 1220
-      },
-      "paints": [
-        {
-          "name": "Cinza Platinum",
-          "hex": "#475569",
-          "price": 0,
-          "class": "bg-slate-600"
-        },
-        {
-          "name": "Branco Diamante",
-          "hex": "#FFFFFF",
-          "price": 0,
-          "class": "bg-white border"
-        },
-        {
-          "name": "Preto Carbono",
-          "hex": "#0F172A",
-          "price": 1500,
-          "class": "bg-slate-900"
-        }
-      ],
-      "wheels": [
-        {
-          "name": "Rodas de Alumínio Diamantadas Originais",
-          "size": "16\"",
-          "image": "Original16",
-          "price": 0
-        }
-      ],
-      "detailUrl": "https://www.garagemdonelsinho.com.br/Veiculo/civic-2.0-16v-flexone-ex-4p-cvt-2019/4880208/detalhes",
       "features": [
         "Ar condicionado",
         "Bancos de Couro",
@@ -969,54 +1026,60 @@
       "id": "scraped-11-hyundai-2018",
       "name": "HYUNDAI CRETA 2.0 16V FLEX PRESTIGE AUTOMÁTICO",
       "brand": "Hyundai",
-      "role": "Hyundai Destaque no Estoque",
+      "role": "Hyundai Inteligência Artificial Jina",
       "category": "suv",
-      "price": 94900,
+      "price": 93900,
       "image": "https://www.autocerto.com/fotos/6983/5407783/2_101313.jpg",
-      "gallery": [
-        "https://www.autocerto.com/fotos/6983/5407783/2_101313.jpg",
-        "https://www.autocerto.com/fabricantes/hyundai.webp"
-      ],
       "description": "2.0 16V FLEX PRESTIGE AUTOMÁTICO",
       "year": 2018,
+      "color": "Preto",
       "isAvailableForTestDrive": true,
       "specs": {
-        "acceleration": 11,
-        "topSpeed": 180,
-        "power": 116,
-        "torque": 160,
+        "power": 166,
+        "torque": 205,
+        "acceleration": 9.3,
+        "topSpeed": 190,
         "rangeOrdisplacement": "82.500 km",
-        "weight": 1220
+        "weight": 1390,
+        "specSource": "ai",
+        "specConfidence": 96,
+        "engineDescription": "2.0 16V Nu Flex",
+        "aiModelUsed": "gemini-3.1-flash-lite"
       },
       "paints": [
         {
-          "name": "Cinza Platinum",
-          "hex": "#475569",
+          "name": "Preto (Cor Original)",
+          "hex": "#000000",
           "price": 0,
-          "class": "bg-slate-600"
+          "class": "bg-slate-950"
         },
         {
-          "name": "Branco Diamante",
-          "hex": "#FFFFFF",
+          "name": "Branco Fábrica",
+          "hex": "#F8FAFC",
           "price": 0,
-          "class": "bg-white border"
+          "class": "bg-slate-100"
         },
         {
-          "name": "Preto Carbono",
-          "hex": "#0F172A",
-          "price": 1500,
-          "class": "bg-slate-900"
+          "name": "Prata Fábrica",
+          "hex": "#94A3B8",
+          "price": 1850,
+          "class": "bg-slate-400"
         }
       ],
       "wheels": [
         {
-          "name": "Rodas de Alumínio Diamantadas Originais",
+          "name": "Rodas de Liga Leve Originais de Fábrica",
           "size": "16\"",
           "image": "Original16",
           "price": 0
         }
       ],
       "detailUrl": "https://www.garagemdonelsinho.com.br/Veiculo/creta-2.0-16v-flex-prestige-automatico-2018/5407783/detalhes",
+      "sellerName": "Garagem do Nelsinho",
+      "gallery": [
+        "https://www.autocerto.com/fotos/6983/5407783/2_101313.jpg",
+        "https://www.autocerto.com/fabricantes/hyundai.webp"
+      ],
       "features": [
         "Ar condicionado",
         "Bancos de Couro",
@@ -1043,10 +1106,56 @@
       "id": "scraped-12-hyundai-2026",
       "name": "HYUNDAI CRETA 1.6 TGDI GASOLINA ULTIMATE DCT",
       "brand": "Hyundai",
-      "role": "Hyundai Destaque no Estoque",
+      "role": "Hyundai Inteligência Artificial Jina",
       "category": "suv",
       "price": 159970,
       "image": "https://www.autocerto.com/fotos/6983/5357282/1_122017.jpg",
+      "description": "1.6 TGDI GASOLINA ULTIMATE DCT",
+      "year": 2026,
+      "color": "Cinza Grafite",
+      "isAvailableForTestDrive": true,
+      "specs": {
+        "power": 198,
+        "torque": 265,
+        "acceleration": 7.4,
+        "topSpeed": 210,
+        "rangeOrdisplacement": "21.042 km",
+        "weight": 1440,
+        "specSource": "ai",
+        "specConfidence": 96,
+        "engineDescription": "1.6 16V T-GDI Gasolina",
+        "aiModelUsed": "gemini-3.1-flash-lite"
+      },
+      "paints": [
+        {
+          "name": "Cinza Grafite (Cor Original)",
+          "hex": "#666666",
+          "price": 0,
+          "class": "bg-slate-600"
+        },
+        {
+          "name": "Branco Fábrica",
+          "hex": "#F8FAFC",
+          "price": 0,
+          "class": "bg-slate-100"
+        },
+        {
+          "name": "Preto Fábrica",
+          "hex": "#0F172A",
+          "price": 1850,
+          "class": "bg-slate-950"
+        }
+      ],
+      "wheels": [
+        {
+          "name": "Rodas de Liga Leve Originais de Fábrica",
+          "size": "16\"",
+          "image": "Original16",
+          "price": 0
+        }
+      ],
+      "detailUrl": "https://www.garagemdonelsinho.com.br/Veiculo/creta-1.6-tgdi-gasolina-ultimate-dct-2026/5357282/detalhes",
+      "sellerName": "Garagem do Nelsinho",
       "gallery": [
         "https://www.autocerto.com/fotos/6983/5357282/1_122017.jpg",
         "https://www.autocerto.com/fotos/6983/5357282/1_122019.jpg",
@@ -1072,46 +1181,6 @@
         "https://www.autocerto.com/fotos/6983/5357282/1_122047.jpg",
         "https://www.autocerto.com/fabricantes/hyundai.webp"
       ],
-      "description": "1.6 TGDI GASOLINA ULTIMATE DCT",
-      "year": 2026,
-      "isAvailableForTestDrive": true,
-      "specs": {
-        "acceleration": 9.5,
-        "topSpeed": 198,
-        "power": 130,
-        "torque": 205,
-        "rangeOrdisplacement": "21.042 km",
-        "weight": 1220
-      },
-      "paints": [
-        {
-          "name": "Cinza Platinum",
-          "hex": "#475569",
-          "price": 0,
-          "class": "bg-slate-600"
-        },
-        {
-          "name": "Branco Diamante",
-          "hex": "#FFFFFF",
-          "price": 0,
-          "class": "bg-white border"
-        },
-        {
-          "name": "Preto Carbono",
-          "hex": "#0F172A",
-          "price": 1500,
-          "class": "bg-slate-900"
-        }
-      ],
-      "wheels": [
-        {
-          "name": "Rodas de Alumínio Diamantadas Originais",
-          "size": "16\"",
-          "image": "Original16",
-          "price": 0
-        }
-      ],
-      "detailUrl": "https://www.garagemdonelsinho.com.br/Veiculo/creta-1.6-tgdi-gasolina-ultimate-dct-2026/5357282/detalhes",
       "features": [
         "Bancos de Couro",
         "Retrovisores elétricos",
@@ -1139,10 +1208,56 @@
       "id": "scraped-13-hyundai-2019",
       "name": "HYUNDAI CRETA 2.0 16V FLEX PRESTIGE AUTOMÁTICO",
       "brand": "Hyundai",
-      "role": "Hyundai Destaque no Estoque",
+      "role": "Hyundai Inteligência Artificial Jina",
       "category": "suv",
       "price": 96900,
       "image": "https://www.autocerto.com/fotos/6983/5332383/1_090948.jpg",
+      "description": "2.0 16V FLEX PRESTIGE AUTOMÁTICO",
+      "year": 2019,
+      "color": "Preto",
+      "isAvailableForTestDrive": true,
+      "specs": {
+        "power": 166,
+        "torque": 205,
+        "acceleration": 9.3,
+        "topSpeed": 190,
+        "rangeOrdisplacement": "72.600 km",
+        "weight": 1390,
+        "specSource": "ai",
+        "specConfidence": 96,
+        "engineDescription": "2.0 16V Nu Flex",
+        "aiModelUsed": "gemini-3.1-flash-lite"
+      },
+      "paints": [
+        {
+          "name": "Preto (Cor Original)",
+          "hex": "#0F172A",
+          "price": 0,
+          "class": "bg-slate-950"
+        },
+        {
+          "name": "Branco Fábrica",
+          "hex": "#F8FAFC",
+          "price": 0,
+          "class": "bg-slate-100"
+        },
+        {
+          "name": "Prata Fábrica",
+          "hex": "#94A3B8",
+          "price": 1850,
+          "class": "bg-slate-400"
+        }
+      ],
+      "wheels": [
+        {
+          "name": "Rodas de Liga Leve Originais de Fábrica",
+          "size": "16\"",
+          "image": "Original16",
+          "price": 0
+        }
+      ],
+      "detailUrl": "https://www.garagemdonelsinho.com.br/Veiculo/creta-2.0-16v-flex-prestige-automatico-2019/5332383/detalhes",
+      "sellerName": "Garagem do Nelsinho",
       "gallery": [
         "https://www.autocerto.com/fotos/6983/5332383/1_090948.jpg",
         "https://www.autocerto.com/fotos/6983/5332383/1_090949.jpg",
@@ -1166,46 +1281,6 @@
         "https://www.autocerto.com/fotos/6983/5332383/1_091012.jpg",
         "https://www.autocerto.com/fabricantes/hyundai.webp"
       ],
-      "description": "2.0 16V FLEX PRESTIGE AUTOMÁTICO",
-      "year": 2019,
-      "isAvailableForTestDrive": true,
-      "specs": {
-        "acceleration": 11,
-        "topSpeed": 180,
-        "power": 116,
-        "torque": 160,
-        "rangeOrdisplacement": "72.600 km",
-        "weight": 1220
-      },
-      "paints": [
-        {
-          "name": "Cinza Platinum",
-          "hex": "#475569",
-          "price": 0,
-          "class": "bg-slate-600"
-        },
-        {
-          "name": "Branco Diamante",
-          "hex": "#FFFFFF",
-          "price": 0,
-          "class": "bg-white border"
-        },
-        {
-          "name": "Preto Carbono",
-          "hex": "#0F172A",
-          "price": 1500,
-          "class": "bg-slate-900"
-        }
-      ],
-      "wheels": [
-        {
-          "name": "Rodas de Alumínio Diamantadas Originais",
-          "size": "16\"",
-          "image": "Original16",
-          "price": 0
-        }
-      ],
-      "detailUrl": "https://www.garagemdonelsinho.com.br/Veiculo/creta-2.0-16v-flex-prestige-automatico-2019/5332383/detalhes",
       "features": [
         "Ar condicionado",
         "Bancos de Couro",
@@ -1232,10 +1307,56 @@
       "id": "scraped-12-hyundai-2025",
       "name": "HYUNDAI HB20 1.0 12V FLEX COMFORT MANUAL",
       "brand": "Hyundai",
-      "role": "Hyundai Destaque no Estoque",
+      "role": "Hyundai Inteligência Artificial Jina",
       "category": "classics",
       "price": 78970,
       "image": "https://www.autocerto.com/fotos/6983/5335415/1_032941.jpg",
+      "description": "Este esplêndido HYUNDAI HB20 1.0 12V FLEX COMFORT MANUAL fabricado em 2025 está disponível.",
+      "year": 2026,
+      "color": "Preto",
+      "isAvailableForTestDrive": true,
+      "specs": {
+        "power": 80,
+        "torque": 104,
+        "acceleration": 13.4,
+        "topSpeed": 165,
+        "rangeOrdisplacement": "47.968 km",
+        "weight": 990,
+        "specSource": "ai",
+        "specConfidence": 96,
+        "engineDescription": "1.0 12V Kappa Flex",
+        "aiModelUsed": "gemini-3.1-flash-lite"
+      },
+      "paints": [
+        {
+          "name": "Preto (Cor Original)",
+          "hex": "#0F172A",
+          "price": 0,
+          "class": "bg-slate-950"
+        },
+        {
+          "name": "Branco Fábrica",
+          "hex": "#F8FAFC",
+          "price": 0,
+          "class": "bg-slate-100"
+        },
+        {
+          "name": "Prata Fábrica",
+          "hex": "#94A3B8",
+          "price": 1850,
+          "class": "bg-slate-400"
+        }
+      ],
+      "wheels": [
+        {
+          "name": "Rodas de Liga Leve Originais de Fábrica",
+          "size": "16\"",
+          "image": "Original16",
+          "price": 0
+        }
+      ],
+      "detailUrl": "https://www.garagemdonelsinho.com.br/Veiculo/hb20-1.0-12v-flex-comfort-manual-2026/5335415/detalhes",
+      "sellerName": "Garagem do Nelsinho",
       "gallery": [
         "https://www.autocerto.com/fotos/6983/5335415/1_032941.jpg",
         "https://www.autocerto.com/fotos/6983/5335415/2_032941.jpg",
@@ -1259,46 +1380,6 @@
         "https://www.autocerto.com/fotos/6983/5335415/1_032959.jpg",
         "https://www.autocerto.com/fabricantes/hyundai.webp"
       ],
-      "description": "Este esplêndido HYUNDAI HB20 1.0 12V FLEX COMFORT MANUAL fabricado em 2025 está disponível.",
-      "year": 2026,
-      "isAvailableForTestDrive": true,
-      "specs": {
-        "acceleration": 9.5,
-        "topSpeed": 198,
-        "power": 130,
-        "torque": 205,
-        "rangeOrdisplacement": "47.968 km",
-        "weight": 1220
-      },
-      "paints": [
-        {
-          "name": "Cinza Platinum",
-          "hex": "#475569",
-          "price": 0,
-          "class": "bg-slate-600"
-        },
-        {
-          "name": "Branco Diamante",
-          "hex": "#FFFFFF",
-          "price": 0,
-          "class": "bg-white border"
-        },
-        {
-          "name": "Preto Carbono",
-          "hex": "#0F172A",
-          "price": 1500,
-          "class": "bg-slate-900"
-        }
-      ],
-      "wheels": [
-        {
-          "name": "Rodas de Alumínio Diamantadas Originais",
-          "size": "16\"",
-          "image": "Original16",
-          "price": 0
-        }
-      ],
-      "detailUrl": "https://www.garagemdonelsinho.com.br/Veiculo/hb20-1.0-12v-flex-comfort-manual-2026/5335415/detalhes",
       "features": [
         "Ar condicionado",
         "Vidros elétricos",
@@ -1314,788 +1395,981 @@
       ]
     },
     {
-      "id": "scraped-13-jeep-2022",
-      "name": "JEEP COMMANDER 1.3 T270 TURBO FLEX OVERLAND AT6",
-      "brand": "Jeep",
-      "role": "Jeep Destaque no Estoque",
-      "category": "classics",
-      "price": 149970,
-      "image": "https://www.autocerto.com/fotos/6983/4997325/1_095550.jpg",
-      "gallery": [
-        "https://www.autocerto.com/fotos/6983/4997325/1_095550.jpg",
-        "https://www.autocerto.com/fotos/6983/4997325/1_095552.jpg",
-        "https://www.autocerto.com/fotos/6983/4997325/1_095553.jpg",
-        "https://www.autocerto.com/fotos/6983/4997325/1_095554.jpg",
-        "https://www.autocerto.com/fotos/6983/4997325/1_095555.jpg",
-        "https://www.autocerto.com/fotos/6983/4997325/1_095556.jpg",
-        "https://www.autocerto.com/fotos/6983/4997325/1_095558.jpg",
-        "https://www.autocerto.com/fotos/6983/4997325/1_095600.jpg",
-        "https://www.autocerto.com/fotos/6983/4997325/1_095602.jpg",
-        "https://www.autocerto.com/fotos/6983/4997325/1_095604.jpg",
-        "https://www.autocerto.com/fotos/6983/4997325/1_095605.jpg",
-        "https://www.autocerto.com/fotos/6983/4997325/1_095606.jpg",
-        "https://www.autocerto.com/fotos/6983/4997325/1_095607.jpg",
-        "https://www.autocerto.com/fotos/6983/4997325/1_095609.jpg",
-        "https://www.autocerto.com/fotos/6983/4997325/1_095610.jpg",
-        "https://www.autocerto.com/fotos/6983/4997325/1_095613.jpg",
-        "https://www.autocerto.com/fotos/6983/4997325/1_095614.jpg",
-        "https://www.autocerto.com/fotos/6983/4997325/1_095615.jpg",
-        "https://www.autocerto.com/fotos/6983/4997325/1_095616.jpg",
-        "https://www.autocerto.com/fotos/6983/4997325/1_095618.jpg",
-        "https://www.autocerto.com/fotos/6983/4997325/1_095619.jpg",
-        "https://www.autocerto.com/fotos/6983/4997325/1_095620.jpg",
-        "https://www.autocerto.com/fotos/6983/4997325/1_095621.jpg",
-        "https://www.autocerto.com/fotos/6983/4997325/1_095623.jpg",
-        "https://www.autocerto.com/fabricantes/jeep.webp"
-      ],
-      "description": "Este esplêndido JEEP COMMANDER 1.3 T270 TURBO FLEX OVERLAND AT6 fabricado em 2022 está disponível.",
-      "year": 2022,
-      "isAvailableForTestDrive": true,
-      "specs": {
-        "acceleration": 11,
-        "topSpeed": 180,
-        "power": 116,
-        "torque": 160,
-        "rangeOrdisplacement": "55.100 km",
-        "weight": 1220
-      },
-      "paints": [
-        {
-          "name": "Cinza Platinum",
-          "hex": "#475569",
-          "price": 0,
-          "class": "bg-slate-600"
-        },
-        {
-          "name": "Branco Diamante",
-          "hex": "#FFFFFF",
-          "price": 0,
-          "class": "bg-white border"
-        },
-        {
-          "name": "Preto Carbono",
-          "hex": "#0F172A",
-          "price": 1500,
-          "class": "bg-slate-900"
-        }
-      ],
-      "wheels": [
-        {
-          "name": "Rodas de Alumínio Diamantadas Originais",
-          "size": "16\"",
-          "image": "Original16",
-          "price": 0
-        }
-      ],
-      "detailUrl": "https://www.garagemdonelsinho.com.br/Veiculo/commander-1.3-t270-turbo-flex-overland-at6-2022/4997325/detalhes",
-      "features": [
-        "Ar condicionado",
-        "Bancos de Couro",
-        "Retrovisores elétricos",
-        "Teto solar",
-        "Vidros elétricos",
-        "Alarme",
-        "Freios ABS",
-        "Rodas de liga leve",
-        "Travas elétricas",
-        "Direção Hidraulica",
-        "Ar condicionado Digital",
-        "Multimídia",
-        "Vidros elétricos Traseiros",
-        "Câmera 360",
-        "Ar condicionado dual zone",
-        "Banco do motorista com ajuste de altura",
-        "Bancos elétricos",
-        "Sensor de chuva",
-        "Sensor de estacionamento",
-        "Airbag laterais",
-        "Airbag motorista",
-        "Airbag passageiro",
-        "Retrovisor fotocrômico",
-        "Câmera de ré",
-        "Banco do motorista com ajuste elétrico"
-      ]
-    },
-    {
-      "id": "scraped-16-jeep-2023",
+      "id": "scraped-15-jeep-2023",
       "name": "JEEP COMPASS 1.3 T270 TURBO FLEX LONGITUDE AT6",
       "brand": "Jeep",
-      "role": "Jeep Destaque no Estoque",
+      "role": "Jeep Inteligência Artificial Jina",
       "category": "suv",
-      "price": 127900,
-      "image": "https://www.autocerto.com/fabricantes/jeep.webp",
-      "gallery": [
-        "https://www.autocerto.com/fabricantes/jeep.webp"
-      ],
-      "description": "Este magnífico JEEP COMPASS 1.3 T270 TURBO FLEX LONGITUDE AT6 ano modelo 2023 conta com apenas 26.670 km rodados! Superbamente revisado pela equipe técnica da Garagem do Nelsinho. Veículo com vistoria cautelar 100% aprovada, estofamento higienizado, mecânica periciada sob rigorosa aprovação, perfeito para rodar diário com imbatível custo-benefício.",
+      "price": 127970,
+      "image": "https://www.autocerto.com/fotos/6983/5467463/1_100030.jpg",
+      "description": "Este esplêndido JEEP COMPASS 1.3 T270 TURBO FLEX LONGITUDE AT6 ano modelo 2023 está disponível.",
       "year": 2023,
+      "color": "Prata",
       "isAvailableForTestDrive": true,
       "specs": {
-        "acceleration": 9.8,
-        "topSpeed": 195,
-        "power": 128,
-        "torque": 200,
+        "power": 185,
+        "torque": 270,
+        "acceleration": 8.7,
+        "topSpeed": 210,
         "rangeOrdisplacement": "26.670 km",
-        "weight": 1210
+        "weight": 1557,
+        "specSource": "ai",
+        "specConfidence": 96,
+        "engineDescription": "1.3 16V Turbo 270 Flex",
+        "aiModelUsed": "gemini-3.1-flash-lite"
       },
       "paints": [
         {
-          "name": "Cinza Platinum",
-          "hex": "#475569",
+          "name": "Prata (Cor Original)",
+          "hex": "#94A3B8",
           "price": 0,
-          "class": "bg-slate-600"
+          "class": "bg-slate-400"
         },
         {
-          "name": "Branco Diamante",
-          "hex": "#FFFFFF",
+          "name": "Branco Fábrica",
+          "hex": "#F8FAFC",
           "price": 0,
-          "class": "bg-white border"
+          "class": "bg-slate-100"
         },
         {
-          "name": "Preto Carbono",
+          "name": "Preto Fábrica",
           "hex": "#0F172A",
-          "price": 1500,
-          "class": "bg-slate-900"
+          "price": 1850,
+          "class": "bg-slate-950"
         }
       ],
       "wheels": [
         {
-          "name": "Rodas de Alumínio Diamantadas Originais",
+          "name": "Rodas de Liga Leve Originais de Fábrica",
           "size": "16\"",
           "image": "Original16",
           "price": 0
         }
       ],
-      "detailUrl": "https://www.garagemdonelsinho.com.br/Veiculo/compass-1.3-t270-turbo-flex-longitude-at6-2023/5467463/detalhes",
-      "features": [
-        "Ar condicionado",
-        "Bancos de Couro",
-        "Retrovisores elétricos",
-        "Vidros elétricos",
-        "Alarme",
-        "Freios ABS",
-        "Rodas de liga leve",
-        "Travas elétricas",
-        "Ar condicionado Digital",
-        "Multimídia",
-        "Vidros elétricos Traseiros",
-        "Ar condicionado dual zone",
-        "Banco do motorista com ajuste de altura",
-        "Sensor de chuva",
-        "Sensor de estacionamento",
-        "Airbag laterais",
-        "Airbag motorista",
-        "Airbag passageiro",
-        "Câmera de ré",
-        "Banco traseiro bipartido"
+      "detailUrl": "https://www.garagemdonelsinho.com.br/Veiculos?busca=JEEP%20COMPASS%201.3%20T270%20TURBO%20FLEX%20LONGITUDE%20AT6",
+      "sellerName": "Garagem do Nelsinho",
+      "gallery": [
+        "https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?q=80&w=1200&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?q=80&w=1200&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1563720223185-11003d516935?q=80&w=1200&auto=format&fit=crop"
       ],
-      "sellerName": "Garagem do Nelsinho"
+      "features": [
+        "Laudo de vistoria cautelar aprovado",
+        "Garantia de km real",
+        "Procedência total garantida"
+      ]
     },
     {
-      "id": "scraped-17-jeep-2020",
+      "id": "scraped-16-jeep-2020",
       "name": "JEEP COMPASS 2.0 16V FLEX LONGITUDE AUTOMÁTICO",
       "brand": "Jeep",
-      "role": "Jeep Destaque no Estoque",
+      "role": "Jeep Inteligência Artificial Jina",
       "category": "suv",
       "price": 93970,
-      "image": "https://www.autocerto.com/fabricantes/jeep.webp",
-      "gallery": [
-        "https://www.autocerto.com/fabricantes/jeep.webp"
-      ],
-      "description": "Este magnífico JEEP COMPASS 2.0 16V FLEX LONGITUDE AUTOMÁTICO ano modelo 2020 conta com apenas 67.838 km rodados! Superbamente revisado pela equipe técnica da Garagem do Nelsinho. Veículo com vistoria cautelar 100% aprovada, estofamento higienizado, mecânica periciada sob rigorosa aprovação, perfeito para rodar diário com imbatível custo-benefício.",
+      "image": "https://www.autocerto.com/images/emBreve.jpg",
+      "description": "Este esplêndido JEEP COMPASS 2.0 16V FLEX LONGITUDE AUTOMÁTICO ano modelo 2020 está disponível.",
       "year": 2020,
+      "color": "Cinza Chumbo",
       "isAvailableForTestDrive": true,
       "specs": {
-        "acceleration": 11.2,
-        "topSpeed": 178,
-        "power": 115,
-        "torque": 155,
+        "power": 166,
+        "torque": 205,
+        "acceleration": 10.7,
+        "topSpeed": 186,
         "rangeOrdisplacement": "67.838 km",
-        "weight": 1210
+        "weight": 1546,
+        "specSource": "ai",
+        "specConfidence": 96,
+        "engineDescription": "2.0 16V Tigershark Flex",
+        "aiModelUsed": "gemini-3.1-flash-lite"
       },
       "paints": [
         {
-          "name": "Cinza Platinum",
-          "hex": "#475569",
+          "name": "Cinza Chumbo (Cor Original)",
+          "hex": "#374151",
           "price": 0,
-          "class": "bg-slate-600"
+          "class": "bg-slate-700"
         },
         {
-          "name": "Branco Diamante",
-          "hex": "#FFFFFF",
+          "name": "Branco Fábrica",
+          "hex": "#F8FAFC",
           "price": 0,
-          "class": "bg-white border"
+          "class": "bg-slate-100"
         },
         {
-          "name": "Preto Carbono",
+          "name": "Preto Fábrica",
           "hex": "#0F172A",
-          "price": 1500,
-          "class": "bg-slate-900"
+          "price": 1850,
+          "class": "bg-slate-950"
         }
       ],
       "wheels": [
         {
-          "name": "Rodas de Alumínio Diamantadas Originais",
+          "name": "Rodas de Liga Leve Originais de Fábrica",
           "size": "16\"",
           "image": "Original16",
           "price": 0
         }
       ],
-      "detailUrl": "https://www.garagemdonelsinho.com.br/Veiculo/compass-2.0-16v-flex-longitude-automatico-2020/5432803/detalhes",
-      "features": [
-        "Ar condicionado",
-        "Bancos de Couro",
-        "Retrovisores elétricos",
-        "Vidros elétricos",
-        "Alarme",
-        "Freios ABS",
-        "Rodas de liga leve",
-        "Travas elétricas",
-        "Direção Hidraulica",
-        "Ar condicionado Digital",
-        "Multimídia",
-        "Vidros elétricos Traseiros",
-        "Ar condicionado dual zone",
-        "Banco do motorista com ajuste de altura",
-        "Sensor de chuva",
-        "Sensor de estacionamento",
-        "Airbag laterais",
-        "Airbag motorista",
-        "Airbag passageiro",
-        "Câmera de ré",
-        "Banco traseiro bipartido"
+      "detailUrl": "https://www.garagemdonelsinho.com.br/Veiculos?busca=JEEP%20COMPASS%202.0%2016V%20FLEX%20LONGITUDE%20AUTOM%C3%81TICO",
+      "sellerName": "Garagem do Nelsinho",
+      "gallery": [
+        "https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?q=80&w=1200&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?q=80&w=1200&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1563720223185-11003d516935?q=80&w=1200&auto=format&fit=crop"
       ],
-      "sellerName": "Garagem do Nelsinho"
+      "features": [
+        "Laudo de vistoria cautelar aprovado",
+        "Garantia de km real",
+        "Procedência total garantida"
+      ]
+    },
+    {
+      "id": "scraped-17-jeep-2024",
+      "name": "JEEP RENEGADE 1.3 T270 TURBO FLEX LONGITUDE AT6",
+      "brand": "Jeep",
+      "role": "Jeep Inteligência Artificial Jina",
+      "category": "suv",
+      "price": 109000,
+      "image": "https://www.autocerto.com/images/emBreve.jpg",
+      "description": "Este esplêndido JEEP RENEGADE 1.3 T270 TURBO FLEX LONGITUDE AT6 ano modelo 2024 está disponível.",
+      "year": 2024,
+      "color": "Cinza Chumbo",
+      "isAvailableForTestDrive": true,
+      "specs": {
+        "power": 185,
+        "torque": 270,
+        "acceleration": 8.8,
+        "topSpeed": 210,
+        "rangeOrdisplacement": "35.321 km",
+        "weight": 1413,
+        "specSource": "ai",
+        "specConfidence": 96,
+        "engineDescription": "1.3 16V Turbo 270 Flex",
+        "aiModelUsed": "gemini-3.1-flash-lite"
+      },
+      "paints": [
+        {
+          "name": "Cinza Chumbo (Cor Original)",
+          "hex": "#374151",
+          "price": 0,
+          "class": "bg-slate-700"
+        },
+        {
+          "name": "Branco Fábrica",
+          "hex": "#F8FAFC",
+          "price": 0,
+          "class": "bg-slate-100"
+        },
+        {
+          "name": "Preto Fábrica",
+          "hex": "#0F172A",
+          "price": 1850,
+          "class": "bg-slate-950"
+        }
+      ],
+      "wheels": [
+        {
+          "name": "Rodas de Liga Leve Originais de Fábrica",
+          "size": "16\"",
+          "image": "Original16",
+          "price": 0
+        }
+      ],
+      "detailUrl": "https://www.garagemdonelsinho.com.br/Veiculos?busca=JEEP%20RENEGADE%201.3%20T270%20TURBO%20FLEX%20LONGITUDE%20AT6",
+      "sellerName": "Garagem do Nelsinho",
+      "gallery": [
+        "https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?q=80&w=1200&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?q=80&w=1200&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1563720223185-11003d516935?q=80&w=1200&auto=format&fit=crop"
+      ],
+      "features": [
+        "Laudo de vistoria cautelar aprovado",
+        "Garantia de km real",
+        "Procedência total garantida"
+      ]
+    },
+    {
+      "id": "scraped-18-jeep-2022",
+      "name": "JEEP RENEGADE 1.3 T270 TURBO FLEX S 4X4 AT9",
+      "brand": "Jeep",
+      "role": "Jeep Inteligência Artificial Jina",
+      "category": "suv",
+      "price": 107900,
+      "image": "https://www.autocerto.com/images/emBreve.jpg",
+      "description": "Este esplêndido JEEP RENEGADE 1.3 T270 TURBO FLEX S 4X4 AT9 ano modelo 2022 está disponível.",
+      "year": 2022,
+      "color": "Cinza Chumbo",
+      "isAvailableForTestDrive": true,
+      "specs": {
+        "power": 185,
+        "torque": 270,
+        "acceleration": 8.7,
+        "topSpeed": 210,
+        "rangeOrdisplacement": "45.864 km",
+        "weight": 1538,
+        "specSource": "ai",
+        "specConfidence": 96,
+        "engineDescription": "1.3 16V Turbo 270 Flex",
+        "aiModelUsed": "gemini-3.1-flash-lite"
+      },
+      "paints": [
+        {
+          "name": "Cinza Chumbo (Cor Original)",
+          "hex": "#374151",
+          "price": 0,
+          "class": "bg-slate-700"
+        },
+        {
+          "name": "Branco Fábrica",
+          "hex": "#F8FAFC",
+          "price": 0,
+          "class": "bg-slate-100"
+        },
+        {
+          "name": "Preto Fábrica",
+          "hex": "#0F172A",
+          "price": 1850,
+          "class": "bg-slate-950"
+        }
+      ],
+      "wheels": [
+        {
+          "name": "Rodas de Liga Leve Originais de Fábrica",
+          "size": "16\"",
+          "image": "Original16",
+          "price": 0
+        }
+      ],
+      "detailUrl": "https://www.garagemdonelsinho.com.br/Veiculos?busca=JEEP%20RENEGADE%201.3%20T270%20TURBO%20FLEX%20S%204X4%20AT9",
+      "sellerName": "Garagem do Nelsinho",
+      "gallery": [
+        "https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?q=80&w=1200&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?q=80&w=1200&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1563720223185-11003d516935?q=80&w=1200&auto=format&fit=crop"
+      ],
+      "features": [
+        "Laudo de vistoria cautelar aprovado",
+        "Garantia de km real",
+        "Procedência total garantida"
+      ]
+    },
+    {
+      "id": "scraped-19-jeep-2021",
+      "name": "JEEP RENEGADE 2.0 16V TURBO DIESEL LONGITUDE 4P 4X4 AUTOMÁTICO",
+      "brand": "Jeep",
+      "role": "Jeep Inteligência Artificial Jina",
+      "category": "suv",
+      "price": 113000,
+      "image": "https://www.autocerto.com/images/emBreve.jpg",
+      "description": "Este esplêndido JEEP RENEGADE 2.0 16V TURBO DIESEL LONGITUDE 4P 4X4 AUTOMÁTICO ano modelo 2021 está disponível.",
+      "year": 2021,
+      "color": "Cinza Chumbo",
+      "isAvailableForTestDrive": true,
+      "specs": {
+        "power": 170,
+        "torque": 350,
+        "acceleration": 9.9,
+        "topSpeed": 190,
+        "rangeOrdisplacement": "76.305 km",
+        "weight": 1632,
+        "specSource": "ai",
+        "specConfidence": 96,
+        "engineDescription": "2.0 16V Multijet Diesel",
+        "aiModelUsed": "gemini-3.1-flash-lite"
+      },
+      "paints": [
+        {
+          "name": "Cinza Chumbo (Cor Original)",
+          "hex": "#374151",
+          "price": 0,
+          "class": "bg-slate-700"
+        },
+        {
+          "name": "Branco Fábrica",
+          "hex": "#F8FAFC",
+          "price": 0,
+          "class": "bg-slate-100"
+        },
+        {
+          "name": "Preto Fábrica",
+          "hex": "#0F172A",
+          "price": 1850,
+          "class": "bg-slate-950"
+        }
+      ],
+      "wheels": [
+        {
+          "name": "Rodas de Liga Leve Originais de Fábrica",
+          "size": "16\"",
+          "image": "Original16",
+          "price": 0
+        }
+      ],
+      "detailUrl": "https://www.garagemdonelsinho.com.br/Veiculos?busca=JEEP%20RENEGADE%202.0%2016V%20TURBO%20DIESEL%20LONGITUDE%204P%204X4%20AUTOM%C3%81TICO",
+      "sellerName": "Garagem do Nelsinho",
+      "gallery": [
+        "https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?q=80&w=1200&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?q=80&w=1200&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1563720223185-11003d516935?q=80&w=1200&auto=format&fit=crop"
+      ],
+      "features": [
+        "Laudo de vistoria cautelar aprovado",
+        "Garantia de km real",
+        "Procedência total garantida"
+      ]
     },
     {
       "id": "scraped-20-jeep-2020",
       "name": "JEEP RENEGADE 1.8 16V FLEX 4P AUTOMÁTICO",
       "brand": "Jeep",
-      "role": "Jeep Destaque no Estoque",
+      "role": "Jeep Inteligência Artificial Jina",
       "category": "suv",
       "price": 73970,
       "image": "https://www.autocerto.com/fotos/6983/5426740/1_105634.jpg",
-      "gallery": [
-        "https://www.autocerto.com/fotos/6983/5426740/1_105634.jpg",
-        "https://www.autocerto.com/fotos/6983/5426740/1_105635.jpg",
-        "https://www.autocerto.com/fotos/6983/5426740/1_105636.jpg",
-        "https://www.autocerto.com/fotos/6983/5426740/1_105637.jpg",
-        "https://www.autocerto.com/fotos/6983/5426740/2_105637.jpg",
-        "https://www.autocerto.com/fotos/6983/5426740/1_105638.jpg",
-        "https://www.autocerto.com/fotos/6983/5426740/1_105639.jpg",
-        "https://www.autocerto.com/fotos/6983/5426740/1_105640.jpg",
-        "https://www.autocerto.com/fotos/6983/5426740/1_105641.jpg",
-        "https://www.autocerto.com/fotos/6983/5426740/1_105642.jpg",
-        "https://www.autocerto.com/fotos/6983/5426740/2_105642.jpg",
-        "https://www.autocerto.com/fotos/6983/5426740/1_105643.jpg",
-        "https://www.autocerto.com/fotos/6983/5426740/1_105644.jpg",
-        "https://www.autocerto.com/fotos/6983/5426740/1_105645.jpg",
-        "https://www.autocerto.com/fotos/6983/5426740/1_105646.jpg",
-        "https://www.autocerto.com/fotos/6983/5426740/2_105646.jpg",
-        "https://www.autocerto.com/fotos/6983/5426740/1_105647.jpg",
-        "https://www.autocerto.com/fotos/6983/5426740/1_105648.jpg",
-        "https://www.autocerto.com/fotos/6983/5426740/1_105649.jpg",
-        "https://www.autocerto.com/fotos/6983/5426740/1_105650.jpg",
-        "https://www.autocerto.com/fotos/6983/5426740/2_105650.jpg",
-        "https://www.autocerto.com/fabricantes/jeep.webp"
-      ],
       "description": "Este esplêndido JEEP RENEGADE 1.8 16V FLEX 4P AUTOMÁTICO ano modelo 2020 está disponível.",
       "year": 2020,
+      "color": "Marrom",
       "isAvailableForTestDrive": true,
       "specs": {
-        "acceleration": 9.5,
-        "topSpeed": 198,
-        "power": 130,
-        "torque": 205,
+        "power": 139,
+        "torque": 189,
+        "acceleration": 12.2,
+        "topSpeed": 179,
         "rangeOrdisplacement": "69.000 km",
-        "weight": 1220
+        "weight": 1448,
+        "specSource": "ai",
+        "specConfidence": 96,
+        "engineDescription": "1.8 16V E.TorQ Flex",
+        "aiModelUsed": "gemini-3.1-flash-lite"
       },
       "paints": [
         {
-          "name": "Cinza Platinum",
-          "hex": "#475569",
+          "name": "Marrom (Cor Original)",
+          "hex": "#78350F",
           "price": 0,
-          "class": "bg-slate-600"
+          "class": "bg-amber-900"
         },
         {
-          "name": "Branco Diamante",
-          "hex": "#FFFFFF",
+          "name": "Branco Fábrica",
+          "hex": "#F8FAFC",
           "price": 0,
-          "class": "bg-white border"
+          "class": "bg-slate-100"
         },
         {
-          "name": "Preto Carbono",
+          "name": "Preto Fábrica",
           "hex": "#0F172A",
-          "price": 1500,
-          "class": "bg-slate-900"
+          "price": 1850,
+          "class": "bg-slate-950"
         }
       ],
       "wheels": [
         {
-          "name": "Rodas de Alumínio Diamantadas Originais",
+          "name": "Rodas de Liga Leve Originais de Fábrica",
           "size": "16\"",
           "image": "Original16",
           "price": 0
         }
       ],
-      "detailUrl": "https://www.garagemdonelsinho.com.br/Veiculo/renegade-1.8-16v-flex-4p-automatico-2020/5426740/detalhes",
+      "detailUrl": "https://www.garagemdonelsinho.com.br/Veiculos?busca=JEEP%20RENEGADE%201.8%2016V%20FLEX%204P%20AUTOM%C3%81TICO",
+      "sellerName": "Garagem do Nelsinho",
+      "gallery": [
+        "https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?q=80&w=1200&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?q=80&w=1200&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1563720223185-11003d516935?q=80&w=1200&auto=format&fit=crop"
+      ],
       "features": [
-        "Ar condicionado",
-        "Bancos de Couro",
-        "Vidros elétricos",
-        "Alarme",
-        "Freios ABS",
-        "Rodas de liga leve",
-        "Travas elétricas",
-        "Multimídia",
-        "Vidros elétricos Traseiros",
-        "Banco do motorista com ajuste de altura",
-        "Airbag motorista",
-        "Airbag passageiro",
-        "Câmera de ré",
-        "Banco traseiro bipartido"
+        "Laudo de vistoria cautelar aprovado",
+        "Garantia de km real",
+        "Procedência total garantida"
       ]
     },
     {
       "id": "scraped-21-jeep-2021",
       "name": "JEEP RENEGADE 1.8 16V FLEX SPORT 4P AUTOMÁTICO",
       "brand": "Jeep",
-      "role": "Jeep Destaque no Estoque",
+      "role": "Jeep Inteligência Artificial Jina",
       "category": "suv",
       "price": 81970,
       "image": "https://www.autocerto.com/fotos/6983/5368346/1_120157.jpg",
-      "gallery": [
-        "https://www.autocerto.com/fotos/6983/5368346/1_120157.jpg",
-        "https://www.autocerto.com/fotos/6983/5368346/1_120158.jpg",
-        "https://www.autocerto.com/fotos/6983/5368346/1_120159.jpg",
-        "https://www.autocerto.com/fotos/6983/5368346/1_120201.jpg",
-        "https://www.autocerto.com/fotos/6983/5368346/1_120202.jpg",
-        "https://www.autocerto.com/fotos/6983/5368346/2_120202.jpg",
-        "https://www.autocerto.com/fotos/6983/5368346/1_120204.jpg",
-        "https://www.autocerto.com/fotos/6983/5368346/1_120206.jpg",
-        "https://www.autocerto.com/fotos/6983/5368346/1_120207.jpg",
-        "https://www.autocerto.com/fotos/6983/5368346/1_120209.jpg",
-        "https://www.autocerto.com/fotos/6983/5368346/1_120210.jpg",
-        "https://www.autocerto.com/fotos/6983/5368346/1_120211.jpg",
-        "https://www.autocerto.com/fotos/6983/5368346/1_120212.jpg",
-        "https://www.autocerto.com/fotos/6983/5368346/1_120214.jpg",
-        "https://www.autocerto.com/fotos/6983/5368346/1_120215.jpg",
-        "https://www.autocerto.com/fotos/6983/5368346/1_120217.jpg",
-        "https://www.autocerto.com/fotos/6983/5368346/1_120218.jpg",
-        "https://www.autocerto.com/fotos/6983/5368346/1_120220.jpg",
-        "https://www.autocerto.com/fotos/6983/5368346/1_120222.jpg",
-        "https://www.autocerto.com/fotos/6983/5368346/1_120223.jpg",
-        "https://www.autocerto.com/fabricantes/jeep.webp"
-      ],
-      "description": "Este esplêndido RENEGADE 1.8 16V FLEX SPORT 4P AUTOMÁTICO ano modelo 2021 está disponível.",
+      "description": "Este esplêndido JEEP RENEGADE 1.8 16V FLEX SPORT 4P AUTOMÁTICO ano modelo 2021 está disponível.",
       "year": 2021,
+      "color": "Marrom",
       "isAvailableForTestDrive": true,
       "specs": {
-        "acceleration": 11,
-        "topSpeed": 180,
-        "power": 116,
-        "torque": 160,
+        "power": 139,
+        "torque": 189,
+        "acceleration": 12.2,
+        "topSpeed": 179,
         "rangeOrdisplacement": "42.035 km",
-        "weight": 1220
+        "weight": 1448,
+        "specSource": "ai",
+        "specConfidence": 96,
+        "engineDescription": "1.8 16V E.TorQ Flex",
+        "aiModelUsed": "gemini-3.1-flash-lite"
       },
       "paints": [
         {
-          "name": "Cinza Platinum",
-          "hex": "#475569",
+          "name": "Marrom (Cor Original)",
+          "hex": "#78350F",
           "price": 0,
-          "class": "bg-slate-600"
+          "class": "bg-amber-900"
         },
         {
-          "name": "Branco Diamante",
-          "hex": "#FFFFFF",
+          "name": "Branco Fábrica",
+          "hex": "#F8FAFC",
           "price": 0,
-          "class": "bg-white border"
+          "class": "bg-slate-100"
         },
         {
-          "name": "Preto Carbono",
+          "name": "Preto Fábrica",
           "hex": "#0F172A",
-          "price": 1500,
-          "class": "bg-slate-900"
+          "price": 1850,
+          "class": "bg-slate-950"
         }
       ],
       "wheels": [
         {
-          "name": "Rodas de Alumínio Diamantadas Originais",
+          "name": "Rodas de Liga Leve Originais de Fábrica",
           "size": "16\"",
           "image": "Original16",
           "price": 0
         }
       ],
-      "detailUrl": "https://www.garagemdonelsinho.com.br/Veiculo/renegade-1.8-16v-flex-sport-4p-automatico-2021/5368346/detalhes",
+      "detailUrl": "https://www.garagemdonelsinho.com.br/Veiculos?busca=JEEP%20RENEGADE%201.8%2016V%20FLEX%20SPORT%204P%20AUTOM%C3%81TICO",
+      "sellerName": "Garagem do Nelsinho",
+      "gallery": [
+        "https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?q=80&w=1200&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?q=80&w=1200&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1563720223185-11003d516935?q=80&w=1200&auto=format&fit=crop"
+      ],
       "features": [
-        "Ar condicionado",
-        "Bancos de Couro",
-        "Retrovisores elétricos",
-        "Vidros elétricos",
-        "Alarme",
-        "Freios ABS",
-        "Rodas de liga leve",
-        "Travas elétricas",
-        "Ar condicionado Digital",
-        "Multimídia",
-        "Vidros elétricos Traseiros",
-        "Banco do motorista com ajuste de altura",
-        "Sensor de estacionamento",
-        "Airbag motorista",
-        "Airbag passageiro",
-        "Retrovisor fotocrômico",
-        "Câmera de ré",
-        "Banco traseiro bipartido"
+        "Laudo de vistoria cautelar aprovado",
+        "Garantia de km real",
+        "Procedência total garantida"
       ]
     },
     {
-      "id": "scraped-17-jeep-2018",
+      "id": "scraped-22-jeep-2018",
       "name": "JEEP RENEGADE 1.8 16V FLEX LIMITED 4P AUTOMÁTICO",
       "brand": "Jeep",
-      "role": "Jeep Destaque no Estoque",
+      "role": "Jeep Inteligência Artificial Jina",
       "category": "suv",
       "price": 76900,
-      "image": "https://www.autocerto.com/fotos/6983/5282526/1_020352.jpg",
-      "gallery": [
-        "https://www.autocerto.com/fotos/6983/5282526/1_020352.jpg",
-        "https://www.autocerto.com/fabricantes/jeep.webp"
-      ],
-      "description": "Este magnífico JEEP RENEGADE 1.8 16V FLEX LIMITED 4P AUTOMÁTICO fabricado em 2018 conta com apenas 54.900 km rodados! Superbamente revisado pela equipe técnica da Garagem do Nelsinho. Veículo com vistoria cautelar 100% aprovada, estofamento higienizado, mecânica periciada sob rigorosa aprovação, perfeito para rodar diário com imbatível custo-benefício.",
+      "image": "https://www.autocerto.com/fotos/6983/5282526/1_055308.jpg",
+      "description": "Este esplêndido JEEP RENEGADE 1.8 16V FLEX LIMITED 4P AUTOMÁTICO ano modelo 2018 está disponível.",
       "year": 2018,
+      "color": "Prata",
       "isAvailableForTestDrive": true,
       "specs": {
-        "acceleration": 11.2,
-        "topSpeed": 178,
-        "power": 115,
-        "torque": 155,
-        "rangeOrdisplacement": "54.900 km",
-        "weight": 1210
+        "power": 139,
+        "torque": 189,
+        "acceleration": 12.2,
+        "topSpeed": 179,
+        "rangeOrdisplacement": "54.940 km",
+        "weight": 1505,
+        "specSource": "ai",
+        "specConfidence": 96,
+        "engineDescription": "1.8 16V E.TorQ Flex",
+        "aiModelUsed": "gemini-3.1-flash-lite"
       },
       "paints": [
         {
-          "name": "Cinza Platinum",
-          "hex": "#475569",
+          "name": "Prata (Cor Original)",
+          "hex": "#94A3B8",
           "price": 0,
-          "class": "bg-slate-600"
+          "class": "bg-slate-400"
         },
         {
-          "name": "Branco Diamante",
-          "hex": "#FFFFFF",
+          "name": "Branco Fábrica",
+          "hex": "#F8FAFC",
           "price": 0,
-          "class": "bg-white border"
+          "class": "bg-slate-100"
         },
         {
-          "name": "Preto Carbono",
+          "name": "Preto Fábrica",
           "hex": "#0F172A",
-          "price": 1500,
-          "class": "bg-slate-900"
+          "price": 1850,
+          "class": "bg-slate-950"
         }
       ],
       "wheels": [
         {
-          "name": "Rodas de Alumínio Diamantadas Originais",
+          "name": "Rodas de Liga Leve Originais de Fábrica",
           "size": "16\"",
           "image": "Original16",
           "price": 0
         }
       ],
-      "detailUrl": "https://www.garagemdonelsinho.com.br/Veiculo/renegade-1.8-16v-flex-limited-4p-automatico-2018/5282526/detalhes",
+      "detailUrl": "https://www.garagemdonelsinho.com.br/Veiculos?busca=JEEP%20RENEGADE%201.8%2016V%20FLEX%20LIMITED%204P%20AUTOM%C3%81TICO",
+      "sellerName": "Garagem do Nelsinho",
+      "gallery": [
+        "https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?q=80&w=1200&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?q=80&w=1200&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1563720223185-11003d516935?q=80&w=1200&auto=format&fit=crop"
+      ],
       "features": [
-        "Ar condicionado",
-        "Bancos de Couro",
-        "Retrovisores elétricos",
-        "Vidros elétricos",
-        "Alarme",
-        "Freios ABS",
-        "Rodas de liga leve",
-        "Travas elétricas",
-        "Direção Hidraulica",
-        "Ar condicionado Digital",
-        "Multimídia",
-        "Vidros elétricos Traseiros",
-        "Banco do motorista com ajuste de altura",
-        "Sensor de chuva",
-        "Sensor de estacionamento",
-        "Airbag motorista",
-        "Airbag passageiro",
-        "Câmera de ré"
+        "Laudo de vistoria cautelar aprovado",
+        "Garantia de km real",
+        "Procedência total garantida"
       ]
     },
     {
-      "id": "scraped-25-mercedes-benz-2015",
+      "id": "scraped-23-mercedes-benz-2015",
       "name": "MERCEDES-BENZ GLA 200 1.6 CGI VISION 16V TURBO FLEX 4P AUTOMÁTICO",
       "brand": "Mercedes-benz",
-      "role": "Mercedes-benz Destaque no Estoque",
-      "category": "classics",
+      "role": "Mercedes-benz Inteligência Artificial Jina",
+      "category": "suv",
       "price": 99970,
       "image": "https://www.autocerto.com/fotos/6983/5322208/1_041948.jpg",
-      "gallery": [
-        "https://www.autocerto.com/fotos/6983/5322208/1_041948.jpg",
-        "https://www.autocerto.com/fotos/6983/5322208/1_041949.jpg",
-        "https://www.autocerto.com/fotos/6983/5322208/1_041950.jpg",
-        "https://www.autocerto.com/fotos/6983/5322208/1_041951.jpg",
-        "https://www.autocerto.com/fotos/6983/5322208/1_041953.jpg",
-        "https://www.autocerto.com/fotos/6983/5322208/1_041954.jpg",
-        "https://www.autocerto.com/fotos/6983/5322208/1_041956.jpg",
-        "https://www.autocerto.com/fotos/6983/5322208/1_042000.jpg",
-        "https://www.autocerto.com/fotos/6983/5322208/1_042003.jpg",
-        "https://www.autocerto.com/fotos/6983/5322208/1_042004.jpg",
-        "https://www.autocerto.com/fotos/6983/5322208/1_042005.jpg",
-        "https://www.autocerto.com/fotos/6983/5322208/1_042007.jpg",
-        "https://www.autocerto.com/fotos/6983/5322208/1_042009.jpg",
-        "https://www.autocerto.com/fotos/6983/5322208/1_042011.jpg",
-        "https://www.autocerto.com/fotos/6983/5322208/1_042013.jpg",
-        "https://www.autocerto.com/fotos/6983/5322208/1_042015.jpg",
-        "https://www.autocerto.com/fotos/6983/5322208/1_042017.jpg",
-        "https://www.autocerto.com/fotos/6983/5322208/1_042018.jpg",
-        "https://www.autocerto.com/fotos/6983/5322208/1_042020.jpg",
-        "https://www.autocerto.com/fotos/6983/5322208/1_042024.jpg",
-        "https://www.autocerto.com/fotos/6983/5322208/1_042027.jpg",
-        "https://www.autocerto.com/fotos/6983/5322208/1_042029.jpg",
-        "https://www.autocerto.com/fotos/6983/5322208/1_042031.jpg",
-        "https://www.autocerto.com/fotos/6983/5322208/1_042433.jpg",
-        "https://www.autocerto.com/fabricantes/mercedesbenz.webp"
-      ],
       "description": "Este esplêndido MERCEDES-BENZ GLA 200 1.6 CGI VISION 16V TURBO FLEX 4P AUTOMÁTICO ano modelo 2015 está disponível.",
       "year": 2015,
+      "color": "Preto",
       "isAvailableForTestDrive": true,
       "specs": {
-        "acceleration": 11,
-        "topSpeed": 180,
-        "power": 116,
-        "torque": 160,
+        "power": 156,
+        "torque": 250,
+        "acceleration": 8.1,
+        "topSpeed": 215,
         "rangeOrdisplacement": "60.986 km",
-        "weight": 1220
+        "weight": 1435,
+        "specSource": "ai",
+        "specConfidence": 96,
+        "engineDescription": "1.6 16V CGI Turbo Flex",
+        "aiModelUsed": "gemini-3.1-flash-lite"
       },
       "paints": [
         {
-          "name": "Cinza Platinum",
-          "hex": "#475569",
-          "price": 0,
-          "class": "bg-slate-600"
-        },
-        {
-          "name": "Branco Diamante",
-          "hex": "#FFFFFF",
-          "price": 0,
-          "class": "bg-white border"
-        },
-        {
-          "name": "Preto Carbono",
+          "name": "Preto (Cor Original)",
           "hex": "#0F172A",
-          "price": 1500,
-          "class": "bg-slate-900"
+          "price": 0,
+          "class": "bg-slate-950"
+        },
+        {
+          "name": "Branco Fábrica",
+          "hex": "#F8FAFC",
+          "price": 0,
+          "class": "bg-slate-100"
+        },
+        {
+          "name": "Prata Fábrica",
+          "hex": "#94A3B8",
+          "price": 1850,
+          "class": "bg-slate-400"
         }
       ],
       "wheels": [
         {
-          "name": "Rodas de Alumínio Diamantadas Originais",
+          "name": "Rodas de Liga Leve Originais de Fábrica",
           "size": "16\"",
           "image": "Original16",
           "price": 0
         }
       ],
-      "detailUrl": "https://www.garagemdonelsinho.com.br/Veiculo/gla-200-1.6-cgi-vision-16v-turbo-flex-4p-automatico-2015/5322208/detalhes",
-      "features": [
-        "Ar condicionado",
-        "Bancos de Couro",
-        "Retrovisores elétricos",
-        "Vidros elétricos",
-        "Freios ABS",
-        "Rodas de liga leve",
-        "Vidros elétricos Traseiros",
-        "Banco do motorista com ajuste de altura",
-        "Sensor de estacionamento",
-        "Airbag de cortina",
-        "Airbag laterais",
-        "Airbag motorista",
-        "Airbag passageiro",
-        "Retrovisor fotocrômico",
-        "Banco do motorista com ajuste elétrico"
-      ]
-    },
-    {
-      "id": "scraped-26-nissan-2019",
-      "name": "NISSAN KICKS 1.6 16V FLEXSTART S DIRECT 4P XTRONIC",
-      "brand": "Nissan",
-      "role": "Nissan Destaque no Estoque",
-      "category": "suv",
-      "price": 83970,
-      "image": "https://www.autocerto.com/fotos/6983/5356870/1_094016.jpg",
+      "detailUrl": "https://www.garagemdonelsinho.com.br/Veiculos?busca=MERCEDES-BENZ%20GLA%20200%201.6%20CGI%20VISION%2016V%20TURBO%20FLEX%204P%20AUTOM%C3%81TICO",
+      "sellerName": "Garagem do Nelsinho",
       "gallery": [
-        "https://www.autocerto.com/fotos/6983/5356870/1_094016.jpg",
-        "https://www.autocerto.com/fotos/6983/5356870/1_094018.jpg",
-        "https://www.autocerto.com/fotos/6983/5356870/1_094019.jpg",
-        "https://www.autocerto.com/fotos/6983/5356870/2_094019.jpg",
-        "https://www.autocerto.com/fotos/6983/5356870/1_094020.jpg",
-        "https://www.autocerto.com/fotos/6983/5356870/1_094021.jpg",
-        "https://www.autocerto.com/fotos/6983/5356870/1_094022.jpg",
-        "https://www.autocerto.com/fotos/6983/5356870/1_094023.jpg",
-        "https://www.autocerto.com/fotos/6983/5356870/1_094024.jpg",
-        "https://www.autocerto.com/fotos/6983/5356870/1_094025.jpg",
-        "https://www.autocerto.com/fotos/6983/5356870/1_094026.jpg",
-        "https://www.autocerto.com/fotos/6983/5356870/1_094027.jpg",
-        "https://www.autocerto.com/fotos/6983/5356870/1_094028.jpg",
-        "https://www.autocerto.com/fotos/6983/5356870/1_094029.jpg",
-        "https://www.autocerto.com/fotos/6983/5356870/1_094030.jpg",
-        "https://www.autocerto.com/fotos/6983/5356870/1_094031.jpg",
-        "https://www.autocerto.com/fotos/6983/5356870/1_094033.jpg",
-        "https://www.autocerto.com/fotos/6983/5356870/2_094033.jpg",
-        "https://www.autocerto.com/fotos/6983/5356870/1_094035.jpg",
-        "https://www.autocerto.com/fotos/6983/5356870/1_094037.jpg",
-        "https://www.autocerto.com/fotos/6983/5356870/1_094038.jpg",
-        "https://www.autocerto.com/fabricantes/nissan.webp"
+        "https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?q=80&w=1200&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?q=80&w=1200&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1563720223185-11003d516935?q=80&w=1200&auto=format&fit=crop"
       ],
-      "description": "Este esplêndido NISSAN KICKS 1.6 16V FLEXSTART S DIRECT 4P XTRONIC ano modelo 2019 está disponível.",
-      "year": 2019,
-      "isAvailableForTestDrive": true,
-      "specs": {
-        "acceleration": 9.5,
-        "topSpeed": 198,
-        "power": 130,
-        "torque": 205,
-        "rangeOrdisplacement": "41.000 km",
-        "weight": 1220
-      },
-      "paints": [
-        {
-          "name": "Cinza Platinum",
-          "hex": "#475569",
-          "price": 0,
-          "class": "bg-slate-600"
-        },
-        {
-          "name": "Branco Diamante",
-          "hex": "#FFFFFF",
-          "price": 0,
-          "class": "bg-white border"
-        },
-        {
-          "name": "Preto Carbono",
-          "hex": "#0F172A",
-          "price": 1500,
-          "class": "bg-slate-900"
-        }
-      ],
-      "wheels": [
-        {
-          "name": "Rodas de Alumínio Diamantadas Originais",
-          "size": "16\"",
-          "image": "Original16",
-          "price": 0
-        }
-      ],
-      "detailUrl": "https://www.garagemdonelsinho.com.br/Veiculo/kicks-1.6-16v-flexstart-s-direct-4p-xtronic-2019/5356870/detalhes",
       "features": [
-        "Ar condicionado",
-        "Vidros elétricos",
-        "Alarme",
-        "Freios ABS",
-        "Rodas de liga leve",
-        "Travas elétricas",
-        "Direção Hidraulica",
-        "Multimídia",
-        "Vidros elétricos Traseiros",
-        "Banco do motorista com ajuste de altura",
-        "Airbag motorista",
-        "Airbag passageiro",
-        "Banco traseiro bipartido"
+        "Laudo de vistoria cautelar aprovado",
+        "Garantia de km real",
+        "Procedência total garantida"
       ]
     },
     {
       "id": "scraped-24-nissan-2019",
-      "name": "NISSAN KICKS 1.6 16V FLEXSTART SV 4P XTRONIC",
+      "name": "NISSAN KICKS 1.6 16V FLEXSTART S DIRECT 4P XTRONIC",
       "brand": "Nissan",
-      "role": "Nissan Destaque no Estoque",
+      "role": "Nissan Inteligência Artificial Jina",
       "category": "suv",
-      "price": 86970,
-      "image": "https://www.autocerto.com/fotos/6983/5240209/1_042307.jpg",
-      "gallery": [
-        "https://www.autocerto.com/fotos/6983/5240209/1_042307.jpg",
-        "https://www.autocerto.com/fotos/6983/5240209/1_042309.jpg",
-        "https://www.autocerto.com/fotos/6983/5240209/1_042311.jpg",
-        "https://www.autocerto.com/fotos/6983/5240209/1_042312.jpg",
-        "https://www.autocerto.com/fotos/6983/5240209/1_042314.jpg",
-        "https://www.autocerto.com/fotos/6983/5240209/1_042315.jpg",
-        "https://www.autocerto.com/fotos/6983/5240209/1_042319.jpg",
-        "https://www.autocerto.com/fotos/6983/5240209/1_042322.jpg",
-        "https://www.autocerto.com/fotos/6983/5240209/1_042324.jpg",
-        "https://www.autocerto.com/fotos/6983/5240209/1_042325.jpg",
-        "https://www.autocerto.com/fotos/6983/5240209/1_042326.jpg",
-        "https://www.autocerto.com/fotos/6983/5240209/1_042328.jpg",
-        "https://www.autocerto.com/fotos/6983/5240209/1_042330.jpg",
-        "https://www.autocerto.com/fotos/6983/5240209/1_042332.jpg",
-        "https://www.autocerto.com/fotos/6983/5240209/1_042334.jpg",
-        "https://www.autocerto.com/fotos/6983/5240209/1_042335.jpg",
-        "https://www.autocerto.com/fotos/6983/5240209/1_042338.jpg",
-        "https://www.autocerto.com/fotos/6983/5240209/1_042339.jpg",
-        "https://www.autocerto.com/fotos/6983/5240209/1_042341.jpg",
-        "https://www.autocerto.com/fotos/6983/5240209/1_042344.jpg",
-        "https://www.autocerto.com/fotos/6983/5240209/1_042346.jpg",
-        "https://www.autocerto.com/fabricantes/nissan.webp"
-      ],
-      "description": "Este esplêndido KICKS 1.6 16V FLEXSTART SV 4P XTRONIC ano modelo 2019 está disponível.",
+      "price": 83970,
+      "image": "https://www.autocerto.com/fotos/6983/5356870/1_094016.jpg",
+      "description": "Este esplêndido NISSAN KICKS 1.6 16V FLEXSTART S DIRECT 4P XTRONIC ano modelo 2019 está disponível.",
       "year": 2019,
+      "color": "Preto",
       "isAvailableForTestDrive": true,
       "specs": {
-        "acceleration": 9.5,
-        "topSpeed": 198,
-        "power": 130,
-        "torque": 205,
-        "rangeOrdisplacement": "80.755 km",
-        "weight": 1220
+        "power": 114,
+        "torque": 155,
+        "acceleration": 11.8,
+        "topSpeed": 175,
+        "rangeOrdisplacement": "41.000 km",
+        "weight": 1142,
+        "specSource": "ai",
+        "specConfidence": 96,
+        "engineDescription": "1.6 16V HR16DE Flex",
+        "aiModelUsed": "gemini-3.1-flash-lite"
       },
       "paints": [
         {
-          "name": "Cinza Platinum",
-          "hex": "#475569",
-          "price": 0,
-          "class": "bg-slate-600"
-        },
-        {
-          "name": "Branco Diamante",
-          "hex": "#FFFFFF",
-          "price": 0,
-          "class": "bg-white border"
-        },
-        {
-          "name": "Preto Carbono",
+          "name": "Preto (Cor Original)",
           "hex": "#0F172A",
-          "price": 1500,
-          "class": "bg-slate-900"
+          "price": 0,
+          "class": "bg-slate-950"
+        },
+        {
+          "name": "Branco Fábrica",
+          "hex": "#F8FAFC",
+          "price": 0,
+          "class": "bg-slate-100"
+        },
+        {
+          "name": "Prata Fábrica",
+          "hex": "#94A3B8",
+          "price": 1850,
+          "class": "bg-slate-400"
         }
       ],
       "wheels": [
         {
-          "name": "Rodas de Alumínio Diamantadas Originais",
+          "name": "Rodas de Liga Leve Originais de Fábrica",
           "size": "16\"",
           "image": "Original16",
           "price": 0
         }
       ],
-      "detailUrl": "https://www.garagemdonelsinho.com.br/Veiculo/kicks-1.6-16v-flexstart-sv-4p-xtronic-2019/5240209/detalhes",
+      "detailUrl": "https://www.garagemdonelsinho.com.br/Veiculos?busca=NISSAN%20KICKS%201.6%2016V%20FLEXSTART%20S%20DIRECT%204P%20XTRONIC",
+      "sellerName": "Garagem do Nelsinho",
+      "gallery": [
+        "https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?q=80&w=1200&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?q=80&w=1200&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1563720223185-11003d516935?q=80&w=1200&auto=format&fit=crop"
+      ],
       "features": [
-        "Ar condicionado",
-        "Bancos de Couro",
-        "Retrovisores elétricos",
-        "Vidros elétricos",
-        "Alarme",
-        "Freios ABS",
-        "Rodas de liga leve",
-        "Travas elétricas",
-        "Ar condicionado Digital",
-        "Multimídia",
-        "Vidros elétricos Traseiros",
-        "Banco do motorista com ajuste de altura",
-        "Sensor de estacionamento",
-        "Airbag motorista",
-        "Airbag passageiro",
-        "Câmera de ré",
-        "Banco traseiro bipartido",
-        "Banco do motorista com ajuste elétrico"
+        "Laudo de vistoria cautelar aprovado",
+        "Garantia de km real",
+        "Procedência total garantida"
+      ]
+    },
+    {
+      "id": "scraped-25-nissan-2019",
+      "name": "NISSAN KICKS 1.6 16V FLEXSTART SV 4P XTRONIC",
+      "brand": "Nissan",
+      "role": "Nissan Inteligência Artificial Jina",
+      "category": "suv",
+      "price": 84970,
+      "image": "https://www.autocerto.com/fotos/6983/5240209/1_042307.jpg",
+      "description": "Este esplêndido NISSAN KICKS 1.6 16V FLEXSTART SV 4P XTRONIC ano modelo 2019 está disponível.",
+      "year": 2019,
+      "color": "Branco",
+      "isAvailableForTestDrive": true,
+      "specs": {
+        "power": 114,
+        "torque": 155,
+        "acceleration": 11.8,
+        "topSpeed": 175,
+        "rangeOrdisplacement": "80.755 km",
+        "weight": 1142,
+        "specSource": "ai",
+        "specConfidence": 96,
+        "engineDescription": "1.6 16V HR16DE Flex",
+        "aiModelUsed": "gemini-3.1-flash-lite"
+      },
+      "paints": [
+        {
+          "name": "Branco (Cor Original)",
+          "hex": "#F8FAFC",
+          "price": 0,
+          "class": "bg-slate-100"
+        },
+        {
+          "name": "Preto Fábrica",
+          "hex": "#0F172A",
+          "price": 1850,
+          "class": "bg-slate-950"
+        },
+        {
+          "name": "Prata Fábrica",
+          "hex": "#94A3B8",
+          "price": 1850,
+          "class": "bg-slate-400"
+        }
+      ],
+      "wheels": [
+        {
+          "name": "Rodas de Liga Leve Originais de Fábrica",
+          "size": "16\"",
+          "image": "Original16",
+          "price": 0
+        }
+      ],
+      "detailUrl": "https://www.garagemdonelsinho.com.br/Veiculos?busca=NISSAN%20KICKS%201.6%2016V%20FLEXSTART%20SV%204P%20XTRONIC",
+      "sellerName": "Garagem do Nelsinho",
+      "gallery": [
+        "https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?q=80&w=1200&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?q=80&w=1200&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1563720223185-11003d516935?q=80&w=1200&auto=format&fit=crop"
+      ],
+      "features": [
+        "Laudo de vistoria cautelar aprovado",
+        "Garantia de km real",
+        "Procedência total garantida"
+      ]
+    },
+    {
+      "id": "scraped-26-toyota-2019",
+      "name": "TOYOTA COROLLA 2.0 XEI 16V FLEX 4P AUTOMÁTICO",
+      "brand": "Toyota",
+      "role": "Toyota Inteligência Artificial Jina",
+      "category": "hypercars",
+      "price": 108900,
+      "image": "https://www.autocerto.com/fotos/6983/5483465/1_050033.jpg",
+      "description": "Este esplêndido TOYOTA COROLLA 2.0 XEI 16V FLEX 4P AUTOMÁTICO ano modelo 2019 está disponível.",
+      "year": 2019,
+      "color": "Branco",
+      "isAvailableForTestDrive": true,
+      "specs": {
+        "power": 154,
+        "torque": 207,
+        "acceleration": 9.6,
+        "topSpeed": 199,
+        "rangeOrdisplacement": "59.322 km",
+        "weight": 1405,
+        "specSource": "ai",
+        "specConfidence": 96,
+        "engineDescription": "2.0 16V Dual VVT-i Flex",
+        "aiModelUsed": "gemini-3.1-flash-lite"
+      },
+      "paints": [
+        {
+          "name": "Branco (Cor Original)",
+          "hex": "#F8FAFC",
+          "price": 0,
+          "class": "bg-slate-100"
+        },
+        {
+          "name": "Preto Fábrica",
+          "hex": "#0F172A",
+          "price": 1850,
+          "class": "bg-slate-950"
+        },
+        {
+          "name": "Prata Fábrica",
+          "hex": "#94A3B8",
+          "price": 1850,
+          "class": "bg-slate-400"
+        }
+      ],
+      "wheels": [
+        {
+          "name": "Rodas de Liga Leve Originais de Fábrica",
+          "size": "16\"",
+          "image": "Original16",
+          "price": 0
+        }
+      ],
+      "detailUrl": "https://www.garagemdonelsinho.com.br/Veiculos?busca=TOYOTA%20COROLLA%202.0%20XEI%2016V%20FLEX%204P%20AUTOM%C3%81TICO",
+      "sellerName": "Garagem do Nelsinho",
+      "gallery": [
+        "https://images.unsplash.com/photo-1621007947382-bb3c3994e3fb?q=80&w=1200&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1590362891991-f776e747a588?q=80&w=1200&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1550355291-bbee04a92027?q=80&w=1200&auto=format&fit=crop"
+      ],
+      "features": [
+        "Laudo de vistoria cautelar aprovado",
+        "Garantia de km real",
+        "Procedência total garantida"
+      ]
+    },
+    {
+      "id": "scraped-27-toyota-2020",
+      "name": "TOYOTA YARIS 1.3 16V FLEX XL LIVE MULTIDRIVE",
+      "brand": "Toyota",
+      "role": "Toyota Inteligência Artificial Jina",
+      "category": "hypercars",
+      "price": 74970,
+      "image": "https://www.autocerto.com/fotos/6983/5424771/1_103736.jpg",
+      "description": "Este esplêndido TOYOTA YARIS 1.3 16V FLEX XL LIVE MULTIDRIVE ano modelo 2020 está disponível.",
+      "year": 2020,
+      "color": "Branco",
+      "isAvailableForTestDrive": true,
+      "specs": {
+        "power": 101,
+        "torque": 129,
+        "acceleration": 12,
+        "topSpeed": 170,
+        "rangeOrdisplacement": "117.000 km",
+        "weight": 1050,
+        "specSource": "ai",
+        "specConfidence": 96,
+        "engineDescription": "1.3 16V Dual VVT-i Flex",
+        "aiModelUsed": "gemini-3.1-flash-lite"
+      },
+      "paints": [
+        {
+          "name": "Branco (Cor Original)",
+          "hex": "#FFFFFF",
+          "price": 0,
+          "class": "bg-slate-100"
+        },
+        {
+          "name": "Preto Fábrica",
+          "hex": "#0F172A",
+          "price": 1850,
+          "class": "bg-slate-950"
+        },
+        {
+          "name": "Prata Fábrica",
+          "hex": "#94A3B8",
+          "price": 1850,
+          "class": "bg-slate-400"
+        }
+      ],
+      "wheels": [
+        {
+          "name": "Rodas de Liga Leve Originais de Fábrica",
+          "size": "16\"",
+          "image": "Original16",
+          "price": 0
+        }
+      ],
+      "detailUrl": "https://www.garagemdonelsinho.com.br/Veiculos?busca=TOYOTA%20YARIS%201.3%2016V%20FLEX%20XL%20LIVE%20MULTIDRIVE",
+      "sellerName": "Garagem do Nelsinho",
+      "gallery": [
+        "https://images.unsplash.com/photo-1621007947382-bb3c3994e3fb?q=80&w=1200&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1590362891991-f776e747a588?q=80&w=1200&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1550355291-bbee04a92027?q=80&w=1200&auto=format&fit=crop"
+      ],
+      "features": [
+        "Laudo de vistoria cautelar aprovado",
+        "Garantia de km real",
+        "Procedência total garantida"
+      ]
+    },
+    {
+      "id": "scraped-28-toyota-2022",
+      "name": "TOYOTA YARIS 1.5 16V FLEX XL PLUS CONNECT MULTIDRIVE",
+      "brand": "Toyota",
+      "role": "Toyota Inteligência Artificial Jina",
+      "category": "hypercars",
+      "price": 89970,
+      "image": "https://www.autocerto.com/fotos/6983/5421275/1_105919.jpg",
+      "description": "Este esplêndido TOYOTA YARIS 1.5 16V FLEX XL PLUS CONNECT MULTIDRIVE ano modelo 2022 está disponível.",
+      "year": 2022,
+      "color": "Prata",
+      "isAvailableForTestDrive": true,
+      "specs": {
+        "power": 110,
+        "torque": 149,
+        "acceleration": 11,
+        "topSpeed": 173,
+        "rangeOrdisplacement": "36.571 km",
+        "weight": 1115,
+        "specSource": "ai",
+        "specConfidence": 96,
+        "engineDescription": "1.5 16V Dual VVT-i Flex",
+        "aiModelUsed": "gemini-3.1-flash-lite"
+      },
+      "paints": [
+        {
+          "name": "Prata (Cor Original)",
+          "hex": "#C0C0C0",
+          "price": 0,
+          "class": "bg-slate-400"
+        },
+        {
+          "name": "Branco Fábrica",
+          "hex": "#F8FAFC",
+          "price": 0,
+          "class": "bg-slate-100"
+        },
+        {
+          "name": "Preto Fábrica",
+          "hex": "#0F172A",
+          "price": 1850,
+          "class": "bg-slate-950"
+        }
+      ],
+      "wheels": [
+        {
+          "name": "Rodas de Liga Leve Originais de Fábrica",
+          "size": "16\"",
+          "image": "Original16",
+          "price": 0
+        }
+      ],
+      "detailUrl": "https://www.garagemdonelsinho.com.br/Veiculos?busca=TOYOTA%20YARIS%201.5%2016V%20FLEX%20XL%20PLUS%20CONNECT%20MULTIDRIVE",
+      "sellerName": "Garagem do Nelsinho",
+      "gallery": [
+        "https://images.unsplash.com/photo-1621007947382-bb3c3994e3fb?q=80&w=1200&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1590362891991-f776e747a588?q=80&w=1200&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1550355291-bbee04a92027?q=80&w=1200&auto=format&fit=crop"
+      ],
+      "features": [
+        "Laudo de vistoria cautelar aprovado",
+        "Garantia de km real",
+        "Procedência total garantida"
+      ]
+    },
+    {
+      "id": "scraped-29-volkswagen-1976",
+      "name": "VOLKSWAGEN FUSCA 1.3 8V GASOLINA 2P MANUAL",
+      "brand": "Volkswagen",
+      "role": "Volkswagen Inteligência Artificial Jina",
+      "category": "classics",
+      "price": 29900,
+      "image": "https://www.autocerto.com/fotos/6983/5282546/1_090947.jpg",
+      "description": "Este esplêndido VOLKSWAGEN FUSCA 1.3 8V GASOLINA 2P MANUAL ano modelo 1976 está disponível.",
+      "year": 1976,
+      "color": "Branco",
+      "isAvailableForTestDrive": true,
+      "specs": {
+        "power": 120,
+        "torque": 90,
+        "acceleration": 10.5,
+        "topSpeed": 120,
+        "rangeOrdisplacement": "9.090 km",
+        "weight": 810,
+        "specSource": "ai",
+        "specConfidence": 96,
+        "engineDescription": "1.3 8V Boxer Gasolina",
+        "aiModelUsed": "gemini-3.1-flash-lite"
+      },
+      "paints": [
+        {
+          "name": "Branco (Cor Original)",
+          "hex": "#F8F9F9",
+          "price": 0,
+          "class": "bg-slate-100"
+        },
+        {
+          "name": "Preto Fábrica",
+          "hex": "#0F172A",
+          "price": 1850,
+          "class": "bg-slate-950"
+        },
+        {
+          "name": "Prata Fábrica",
+          "hex": "#94A3B8",
+          "price": 1850,
+          "class": "bg-slate-400"
+        }
+      ],
+      "wheels": [
+        {
+          "name": "Rodas de Liga Leve Originais de Fábrica",
+          "size": "16\"",
+          "image": "Original16",
+          "price": 0
+        }
+      ],
+      "detailUrl": "https://www.garagemdonelsinho.com.br/Veiculos?busca=VOLKSWAGEN%20FUSCA%201.3%208V%20GASOLINA%202P%20MANUAL",
+      "sellerName": "Garagem do Nelsinho",
+      "gallery": [
+        "https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=1200&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1542282088-72c9c27ed0cd?q=80&w=1200&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1550355291-bbee04a92027?q=80&w=1200&auto=format&fit=crop"
+      ],
+      "features": [
+        "Laudo de vistoria cautelar aprovado",
+        "Garantia de km real",
+        "Procedência total garantida"
       ]
     }
   ],
-  "timestamp": "2026-09-10T12:33:36.066Z",
+  "timestamp": "2026-09-17T20:23:11.667Z",
   "source": "local_file_cache"
 }

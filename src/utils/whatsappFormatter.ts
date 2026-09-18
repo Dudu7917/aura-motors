@@ -13,13 +13,14 @@ export function generateWhatsAppText(car: Car, customLink?: string): string {
   
   const odometer = car.specs?.rangeOrdisplacement || 'Não informado';
   const power = car.specs?.power ? `${car.specs.power} cv` : 'Não informado';
+  const colorLine = car.color ? `\n• *Cor:* ${car.color}` : '';
 
   return `🚗 *${car.brand.toUpperCase()} ${car.name.toUpperCase()}*
 
 📋 *Informações Principais:*
 • *Ano:* ${car.year}
 • *KM:* ${odometer}
-• *Potência:* ${power}
+• *Potência:* ${power}${colorLine}
 • *Preço:* ${priceFormatted}
 
 Para conferir todas as fotos, opcionais e detalhes do veículo, acesse o link abaixo:
